@@ -1,0 +1,123 @@
+\section{Multiset-trie data structure} \label{c:description}
+%
+Let $\Sigma$ be a set of distinct symbols that define an alphabet and let 
+$\sigma$ be the cardinality of $\Sigma.$ The \emph{multiset-trie} data structure 
+stores multisets that are composed of symbols from the alphabet $\Sigma.$ It 
+provides the basic tree data structure operations such as insert, delete and 
+search together with multiset containment and membership operations such as 
+submultiset and supermultiset that will be discussed in the next section 
+in greater details.
+
+Multiset ignores the ordering of its elements by definition, which allows us to 
+define a bijective mapping $\phi:\Sigma \rightarrow I,$ where $I$ is the set of 
+integers $\{ 1,2,3, \ldots, \sigma \}.$ In this way, we obtain an indexing of 
+elements from the alphabet $\Sigma,$ so we can work directly with integers 
+rather then with specific symbols from $\Sigma.$
+
+The multiset-trie is an $n$-ary tree based data structure with the properties of 
+trie. A node in multiset-trie always has degree $n,$ i.e. $n$ children. Some of 
+the children may be \emph{Null} (non-existing), but the number of \emph{Null} 
+children can be at most $n-1.$ All the children of a node, including the \emph{Null} 
+children, are labeled from left to right with labels $c_j,$ where $j\in \{ 0, 1, \ldots, n-1 \}.$ 
+Every two child nodes $u$ and $v$ that share the same parent node have different labels.
+
+%The multiset-trie is an $n$-ary tree based structure. A node can have a degree 
+%from $1$ to $n,$ depending on the number of existing children. The edges from 
+%parent node to children have labels $c_j,$ where $j\in \{ 0, 1, \ldots, n-1 \}.$ 
+%The edges are labeled from left to right with the condition that there are no 
+%two edges with the same label coming from a parent node. 
+
+Nodes that have equal height in a multiset-trie form a level. The height of a 
+multiset-trie is always $\sigma+1$ if at least one multiset is in structure. 
+The height of the root node (the first level) is defined to be 1.
+%
+Levels in multiset-trie are enumerated by their height, i.e. a level $L_i$ has 
+height $i.$ The connection between level height in a multiset-trie and symbols 
+from alphabet $\Sigma$ is defined as follows. A level $L_i,$ where 
+$i\in\{ 1,2,\ldots, \sigma \}$ represents a symbol $s\in\Sigma,$ such that 
+$\phi^{-1}(i) = s.$ The last level $L_{\sigma+1}$ does not represent any symbol 
+and is named \emph{leaf level} ($LL$ for short).
+
+Since every level, except $LL$ represents a symbol from $\Sigma,$ we can define 
+a transition between nodes that are located at different levels in a multiset-trie. 
+%
+Consider two nodes $u,v$ in a multiset-trie at levels $L_i, L_{i+1}$ respectively, 
+where $i\in\{1,2,\ldots,\sigma\}.$ Let a node $u$ be a parent node of a node $v$ 
+and consequently a node $v$ be a child node of a node $u.$ Suppose that a child 
+node $v$ is not \emph{Null} and has a label $c_j,$ where $j\in\{ 0,1,\ldots, n-1 \}.$ 
+%
+Then the \emph{path} $u\rightarrow v$ represents a symbol $s\in\Sigma$ with 
+multiplicity $j,$ such that $\phi^{-1}(i) = s.$ 
+%
+Such a transition $u\rightarrow v$ is called a \emph{path of length} $1$ and is 
+allowed if and only if a node $v$ is not \emph{Null} and $u$ is a parent node of 
+a node $v.$ If a node $v$ has label $c_0,$ then the path $u\rightarrow v$ 
+represents a symbol with the multiplicity $0$ respectively i.e. an empty symbol.
+
+We define a \emph{complete path} to be the path of length $\sigma$ in a 
+multiset-trie with the end points at root node (the 1st level) and $LL$. Thus, 
+a multiset $m$ is inserted into a multiset-trie if and only if there exists a 
+complete path in a multiset-trie that corresponds to $m.$
+%
+Note that every complete path in a multiset-trie is unique. Therefore, the multisets 
+that share a common prefix in a multiset-trie can have a common path of length at 
+most $\sigma-1.$ The complete path that passes through nodes labeled by $c_0$ 
+on all levels represents an empty multiset or an empty set.
+%
+Thus, any multiset $m$ that is composed of symbols from $\Sigma$ with maximum 
+multiplicity not greater than $n-1$ can be represented by a complete path in a multiset-trie.
+
+Let us have an example of a multiset-trie data structure. Let $\sigma = 2$ and 
+$\Sigma = I = \{ 1,2 \}$ respectively, so the mapping $\phi$ is an identity mapping. 
+Fix the degree of a node $n=3,$ so the maximal multiplicity of an element in 
+a multiset is $n-1=2.$ The figure~\ref{fig:sketch} presents the multiset-trie that 
+contains multisets $\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}.$ 
+The \emph{Null} children are omitted on the figure.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[>=stealth',
+level 1/.style={sibling distance = 2.5cm},
+level 2/.style={sibling distance = 1cm},
+level distance = 1.5cm]
+\node (R) [node1] {\tiny Root}
+	child { node [node1] {} 
+		child { node [node1] {} edge from parent node [near end, left] {$c_0$}}
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		child { node [node1] {} edge from parent node [near end, right] {$c_2$}}
+		edge from parent node [near end, left] {$c_0$}	
+	}
+	child { node [node1] {}
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		child { node [node1] {} edge from parent node [near end, right] {$c_2$}}
+		edge from parent node [near end, left] {$c_1$}
+	}
+	child { node [node1] {} 
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		edge from parent node [near end, right] {$c_2$} 
+};	
+%----------------- Level labels --------------	
+	\begin{scope}[every node/.style={right}]
+		\path (R 				-| R-3-1) ++(5mm,0) node {$L_1$};
+		\path (R-3 			-| R-3-1) ++(5mm,0) node {$L_2$};
+		\path (R-3-1		-| R-3-1) ++(5mm,0) node {$LL$};
+	\end{scope}			
+\end{tikzpicture}
+\caption{Example of multiset-trie structure.}
+\label{fig:sketch}
+\end{figure}
+
+Let a pair $(L_i, c_j)$ represents a node with label $c_j$ at a level $L_i.$ 
+The pair $(L_1,c_j)$ is equivalent to $(L_1,root),$ since the first level has 
+the root node only. According to the figure~\ref{fig:sketch} we can extract 
+inserted multisets as follows:
+
+\begin{eqnarray*}
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_0) & \textrm{equivalent to} & \{ 1^0, 2^0 \} = \emptyset \\
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_1) & \textrm{equivalent to} & \{ 1^0, 2^1 \} = \{ 2 \} \\
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_2) & \textrm{equivalent to} & \{ 1^0, 2^2 \} = \{ 2,2 \} \\
+(L_1,root) \rightarrow (L_2,c_1) \rightarrow (LL,c_1) & \textrm{equivalent to} & \{ 1^1, 2^1 \} = \{ 1,2 \} \\
+(L_1,root) \rightarrow (L_2,c_1) \rightarrow (LL,c_2) & \textrm{equivalent to} & \{ 1^1, 2^2 \} = \{ 1,2,2 \} \\
+(L_1,root) \rightarrow (L_2,c_2) \rightarrow (LL,c_1) & \textrm{equivalent to} & \{ 1^2, 2^1 \} = \{ 1,1,2 \} 
+\end{eqnarray*}
+where $e^k$ represents an element $e$ with multiplicity $k.$

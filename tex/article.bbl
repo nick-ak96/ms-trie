@@ -1,0 +1,75 @@
+\begin{thebibliography}{10}
+
+\bibitem{baeza1999modern}
+R.~Baeza-Yates, B.~Ribeiro-Neto, et~al.
+\newblock {\em Modern information retrieval}, volume 463.
+\newblock 1999.
+
+\bibitem{blizard1988multiset}
+W.~D. Blizard et~al.
+\newblock Multiset theory.
+\newblock {\em Notre Dame Journal of formal logic}, 30(1):36--66, 1988.
+
+\bibitem{broder2006indexing}
+A.~Z. Broder, N.~Eiron, M.~Fontoura, M.~Herscovici, R.~Lempel, J.~McPherson,
+  R.~Qi, and E.~Shekita.
+\newblock Indexing shared content in information retrieval systems.
+\newblock In {\em International Conference on Extending Database Technology},
+  pages 313--330. Springer, 2006.
+
+\bibitem{gardiner1985stochastic}
+C.~W. Gardiner.
+\newblock {\em Stochastic methods}.
+\newblock Springer-Verlag, Berlin--Heidelberg--New York--Tokyo, 1985.
+
+\bibitem{harris1954distributional}
+Z.~S. Harris.
+\newblock Distributional structure.
+\newblock {\em Word}, 10(2-3):146--162, 1954.
+
+\bibitem{hellerstein1995generalized}
+J.~M. Hellerstein, J.~F. Naughton, and A.~Pfeffer.
+\newblock {\em Generalized search trees for database systems}.
+\newblock September, 1995.
+
+\bibitem{kornacker1999high}
+M.~Kornacker.
+\newblock High-performance extensible indexing.
+\newblock In {\em VLDB}, volume~99, pages 699--708, 1999.
+
+\bibitem{Lamperti2000msetsinds}
+G.~Lamperti, M.~Melchiori, and M.~Zanella.
+\newblock On multisets in database systems.
+\newblock In {\em Proceedings of the Workshop on Multiset Processing: Multiset
+  Processing, Mathematical, Computer Science, and Molecular Computing Points of
+  View}, WMP '00, pages 147--216, London, UK, UK, 2001. Springer-Verlag.
+
+\bibitem{manning2008introduction}
+C.~D. Manning, P.~Raghavan, H.~Sch{\"u}tze, et~al.
+\newblock {\em Introduction to information retrieval}, volume~1.
+\newblock Cambridge university press Cambridge, 2008.
+
+\bibitem{savnik2013index}
+I.~Savnik.
+\newblock Index data structure for fast subset and superset queries.
+\newblock In {\em International Conference on Availability, Reliability, and
+  Security}, pages 134--148. Springer, 2013.
+
+\bibitem{singh2007overview}
+D.~Singh, A.~Ibrahim, T.~Yohanna, and J.~Singh.
+\newblock An overview of the applications of multisets.
+\newblock {\em Novi Sad Journal of Mathematics}, 37(3):73--92, 2007.
+
+\bibitem{zobel2006inverted}
+J.~Zobel and A.~Moffat.
+\newblock Inverted files for text search engines.
+\newblock {\em ACM computing surveys (CSUR)}, 38(2):6, 2006.
+
+\bibitem{zobel1992efficient}
+J.~Zobel, A.~Moffat, and R.~Sacks-Davis.
+\newblock An efficient indexing technique for full-text database systems.
+\newblock In {\em PROCEEDINGS OF THE INTERNATIONAL CONFERENCE ON VERY LARGE
+  DATA BASES}, pages 352--352. INSTITUTE OF ELECTRICAL \&amp; ELECTRONICS
+  ENGINEERS (IEEE), 1992.
+
+\end{thebibliography}

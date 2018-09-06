@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: article.aux
+The style file: abbrv.bst
+Database file #1: multiset-trie.bib
+Warning--empty publisher in baeza1999modern
+Warning--can't use both volume and number fields in manning2008introduction
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            583 strings with 5925 characters,
+and the built_in function-call counts, 4893 in all, are:
+= -- 489
+> -- 215
+< -- 8
++ -- 87
+- -- 72
+* -- 327
+:= -- 777
+add.period$ -- 43
+call.type$ -- 13
+change.case$ -- 68
+chr.to.int$ -- 0
+cite$ -- 15
+duplicate$ -- 207
+empty$ -- 390
+format.name$ -- 72
+if$ -- 1060
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 17
+newline$ -- 68
+num.names$ -- 26
+pop$ -- 89
+preamble$ -- 1
+purify$ -- 59
+quote$ -- 0
+skip$ -- 152
+stack$ -- 0
+substring$ -- 293
+swap$ -- 66
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 2
+while$ -- 48
+width$ -- 15
+write$ -- 149
+(There were 2 warnings)

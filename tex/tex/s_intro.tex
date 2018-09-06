@@ -1,0 +1,125 @@
+\section{Introduction} \label{c:introduction}
+[Will be rewritten]
+%
+% some intro
+During recent years the popularity of digital data has increased. All sorts of 
+information such as text, audio and video can now be accessed by searching 
+\emph{information retrieval systems}. Information retrieval (IR) is the science of 
+searching information units in a collection of data. Most commonly IR systems 
+are used for searching a text-based content such as text documents in a database. 
+Such IR systems are called \emph{full-text search systems}. 
+
+Full-text search techniques can be applied directly on the database. However, 
+it is a very expensive procedure in terms of running time complexity, because it 
+requires a frequent accesses to the database. In order to reduce this number, indexes 
+were invented. Indexes narrow down the search using pre-generated meta data 
+constructed from the data in the database. Furthermore the meta data can be 
+organized in a data structure that would provide fast retrieval of data according 
+to search queries.
+
+In IR most systems use the concept of an inverted index to achieve full-text 
+indexing of a database. Inverted index consists of two parts: \emph{postings} 
+and \emph{dictionary}, a search structure that is used to locate a specific entries 
+in a posting. A posting entry can be created on different levels depending on data 
+that needs to be indexed. Most common for full-text indexes are document level 
+entries. In this context a posting is defined to be a list of identifiers or keys that are 
+further used to locate a specific document in the database \cite{zobel1992efficient}.
+
+An index is a search structure that is used to process user queries. The query 
+can be processed in different ways according to the \emph{retrieval model}. The 
+retrieval model that will be discussed in the thesis is the \emph{boolean retrieval 
+model} that views each document in a database as a set of words. The document 
+itself is an information unit a retrieval system is built over. In our case an 
+information unit is defined to be a textual document. 
+
+The boolean retrieval model is based on set and multiset theory together with 
+boolean algebra. \emph{Set and multiset containment operations} are used to 
+derive the similarities between objects, and consequently make decisions on their 
+association. Thus, the multiset containment operations allow us to 
+search objects not only with exact queries but also to retrieve the most relevant 
+set of results that satisfy a given search query \cite{baeza1999modern,manning2008introduction,zobel2006inverted}.
+
+% research topic
+% walking through the new terms and so on
+% brief overview of the literature (relations to other work etc.)
+%
+
+The dictionary (search structure) of the inverted index can be organized in different ways in 
+order to meet the required types of queries and specification of data. For example, 
+it can be organized as a search tree, hash map, array, heap, linked list, etc. In our 
+research we will be focused on search trees. The most efficient search tree index 
+nowadays is the Generalized Search Tree (GiST). Its flexibility stems from combining 
+functionality of B+-trees, R-trees and RD-trees. GiST further extends their functionality 
+providing support for a variety of data types together with the nearest-neighbor 
+search \cite{broder2006indexing,hellerstein1995generalized,kornacker1999high}.
+
+% description of innovations
+%
+The proposed data structure \emph{multiset-trie} can be used as an alternative 
+implementation of the search structure in an inverted index. It is an extension of 
+the \emph{set-trie} data structure proposed by Savnik \cite{savnik2013index}. 
+Set-trie is a trie based data structure that is used for storing and fast retrieval of 
+objects represented as sets. The set-trie provides the nearest-neighbor search by 
+implementing methods that perform set-containment queries. Multiset-trie extends 
+the abilities of set-trie and provides support for storing and retrieving objects 
+that can be represented as both sets and multisets. It also implements 
+multiset-containment methods together with the basic tree methods such as search, 
+deletion and insertion.
+
+The multiset-trie is an $n$-ary tree based data structure with properties similar to 
+those of a trie. 
+This particular combination allows us to associate multisets with a collection 
+of nodes in a tree. Every node represents a symbol with particular multiplicity. 
+%
+Multiset-trie is a kind of search tree. Similarly to a trie, it uses common prefixes 
+to narrow down the search. Unlike the compact prefix tree, Patricia, the multiset-trie 
+does not provide the ability to compress a path. However, the absence of path 
+compression makes the multiset-trie a perfectly height-balanced tree.
+
+The multiset-trie is designed for efficient execution of the multiset containment 
+operations. In particular, it supports the operations \textsc{submsetExistence}, 
+\textsc{supermsetExistence}, \textsc{getAllSubmsets} and \textsc{getAllSupermsets}. 
+The so-called "existence" queries implement the nearest-neighbor search queries. The 
+functions \textsc{submsetExistence} and \textsc{supermsetExistence} search for 
+the closest submultiset and supermultiset in the multiset-trie respectively and return 
+an answer whether such a multiset exists in the data structure. The so-called 
+"getAll" functions act in the same way as "existence" functions, but they do not 
+terminate once they have reached the desired multiset. Alternatively, these functions 
+store the results and continue until all the multisets that satisfy the query are retrieved. 
+
+% paper organization
+%
+Let us now present the organization of the thesis. 
+In the following Chapter~\ref{c:description} we present the description of the 
+multiset-trie data structure. The representation of multisets in multiset-trie is 
+explained in detail. The organization of the data structure is also presented 
+graphically.
+%
+In Chapter~\ref{c:operations} we present operations that multiset-trie currently 
+supports. The multiset containment functions \textsc{submsetExistence}, 
+\textsc{supermsetExistence}, \textsc{getAllSubmsets} and \textsc{getAllSupermsets} 
+are presented together with the basic search tree functions such as \textsc{insert}, 
+\textsc{delete} and \textsc{search}. The algorithms in pseudo code are presented 
+as well. 
+%
+The description of multiset-trie functions and procedures is followed by the 
+mathematical analysis of their complexity in Chapter~\ref{c:analysis}. 
+In this analysis, we make an assumption that multisets are constructed uniformly at 
+random and are parametrized by several parameters, such as multiplicity and the alphabet 
+$\Sigma.$ By using probabilistic tools we describe time complexity of the algorithms 
+and space complexity of the structure.
+%
+Further, in Chapter~\ref{c:experiments} we present an empirical study of the 
+multiset-trie. Artificially generated as well as real-world data sets are used in experiments. 
+The experiments are dedicated to testing the performance of the data structure while 
+varying selected parameters. The experiments also show some methods for 
+optimizing a multiset-trie.
+%
+The Chapter~\ref{c:relwork} presents related work. The connection to the set-trie 
+data structure \cite{savnik2013index} is discussed more explicitly. We also relate 
+the multiset-trie to the information retrieval systems. In particular, we refer to the 
+inverted index data structure and discuss how the multiset-trie can be used as a 
+database index.
+%
+Finally, in Chapter~\ref{c:conclusions} our conclusion about the multiset-trie 
+data structure and discussion of future work are presented.

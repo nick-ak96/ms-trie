@@ -1,0 +1,151 @@
+\pagenumbering{Roman}
+\pagestyle{empty}
+\begin{center}
+\noindent \large UNIVERZA NA PRIMORSKEM\\
+\large FAKULTETA ZA MATEMATIKO, NARAVOSLOVJE IN\\
+INFORMACIJSKE TEHNOLOGIJE
+
+
+\normalsize
+\vspace{5.5cm}
+Zaklju\v cna naloga\\
+(Final project paper)\\
+\textbf{\large Predstavitev objektov z multimno\v zicami v sistemih za informacijsko povpra\v sevanje}\\
+\normalsize
+(Multiset representation of objects in information retrieval systems)\\
+\end{center}
+
+\begin{flushleft}
+\vspace{5cm}
+\noindent Ime in priimek: Mikita Akulich
+% add your first name and last name in the line above
+\\
+\noindent \v Studijski program: Matematika
+% add your study program in the line above
+\\
+\noindent Mentor: doc. dr. Iztok Savnik
+% add the academic title, first name, and last name of your mentor in the line above
+\\
+\noindent Somentor: doc. dr. Matja\v z Krnc
+% if you have a co-mentor, add his/her academic title, first name, and last name in the line above
+% if you do not have a co-mentor, delete the line above and the line below
+\\
+\end{flushleft}
+
+\vspace{4cm}
+\begin{center}
+\large \textbf{Koper, september 2017}
+% add the month and year of submission of your final project paper
+\end{center}
+\newpage
+
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Key words documentation (Slovene and English) %%%%%%%%%%%
+
+\section*{Klju\v cna dokumentacijska informacija}
+
+\medskip
+\begin{center}
+\fbox{\parbox{\linewidth}{
+\vspace{0.2cm}
+\noindent
+Ime in PRIIMEK: Mikita AKULICH \vspace{0.5cm}\\
+Naslov zaklju\v cne naloge: Predstavitev objektov z multimno\v zicami v sistemih za informacijsko povpra\v sevanje \vspace{0.5cm}\\
+Kraj: Koper \vspace{0.5cm}\\
+Leto: 2017 \vspace{0.5cm}\\
+\v Stevilo listov: 40\hspace{2cm} \v Stevilo slik: 15\hspace{2.6cm} \\
+\v Stevilo referenc: 14 \vspace{0.5cm}\\
+Mentor: doc. dr. Iztok Savnik \vspace{0.5cm}\\
+Somentor: doc. dr. Matja\v z Krnc \vspace{0.5cm}\\
+Klju\v cne besede: multimno\v zica, vre\v ca-besed, trie, multiset-trie, informacijsko povpra\v sevanje, obrnjen indeks, full-text search \vspace{0.5cm} \\
+Math.~Subj.~Class.~(2010): 68P05, 68P20, 68Q87 \vspace{0.5cm}\\
+{\bf Izvle\v cek:}
+\vspace{0.2cm} \\
+V zaklju\v cni nalogi je predstavljena multiset-trie, nova podatkovna struktura, ki deluje na objektih predstavljenih 
+z multimno\v zicami. 
+Multiset-trie je podatkovna struktura, ki temelji na iskalnem drevesu in ima podobne lastnosti kot trie. 
+Vklju\v cuje vse standardne operacije iskalnega drevesa skupaj z operacijami vsebovanja nad multimno\v zicami. 
+Operacije vsebovanja, ki so definirane z multiset-trie, so izpeljane iz operacij pod-multimno\v zica in nad-multimno\v zica. 
+Te operacije se uporabljajo za izvajanje razli\v cnih poizvedb, ki delujejo na multimno\v zicah v multiset-trie. 
+Ena izmed najpomembnej\v sih poizvedb je iskanje najbli\v zjega soseda glede na vhodno multimno\v zico. 
+Iskanje najbli\v zjega soseda v multiset-trie je dobra alternativa operacijam nad indeksnimi strukturami, ki se uporabljajo v sistemih 
+za informacijsko povpra\v sevanje.
+Na\v sa raziskava je osredoto\v cena na uporabo multiset-trie v sistemih za iskanje po celotnem besedilu.
+}}
+\end{center}
+
+\newpage
+
+\section*{Key words documentation}
+
+\medskip
+
+\begin{center}
+\fbox{\parbox{\linewidth}{
+\vspace{0.2cm}
+\noindent
+Name and SURNAME: Mikita AKULICH \vspace{0.5cm}\\
+Title of final project paper: Multiset representation of objects in information retrieval systems \vspace{0.5cm}\\
+Place: Koper \vspace{0.5cm}\\
+Year: 2017 \vspace{0.5cm}\\
+Number of pages: 40\hspace{1.6cm} Number of figures: 15\\
+Number of references: 14 \vspace{0.5cm}\\
+Mentor: Assist.~Prof.~Iztok~Savnik, PhD\vspace{0.5cm}\\
+Co-Mentor: Assist.~Prof.~Matja\v z~Krnc, PhD\vspace{0.5cm}\\
+Keywords: multiset, bag-of-words, trie, multiset-trie, information retrieval, inverted index, full-text search \vspace{0.5cm}\\
+Math.~Subj.~Class.~(2010): 68P05, 68P20, 68Q87 \vspace{0.5cm}\\
+{\bf Abstract:}
+\vspace{0.2cm} \\
+In this thesis we will present the multiset-trie, a new data structure that operates 
+on objects represented as multisets. The multiset-trie is a search-tree-based 
+data structure with the properties similar to those of a trie. It implements all standard search 
+tree operations together with the special multiset containment operations. Multiset 
+containment operations supported by the multiset-trie are submultiset and supermultiset. 
+These operations are used for implementation of different queries that can be performed 
+on multisets in a multiset-trie. One of the most important queries is the search of 
+the nearest neighbor given an input object. The nearest neighbor search of a 
+multiset-trie makes it a good alternative for the index data structures that are 
+used in information retrieval systems. In particular, our research is focused on the 
+application of the multiset-trie to full-text search systems. 
+}}
+\end{center}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section*{Acknowledgement}
+
+I would like to thank my mentor assist. prof. Iztok Savnik and co-mentor 
+assist. prof. Matja\v z Krnc for introducing me to this topic and their guidance 
+for completing my final thesis. I would also like to thank assoc. prof. Riste 
+\v Skrekovski for organizing a lecture at Faculty of Mathematics and Physics at 
+University of Ljubljana where I had an opportunity to present our project and 
+receive a practical feedback. Finally, I would like to thank Faculty of Mathematics, 
+Natural Sciences and Information Technologies for given support trough supporting me 
+with a scholarship during my stay, as well as the financial help for attending competitions 
+and conferences.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table of contents, list of figures, etc. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\tableofcontents
+\addtocontents{toc}{\protect\thispagestyle{fancy}}
+% if there are no tables in your final project paper, delete the following three lines
+%\newpage
+%\listoftables
+%\addtocontents{lot}{\protect\thispagestyle{fancy}}
+% if there are no figures in your final project paper, delete the following three lines
+\newpage
+\listoffigures
+\addtocontents{lof}{\protect\thispagestyle{fancy}}
+\newpage
+% Since the appendices are not numbered, we also do not want to show the dots to their (non-existing) page numbers.
+%\renewcommand{\cftdot}{}
+%\listofappendices
+%\thispagestyle{fancy}
+%\newpage
+
+\normalsize

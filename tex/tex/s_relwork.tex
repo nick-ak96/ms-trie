@@ -1,0 +1,86 @@
+\section{Related work} \label{c:relwork}
+[Will be rewritten]
+%
+% Set theory, multiest theory, bag-of-words model
+\subsection{Multiset}
+Multiset is a widely used data structure in different areas of mathematics, physics 
+and computer science \cite{singh2007overview}. The theory of multisets is based 
+entirely on the theory of sets. However, classical mathematics does not deal with 
+multisets directly. Instead, one can define a multiset to be a \emph{family} of sets 
+or the functions on ordered pairs, where the members of a pair are an element and its 
+multiplicity. This means that mathematically the concepts of set such as cardinality, 
+set-containment operation, power set, equivalence classes and others are well defined 
+for multisets in terms of sets \cite{blizard1988multiset}. 
+
+The concept of a multiset can also be referred to the \emph{bag-of-words model}. 
+This model takes its origin from a linguistic context studied by Harris~\cite{harris1954distributional}. 
+According to the bag-of-words model, text can be represented as a bag (multiset) 
+of words, where an element is a word and the number of its occurrences in the 
+text is multiplicity. A bag of words does not keep track of grammar and ordering 
+of words. 
+
+% Information retrieval
+\subsection{Information retrieval}
+\emph{Information retrieval (IR)} refers to a problem of finding material of an 
+unstructured nature that satisfies an information need~\cite{manning2008introduction}. 
+Usually, one is searching for a specific documents in a significantly large text 
+documents database. The size of a database makes the search a time consuming 
+operation. In order to resolve the issue IR systems pre-process data and create 
+indexes for future use in search operation. 
+
+The bag-of-words model is widely used in IR. In particular, such a representation of 
+text documents is used in database indexes when a full text search of a database 
+is required. The full-text search problem refers to indexing techniques for full-text 
+databases. The most efficient index nowadays uses the concept of an inverted index 
+\cite{zobel1992efficient}. 
+
+The proposed data structure multiset-trie can be used as an alternative implementation 
+of the search structure of an inverted index. It represents words as multisets and 
+stores them into data structure. The query processing is achieved using boolean 
+retrieval model \cite{manning2008introduction} and multiset containment operations. 
+Multiset containment operations of the multiset-trie implement the nearest neighbor 
+search queries which retrieve not only exact but also the most relevant results 
+to a user. 
+
+\subsection{Generalized search tree}
+The properties and operations of the multiset-trie makes it a competitor to the 
+most efficient implementation of a search tree the \emph{Generalized Search Tree 
+(GiST)}~\cite{broder2006indexing,hellerstein1995generalized,kornacker1999high} 
+that is used in inverted index. GiST is a very flexible data structure that can be 
+customized in order to behave like B+-tree, R-tree or RD-tree. It also provides 
+support for an extensible set of queries and data types that B+-tree, R-tree or RD-tree 
+do not support originally. GiST supports all the basic search tree operations such as 
+insert, delete and search, and in addition provides such extensions as the 
+nearest-neighbor search and multiset containment operations. The extensions 
+provided by GiST are native in the multiset-trie. The multiset-trie also has a fixed 
+height while GiST is a self-balanced tree and has to use additional methods in 
+order to preserve its balance. 
+
+% Set-trie
+\subsection{Set-trie}
+The multiset containment queries are well studied in the area of relational 
+databases. The queries are well-defined in the context of relational 
+algebra~\cite{Lamperti2000msetsinds}. This problem was previously studied 
+for a restricted case of queries. In particular, the storage and fast retrieval of sets 
+were previously accomplished in data structure \emph{set-trie} proposed by 
+Savnik~\cite{savnik2013index}. 
+
+The set-trie data structure is based on a trie data structure. It supports set 
+containment operations such as retrieval of the nearest sub- and supersets and 
+retrieval of all sub- and supersets from the data structure.
+
+The data structure multiset-trie adapts the properties of the set-trie implementing 
+the functions \textsc{submsetExistence}, \textsc{supermsetExistence}, 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets} together with the basic 
+tree functions such as \textsc{insert}, \textsc{delete} and \textsc{search}. 
+Moreover, multiset-trie extends the abilities of the set-trie allowing to store and 
+retrieve multisets. The downside of such an extension is that multiset-trie no 
+longer supports path compression that was obtained in set-trie. However, the 
+design of multiset-trie provides a constant worst case time complexity of search 
+function independently of user input. 
+
+
+
+
+
+

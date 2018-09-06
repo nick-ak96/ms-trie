@@ -1,0 +1,46 @@
+\ProvidesPackage{styles}
+
+% fonts
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{siunitx}
+
+% graphics
+\usepackage{graphicx}
+\graphicspath{{img/ex1/}{img/ex2/}{img/ex3/}{img/ex4/}{img/ex5/}{img/other/}{img/benchmark/}}
+
+% positioning of figures/tables
+\usepackage{float} %floatrow might be used as well
+
+% references with hyperlinks
+\usepackage[hidelinks]{hyperref}
+\usepackage[all]{hypcap} % jump to the right position
+
+% pseudocode
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% drawing trees
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, font=\sffamily\bfseries, 
+  	text=black, draw=black, thick},
+  node1/.style = {treenode, rectangle, rounded corners=5pt, fill=green!10, 
+  	minimum width=2em, minimum height=1.5em, text width=1.5em},
+  dummy/.style = {treenode, rectangle, rounded corners=2.5pt, fill=green!10, 
+  	minimum width=1em, minimum height=0.75em},
+  emp/.style = {treenode, circle, fill=white, minimum width=1.5em},
+  none/.style = {treenode, rectangle, fill=black, minimum width=0.5em, 
+  	minimum height=0.5em}
+}
+
+% pretty C++
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+
+\hyphenation{submsetExistence}
+\hyphenation{supermsetExistence} 
+\hyphenation{getAllSubmsets}
+\hyphenation{getAllSupermsets}

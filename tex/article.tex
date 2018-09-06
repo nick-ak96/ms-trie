@@ -1,0 +1,71 @@
+\documentclass[twocolumn]{svjour3}
+\usepackage{style}
+\usepackage{subfiles}
+\usepackage{microtype}
+
+% Title
+\title{Multiset-trie data structure}
+\author{Mikita Akulich \and Iztok Savnik \and Matja\v z Krnc \and Riste \v Skrekovski}
+\institute{
+		Mikita Akulich 
+		\at 
+		University of Primorska, FAMNIT, Koper, Slovenia\\
+		\email{mikita.akulich@gmail.com}
+		\and
+		Iztok Savnik
+		\at 
+		University of Primorska, FAMNIT, Koper, Slovenia\\
+		\email{iztok.savnik@famnit.upr.si}
+		\and 
+		Matja\v z Krnc 
+		\at 
+		University of Primorska, FAMNIT, Koper, Slovenia\\
+		\email{matjaz.krnc@famnit.upr.si}
+		\and 
+		Riste \v Skrekovski
+		\at
+		University of Ljubljana, FMF, Ljubljana, Slovenia\\
+		\email{riste.skrekovski@famnit.upr.si}
+		}
+
+
+\begin{document}
+\maketitle
+
+%Abstract
+\begin{abstract}
+[Will be rewritten]
+In this paper we will present the multiset-trie, a new data structure that operates 
+on objects represented as multisets. The multiset-trie is a search-tree-based 
+data structure with the properties similar to those of a trie. It implements all standard search 
+tree operations together with the special multiset containment operations. Multiset 
+containment operations supported by the multiset-trie are submultiset and supermultiset. 
+These operations are used for implementation of different queries that can be performed 
+on multisets in a multiset-trie. One of the most important queries is the search of 
+the nearest neighbor given an input object. The nearest neighbor search of a 
+multiset-trie makes it a good alternative for the index data structures that are 
+used in information retrieval systems. In particular, our research is focused on the 
+application of the multiset-trie to full-text search systems. 
+\end{abstract}
+\keywords{multiset, bag-of-words, trie, multiset-trie, information retrieval, inverted index, full-text search}
+%\subclass{68P05, 68P20, 68Q87}
+
+% section 1
+\input{tex/s_intro}
+% section 2
+\input{tex/s_data_structure}
+% section 3
+\input{tex/s_operations}
+% section 4
+\input{tex/s_math}
+% section 5
+\input{tex/s_experiments}
+% section 6
+\input{tex/s_relwork}
+% section 7
+\input{tex/s_conclusions}
+
+\bibliographystyle{abbrv}
+\bibliography{multiset-trie}
+
+\end{document}
