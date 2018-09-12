@@ -1,4 +1,5 @@
 \section{Multiset-trie operations} \label{c:operations}
+
 %
 Let $\mathcal{M}$ be a multiset-trie and let $M$ be a set of multisets that are 
 inserted into the multiset-trie $\mathcal{M}.$ We define a type \emph{Multiset} in 
@@ -34,19 +35,21 @@ for a given $\mathcal{M},$ and returns false otherwise;
 successfully deleted from $\mathcal{M},$ and returns false otherwise (in case 
 $m\not\in M$);
 %
-\item \textsc{submsetExistence}($\mathcal{M}$, $m$): returns true if 
-there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\subseteq m,$ 
-and returns false otherwise; 
+\item \textsc{submsetExistence}($\mathcal{M}$, $m$, $dev$): returns true if 
+there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\subseteq m$ 
+and $| x[i] - m[i] |\leq dev$ for $1\leq i\leq \sigma$, and returns false otherwise; 
 %
-\item \textsc{supermsetExistence}($\mathcal{M}$, $m$): returns true if 
-there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\supseteq m,$ and returns 
-false otherwise; 
+\item \textsc{supermsetExistence}($\mathcal{M}$, $m$, $dev$): returns true if 
+there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\supseteq m$ 
+and $| x[i] - m[i] |\leq dev$ for $1\leq i\leq \sigma$, and returns false otherwise; 
 %
-\item \textsc{getAllSubmsets}($\mathcal{M}$, $m$): returns the set of multisets 
-$\{ x \in M : x\subseteq m \}$ for a given $\mathcal{M};$
+\item \textsc{getAllSubmsets}($\mathcal{M}$, $m$, $dev$): returns the set of multisets 
+$\{ x \in M : x\subseteq m \wedge |x[i]-m[i]|\leq dev \}$ for a given 
+$\mathcal{M},$ where $1\leq i\leq \sigma;$
 %
-\item \textsc{getAllSupermsets}($\mathcal{M}$, $m$): returns the set of multisets 
-$\{ x\in M : x\supseteq m \}$ for a given $\mathcal{M}.$
+\item \textsc{getAllSupermsets}($\mathcal{M}$, $m$, $dev$): returns the set of multisets 
+$\{ x\in M : x\supseteq m \wedge |x[i]-m[i]|\leq dev \}$ for a given $\mathcal{M},$
+where $1\leq i\leq \sigma.$
 %
 \end{enumerate}
 
@@ -159,33 +162,36 @@ presented in Algorithm~\ref{alg:delete}.
 \end{algorithm}
 
 \subsection{Sub-multiset existence} \label{s:subexists}
-The function \textsc{submsetExistence}($\mathcal{M}$, $m$) checks if there exists 
-a multiset $x$ in $\mathcal{M},$ that satisfies the condition $x\subseteq m.$ 
+The function \textsc{submsetExistence}($\mathcal{M},m,dev$) checks if there exists 
+a multiset $x$ in $\mathcal{M},$ that satisfies the condition $x\subseteq m$ and 
+$| x[i] - m[i] | \leq dev,$ where $1\leq i \leq \sigma.$ 
 The function starts with searching for an exact match $x=m$ in $\mathcal{M},$ 
 since $m\subseteq m$ by definition of submultiset inclusion. If an exact match is 
 not found in $\mathcal{M},$ the function uses multiset-trie to find the closest 
 (the largest) submultiset of $m$ in $\mathcal{M}$ by decreasing multiplicity of 
-elements in $m.$ At every level the function tries to proceed with the largest 
-possible multiplicity of an element that is provided by $m.$ However, when the 
-function reaches some level where it meets a \emph{Null} node and can not go 
-further using path provided by $m,$ it decreases the multiplicity of an element 
-that corresponds to a current level. Thus, the function can decrease multiplicity 
-of an element or eventually skip it in order to find the closest $x\subseteq m.$ 
-The function \textsc{submsetExistence} is presented in Algorithm~\ref{alg:subexists}.
-
+elements in $m.$ The parameter $dev$ is used to limit a maximal deviation of 
+multiplicity for a particular element in $x$ with respect to $m.$ 
+At every level the function tries to proceed with the largest possible multiplicity of 
+an element that is provided by $m.$ However, when the function reaches some level 
+where it meets a \emph{Null} node and can not go further using path provided by 
+$m,$ it decreases the multiplicity of an element 
+that corresponds to a current level with respect to the specified maximal deviation. 
+Thus, the function can decrease multiplicity of an element or eventually skip it in 
+order to find the closest $x\subseteq m.$ The function \textsc{submsetExistence} 
+is presented in Algorithm~\ref{alg:subexists}.
 
 \begin{algorithm}[h!]
 \caption{Function \textsc{submsetExistence}}
 \label{alg:subexists}
 \begin{algorithmic}[1]
-\Function{\textsc{submsetExistence}}{$\mathcal{M}$, $m$}
+\Function{\textsc{submsetExistence}}{$\mathcal{M}, m, dev$}
 \State $currentNode \gets \mathcal{M}$
 \If {$currentNode$ is \emph{accepting}}
 \State \Return True
 \EndIf
-\For {$i=m[1]$ down to $0$}
+\For {$i=m[1]$ down to max($0, m[1]-dev$)}
 \If {child $c_i$ of $currentNode$ is not \emph{Null}}
-\If {\textsc{submsetExistence}($c_i,$ $m[2:]$)}
+\If {\textsc{submsetExistence}($c_i,m[2:], dev$)}
 \State \Return True
 \EndIf
 \EndIf
@@ -196,17 +202,18 @@ The function \textsc{submsetExistence} is presented in Algorithm~\ref{alg:subexi
 \end{algorithm}
 
 \subsection{Super-multiset existence} \label{s:superexists}
-The function \textsc{supermsetExistence}($\mathcal{M},$ $m$) checks if there 
-exists supermultiset $x$ of a given multiset $m$ in $\mathcal{M}.$ By analogy 
+The function \textsc{supermsetExistence}($\mathcal{M},m,dev$) checks if there 
+exists supermultiset $x$ of a given multiset $m$ in $\mathcal{M},$ such that 
+condition $| x[i] - m[i] |\leq dev$ is satisfied, where $1\leq i \leq \sigma.$ By analogy 
 to the function \textsc{submsetExistence}, the function \textsc{supermsetExistence} 
 starts by searching for an exact match $x=m$ in $\mathcal{M}.$ If an exact 
 match is not found in $\mathcal{M},$ the function searches for the closest (the 
 smallest) supermultiset $x$ of $m$ in $\mathcal{M}$ by increasing multiplicity 
 of elements in $m.$ At every level the function tries to proceed with the smallest 
 possible multiplicity of an element that is provided by $m.$ However, when function 
-reaches some level where it meets a \emph{Null} node and can not go further 
-using path provided by $m,$ it increases the multiplicity of an element that 
-corresponds to a current level. Thus, the function \textsc{supermsetExistence} 
+reaches some level where it meets a \emph{Null} node and can not go further using 
+path provided by $m,$ it increases the multiplicity of an element that corresponds to a 
+current level according to the deviation parameter $dev.$ Thus, the function \textsc{supermsetExistence} 
 can increase multiplicity of an element up to $n-1,$ where $n$ is the degree of 
 a node in $\mathcal{M},$ to find the closest supermultiset $x\supseteq m$ in 
 $\mathcal{M}.$ The function \textsc{supermsetExistence} is presented in 
@@ -217,14 +224,14 @@ Algorithm~\ref{alg:superxists}.
 \caption{Function \textsc{supermsetExistence}}
 \label{alg:superxists}
 \begin{algorithmic}[1]
-\Function{\textsc{supermsetExistence}}{$\mathcal{M}$, $m$}
+\Function{\textsc{supermsetExistence}}{$\mathcal{M},m,dev$}
 \State $currentNode \gets \mathcal{M}$
 \If {$currentNode$ is \emph{accepting} }
 \State \Return True
 \EndIf
-\For {$i=m[1]$ to $n-1$}
+\For {$i=m[1]$ to min($n-1, m[1] + dev$)}
 \If {child $c_i$ of $currentNode$ is not \emph{Null}}
-\If {\textsc{supermsetExistence}($c_i,$ $m[2:]$)}
+\If {\textsc{supermsetExistence}($c_i,$ $m[2:], dev$)}
 \State \Return True
 \EndIf
 \EndIf
@@ -241,4 +248,54 @@ The algorithms for functions \textsc{getAllSubmsets} and
 \textsc{submsetExistence} and \textsc{supermsetExistence} functions that do not 
 terminate on the first existing sub/supermultiset, but store the results and 
 continue procedure until all existing sub/supermultisets in $\mathcal{M}$ are 
-found and stored.
+found and stored. The functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} 
+are presented in Algorithm~\ref{alg:getallsub} and Algorithm~\ref{alg:getallsup} respectively.
+
+In order to record a multiset during multiset-trie traversal we use the variable $x$ in the algorithms.
+It is an empty array of size $\sigma$ where we store multiplicities of elements at 
+each level as we traverse the tree. The variable $result$ is used as a container for storing 
+submultisets of $m$ found during traversal. Both variables $x$ and $result$ are presented 
+as global, however they could be passed to the recursive function as parameters.
+
+\begin{algorithm}[h!]
+\caption{Function \textsc{getAllSubmsets}}
+\label{alg:getallsub}
+\begin{algorithmic}[1]
+\State $result \gets$ empty container
+\State $x \gets$ empty array of size $\sigma$
+\Function{\textsc{getAllSubmsets}}{$\mathcal{M}, m, dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting}}
+\State add copy of $x$ to $result$ 
+\EndIf
+\For {$i=m[1]$ down to max($0, m[1]-dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\State $x[1]\gets i$
+\State \textsc{getAllSubmsets}($c_i,m[2:], dev$)
+\EndIf
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[h!]
+\caption{Function \textsc{getAllSupermsets}}
+\label{alg:getallsup}
+\begin{algorithmic}[1]
+\State $result \gets$ empty container
+\State $x \gets$ empty array of size $\sigma$
+\Function{\textsc{getAllSupermsets}}{$\mathcal{M},m,dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting} }
+\State add copy of $x$ to $result$ 
+\EndIf
+\For {$i=m[1]$ to min($n-1, m[1] + dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\State $x[1]\gets i$
+\textsc{getAllSupermsets}($c_i,$ $m[2:], dev$)
+\EndIf
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}

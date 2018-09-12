@@ -1,4 +1,5 @@
 \section{Experiments} \label{c:experiments}
+
 %
 This section contains results of experiments that were performed on the multiset-trie 
 data structure. The implementation of multiset-trie is done in the \CC 
@@ -116,7 +117,7 @@ average the results will be the same for any $\phi,$ since all the multisets are
 equally likely to appear in $M.$ The parameter $|M|$ varies from 10000 sets up 
 to 320000 sets. According to the parameters $n$ and $\sigma,$ the cardinality of 
 $N$ is $33554432\approx \num{3.36e+7}.$ Thus, the calculated density of the 
-multiset-trie with respect to $|M|$ varies from~$0.03\%$ to~$0.95\%.$
+multiset-trie with respect to $|M|$ varies from~$\num{0.3e-3}$ to~$\num{9.5e-3}.$
 
 
 \begin{figure}
@@ -156,8 +157,8 @@ multiset-trie, which leads to the lower number of visited nodes.
 The maxima are located between 175 and 375 for \textsc{submsetExistence} and 
 between 175 and 350 for \textsc{supermsetExistence}. According to those maxima 
 we can deduce that at least 7-15 multisets were checked in order to find 
-submultiset or supermultiset, which is from $0.002\%$ to $0.15\%$ of the 
-multiset-trie and from $\num{1.9e-5}\%$ to $\num{4.5e-5}\%$ of the complete 
+submultiset or supermultiset, which is from $\num{0.02e-3}$ to $\num{1.5e-3}$ of the 
+multiset-trie and from $\num{1.9e-7}$ to $\num{4.5e-7}$ of the complete 
 multiset-trie.
 
 As the density increases the peaks shift from the center to the left, or to the right, 
@@ -204,7 +205,7 @@ We set $n$ to be 6 and retain $\sigma = 25$ as it was in Experiment~\hyperref[s:
 The mapping $\phi$ does not have an influence on results, since the input 
 data is generated artificially with uniform distribution. The cardinality of $M$ 
 varies from 40000 to 640000 multisets. Thus, the calculated density $d$ varies 
-from $\num{1.4e-13}\%$ to $\num{2.25e-12}\%.$ The density is much smaller than 
+from $\num{1.4e-15}$ to $\num{2.25e-14}.$ The density is much smaller than 
 in Experiment~\hyperref[s:exp1]{1}, because now we allow multisets to be stored 
 in the data structure and according to the parameters $n$ and $\sigma$ the 
 cardinality of $N$ is $6^{25} = \num{2.84e19}.$
@@ -247,8 +248,8 @@ which leads to the larger number of visited nodes.
 
 The maxima for both functions varies from 7500 to 25000 visited nodes. According 
 to those maxima at least 300-1000 multisets were checked in order to find 
-submultiset or supermultiset, which is from $0.15\%$ to $0.75\%$ of the entire 
-multiset-trie and from $\num{1.1e-15}\%$ to $\num{3.4e-15}\%$ of the complete 
+submultiset or supermultiset, which is from $\num{1.5e-3}$ to $\num{7.5e-3}$ of the entire 
+multiset-trie and from $\num{1.1e-17}$ to $\num{3.4e-17}$ of the complete 
 multiset-trie. The percentage of visited multisets with respect to $|M|$ is 
 larger than in the Experiment~\hyperref[s:exp1]{1}. However, if one would compare 
 the percentage of visited multiset with respect to complete multiset-trie, then 
@@ -333,7 +334,7 @@ nodes is maximal.
 In this experiment, we empirically find the extremum of density for functions 
 \textsc{submsetExistence} and \textsc{supermsetExistence}. The parameters 
 $\sigma$ and $n$ are set to 12 and 5 respectively. The density varies from 
-$\num{1.0e-4}\%$ to $1.0\%.$ The number of visited nodes was chosen to be 
+$\num{1.0e-6}$ to $\num{1.0e-2}.$ The number of visited nodes was chosen to be 
 maximal for each value of particular density.
 
 \begin{figure}
@@ -352,8 +353,8 @@ maximal for each value of particular density.
 
 As we see on figures~\ref{fig:e3m1} and~\ref{fig:e3m2} both functions 
 \textsc{submsetExistence} and \textsc{supermsetExistence} have the maximum 
-around $d\approx \num{7.0e-3}\%.$ The maximum is less than $0.03\%$ and 
-greater than $\num{1.4e-13}\%,$ which explains the behavior of multiset-trie in 
+around $d\approx \num{7.0e-5}.$ The maximum is less than $\num{0.3e-3}$ and 
+greater than $\num{1.4e-15},$ which explains the behavior of multiset-trie in 
 Experiment~\hyperref[s:exp1]{1} and Experiment~\hyperref[s:exp2]{2}. It is safe 
 to say that the maximum may vary depending on parameters $n$ and $\sigma,$ but 
 such a maximum always exists. Therefore, we omit the experiments with different 
