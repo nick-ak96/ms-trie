@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 NOV 2018 02:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1524,33 +1524,17 @@ LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <8.5> not available
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <4.25> not available
 (Font)              size <5> substituted on input line 34.
 
-(./tex/s_intro.tex [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap
-/pdftex.map}
+(./tex/s_intro.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Overfull \hbox (57.01822pt too wide) in paragraph at lines 86--96
-\T1/cmr/m/n/10 (-20) sup-ports the op-er-a-tions \T1/cmr/m/sc/10 (-20) submsetE
-xistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/
-m/n/10 (-20) ,
- []
-
-
-Overfull \hbox (3.78822pt too wide) in paragraph at lines 86--96
-\T1/cmr/m/n/10 (-20) called "ex-is-tence" queries im-ple-ment the nearest-neigh
-bor
- []
-
-) (./tex/s_data_structure.tex
-Overfull \hbox (39.81764pt too wide) in paragraph at lines 99--1
-\T1/cmr/m/sc/10 (-20) submsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 (-
-20) supermsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 (-20) getAllSubmse
-ts
- []
-
-[2]
+])
+(./tex/s_data_structure.tex [2]
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 83.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
@@ -1615,23 +1599,20 @@ Overfull \hbox (57.10887pt too wide) in paragraph at lines 26--33
  []
 
 
-Underfull \vbox (badness 6173) has occurred while \output is active []
-
-
 Overfull \hbox (28.49629pt too wide) in paragraph at lines 53--56
 \T1/cmr/m/n/10 (-20) volved func-tions: \T1/cmr/m/sc/10 (-20) submsetExistence\
 T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-
 20) ,
  []
 
-[6] [7] [8]
+[6] [7]
 Overfull \hbox (35.56277pt too wide) in paragraph at lines 357--365
 \T1/cmr/m/n/10 (-20) ity of the func-tions \T1/cmr/m/sc/10 (-20) getAllSubmsets
  \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSupermsets\T1/cmr/m/n/10 
 (-20) .
  []
 
-
+[8]
 Overfull \hbox (35.08081pt too wide) in paragraph at lines 372--374
 \T1/cmr/m/n/10 (-20) the whole multiset-trie is tra-versed dur-ing the \T1/cmr/
 m/sc/10 (-20) getAllSubmsets
@@ -1649,7 +1630,7 @@ Overfull \hbox (6.03267pt too wide) in paragraph at lines 406--412
 (-20) submsetExistence
  []
 
-[9]
+
 Overfull \hbox (10.56178pt too wide) in paragraph at lines 477--480
 \T1/cmr/m/n/10 (-20) func-tions \T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/
 m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
@@ -1661,7 +1642,7 @@ Overfull \hbox (26.63992pt too wide) in paragraph at lines 482--485
 n/10 (-20) for the func-tion \T1/cmr/m/sc/10 (-20) submsetExistence
  []
 
-<img/other/exp-nodes-on-probab.pdf, id=228, 462.52798pt x 346.89601pt>
+[9] <img/other/exp-nodes-on-probab.pdf, id=207, 462.52798pt x 346.89601pt>
 File: img/other/exp-nodes-on-probab.pdf Graphic file (type pdf)
 
 <use img/other/exp-nodes-on-probab.pdf>
@@ -1669,72 +1650,73 @@ Package pdftex.def Info: img/other/exp-nodes-on-probab.pdf used on input line 5
 19.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/other/ratio-exp-nodes-and-msets-on-prob.pdf, id=231, 462.52798pt x 346.896
+<img/other/ratio-exp-nodes-and-msets-on-prob.pdf, id=210, 462.52798pt x 346.896
 01pt>
 File: img/other/ratio-exp-nodes-and-msets-on-prob.pdf Graphic file (type pdf)
  <use img/other/ratio-exp-nodes-and-msets-on-prob.pdf>
 Package pdftex.def Info: img/other/ratio-exp-nodes-and-msets-on-prob.pdf used o
 n input line 534.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
- [10 <./img/other/exp-nodes-on-probab.pdf> <./img/other/ratio-exp-nodes-and-mse
-ts-on-prob.pdf
+)
+(./tex/s_experiments.tex
+Overfull \hbox (59.34663pt too wide) in paragraph at lines 4--8
+\T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 
+(-20) getAllSubmsets \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSuper
+msets\T1/cmr/m/n/10 (-20) . 
+ []
+
+[10 <./img/other/exp-nodes-on-probab.pdf> <./img/other/ratio-exp-nodes-and-mset
+s-on-prob.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/other/ratio-exp-nodes-
 and-msets-on-prob.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
->]) (./tex/s_experiments.tex
-Overfull \hbox (55.83362pt too wide) in paragraph at lines 12--18
-[]\T1/cmr/m/n/10 (-20) In our ex-per-i-ments we will test the func-tions: \T1/c
-mr/m/sc/10 (-20) submsetExistence\T1/cmr/m/n/10 (-20) ,
- []
-
-
-Overfull \hbox (59.34663pt too wide) in paragraph at lines 12--18
-\T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 
-(-20) getAllSubmsets \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSuper
-msets\T1/cmr/m/n/10 (-20) .
- []
-
-[11] <img/ex1/exp1-m1.pdf, id=327, 462.52798pt x 346.89601pt>
+>] [11] <img/ex1/exp1-m1.pdf, id=309, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m1.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m1.pdf>
-Package pdftex.def Info: img/ex1/exp1-m1.pdf used on input line 125.
+Package pdftex.def Info: img/ex1/exp1-m1.pdf used on input line 128.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m2.pdf, id=328, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m2.pdf, id=310, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m2.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m2.pdf>
-Package pdftex.def Info: img/ex1/exp1-m2.pdf used on input line 132.
+Package pdftex.def Info: img/ex1/exp1-m2.pdf used on input line 135.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m3.pdf, id=329, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m3.pdf, id=311, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m3.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m3.pdf>
-Package pdftex.def Info: img/ex1/exp1-m3.pdf used on input line 139.
+Package pdftex.def Info: img/ex1/exp1-m3.pdf used on input line 142.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m4.pdf, id=330, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m4.pdf, id=312, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m4.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m4.pdf>
-Package pdftex.def Info: img/ex1/exp1-m4.pdf used on input line 146.
+Package pdftex.def Info: img/ex1/exp1-m4.pdf used on input line 149.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (5.82695pt too wide) in paragraph at lines 151--156
+Overfull \hbox (5.82695pt too wide) in paragraph at lines 154--159
 []\T1/cmr/m/n/10 (-20) The per-for-mance of the func-tions \T1/cmr/m/sc/10 (-20
 ) submsetExistence
  []
 
 
-Overfull \hbox (72.72383pt too wide) in paragraph at lines 157--163
+Overfull \hbox (72.72383pt too wide) in paragraph at lines 160--166
 \T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/m/n/10 (-20) and be-tween 175 an
 d 350 for \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) .
  []
 
-[12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+ [12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex1/exp1-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1746,34 +1728,39 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex1/exp1-m4.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/ex2/exp2-m1.pdf, id=512, 462.52798pt x 346.89601pt>
+>] <img/ex2/exp2-m1.pdf, id=494, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m1.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m1.pdf>
-Package pdftex.def Info: img/ex2/exp2-m1.pdf used on input line 215.
+Package pdftex.def Info: img/ex2/exp2-m1.pdf used on input line 218.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m2.pdf, id=513, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m2.pdf, id=495, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m2.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m2.pdf>
-Package pdftex.def Info: img/ex2/exp2-m2.pdf used on input line 222.
+Package pdftex.def Info: img/ex2/exp2-m2.pdf used on input line 225.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m3.pdf, id=514, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m3.pdf, id=496, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m3.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m3.pdf>
-Package pdftex.def Info: img/ex2/exp2-m3.pdf used on input line 229.
+Package pdftex.def Info: img/ex2/exp2-m3.pdf used on input line 232.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m4.pdf, id=515, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m4.pdf, id=497, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m4.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m4.pdf>
-Package pdftex.def Info: img/ex2/exp2-m4.pdf used on input line 236.
+Package pdftex.def Info: img/ex2/exp2-m4.pdf used on input line 239.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
- [13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
+
+Overfull \hbox (5.42299pt too wide) in paragraph at lines 252--261
+[]$ \T1/cmr/m/n/10 (-20) of the en-tire multiset-trie and from $[]$
+ []
+
+[13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1781,111 +1768,94 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m3.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
+> <./img/ex2/exp2-m4.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m4.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
 >]
-Overfull \hbox (5.42299pt too wide) in paragraph at lines 249--258
-[]$ \T1/cmr/m/n/10 (-20) of the en-tire multiset-trie and from $[]$
- []
-
-
-Overfull \hbox (5.97403pt too wide) in paragraph at lines 259--265
+Overfull \hbox (5.97403pt too wide) in paragraph at lines 262--268
 \T1/cmr/m/n/10 (-20) right for \T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/m
 /n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
  []
 
 
-Overfull \hbox (29.28575pt too wide) in paragraph at lines 270--280
+Overfull \hbox (29.28575pt too wide) in paragraph at lines 273--283
 []\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) getAllSubmsets \T1/
 cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSupermsets
  []
 
 
-Overfull \hbox (50.11324pt too wide) in paragraph at lines 281--286
+Overfull \hbox (50.11324pt too wide) in paragraph at lines 284--289
 \T1/cmr/m/n/10 (-20) mance of func-tions \T1/cmr/m/sc/10 (-20) submsetExistence
  \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
  []
 
 
-Overfull \hbox (68.1616pt too wide) in paragraph at lines 334--339
+Overfull \hbox (68.1616pt too wide) in paragraph at lines 337--342
 \T1/cmr/m/n/10 (-20) of den-sity for func-tions \T1/cmr/m/sc/10 (-20) submsetEx
 istence \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cm
 r/m/n/10 (-20) .
  []
 
-<img/ex4/exp4-m1.pdf, id=662, 462.52798pt x 346.89601pt>
+<img/ex4/exp4-m1.pdf, id=686, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m1.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m1.pdf>
-Package pdftex.def Info: img/ex4/exp4-m1.pdf used on input line 342.
+Package pdftex.def Info: img/ex4/exp4-m1.pdf used on input line 345.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex4/exp4-m2.pdf, id=663, 462.52798pt x 346.89601pt>
+<img/ex4/exp4-m2.pdf, id=687, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m2.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m2.pdf>
-Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 349.
+Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 352.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (54.07904pt too wide) in paragraph at lines 354--362
+Overfull \hbox (54.07904pt too wide) in paragraph at lines 357--365
 []\T1/cmr/m/n/10 (-20) As we see on fig-ures []12[] and []13[] both func-tions 
 \T1/cmr/m/sc/10 (-20) submsetExistence
  []
 
-[14 <./img/ex2/exp2-m4.pdf> <./img/ex4/exp4-m1.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m1.pdf): PDF 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./img/ex4/exp4-m1.pdf> <./img/ex4/exp4-m2.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/ex3/exp3-m1.pdf, id=750, 462.52798pt x 346.89601pt>
+>] <img/ex3/exp3-m1.pdf, id=766, 462.52798pt x 346.89601pt>
 File: img/ex3/exp3-m1.pdf Graphic file (type pdf)
 
 <use img/ex3/exp3-m1.pdf>
-Package pdftex.def Info: img/ex3/exp3-m1.pdf used on input line 385.
+Package pdftex.def Info: img/ex3/exp3-m1.pdf used on input line 388.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex3/exp3-m2.pdf, id=751, 462.52798pt x 346.89601pt>
+<img/ex3/exp3-m2.pdf, id=767, 462.52798pt x 346.89601pt>
 File: img/ex3/exp3-m2.pdf Graphic file (type pdf)
 
 <use img/ex3/exp3-m2.pdf>
-Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 392.
+Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 395.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (1.38914pt too wide) in paragraph at lines 411--416
+Underfull \vbox (badness 6348) has occurred while \output is active []
+
+
+Overfull \hbox (1.38914pt too wide) in paragraph at lines 414--419
 []\T1/cmr/m/n/10 (-20) According to the de-sign of the data struc-ture multiset
 -
  []
 
 
-Overfull \hbox (19.70265pt too wide) in paragraph at lines 422--427
+Overfull \hbox (19.70265pt too wide) in paragraph at lines 425--430
 []\T1/cmr/m/n/10 (-20) As you may have no-ticed the func-tions \T1/cmr/m/sc/10 
 (-20) getAllSubmsets
  []
 
-[15 <./img/ex4/exp4-m2.pdf> <./img/ex3/exp3-m1.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex3/exp3-m1.pdf): PDF 
-inclusion: multiple pdfs with page group included in a single page
-> <./img/ex3/exp3-m2.pdf
+[15 <./img/ex3/exp3-m1.pdf> <./img/ex3/exp3-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex3/exp3-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/benchmark/exact.pdf, id=865, 462.52798pt x 346.89601pt>
-File: img/benchmark/exact.pdf Graphic file (type pdf)
-
-<use img/benchmark/exact.pdf>
-Package pdftex.def Info: img/benchmark/exact.pdf used on input line 451.
-(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-
-<img/benchmark/submset.pdf, id=867, 462.52798pt x 346.89601pt>
-File: img/benchmark/submset.pdf Graphic file (type pdf)
-
-<use img/benchmark/submset.pdf>
-Package pdftex.def Info: img/benchmark/submset.pdf used on input line 470.
-(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-) (./tex/s_relwork.tex [16 <./img/benchmark/exact.pdf> <./img/benchmark/submset
-.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/benchmark/submset.pdf)
-: PDF inclusion: multiple pdfs with page group included in a single page
->]
+>]) (./tex/s_relwork.tex [16]
 Overfull \hbox (43.21136pt too wide) in paragraph at lines 76--85
 \T1/cmr/m/n/10 (-20) ties of the set-trie im-ple-ment-ing the func-tions \T1/cm
 r/m/sc/10 (-20) submsetExistence\T1/cmr/m/n/10 (-20) ,
@@ -1903,11 +1873,8 @@ msets
 LaTeX Warning: Hyper reference `ss:exp3' on page 17 undefined on input line 10.
 
 
-) [17] (./article.bbl)
+[17]) (./article.bbl) [18]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
- [18
-
-]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
  (./article.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
@@ -1970,11 +1937,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
 (\end occurred when \ifx on line 74 was incomplete)
 (\end occurred when \ifx on line 74 was incomplete) 
 Here is how much of TeX's memory you used:
- 29786 strings out of 492995
- 585833 string characters out of 6132704
- 643643 words of memory out of 5000000
- 32529 multiletter control sequences out of 15000+600000
- 35958 words of font info for 188 fonts, out of 8000000 for 9000
+ 29765 strings out of 492995
+ 585423 string characters out of 6132704
+ 644700 words of memory out of 5000000
+ 32524 multiletter control sequences out of 15000+600000
+ 35209 words of font info for 181 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  62i,14n,72p,10380b,1206s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/tex
@@ -2007,10 +1974,10 @@ cc1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx0500.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on article.pdf (18 pages, 750500 bytes).
+Output written on article.pdf (18 pages, 726114 bytes).
 PDF statistics:
- 1113 PDF objects out of 1200 (max. 8388607)
- 497 compressed objects within 5 object streams
- 115 named destinations out of 1000 (max. 500000)
- 28309 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1025 PDF objects out of 1200 (max. 8388607)
+ 484 compressed objects within 5 object streams
+ 116 named destinations out of 1000 (max. 500000)
+ 28299 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{baeza1999modern}
-R.~Baeza-Yates, B.~Ribeiro-Neto, et~al.
-\newblock {\em Modern information retrieval}, volume 463.
-\newblock 1999.
-
 \bibitem{blizard1988multiset}
 W.~D. Blizard et~al.
 \newblock Multiset theory.
@@ -31,6 +26,12 @@ Z.~S. Harris.
 J.~M. Hellerstein, J.~F. Naughton, and A.~Pfeffer.
 \newblock {\em Generalized search trees for database systems}.
 \newblock September, 1995.
+
+\bibitem{Helmer2003}
+S.~Helmer and G.~Moerkotte.
+\newblock A performance study of four index structures for set-valued
+  attributes of low cardinality.
+\newblock {\em The VLDB Journal}, 12(3):244--261, Oct 2003.
 
 \bibitem{kornacker1999high}
 M.~Kornacker.
@@ -59,11 +60,6 @@ I.~Savnik.
 D.~Singh, A.~Ibrahim, T.~Yohanna, and J.~Singh.
 \newblock An overview of the applications of multisets.
 \newblock {\em Novi Sad Journal of Mathematics}, 37(3):73--92, 2007.
-
-\bibitem{zobel2006inverted}
-J.~Zobel and A.~Moffat.
-\newblock Inverted files for text search engines.
-\newblock {\em ACM computing surveys (CSUR)}, 38(2):6, 2006.
 
 \bibitem{zobel1992efficient}
 J.~Zobel, A.~Moffat, and R.~Sacks-Davis.
