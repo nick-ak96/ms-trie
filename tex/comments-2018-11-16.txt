@@ -1,0 +1,64 @@
+Section 1
+
+-- 1st paragraph: a very general observation about the data processing...
+I will try first to get the complete idea about the intro...
+
+-- 2nd paragraph: I would merge 2nd and 3rd paragraphs. It is easier to describe concrete things.
+
+-- 3rd paragraph: I would separate the description (comments on) of inv file and other structures. 
+Most papers say that inv file has the capabilities to answer submset and supmset queries.
+The query is not "direct" but uses some operations... but anyway.
+
+-- general comment: references must be stated in the description of the related approaches. 
+Maybe, if you have some, the reference or two could be added to 1st and 2nd paragraph.
+
+-- so, the first 3 paragraps are about the *problem* that we deal with... 
+
+      * Firstly, I would explicitely and clearly state the problem definition. 
+        Perhaps in the 1st paragraph. 
+
+      * Then you can lean on this description and present the details, problems, environment, etc. and 
+
+      * finally, the existing approaches and their drawbacks.
+
+-- 4th paragraph: "In this paper we propose a data structure multiset-trie that is designed 
+for storage and processing of multisets." Isn't it a set of multisets?
+
+-- I would merge paragraphs 4, 5 and 6. Paragraphs 5 and 6 are well written; I would just correct 
+few sentences. I would merge paragraph 4 with the 5 and 6.
+
+-- The explicit statetement of the contributions needs to be presented. I suggest that you prepare 
+the material and then I can re-write the complete introduction (you can then continue at 
+Related work). 
+
+-- I would shorten the announcement of sections. 
+
+Section 5
+
+-- homepage for the code of mstrie could be created to provide the source to reviewers.
+It is quite usual that the data is also provided.
+
+-- English needs to be corrected in the second paragraph. Can I correct ENglish directly?
+
+-- Are you sure that we are reading micro seconds? (10^-6 seconds)
+
+-- experiments tables. The scale-up is 1000-10000... can you justify this? Why are exact queries so fast 
+in comparison to inv-file? 
+
+-- Before the tables are presented the parameters should be described. I suspect n=multiplicity. 
+
+-- "Interestingly, the multiplicity also affects the time of processing, however, this happens passively."
+Can you explain this? Again, English should be corrected. I suggest that I go once through the text and 
+maybe you check it then again.
+
+-- last paragraph in the section should perhaps include more convenient justification. I would 
+stress that in existance tests we need to find one example! Is it hard to mention how many nodes have 
+been visited?
+
+General comments:
+
+-- I think that maybe the implementation of the inverted files could be described so that the reader
+sees it (plus the code).
+
+-- It came to my mind about the larger sigma. Do we have an experiment that includes larger sigmas? 
+Then reader should be satisfied by that... 
