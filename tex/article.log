@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 NOV 2018 02:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 FEB 2019 00:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1288,20 +1288,20 @@ File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
 (./article.aux)
 \openout1 = `article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
 
 Unknown journal: specify \journalname{<name of your journal>} in preambel
 
@@ -1416,7 +1416,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 32.
+Package hyperref Info: Link coloring OFF on input line 31.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1426,16 +1426,16 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count288
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 31.
+LaTeX Info: Redefining \pageref on input line 31.
+LaTeX Info: Redefining \nameref on input line 31.
 
 (./article.out) (./article.out)
 \@outlinefile=\write4
 \openout4 = `article.out'.
 
  ABD: EveryShipout initializing macros
-LaTeX Info: Redefining \microtypecontext on input line 32.
+LaTeX Info: Redefining \microtypecontext on input line 31.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1451,7 +1451,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \c__siunitx_mathsf_int=\count289
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1459,7 +1459,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1481,48 +1481,48 @@ SVJour3 warning: Missing \journalname
 SVJour3 warning: Missing \date
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 34.
+(Font)              size <8> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 34.
+(Font)              size <17.28> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 34.
+(Font)              size <17.28> substituted on input line 33.
 
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 34.
+LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 33.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 34.
+(Font)              size <8> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 34.
+(Font)              size <8> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 34.
+(Font)              size <8> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 34.
+(Font)              size <8> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 34.
+(Font)              size <5> substituted on input line 33.
 
 (./tex/s_intro.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1553,12 +1553,7 @@ LaTeX Font Warning: Font shape `T1/cmss/bx/n' in size <8.5> not available
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <8.5> not available
 (Font)              size <8> substituted on input line 106.
 
-
-Overfull \hbox (43.74419pt too wide) in alignment at lines 115--122
-[][][] []
- []
-
-) (./tex/s_operations.tex [3]
+) (./tex/s_operations.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 81.
 
@@ -1570,151 +1565,96 @@ LaTeX Font Warning: Font shape `T1/cmr/m/sc' in size <8.5> not available
 LaTeX Font Warning: Font shape `T1/cmr/m/it' in size <8.5> not available
 (Font)              size <8> substituted on input line 87.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 [4]
-Overfull \hbox (7.24149pt too wide) in paragraph at lines 205--221
-\T1/cmr/m/sc/10 (-20) submsetExistence\T1/cmr/m/n/10 (-20) , the func-tion \T1/
-cmr/m/sc/10 (-20) supermsetExistence
- []
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./tex/s_math.tex [5]
-Overfull \hbox (35.56277pt too wide) in paragraph at lines 13--18
-\T1/cmr/m/n/10 (-20) ity of the func-tions \T1/cmr/m/sc/10 (-20) getAllSubmsets
- \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSupermsets\T1/cmr/m/n/10 
-(-20) .
- []
-
-
-Overfull \hbox (9.75253pt too wide) in paragraph at lines 19--25
-\T1/cmr/m/n/10 (-20) math-e-mat-i-cal model un-like in func-tions \T1/cmr/m/sc/
-10 (-20) getAllSubmsets
- []
-
-
-Overfull \hbox (57.10887pt too wide) in paragraph at lines 26--33
-[]\T1/cmr/m/n/10 (-20) We find that the per-for-mance of the func-tions \T1/cmr
-/m/sc/10 (-20) submsetExistence
- []
-
-
-Overfull \hbox (28.49629pt too wide) in paragraph at lines 53--56
-\T1/cmr/m/n/10 (-20) volved func-tions: \T1/cmr/m/sc/10 (-20) submsetExistence\
-T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-
-20) ,
- []
-
-[6] [7]
-Overfull \hbox (35.56277pt too wide) in paragraph at lines 357--365
-\T1/cmr/m/n/10 (-20) ity of the func-tions \T1/cmr/m/sc/10 (-20) getAllSubmsets
- \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSupermsets\T1/cmr/m/n/10 
-(-20) .
- []
-
-[8]
-Overfull \hbox (35.08081pt too wide) in paragraph at lines 372--374
-\T1/cmr/m/n/10 (-20) the whole multiset-trie is tra-versed dur-ing the \T1/cmr/
-m/sc/10 (-20) getAllSubmsets
- []
-
-
-Overfull \hbox (4.96036pt too wide) in paragraph at lines 375--380
-[]\T1/cmr/m/n/10 (-20) Now let us con-sider the func-tion \T1/cmr/m/sc/10 (-20)
- getAllSupermsets\T1/cmr/m/n/10 (-20) .
- []
-
-
-Overfull \hbox (6.03267pt too wide) in paragraph at lines 406--412
+) (./tex/s_math.tex [5] [6] [7] [8]
+Overfull \hbox (6.03267pt too wide) in paragraph at lines 410--416
 \T1/cmr/m/n/10 (-20) We start the anal-y-sis of the func-tions \T1/cmr/m/sc/10 
-(-20) submsetExistence
+(-20) sub-mset-Existence
  []
 
-
-Overfull \hbox (10.56178pt too wide) in paragraph at lines 477--480
-\T1/cmr/m/n/10 (-20) func-tions \T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/
-m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
- []
-
-
-Overfull \hbox (26.63992pt too wide) in paragraph at lines 482--485
-\T1/cmr/m/n/10 (-20) given an in-put mul-ti-set $\OML/cmm/m/it/10 m$ \T1/cmr/m/
-n/10 (-20) for the func-tion \T1/cmr/m/sc/10 (-20) submsetExistence
- []
-
-[9] <img/other/exp-nodes-on-probab.pdf, id=207, 462.52798pt x 346.89601pt>
+[9] <img/other/exp-nodes-on-probab.pdf, id=220, 462.52798pt x 346.89601pt>
 File: img/other/exp-nodes-on-probab.pdf Graphic file (type pdf)
 
 <use img/other/exp-nodes-on-probab.pdf>
 Package pdftex.def Info: img/other/exp-nodes-on-probab.pdf used on input line 5
-19.
+23.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/other/ratio-exp-nodes-and-msets-on-prob.pdf, id=210, 462.52798pt x 346.896
+<img/other/ratio-exp-nodes-and-msets-on-prob.pdf, id=223, 462.52798pt x 346.896
 01pt>
 File: img/other/ratio-exp-nodes-and-msets-on-prob.pdf Graphic file (type pdf)
  <use img/other/ratio-exp-nodes-and-msets-on-prob.pdf>
 Package pdftex.def Info: img/other/ratio-exp-nodes-and-msets-on-prob.pdf used o
-n input line 534.
+n input line 538.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-)
-(./tex/s_experiments.tex
-Overfull \hbox (59.34663pt too wide) in paragraph at lines 4--8
-\T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 
-(-20) getAllSubmsets \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSuper
-msets\T1/cmr/m/n/10 (-20) . 
- []
 
-[10 <./img/other/exp-nodes-on-probab.pdf> <./img/other/ratio-exp-nodes-and-mset
-s-on-prob.pdf
+Underfull \vbox (badness 4205) has occurred while \output is active []
+
+)
+(./tex/s_experiments.tex [10 <./img/other/exp-nodes-on-probab.pdf> <./img/other
+/ratio-exp-nodes-and-msets-on-prob.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/other/ratio-exp-nodes-
 and-msets-on-prob.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
->] [11] <img/ex1/exp1-m1.pdf, id=309, 462.52798pt x 346.89601pt>
+>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<img/ex1/exp1-m1.pdf, id=315, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m1.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m1.pdf>
-Package pdftex.def Info: img/ex1/exp1-m1.pdf used on input line 128.
+Package pdftex.def Info: img/ex1/exp1-m1.pdf used on input line 126.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m2.pdf, id=310, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m2.pdf, id=316, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m2.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m2.pdf>
-Package pdftex.def Info: img/ex1/exp1-m2.pdf used on input line 135.
+Package pdftex.def Info: img/ex1/exp1-m2.pdf used on input line 133.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m3.pdf, id=311, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m3.pdf, id=317, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m3.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m3.pdf>
-Package pdftex.def Info: img/ex1/exp1-m3.pdf used on input line 142.
+Package pdftex.def Info: img/ex1/exp1-m3.pdf used on input line 140.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m4.pdf, id=312, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m4.pdf, id=318, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m4.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m4.pdf>
-Package pdftex.def Info: img/ex1/exp1-m4.pdf used on input line 149.
+Package pdftex.def Info: img/ex1/exp1-m4.pdf used on input line 147.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (5.82695pt too wide) in paragraph at lines 154--159
+Overfull \hbox (5.82695pt too wide) in paragraph at lines 152--157
 []\T1/cmr/m/n/10 (-20) The per-for-mance of the func-tions \T1/cmr/m/sc/10 (-20
-) submsetExistence
+) sub-mset-Existence
  []
 
 
-Overfull \hbox (72.72383pt too wide) in paragraph at lines 160--166
-\T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/m/n/10 (-20) and be-tween 175 an
-d 350 for \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) .
+Overfull \hbox (1.45218pt too wide) in paragraph at lines 158--164
+\T1/cmr/m/sc/10 (-20) sub-mset-Existence \T1/cmr/m/n/10 (-20) and be-tween 175 
+and 350 for \T1/cmr/m/sc/10 (-20) super-
  []
 
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
-
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
+[11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
 
@@ -1728,36 +1668,42 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex1/exp1-m4.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/ex2/exp2-m1.pdf, id=494, 462.52798pt x 346.89601pt>
+>] <img/ex2/exp2-m1.pdf, id=509, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m1.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m1.pdf>
-Package pdftex.def Info: img/ex2/exp2-m1.pdf used on input line 218.
+Package pdftex.def Info: img/ex2/exp2-m1.pdf used on input line 216.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m2.pdf, id=495, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m2.pdf, id=510, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m2.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m2.pdf>
-Package pdftex.def Info: img/ex2/exp2-m2.pdf used on input line 225.
+Package pdftex.def Info: img/ex2/exp2-m2.pdf used on input line 223.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m3.pdf, id=496, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m3.pdf, id=511, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m3.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m3.pdf>
-Package pdftex.def Info: img/ex2/exp2-m3.pdf used on input line 232.
+Package pdftex.def Info: img/ex2/exp2-m3.pdf used on input line 230.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex2/exp2-m4.pdf, id=497, 462.52798pt x 346.89601pt>
+<img/ex2/exp2-m4.pdf, id=512, 462.52798pt x 346.89601pt>
 File: img/ex2/exp2-m4.pdf Graphic file (type pdf)
 
 <use img/ex2/exp2-m4.pdf>
-Package pdftex.def Info: img/ex2/exp2-m4.pdf used on input line 239.
+Package pdftex.def Info: img/ex2/exp2-m4.pdf used on input line 237.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (5.42299pt too wide) in paragraph at lines 252--261
+Overfull \hbox (5.42299pt too wide) in paragraph at lines 250--259
 []$ \T1/cmr/m/n/10 (-20) of the en-tire multiset-trie and from $[]$
+ []
+
+
+Overfull \hbox (3.55487pt too wide) in paragraph at lines 271--281
+[]\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) get-All-Sub-msets \
+T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) get-All-Super-
  []
 
 [13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
@@ -1772,113 +1718,98 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m4.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->]
-Overfull \hbox (5.97403pt too wide) in paragraph at lines 262--268
-\T1/cmr/m/n/10 (-20) right for \T1/cmr/m/sc/10 (-20) submsetExistence \T1/cmr/m
-/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
- []
-
-
-Overfull \hbox (29.28575pt too wide) in paragraph at lines 273--283
-[]\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) getAllSubmsets \T1/
-cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSupermsets
- []
-
-
-Overfull \hbox (50.11324pt too wide) in paragraph at lines 284--289
-\T1/cmr/m/n/10 (-20) mance of func-tions \T1/cmr/m/sc/10 (-20) submsetExistence
- \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence
- []
-
-
-Overfull \hbox (68.1616pt too wide) in paragraph at lines 337--342
-\T1/cmr/m/n/10 (-20) of den-sity for func-tions \T1/cmr/m/sc/10 (-20) submsetEx
-istence \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cm
-r/m/n/10 (-20) .
- []
-
-<img/ex4/exp4-m1.pdf, id=686, 462.52798pt x 346.89601pt>
+>] <img/ex4/exp4-m1.pdf, id=701, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m1.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m1.pdf>
-Package pdftex.def Info: img/ex4/exp4-m1.pdf used on input line 345.
+Package pdftex.def Info: img/ex4/exp4-m1.pdf used on input line 343.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex4/exp4-m2.pdf, id=687, 462.52798pt x 346.89601pt>
+<img/ex4/exp4-m2.pdf, id=702, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m2.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m2.pdf>
-Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 352.
+Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 350.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Overfull \hbox (54.07904pt too wide) in paragraph at lines 357--365
-[]\T1/cmr/m/n/10 (-20) As we see on fig-ures []12[] and []13[] both func-tions 
-\T1/cmr/m/sc/10 (-20) submsetExistence
- []
+<img/ex3/exp3-m1.pdf, id=707, 462.52798pt x 346.89601pt>
+File: img/ex3/exp3-m1.pdf Graphic file (type pdf)
 
+<use img/ex3/exp3-m1.pdf>
+Package pdftex.def Info: img/ex3/exp3-m1.pdf used on input line 386.
+(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+<img/ex3/exp3-m2.pdf, id=708, 462.52798pt x 346.89601pt>
+File: img/ex3/exp3-m2.pdf Graphic file (type pdf)
+
+<use img/ex3/exp3-m2.pdf>
+Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 393.
+(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
+
+Underfull \vbox (badness 6348) has occurred while \output is active []
 
  [14 <./img/ex4/exp4-m1.pdf> <./img/ex4/exp4-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/ex3/exp3-m1.pdf, id=766, 462.52798pt x 346.89601pt>
-File: img/ex3/exp3-m1.pdf Graphic file (type pdf)
-
-<use img/ex3/exp3-m1.pdf>
-Package pdftex.def Info: img/ex3/exp3-m1.pdf used on input line 388.
-(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-
-<img/ex3/exp3-m2.pdf, id=767, 462.52798pt x 346.89601pt>
-File: img/ex3/exp3-m2.pdf Graphic file (type pdf)
-
-<use img/ex3/exp3-m2.pdf>
-Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 395.
-(pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-
-Underfull \vbox (badness 6348) has occurred while \output is active []
-
-
-Overfull \hbox (1.38914pt too wide) in paragraph at lines 414--419
+>]
+Overfull \hbox (1.38914pt too wide) in paragraph at lines 412--417
 []\T1/cmr/m/n/10 (-20) According to the de-sign of the data struc-ture multiset
 -
  []
 
 
-Overfull \hbox (19.70265pt too wide) in paragraph at lines 425--430
-[]\T1/cmr/m/n/10 (-20) As you may have no-ticed the func-tions \T1/cmr/m/sc/10 
-(-20) getAllSubmsets
- []
+Underfull \vbox (badness 3396) has occurred while \output is active []
+
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15 <./img/ex3/exp3-m1.pdf> <./img/ex3/exp3-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex3/exp3-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->]) (./tex/s_relwork.tex [16]
-Overfull \hbox (43.21136pt too wide) in paragraph at lines 76--85
-\T1/cmr/m/n/10 (-20) ties of the set-trie im-ple-ment-ing the func-tions \T1/cm
-r/m/sc/10 (-20) submsetExistence\T1/cmr/m/n/10 (-20) ,
- []
+>]) (./tex/s_relwork.tex
+Underfull \vbox (badness 6658) has occurred while \output is active []
 
 
-Overfull \hbox (58.5646pt too wide) in paragraph at lines 76--85
-\T1/cmr/m/sc/10 (-20) supermsetExistence\T1/cmr/m/n/10 (-20) , \T1/cmr/m/sc/10 
-(-20) getAllSubmsets \T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) getAllSuper
-msets
- []
+Underfull \vbox (badness 8189) has occurred while \output is active []
 
-) (./tex/s_conclusions.tex
+ [16])
+(./tex/s_conclusions.tex
 
 LaTeX Warning: Hyper reference `ss:exp3' on page 17 undefined on input line 10.
 
 
-[17]) (./article.bbl) [18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
+) (./article.bbl [17]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+
+LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 6.
+
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 1231) in paragraph at lines 4--7
+[]\T1/cmr/m/n/8 M. Akulich.  Mstrie repos-i-tory.  []$\T1/cmtt/m/n/8 https : / 
+/ github . com /
+ []
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
+ [18
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
  (./article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `article.out' has not changed.
 (rerunfilecheck)             Checksum: E381E56A4E1F6DD7417EB3C5784B3CF2;397.
 
@@ -1889,7 +1820,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  )
 (\end occurred when \ifx on line 99 was incomplete)
 (\end occurred when \ifx on line 99 was incomplete)
@@ -1937,11 +1868,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
 (\end occurred when \ifx on line 74 was incomplete)
 (\end occurred when \ifx on line 74 was incomplete) 
 Here is how much of TeX's memory you used:
- 29765 strings out of 492995
- 585423 string characters out of 6132704
- 644700 words of memory out of 5000000
- 32524 multiletter control sequences out of 15000+600000
- 35209 words of font info for 181 fonts, out of 8000000 for 9000
+ 29809 strings out of 492995
+ 586433 string characters out of 6132704
+ 644919 words of memory out of 5000000
+ 32547 multiletter control sequences out of 15000+600000
+ 35958 words of font info for 188 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  62i,14n,72p,10380b,1206s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/tex
@@ -1973,11 +1904,12 @@ cc1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
 00.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1000
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx0500.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on article.pdf (18 pages, 726114 bytes).
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
+Output written on article.pdf (18 pages, 753373 bytes).
 PDF statistics:
- 1025 PDF objects out of 1200 (max. 8388607)
- 484 compressed objects within 5 object streams
- 116 named destinations out of 1000 (max. 500000)
- 28299 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 1047 PDF objects out of 1200 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 121 named destinations out of 1000 (max. 500000)
+ 28811 words of extra memory for PDF output out of 29859 (max. 10000000)
 

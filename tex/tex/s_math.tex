@@ -106,8 +106,6 @@ Without conditioning on the existence of any node in multiset-trie,
 it is easy to describe the probability of existence of any individual node.
 
 \begin{lemma}\label{l:prob-node-existence}
-
-
 Any potential node on a fixed level $i,$ where $i\in \{ 1,2,\ldots, \sigma +1 \}$ exists, %independently of others,
 with probability
 \begin{equation}
@@ -130,7 +128,7 @@ number of nodes on the leaf level of $v$-sub tree can be easily calculated knowi
 It is equal to
 %
 \[
-n^{\sigma + 1 - i}
+n^{\sigma + 1 - i}.
 \]
 %
 A node at level $\sigma+1$ exists with probability $p,$ where $p = P(m\in M).$
@@ -140,7 +138,8 @@ Thus, the probability that there are no nodes on leaf level in $v$-sub tree is
 (1-p)^{n^{\sigma +1 - i}}.
 \]
 %
-The claim follows by taking the complement probability of the above result.
+The claim follows by taking the complement probability of the above result. 
+\hspace*{\fill}\qed
 %
 \end{proof}
 
@@ -186,6 +185,7 @@ distribution:
 \]
 %
 which completes the proof.
+\hspace*{\fill}\qed
 \end{proof}
 %
 Knowing the probability density and probability generating functions of $\xi_{ij}$ 
@@ -245,6 +245,7 @@ According to~(\ref{eq:pdf}) and~(\ref{eq:generating_func}) the value of $G_i(z)$
 $1$ is $1$ and the value of its derivative at $1$ is $\mathbb{E}(\mathcal{B}_0(n,p_{i+1})).$ 
 Substituting the values of $G_i(1^-)$ and $G_i'(1^-),$ and applying the 
 property~(\ref{eq:prop_exp-pgf}) we complete the proof.
+\hspace*{\fill}\qed
 \end{proof}
 %
 From the Proposition~\ref{prop:exp_rec} above and Lemma~\ref{l:prob-children} we 
@@ -272,6 +273,7 @@ we get
 = \prod_{j=2}^{i} n \frac{1-(1-p)^{n^{\sigma +1-j}}}{1-(1-p)^{n^{\sigma + 2 -j}}} \\
 &=& n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}
 \end{eqnarray*}
+\hspace*{\fill}\qed
 \end{proof}
 
 Having derived the expected number of nodes on every level of multiset-trie, the
@@ -293,6 +295,7 @@ Using the results obtained from Theorem~\ref{thm:exp_level} we compute
 \mathbb{E}( | \mathcal{M} | ) &=& \mathbb{E}\left[ \sum_{i=1}^{\sigma+1} \xi_i \right] \\
 &=& \sum_{i=1}^{\sigma + 1} n^{i-1} \frac{1-(1-p)^{n^{\sigma + 1 -i}}}{1-(1-p)^{n^{\sigma}}} \\
 \end{eqnarray*}
+\hspace*{\fill}\qed
 \end{proof}
 
 With the expected number of nodes in a multiset-trie $\mathcal{M}$ obtained from 
@@ -351,6 +354,7 @@ defined by the number $k_{i-1}+1$ or $n-k_{i-1}-1$ for $i\geq 2.$ On level $i=1$
 there is only one root node in any multiset-trie $\mathcal{M},$ which always exists 
 if $M\neq\emptyset$ and is traversed for any type of query (submultiset and 
 supermultiset).
+\hspace*{\fill}\qed
 \end{proof}
 
 \subsubsection{GetAllSubmsets and GetAllSupermsets}\label{ss:getall}

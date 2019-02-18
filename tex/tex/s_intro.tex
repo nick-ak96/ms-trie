@@ -1,54 +1,58 @@
 \section{Introduction} \label{c:introduction}
 %
-% some intro
-During recent years the popularity of digital data has increased. Huge amount of diverse data is collected in databases and 
-processed regularly. Data processing usually consists of operations such as filtering, sorting and aggregation. This requires 
-indexing for optimization of data processing especially when it is repetitive. Data often includes duplicates or multivalued 
-attributes that are complicated to process efficiently when sophisticated queries are required.
+% general intro into problem
+%
+A multiset is a data structure that represents a collection of elements. It generalizes a set data structure 
+by allowing duplicate elements in a collection. 
+%
+Data with duplicate elements is encountered in a wide variety of domains and applications. For example, 
+in databases or data mining. In particular, processing of multisets has attracted significant attention in 
+recent years. 
+%
+There are discussions about storage and representation of multi-valued attributes in databases, organization 
+of data with shared content, containment joins, efficient algorithms for containment queries, compression 
+of multisets, etc~\cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}.
 
-Multisets or bags are not well supported by storage systems for processing. Usually multisets have to be stored in a 
-simpler format that does not allow a direct analysis of the data. Such storage results in a more complex processing, 
-since multisets have to be re-constructed or pre-processed first in order to run the query. It also becomes impossible
-to execute containment queries on multisets.
-
-Currently the most efficient ways for multisets storage and processing involve inverted files, signature trees and B+ tree.
-Such solutions provide key-value look-up only, which does not allow to perform containment queries on multisets directly and efficiently.
-Additional processing is required such as intersection or union of obtained partial results from key-value look-ups. The post 
-processing of partial results can be optimized, however, it is still not as efficient and usually requires additional encoded 
-signatures or other types of identifiers to speed-up the process.
+Multiset data structure is usually implemented as a search tree and its elements can be accessed by a key. 
+%
+This approach is good when individual elements of a multiset are of interest. However, it is not as optimal for operations 
+that use containment relation between multisets, also known as containment queries. 
+%
+Containment relation allows us to operate directly with the collections that are associated with a multiset such as a set 
+of submultiset and a set of supermultisets.
+%
+Currently, the solution to searching or retrieval of a set of multisets using containment queries involves inverted file, 
+signature tree or B+ tree~\cite{Helmer2003}. The solution provides a key-value look-up for elements of a multiset implying that 
+containment operations are still element-wise.
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 % description of innovations
 %
-In this paper we propose a data structure \emph{multiset-trie} that is designed for storage and processing of multisets.
-It is an extension of the \emph{set-trie} data structure proposed by Savnik \cite{savnik2013index}. 
-Set-trie is a trie based data structure that is used for storing and fast retrieval of 
-objects represented as sets. The set-trie provides the nearest-neighbor search by 
-implementing methods that perform set-containment queries. Multiset-trie generalizes 
-set-trie and provides support for storing and retrieving objects that can be represented 
-as both sets and multisets. 
-
-The multiset-trie is an $n$-ary tree based data structure with properties similar to those of a trie. 
-This particular combination allows us to associate multisets with a collection of nodes in a tree. 
-Every node represents an element of a multiset with particular multiplicity. 
+In this paper we propose a data structure \emph{multiset-trie} that is designed for storage and 
+processing of a set of multisets. It extends the \emph{set-trie} data structure proposed by 
+Savnik~\cite{savnik2013index} that was designed for storage and processing of a set of sets. 
 %
-Multiset-trie is a kind of search tree. Similarly to a trie, it uses common prefixes 
-to narrow down the search. It also implements the basic tree methods such as 
-search, deletion and insertion. Unlike the compact prefix tree, Patricia, the multiset-trie 
-does not provide the ability to compress a path. However, the absence of path 
-compression makes the multiset-trie a perfectly height-balanced tree.
+Set-trie is a trie based data structure that provides a fast search and retrieval of sets and implements 
+set-containment operations. 
+%
+Multiset-trie generalizes set-trie and can work with a set of sets (as set-trie) or with 
+a set of multisets providing efficient multiset-containment operations.
 
-The multiset-trie is designed for efficient execution of the multiset containment 
-operations. It handles multisets directly by having access to each of the element 
+% intro into mstrie
+The multiset-trie is an $n$-ary tree based data structure with properties similar to those of a trie. 
+Multisets are associated with a collection of nodes in a tree such that every node represents an element 
+of a multiset with particular multiplicity. 
+%
+Multiset-trie is a kind of search tree. Similarly to a trie, it uses common prefixes for shared data representation.
+Unlike the compact prefix tree, the multiset-trie does not support path compression. However, the absence of path 
+compression makes the multiset-trie a perfectly height-balanced tree.
+%
+The multiset-trie handles multisets directly by having access to each of the element 
 without the need to reconstruct them for processing, which allows fast retrieval and 
-containment queries. In particular, it supports submultiset and supermultiset queries.
+containment operations. In particular, it supports submultiset and supermultiset queries.
 The operations allow to find and retrieve the closest submultisets or supermultisets 
 as well as to find and retrieve all of them.
-%
-Since multiset is a generalized version of sets that allows duplicates multiset-trie can be 
-used for storing and processing sets supporting the same set of operations and providing 
-the same efficiency.
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -59,37 +63,31 @@ it is possible to estimate the overall performance of the multiset-trie both tim
 related using our mathematical theory that describes multiset-trie.
 %
 The comparative study shows how efficient multiset-trie is by outperforming inverted file in 
-both exact and containment queries by up to 4 orders of magnitude in the time consumed by 
-query processing. 
+both equality and containment queries by up to 4 orders of magnitude in the time consumed by 
+query. 
 
 % --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 % paper organization
 %
 In the following Section~\ref{c:description} we present the organization of 
-multiset-trie data structure. The representation of multisets in multiset-trie is 
-explained in detail.
+multiset-trie data structure in detail.
 %
-In Section~\ref{c:operations} we present operations that multiset-trie currently 
-supports. Those are the multiset containment and the basic search tree functions. 
+Next, in Section~\ref{c:operations} we present operations that multiset-trie currently 
+supports. This includes multiset containment and the basic search tree functions. 
 The algorithms in pseudo code are presented as well. 
 %
 The description of multiset-trie functions and procedures is followed by the 
 mathematical analysis of their complexity in Section~\ref{c:analysis}. 
-We assume that multisets are constructed uniformly at random and are parametrized 
-by several parameters, such as multiplicity and the alphabet. By using probabilistic 
-tools we describe time complexity of the algorithms and space complexity of the structure.
+The main assumption is that multisets are constructed uniformly at random 
+with bounded cardinality. By using probabilistic tools we describe time complexity of 
+the algorithms and space complexity of the structure.
 %
 Further, in Section~\ref{c:experiments} we present an empirical study of the 
-multiset-trie. Artificially generated as well as real-world data sets are used in experiments. 
-The experiments are dedicated to testing the performance of the data structure while 
-varying selected parameters. The experiments also highlight the methods for optimizing a multiset-trie.
+multiset-trie. Synthetic and real-world data sets are used in experiments to test the performance 
+of the data structure. The experiments also highlight the methods for optimizing a multiset-trie.
 %
-The Section~\ref{c:relwork} presents related work. The connection to the set-trie 
-data structure \cite{savnik2013index} is discussed more explicitly. We also relate 
-the multiset-trie to the information retrieval systems. In particular, we refer to the 
-inverted index data structure and discuss how the multiset-trie can be used as a 
-database index.
+The related work is reviewed in Section~\ref{c:relwork}. 
 %
-Finally, in Section~\ref{c:conclusions} our conclusion about the multiset-trie 
-data structure and discussion of future work are presented.
+Finally, we conclude with the discussion of future work in Section~\ref{c:conclusions}.
+%
