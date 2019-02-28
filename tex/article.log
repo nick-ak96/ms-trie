@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 FEB 2019 00:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 FEB 2019 01:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1553,7 +1553,7 @@ LaTeX Font Warning: Font shape `T1/cmss/bx/n' in size <8.5> not available
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <8.5> not available
 (Font)              size <8> substituted on input line 106.
 
-) (./tex/s_operations.tex
+) (./tex/s_operations.tex [3]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 81.
 
@@ -1568,18 +1568,7 @@ LaTeX Font Warning: Font shape `T1/cmr/m/it' in size <8.5> not available
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./tex/s_math.tex [5] [6] [7] [8]
+[4]) (./tex/s_math.tex [5] [6] [7] [8]
 Overfull \hbox (6.03267pt too wide) in paragraph at lines 410--416
 \T1/cmr/m/n/10 (-20) We start the anal-y-sis of the func-tions \T1/cmr/m/sc/10 
 (-20) sub-mset-Existence
@@ -1600,9 +1589,6 @@ File: img/other/ratio-exp-nodes-and-msets-on-prob.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/other/ratio-exp-nodes-and-msets-on-prob.pdf used o
 n input line 538.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-
-Underfull \vbox (badness 4205) has occurred while \output is active []
-
 )
 (./tex/s_experiments.tex [10 <./img/other/exp-nodes-on-probab.pdf> <./img/other
 /ratio-exp-nodes-and-msets-on-prob.pdf
@@ -1610,32 +1596,28 @@ Underfull \vbox (badness 4205) has occurred while \output is active []
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/other/ratio-exp-nodes-
 and-msets-on-prob.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
->]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<img/ex1/exp1-m1.pdf, id=315, 462.52798pt x 346.89601pt>
+>] [11] <img/ex1/exp1-m1.pdf, id=324, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m1.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m1.pdf>
 Package pdftex.def Info: img/ex1/exp1-m1.pdf used on input line 126.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m2.pdf, id=316, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m2.pdf, id=325, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m2.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m2.pdf>
 Package pdftex.def Info: img/ex1/exp1-m2.pdf used on input line 133.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m3.pdf, id=317, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m3.pdf, id=326, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m3.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m3.pdf>
 Package pdftex.def Info: img/ex1/exp1-m3.pdf used on input line 140.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex1/exp1-m4.pdf, id=318, 462.52798pt x 346.89601pt>
+<img/ex1/exp1-m4.pdf, id=327, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m4.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m4.pdf>
@@ -1653,8 +1635,11 @@ Overfull \hbox (1.45218pt too wide) in paragraph at lines 158--164
 and 350 for \T1/cmr/m/sc/10 (-20) super-
  []
 
-[11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
+
+
+Underfull \vbox (badness 5388) has occurred while \output is active []
 
  [12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
 
@@ -1700,12 +1685,6 @@ Overfull \hbox (5.42299pt too wide) in paragraph at lines 250--259
 []$ \T1/cmr/m/n/10 (-20) of the en-tire multiset-trie and from $[]$
  []
 
-
-Overfull \hbox (3.55487pt too wide) in paragraph at lines 271--281
-[]\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) get-All-Sub-msets \
-T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) get-All-Super-
- []
-
 [13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m2.pdf): PDF 
@@ -1718,7 +1697,13 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m4.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->] <img/ex4/exp4-m1.pdf, id=701, 462.52798pt x 346.89601pt>
+>]
+Overfull \hbox (3.55487pt too wide) in paragraph at lines 271--281
+[]\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) get-All-Sub-msets \
+T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) get-All-Super-
+ []
+
+<img/ex4/exp4-m1.pdf, id=701, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m1.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m1.pdf>
@@ -1732,14 +1717,20 @@ File: img/ex4/exp4-m2.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 350.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex3/exp3-m1.pdf, id=707, 462.52798pt x 346.89601pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14 <./img/ex4/exp4-m1.pdf> <./img/ex4/exp4-m2.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m2.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] <img/ex3/exp3-m1.pdf, id=781, 462.52798pt x 346.89601pt>
 File: img/ex3/exp3-m1.pdf Graphic file (type pdf)
 
 <use img/ex3/exp3-m1.pdf>
 Package pdftex.def Info: img/ex3/exp3-m1.pdf used on input line 386.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex3/exp3-m2.pdf, id=708, 462.52798pt x 346.89601pt>
+<img/ex3/exp3-m2.pdf, id=782, 462.52798pt x 346.89601pt>
 File: img/ex3/exp3-m2.pdf Graphic file (type pdf)
 
 <use img/ex3/exp3-m2.pdf>
@@ -1748,40 +1739,22 @@ Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 393.
 
 Underfull \vbox (badness 6348) has occurred while \output is active []
 
- [14 <./img/ex4/exp4-m1.pdf> <./img/ex4/exp4-m2.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m2.pdf): PDF 
-inclusion: multiple pdfs with page group included in a single page
->]
 Overfull \hbox (1.38914pt too wide) in paragraph at lines 412--417
 []\T1/cmr/m/n/10 (-20) According to the de-sign of the data struc-ture multiset
 -
  []
 
-
-Underfull \vbox (badness 3396) has occurred while \output is active []
-
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [15 <./img/ex3/exp3-m1.pdf> <./img/ex3/exp3-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex3/exp3-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
->]) (./tex/s_relwork.tex
-Underfull \vbox (badness 6658) has occurred while \output is active []
-
-
-Underfull \vbox (badness 8189) has occurred while \output is active []
-
- [16])
-(./tex/s_conclusions.tex
+>]) (./tex/s_relwork.tex [16]) (./tex/s_conclusions.tex
 
 LaTeX Warning: Hyper reference `ss:exp3' on page 17 undefined on input line 10.
 
 
-) (./article.bbl [17]
+[17]) (./article.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
@@ -1801,11 +1774,8 @@ Underfull \hbox (badness 1231) in paragraph at lines 4--7
 / github . com /
  []
 
-)
+) [18]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [18
-
-]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
  (./article.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
@@ -1870,7 +1840,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
 Here is how much of TeX's memory you used:
  29809 strings out of 492995
  586433 string characters out of 6132704
- 644919 words of memory out of 5000000
+ 644920 words of memory out of 5000000
  32547 multiletter control sequences out of 15000+600000
  35958 words of font info for 188 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
@@ -1906,7 +1876,7 @@ cc1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on article.pdf (18 pages, 753373 bytes).
+Output written on article.pdf (18 pages, 753403 bytes).
 PDF statistics:
  1047 PDF objects out of 1200 (max. 8388607)
  500 compressed objects within 5 object streams
