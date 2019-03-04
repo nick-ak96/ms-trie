@@ -427,18 +427,14 @@ they retrieve all sub/supermultisets. This means that the number of visited
 nodes will not be changed as $\phi$ varies.
 
 \subsection{Experiment 5} \label{s:exp5}
-In this experiment we demonstrate the performance of multiset-trie data structure 
-compared to B+ tree based inverted index. The data structure is also implemented 
-in~\CC{ to} avoid any optimization or degradation of performance caused by different 
-programming language implementation.
+In this experiment, we demonstrate the performance of multiset-trie data structure compared to the inverted index based on the B+ tree. Both data structures are implemented in the programming language \CC, providing in this way an experimental setup for a fair comparison  [ref. to impl].
 
 %% more details about implementation of the inverted files
+((Presentation of the inverted index implementation? What about the smallest postings first?))
 
-During tests both data structures used the same interface for benchmark that operates 
-with files as its input and output. Each data structure was loaded with the same input data 
-and was queried with the same test data. The input and test data were generated artificially 
-according to parameters $\sigma$ and $n.$ The combinations of parameters is as follows in the 
-Table~\ref{t:benchmark}.
+The experiment uses the input data for the construction of the given data structure and the test data for the execution of the operations on the given data structure. The input data comprises a set of randomly generated multisets used for the construction of a data structure. The test data includes the set of multisets together with the operations that are evaluated. The input and test data were generated with respect to parameters $\sigma$ and $n$ as presented in Table~\ref{t:benchmark}.
+
+((Is there anything special to be said about the artificially generated data?))
 
 \begin{table}[h]
 \center
@@ -463,12 +459,7 @@ $\sigma$ & $n$ \\
 \label{t:benchmark}
 \end{table}
 
-We tested all the three types of query on all of the configurations from the Table~\ref{t:benchmark} which 
-results in 18 experiments total, i.e. 6 experiments per query type. In each of the experiment we measured an 
-average time consumed by the data structure to process the query. 
-
-The results of the exact search, submultiset search and supermultiset search experiments are shown in the tables 
-Table~\ref{t:res_ex}, Table~\ref{t:res_sub} and Table~\ref{t:res_sup} respectively .
+We tested all three types of a query on all of the configurations from Table 1 which results in 18 experiments total, i.e., 6 experiments per query type. In each of the experiment, we measured an average time consumed by the data structure to process the query. The results of the exact search, sub-multiset and super-multiset search experiments are presented in tables Table~\ref{t:res_ex}, Table~\ref{t:res_sub} and Table~\ref{t:res_sup}, respectively.
 
 \begin{table}[h]
 \center
@@ -518,7 +509,7 @@ Table~\ref{t:res_ex}, Table~\ref{t:res_sub} and Table~\ref{t:res_sup} respective
 10	& 10		& 55.59 & 466022.68\\
 \hline
 \end{tabular}
-\caption{Submultiset search.}
+\caption{Sub-multiset search.}
 \label{t:res_sub}
 \end{table}
 
@@ -544,28 +535,16 @@ Table~\ref{t:res_ex}, Table~\ref{t:res_sub} and Table~\ref{t:res_sup} respective
 10	& 10 	& 58.32 & 373784.81\\
 \hline
 \end{tabular}
-\caption{Supermultiset search.}
+\caption{Super-multiset search.}
 \label{t:res_sup}
 \end{table}
 
-We can see that multiset-trie outperforms inverted index in all of the experiments by up to 4 orders of magnitude. 
-In exact search multiset-trie has to traverse only up to $\sigma+1$ nodes in order to get query result. It is seen 
-from results that with increase of $\sigma$ the processing time for multiset-tire also increases. Interestingly, the 
-multiplicity also affects the time of processing, however, this happens passively. Multiplicity or degree of a node $n$ 
-defines what multisets can be stored in multiset-trie. Thus, it affects the structure and density of the multiset-trie.
+We can see that multiset-trie outperforms inverted index in all of the experiments by up to 4 orders of magnitude. In an exact search, multiset-trie has to traverse only up to $\sigma+1$ nodes to get query result. It can be seen from results that with the increase of $\sigma$ the processing time for multiset-tire also increases. Multiplicity also affects the processing time; however, this happens passively. ((equivalent to $\sigma+1$?)) Multiplicity, or degree of a node $n$, defines the shape of multisets that are stored in multiset-trie. Thus, it affects the structure and density of the multiset-trie.
 
-As for the inverted index, it must fetch all the postings according to each element in a test multiset and then intersect 
-the results in order to answer the query. This is a more time consuming operation than a simple tree traversal, which we 
-can see from results. Postings are of course filtered on-the-fly to reduce the cost of intersection, however these are still 
-additional operations to be performed. Note, that inverted file will also access at most $\sigma$ postings during search, 
-but in addition to access some extra processing is required.
+As for the inverted index, all three operations must first fetch all the postings for each particular element of a test multi-set. Afterward, the intersection of postings is computed to answer the query. The operations use more processing time than a simple tree traversal, which we can see from results. Postings are filtered on-the-fly to reduce the cost of the intersection. ((I do not get this: "Note that inverted index will also access at most $\sigma$ postings during search, but in addition to access some extra processing is required."))
 
-The submultiset and supermultiset basically do not change to much in the case of inverted file, because the algorithm consists 
-of the same steps: the postings are fetched according to elements of the test multiset, then they are filtered on-the-fly 
-according to the query type, and at the end the postings either has to be united or intersected. So, besides a traversal of at most 
-$\sigma$ keys of the index additional processing is required. Note, that every key is mapped to a list of postings which 
-can be large as index grows.
+Implementations of the sub-multiset and super-multiset are similar in the case of the inverted file. The algorithm consists of the same steps. First, the postings are fetched for each element of the test multiset. Depending on the particular operation, postings are filtered on-the-fly. Finally, the union or the intersection of the filtered set of postings is computed. Note that the processing time increases with the size of the inverted index because of the increased sizes of postings. 
 
 %% more details on this paragraph
-In the case of multiset-trie only a traversal of the tree is required which is much faster than processing of postings as we can 
-see from results. In the worst case the whole tree is traversed, but so is for inverted file.
+((Can you characterize the sub-tree (num of nodes visited) visited by an operation more precisely? Can we say something about this? What is the size of the sub-tree visited by an operation? Why it is not very large? I did not try to finalize the following text.))
+In the case of multiset-trie, only a traversal of the tree is required which is much faster than the processing of postings as we can see from results. In the worst case the whole tree is traversed, but so is for an inverted file. ((Can we see how...?))
