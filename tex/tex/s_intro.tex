@@ -2,46 +2,24 @@
 %
 % general intro into problem
 %
-A multiset is a data structure that represents a collection of elements. It generalizes a set data structure 
-by allowing duplicate elements in a collection. 
-%
-Data with duplicate elements is encountered in a wide variety of domains and applications. For example, 
-in databases or data mining. In particular, processing of multisets has attracted significant attention in 
-recent years. 
-%
-There are discussions about storage and representation of multi-valued attributes in databases, organization 
-of data with shared content, containment joins, efficient algorithms for containment queries, compression 
-of multisets, etc~\cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}.
-
+A multiset is a data structure that represents a collection of elements. It generalizes a set data structure by allowing duplicate elements in a collection. Multisets appear in a wide variety of domains and applications. The index structures for storing sets of multisets were studied in the area of object-relational database systems to efficiently store, compress and query multiset-valued attributes \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. Furthermore, the need to efficiently store and query the multisets appears also in the information retrieval \cite{}, the data mining \cite{}, and in the area of expert systems \cite{}. 
 %
 % problem
-%
-The problem we would like to address in this paper is efficient execution of containment queries on a set of multisets.
-The modern implementations of data structure for a set or a multiset is usually implemented as a search tree and 
-its elements can be accessed by a key. 
-%
-This approach is good when individual elements of a set or a multiset are of interest. However, it is not as optimal for operations 
-that use containment relation between multisets. 
-%
-Containment relation allows us to operate directly with the collections that are associated with a multiset such as a set 
-of submultiset and a set of supermultisets.
-%
-Currently, the solution to searching or retrieval of a set of multisets using containment queries involves inverted file, 
-signature tree or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that 
-containment operations are still element-wise. In order to improve the efficiency of operations we organize a set of 
-multisets in a different way described further below.
 
-% --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In this paper, we address the problems of storing, indexing and querying the sets of multisets. In particular, we deal with the design of an index data structure that provides an efficient implementation of the containment queries. Let $S$ be an index storing a set of multisets. For a given input multiset $m$, a \emph{containment query} searches for either sub-multisets or super-multisets of $m$ in $S$. 
+
+Existent indexes for storing a set of multisets are rooted in the search trees. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for operations that use containment relation between multisets. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship.
+
+The existing solutions to the implementation of the containment queries include the inverted file \cite{}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?)
+%
+
+---------------------------------------------------------------------
 
 % description of innovations
 %
-In this paper we propose a data structure \emph{multiset-trie} that is designed for storage and 
-processing of a finite bounded set of multisets. It extends the \emph{set-trie} data structure proposed 
-by Savnik~\cite{savnik2013index} that was designed for storage and processing of a finite bounded (?or 
-unbounded?) set of sets. 
+To improve the efficiency of containment operations, we propose a data structure \emph{multiset-trie} that is designed for storage and processing of a finite bounded set of multisets. It extends the \emph{set-trie} data structure proposed by Savnik~\cite{savnik2013index} that was designed for storage and processing of a finite bounded (?or unbounded?) set of sets. 
 %
-Set-trie is a trie based data structure that provides a fast search and retrieval of sets and implements 
-set-containment operations. 
+Set-trie is a trie based data structure that provides a fast search and retrieval of sets and implements set-containment operations. 
 %
 Multiset-trie generalizes set-trie and can work with a set of sets (as set-trie) or with 
 a set of multisets providing efficient multiset-containment operations.
