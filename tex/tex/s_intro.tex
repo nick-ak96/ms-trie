@@ -2,15 +2,15 @@
 %
 % general intro into problem
 %
-A multiset is a data structure that represents a collection of elements. It generalizes a set data structure by allowing duplicate elements in a collection. Multisets appear in a wide variety of domains and applications. The index structures for storing sets of multisets were studied in the area of object-relational database systems to efficiently store, compress and query multiset-valued attributes \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. Furthermore, the need to efficiently store and query the multisets appears also in the information retrieval \cite{}, the data mining \cite{}, and in the area of expert systems \cite{}. 
+A multiset is a data structure that represents a collection of elements. It generalizes a set data structure by allowing duplicate elements in a collection. Multisets appear in a wide variety of domains and applications. The index structures for storing sets of multisets were studied in the area of object-relational database systems to efficiently store, compress and query multiset-valued attributes \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. Furthermore, the need to efficiently store and query the multisets appears also in the information retrieval \cite{manningBook}, the data mining \cite{interestingSets}, and in the area of expert systems \cite{reteAlgorithm}. 
 %
 % problem
 
 In this paper, we address the problems of storing, indexing and querying the sets of multisets. In particular, we deal with the design of an index data structure that provides an efficient implementation of the containment queries. Let $S$ be an index storing a set of multisets. For a given input multiset $m$, a \emph{containment query} searches for either sub-multisets or super-multisets of $m$ in $S$. 
 
-Existent indexes for storing a set of multisets are rooted in the search trees. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for operations that use containment relation between multisets. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship.
+Existent indexes for storing a set of multisets are rooted in the search trees \cite{rivestBook}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
 
-The existing solutions to the implementation of the containment queries include the inverted file \cite{}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?)
+The existing solutions to the implementation of the containment queries include the inverted file \cite{manningBook}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
 %
 
 ---------------------------------------------------------------------
