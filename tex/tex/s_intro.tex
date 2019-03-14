@@ -10,7 +10,7 @@ In this paper, we address the problems of storing, indexing and querying the set
 
 Existent indexes for storing a set of multisets are rooted in the search trees \cite{rivestBook}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
 
-The existing solutions to the implementation of the containment queries include the inverted file \cite{manningBook}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
+The existing solutions to the implementation of the containment queries include the inverted index \cite{manningBook}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
 
 % ----------------------------------------------------------------------------------------------------------------------------------------
 %
@@ -30,18 +30,18 @@ A multiset-trie is also a kind of search tree. Similarly to a trie, it uses comm
 %The multiset-trie handles multisets directly by having access to each of the element without the need to reconstruct them for processing, which allows fast retrieval and containment operations. In particular, it supports sub-multiset and super-multiset queries. The operations allow to find and retrieve the closest submultisets or super-multisets as well as to find and retrieve all of them.
 
 % 
---------------------------------------------------------------------------------------------------------------------------------------------
+%--------------------------------------------------------------------------------------------------------------------------------------------
 %
 % 3rd part: contributions
-
-Empirical studies on real data show, that multiset-trie is sensitive to the context, which can 
-be further used to optimize data structure for particular data. Moreover, knowing the data 
-it is possible to estimate the overall performance of the multiset-trie both time and space 
-related using our mathematical theory that describes multiset-trie.
+The contributions of this paper are:
+\begin{itemize}
+\item A novel data structure multiset-trie which can store a set of multisets using common prefixes and provide fast containment queries. 
+\item A mathematical model of a general case multiset-trie that analyses its space complexity, an estimation of a sub-tree size traversed by a containment query and therefore gives insights on containment query time complexity.
+\item Empirical results of multiset-trie performance depending on a multiset space parameterization.
+\item A comparative study between an inverted index and multiset-trie where the later outperforms its competitor by up to 4 orders of magnitude in the time consumed by both equality and containment queries.
+\item Experimental result that shows an influence of ordering in multisets on their storage and processing.
+\end{itemize}
 %
-The comparative study shows how efficient multiset-trie is by outperforming inverted file in 
-both equality and containment queries by up to 4 orders of magnitude in the time consumed by 
-query. 
 
 % --------------------------------------------------------------------------------------------------------------------------------------------
 %

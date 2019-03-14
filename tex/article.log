@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 MAR 2019 23:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  14 MAR 2019 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1525,13 +1525,33 @@ LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <4.25> not available
 (Font)              size <5> substituted on input line 33.
 
 (./tex/s_intro.tex
+
+LaTeX Warning: Citation `manningBook' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation `interestingSets' on page 1 undefined on input line 5.
+
+
+LaTeX Warning: Citation `reteAlgorithm' on page 1 undefined on input line 5.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-])
-(./tex/s_data_structure.tex [2]
+LaTeX Warning: Citation `rivestBook' on page 1 undefined on input line 11.
+
+
+LaTeX Warning: Citation `manningBook' on page 1 undefined on input line 13.
+
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Citation `patriciaTree' on page 2 undefined on input line 28.
+
+) (./tex/s_data_structure.tex [2]
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 83.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
@@ -1553,7 +1573,11 @@ LaTeX Font Warning: Font shape `T1/cmss/bx/n' in size <8.5> not available
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <8.5> not available
 (Font)              size <8> substituted on input line 106.
 
-) (./tex/s_operations.tex [3]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+)
+(./tex/s_operations.tex [3]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 81.
 
@@ -1564,9 +1588,6 @@ LaTeX Font Warning: Font shape `T1/cmr/m/sc' in size <8.5> not available
 
 LaTeX Font Warning: Font shape `T1/cmr/m/it' in size <8.5> not available
 (Font)              size <8> substituted on input line 87.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4]) (./tex/s_math.tex [5] [6] [7] [8]
 Overfull \hbox (6.03267pt too wide) in paragraph at lines 410--416
@@ -1582,6 +1603,10 @@ Package pdftex.def Info: img/other/exp-nodes-on-probab.pdf used on input line 5
 23.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 <img/other/ratio-exp-nodes-and-msets-on-prob.pdf, id=223, 462.52798pt x 346.896
 01pt>
 File: img/other/ratio-exp-nodes-and-msets-on-prob.pdf Graphic file (type pdf)
@@ -1589,14 +1614,14 @@ File: img/other/ratio-exp-nodes-and-msets-on-prob.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/other/ratio-exp-nodes-and-msets-on-prob.pdf used o
 n input line 538.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
-)
-(./tex/s_experiments.tex [10 <./img/other/exp-nodes-on-probab.pdf> <./img/other
-/ratio-exp-nodes-and-msets-on-prob.pdf
+ [10 <./img/other/exp-nodes-on-probab.pdf> <./img/other/ratio-exp-nodes-and-mse
+ts-on-prob.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/other/ratio-exp-nodes-
 and-msets-on-prob.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
->] [11] <img/ex1/exp1-m1.pdf, id=324, 462.52798pt x 346.89601pt>
+>]) (./tex/s_experiments.tex [11]
+<img/ex1/exp1-m1.pdf, id=324, 462.52798pt x 346.89601pt>
 File: img/ex1/exp1-m1.pdf Graphic file (type pdf)
 
 <use img/ex1/exp1-m1.pdf>
@@ -1635,13 +1660,7 @@ Overfull \hbox (1.45218pt too wide) in paragraph at lines 158--164
 and 350 for \T1/cmr/m/sc/10 (-20) super-
  []
 
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
-
-
-Underfull \vbox (badness 5388) has occurred while \output is active []
-
- [12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
+[12 <./img/ex1/exp1-m1.pdf> <./img/ex1/exp1-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex1/exp1-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1685,7 +1704,10 @@ Overfull \hbox (5.42299pt too wide) in paragraph at lines 250--259
 []$ \T1/cmr/m/n/10 (-20) of the en-tire multiset-trie and from $[]$
  []
 
-[13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
+
+Underfull \vbox (badness 5359) has occurred while \output is active []
+
+ [13 <./img/ex2/exp2-m1.pdf> <./img/ex2/exp2-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1693,33 +1715,30 @@ inclusion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m3.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
-> <./img/ex2/exp2-m4.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex2/exp2-m4.pdf): PDF 
-inclusion: multiple pdfs with page group included in a single page
 >]
 Overfull \hbox (3.55487pt too wide) in paragraph at lines 271--281
 []\T1/cmr/m/n/10 (-20) The func-tions \T1/cmr/m/sc/10 (-20) get-All-Sub-msets \
 T1/cmr/m/n/10 (-20) and \T1/cmr/m/sc/10 (-20) get-All-Super-
  []
 
-<img/ex4/exp4-m1.pdf, id=701, 462.52798pt x 346.89601pt>
+<img/ex4/exp4-m1.pdf, id=659, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m1.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m1.pdf>
 Package pdftex.def Info: img/ex4/exp4-m1.pdf used on input line 343.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-<img/ex4/exp4-m2.pdf, id=702, 462.52798pt x 346.89601pt>
+<img/ex4/exp4-m2.pdf, id=660, 462.52798pt x 346.89601pt>
 File: img/ex4/exp4-m2.pdf Graphic file (type pdf)
 
 <use img/ex4/exp4-m2.pdf>
 Package pdftex.def Info: img/ex4/exp4-m2.pdf used on input line 350.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
+ [14 <./img/ex2/exp2-m4.pdf> <./img/ex4/exp4-m1.pdf
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14 <./img/ex4/exp4-m1.pdf> <./img/ex4/exp4-m2.pdf
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m1.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+> <./img/ex4/exp4-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex4/exp4-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
@@ -1737,35 +1756,31 @@ File: img/ex3/exp3-m2.pdf Graphic file (type pdf)
 Package pdftex.def Info: img/ex3/exp3-m2.pdf used on input line 393.
 (pdftex.def)             Requested size: 197.99698pt x 148.50072pt.
 
-Underfull \vbox (badness 6348) has occurred while \output is active []
-
-
 Overfull \hbox (1.38914pt too wide) in paragraph at lines 412--417
 []\T1/cmr/m/n/10 (-20) According to the de-sign of the data struc-ture multiset
 -
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [15 <./img/ex3/exp3-m1.pdf> <./img/ex3/exp3-m2.pdf
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./img/ex3/exp3-m2.pdf): PDF 
 inclusion: multiple pdfs with page group included in a single page
 >]
+Underfull \vbox (badness 1127) has occurred while \output is active []
+
+
 Overfull \hbox (9.24165pt too wide) in paragraph at lines 546--547
 []\T1/cmr/m/n/10 (-20) Implementations of the sub-multiset and super-multiset
  []
 
-) (./tex/s_relwork.tex [16]) (./tex/s_conclusions.tex
+) (./tex/s_relwork.tex [16] [17]) (./tex/s_conclusions.tex
 
-LaTeX Warning: Hyper reference `ss:exp3' on page 17 undefined on input line 10.
+LaTeX Warning: Hyper reference `ss:exp3' on page 18 undefined on input line 10.
 
 
-[17]) (./article.bbl
+) (./article.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
@@ -1849,11 +1864,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
 (\end occurred when \ifx on line 74 was incomplete)
 (\end occurred when \ifx on line 74 was incomplete) 
 Here is how much of TeX's memory you used:
- 29814 strings out of 492995
- 586470 string characters out of 6132704
- 644919 words of memory out of 5000000
- 32547 multiletter control sequences out of 15000+600000
- 36060 words of font info for 190 fonts, out of 8000000 for 9000
+ 29817 strings out of 492995
+ 586521 string characters out of 6132704
+ 643918 words of memory out of 5000000
+ 32552 multiletter control sequences out of 15000+600000
+ 35941 words of font info for 189 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  62i,14n,72p,10380b,1206s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/tex
@@ -1887,7 +1902,7 @@ cc1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb>
-Output written on article.pdf (19 pages, 756227 bytes).
+Output written on article.pdf (19 pages, 757698 bytes).
 PDF statistics:
  1052 PDF objects out of 1200 (max. 8388607)
  503 compressed objects within 6 object streams
