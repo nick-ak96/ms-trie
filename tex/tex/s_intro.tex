@@ -2,7 +2,7 @@
 %
 % 1st part: general intro into problem
 %
-A multiset is a data structure that represents a collection of elements. It generalizes a set data structure by allowing duplicate elements in a collection. Multisets appear in a wide variety of domains and applications. The index structures for storing sets of multisets were studied in the area of object-relational database systems to efficiently store, compress and query multiset-valued attributes \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. Furthermore, the need to efficiently store and query the multisets appears also in the information retrieval \cite{manningBook}, the data mining \cite{interestingSets}, and in the area of expert systems \cite{reteAlgorithm}. 
+A multiset is a data structure that represents a collection of elements. It generalizes a set data structure by allowing duplicate elements in a collection. Multisets appear in a wide variety of domains and applications. The index structures for storing sets of multisets were studied in the area of object-relational database systems to efficiently store, compress and query multiset-valued attributes \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. Furthermore, the need to efficiently store and query the multisets appears also in the information retrieval \cite{manning2008introduction,baeza1999modern}, the data mining \cite{interestingSets}, and in the area of expert systems \cite{reteAlgorithm}. 
 %
 % problem definition
 
@@ -10,7 +10,7 @@ In this paper, we address the problems of storing, indexing and querying the set
 
 Existent indexes for storing a set of multisets are rooted in the search trees \cite{rivestBook}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
 
-The existing solutions to the implementation of the containment queries include the inverted index \cite{manningBook}, signature tree \cite{} or B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
+The existing solutions to the implementation of the containment queries include the inverted index \cite{zobel1992efficient,zobel1998inverted,broder2006indexing}, the signature tree \cite{tousidou2002sigstruc,yangjun2005stree,zobel1998inverted} or, the B+ tree~\cite{Helmer2003,?}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
 
 % ----------------------------------------------------------------------------------------------------------------------------------------
 %
