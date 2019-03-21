@@ -33,36 +33,27 @@ A multiset-trie is also a kind of search tree. Similarly to a trie, it uses comm
 %--------------------------------------------------------------------------------------------------------------------------------------------
 %
 % 3rd part: contributions
-The contributions of this paper are:
-\begin{itemize}
-\item A novel data structure multiset-trie which can store a set of multisets using common prefixes and provide fast containment queries. 
-\item A mathematical model of a general case multiset-trie that analyses its space complexity, an estimation of a sub-tree size traversed by a containment query and therefore gives insights on containment query time complexity.
-\item Empirical results of multiset-trie performance depending on a multiset space parameterization.
-\item A comparative study between an inverted index and multiset-trie where the later outperforms its competitor by up to 4 orders of magnitude in the time consumed by both equality and containment queries.
-\item Experimental result that shows an influence of ordering in multisets on their storage and processing.
-\end{itemize}
+The main contribution of this paper is a novel data structure multiset-trie for storing and querying a set of multisets that provides efficient multiset containment operations. Furthermore, the contributions of this work are thorough mathematical and empirical analyses of the proposed data structure multiset-trie. 
 %
-
+A mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and, therefore, give an insight into the time complexity of containment queries.  In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the time complexity space. 
+%
+Finally, a comparative study between the inverted index and the multiset-trie shows that the multiset-trie outperforms the inverted index by 4 levels of magnitude in the time consumed by both equality and containment queries.
+%
+%Experimental result that shows an influence of ordering in multisets on their storage and processing.
+%
+%
 % --------------------------------------------------------------------------------------------------------------------------------------------
 %
 % 4th part: paper organization
 
-In the following Section~\ref{c:description} we present the organization of 
-multiset-trie data structure in detail.
+(? not finshed ... ?)
+The paper is organized as follows. In the following Section~\ref{c:description}, we present the multiset-trie data structure in detail.
 %
-Next, in Section~\ref{c:operations} we present operations that multiset-trie currently 
-supports. This includes multiset containment and the basic search tree functions. 
-The algorithms in pseudo code are presented as well. 
+Section~\ref{c:operations} presents the operations of the multiset-trie. This includes multiset containment and the basic search tree functions. The algorithms in pseudo code are presented as well. 
 %
-The description of multiset-trie functions and procedures is followed by the 
-mathematical analysis of their complexity in Section~\ref{c:analysis}. 
-The main assumption is that multisets are constructed uniformly at random 
-with bounded cardinality. By using probabilistic tools we describe time complexity of 
-the algorithms and space complexity of the structure.
+The description of multiset-trie functions and procedures is followed by the mathematical analysis of their complexity in Section~\ref{c:analysis}. The main assumption is that multisets are constructed uniformly at random with bounded cardinality. By using probabilistic tools we describe time complexity of the algorithms and space complexity of the structure.
 %
-Further, in Section~\ref{c:experiments} we present an empirical study of the 
-multiset-trie. Synthetic and real-world data sets are used in experiments to test the performance 
-of the data structure. The experiments also highlight the methods for optimizing a multiset-trie.
+Further, in Section~\ref{c:experiments} we present an empirical study of the multiset-trie. Synthetic and real-world data sets are used in experiments to test the performance of the data structure. The experiments also highlight the methods for optimizing a multiset-trie.
 %
 The related work is reviewed in Section~\ref{c:relwork}. 
 %
