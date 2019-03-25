@@ -1,1 +1,7 @@
 .DS_Store
+tex/*.aux
+tex/*.bbl
+tex/*.blg
+tex/*.log
+tex/*.pdf
+tex/*.synctex.gz
