@@ -10,7 +10,7 @@ In this paper, we address the problems of storing, indexing and querying the set
 
 Existent indexes for storing a set of multisets are rooted in the search trees \cite{rivestBook}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
 
-The existing solutions to the implementation of the containment queries include the inverted index \cite{zobel1992efficient,zobel1998inverted,broder2006indexing}, the signature tree \cite{tousidou2002sigstruc,yangjun2005stree,zobel1998inverted} or, the B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up for elements of a multiset implying that containment operations are still element-wise. (? Is it possible to state more precisely the drawbacks of these solutions? ?) 
+The existing solutions to the implementation of the containment queries include the inverted index \cite{zobel1992efficient,zobel1998inverted,broder2006indexing}, the signature tree \cite{tousidou2002sigstruc,yangjun2005stree,zobel1998inverted} or, the B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up, where a key is an element of a multiset and a value is a corresponding multiset implying that containment operations require additional processing of partial results such as intersection or union.
 
 % ----------------------------------------------------------------------------------------------------------------------------------------
 %

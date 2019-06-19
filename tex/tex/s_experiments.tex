@@ -52,7 +52,7 @@ levels in multiset-trie. It is also true, that $\phi$ defines the ordering in mu
 % anouncement of the experiments
 In the next sections we will present the behavior of the multiset-trie data 
 structure depending on the selected parameters as well as the comparative 
-benchmark of the multiset-trie against B+ tree implementation of inverted index. 
+benchmark of the multiset-trie against B-tree implementation of inverted index. 
 % outline of the experiment section
 We start with experiments that are performed on an artificially generated data in 
 order to give a general picture of the multiset-trie performance. In the 
@@ -79,7 +79,7 @@ different mappings $\phi.$ It also shows the usability of the multiset-trie in t
 of real data demonstrating the high performance of search queries.
 %
 After all the experiments we present an empirical comparison of multiset-trie 
-data structure with B+ tree based inverted index. We use inverted index 
+data structure with B-tree based inverted index. We use inverted index 
 to store and retrieve multisets in the same way as it is described in the paper by 
 Helmer and Moerkotte~\cite{Helmer2003} for sets. In the comparison we use 
 three types of queries exact, submultiset and supermultiset retrieval.
@@ -427,10 +427,10 @@ they retrieve all sub/supermultisets. This means that the number of visited
 nodes will not be changed as $\phi$ varies.
 
 \subsection{Experiment 5} \label{s:exp5}
-In this experiment, we demonstrate the performance of multiset-trie data structure compared to the inverted index based on the B+~tree. Both data structures are implemented in the programming language \CC, providing in this way an experimental setup for a fair comparison \cite{akulich2019mstrie}.
+In this experiment, we demonstrate the performance of multiset-trie data structure compared to the inverted index based on the B-tree. Both data structures are implemented in the programming language \CC, providing in this way an experimental setup for a fair comparison \cite{akulich2019mstrie}.
 
 %((Brief description of the implementation of the inverted files?))
-The inverted index is implemented using an idea from~\cite{Helmer2003}. An inverted index structure consist of two parts: a dictionary and postings. In our case a dictionary is implemented as an in-memory B+~tree where keys are all distinct values from a domain represented by a set $\Sigma.$ The postings are represented by lists of multisets that contain a particular element from $\Sigma.$ Each list item in postings contains a cardinality of a multiset, which speeds up the containment queries.
+The inverted index is implemented using an idea from~\cite{Helmer2003}. An inverted index structure consist of two parts: a dictionary and postings. In our case a dictionary is implemented as an in-memory B-tree where keys are all distinct values from a domain represented by a set $\Sigma.$ The postings are represented by lists of multisets that contain a particular element from $\Sigma.$ Each list item in postings contains a cardinality of a multiset, which speeds up the containment queries.
 
 The experiment uses the input data for the construction of the given data structure and the test data for the execution of the operations on the given data structure. The input data comprises a set of randomly generated multisets used for the construction of a data structure. The test data includes the set of multisets together with the operations that are evaluated. The input and test data were generated with respect to parameters $\sigma$ and $n$ as presented in Table~\ref{t:benchmark}.
 
