@@ -1,57 +1,20 @@
 \section{Conclusions and future work} \label{c:conclusions}
-[Will be rewritten]
+
 %
 % Experiments conclusions
 %
-One of the conclusions of studying the multiset-trie both theoretically and 
-empirically is that our data structure is input sensitive. Input sensitivity implies 
-a non consistent performance on different input data. However, our argument 
-that the performance can be optimized by pre-processing the input data 
-is confirmed in the Experiment~\hyperref[ss:exp3]{4}. 
-Pre-processing determines the optimal encoding for input data and ensures the 
-best performance of the multiset-trie on particular input data. In case of storing 
-words in the multiset-trie, the search queries can be always optimized based on 
-the frequencies of letters in a specific language. We also see from 
-Experiments~\hyperref[s:exp1]{1} and~\hyperref[s:exp2]{2} that dependence of 
-the multiset-trie performance on the density is not a linear function. Yet the function 
-is continuous and the point of inflection is unique on the whole domain as it is shown 
-in Experiment~\hyperref[s:exp3]{3}. This allows us to predict whether multiset-trie 
-can be used for some particular application, serving a high performance. 
-%
+One of the conclusions of studying the multiset-trie both theoretically and empirically is that our data structure is input sensitive. Input sensitivity implies a non-consistent performance on different input data. However, our argument that the performance can be optimized by pre-processing the input data is confirmed in the Experiment~\hyperref[ss:exp3]{4}. Pre-processing determines the optimal encoding for input data and ensures the best performance of the multiset-trie on particular input data. For example, in the case of storing words in the multiset-trie, the search queries can always be optimized based on the frequencies of letters in a specific language. We also see from Experiments~\hyperref[s:exp1]{1} and~\hyperref[s:exp2]{2} that dependence of the multiset-trie performance on the density is not a linear function. Yet the function is continuous, and the point of inflection is unique on the whole domain as it is shown in Experiment~\hyperref[s:exp3]{3}. This allows us to predict whether multiset-trie can be used for some particular application, serving a high performance. 
 
+%
 % Mathematical analysis conclusions
 %
-The mathematical analysis of the space complexity shows that multiset-trie requires 
-only $O(|M|)$ space, which is the minimal possible space that is required by any 
-data structure for storage of $|M|$ objects. As for the running time complexity of the 
-algorithms the basic tree functions such as \textsc{insert}, \textsc{search} and 
-\textsc{delete} all have a constant complexity once the multiset-trie is defined. 
-The "getAll" multiset containment functions have worst case running time complexity of 
-$O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. 
-The "existence" multiset containment functions have the worst case running time 
-complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of 
-the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
+The mathematical analysis of the space complexity shows that multiset-trie requires only $O(|M|)$ space, which is the minimal possible space required by any data structure for storage of $|M|$ objects. As for the running time complexity of algorithms, the basic tree functions such as \textsc{insert}, \textsc{search}, and \textsc{delete} all have a constant complexity once the multiset-trie is defined. The "getAll" multiset containment functions have worst-case running time complexity of $O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. The "existence" multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
 
-It can also be concluded that the multiset-trie is an input sensitive data structure, 
-because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of 
-multisets in $M.$ Our mathematical model assumes that multisets $m$ in $M$ 
-are distributed uniformly. However, in a real world models such an assumption 
-is not true in a lot of the cases. Specifically, the probability $P(m\in M)$ may vary 
-dramatically and can be even equal to $0.$ For example, if words are mapped to 
-multisets, then the sample space contains very large multisets. Nonetheless, most of 
-them will have zero probability to appear in $M$, because a word that would 
-correspond to such a multiset simply does not exist.
-%
+The multiset-trie is an input sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$ Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly. However, in real-world models, such an assumption is not true in a lot of cases. Specifically, the probability $P(m\in M)$ may vary dramatically and can be even equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. Nonetheless, most of the words will have zero probability to appear in $M$, because a word that would correspond to such a multiset does not exist.%
 
 % Future work notes
 %
-The above results have opened even more interesting questions for the future research. 
-Further steps in our research will be to extend the functionality of the multiset-trie. 
-We are interested in more flexible multiset containment queries, where the types 
-of sub and supermultisets can be specified. As an example, the multiplicity of an 
-element in a multiset can be bounded in operations getAllSubmsets and 
-getAllSupermsets. Such functionality would allow more specific queries of multisets.
+%The above results have opened even more interesting questions for future research. 
+Further steps in our research will be to extend the functionality of the multiset-trie. We are interested in more flexible multiset containment queries where additional conditions constrain the sub and super-multisets. For example, the multiplicity of an element in a multiset can be bounded in operations getAllSubmsets and getAllSupermsets. Furthermore, the similarity search on multisets can be implemented by modifying the algorithms for searching the sub and super-multisets. 
 %
-The second line of research is to investigate the multiset-trie as an index data 
-structure in detail. It will be very interesting to study the comparison of the 
-multiset-trie with other existing index data structures.
+The second line of research is to investigate the multiset-trie as a database index data structure. A disk-based index data structure allows storing and managing a huge amount of multisets. The mapping from a multiset-trie, i.e., a $n$-ary search tree, to a block-based index can be easily defined because of the regularity of multiset-trie. It will be interesting to compare the multiset-trie with other existing disk-based index data structures.
