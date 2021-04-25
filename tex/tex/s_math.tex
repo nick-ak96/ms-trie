@@ -92,7 +92,7 @@ P(m\in M) = p, \quad \forall~m\in N.
 Let $\xi_1, \xi_2, \ldots, \xi_{\sigma+1}$ be random variables such that $\xi_i$
 represents the number of nodes in a multiset-trie on $i$-th level. For every node $j$ 
 on $i$-th level we assign a random variable $\xi_{ij}$ to be the number of its children, 
-such that $j\in[1,\xi_i].$ Then $\forall~i\in[1,\sigma]$ the following holds:
+such that $j\in[1,\xi_i].$ Then for every $i\in[1,\sigma]$ the following holds:
 %
 \begin{equation}\label{eq:sum_recursive}
 \xi_{i+1} = \sum_{j=1}^{\xi_i} \xi_{ij},
@@ -114,17 +114,17 @@ p_i=1-(1-p)^{n^{\sigma + 1 -i}}.
 \end{lemma}
 \begin{proof}
 Let $v$ be an arbitrary node in a multiset-trie on an arbitrary level $i.$ Consider
-the sub tree with the root $v$ and call it $v$-sub tree. Since the height of the
-multiset-trie is $\sigma + 1$ we can calculate the height of the $v$-sub tree.
-Taking in account that the root node has height 1, the height of the $v$-sub tree is
+the subtree with the root $v$ and call it $v$-subtree. Since the height of the
+multiset-trie is $\sigma + 1$ we can calculate the height of the $v$-subtree.
+Taking in account that the root node has height 1, the height of the $v$-subtree is
 %
 \[
 h_v = \sigma + 1 - i.
 \]
 %
 A node in a multiset-trie exists if at least one node exists on the leaf level of its
-sub tree, i.e. a node on the level $\sigma + 1$ that belongs to $v$-sub tree. The possible
-number of nodes on the leaf level of $v$-sub tree can be easily calculated knowing its height.
+subtree, i.e. a node on the level $\sigma + 1$ that belongs to $v$-subtree. The possible
+number of nodes on the leaf level of $v$-subtree can be easily calculated knowing its height.
 It is equal to
 %
 \[
@@ -132,7 +132,7 @@ n^{\sigma + 1 - i}.
 \]
 %
 A node at level $\sigma+1$ exists with probability $p,$ where $p = P(m\in M).$
-Thus, the probability that there are no nodes on leaf level in $v$-sub tree is
+Thus, the probability that there are no nodes on leaf level in $v$-subtree is
 %
 \[
 (1-p)^{n^{\sigma +1 - i}}.
@@ -143,7 +143,7 @@ The claim follows by taking the complement probability of the above result.
 %
 \end{proof}
 
-However, in order to determine the distribution of $\xi_{ij}$, one needs a lemma of a different type.
+However, in order to determine the distribution of $\xi_{ij}$, one needs a lemma of a different kind.
 
 \begin{lemma}\label{l:prob-children}
 Suppose that a node $v$ exists at level $1\leq i\leq\sigma$.
@@ -169,8 +169,8 @@ $k\in\{ 1,2,\ldots, n\}$ children. Let $X_0, X_1, \ldots, X_{n-1}$ be random
 variables, they are defined as follows:
 \[
 X_k = \begin{cases}
-0 & \textrm{child k of node $v$ does not exist} \\
-1 & \textrm{child k of node $v$ exists} \\
+0 & \textrm{child $k$ of node $v$ does not exist} \\
+1 & \textrm{child $k$ of node $v$ exists} \\
 \end{cases}
 \]
 As it was shown in previous Lemma~\ref{l:prob-children}, the distribution of 
@@ -207,10 +207,10 @@ a randomly generated multiset-trie as follows:
 %depends on the probability distribution function $P(m\in M).$
 %
 
-In order to evaluate~(\ref{eq:num_nodes}) we will use some of the tools from 
+In order to evaluate~(\cref{eq:num_nodes}) we will use some of the tools from 
 a Galton-Watson process, see Gardiner~\cite{gardiner1985stochastic} for 
 an introduction.
-Using the equations~(\ref{eq:sum_recursive}) and~(\ref{eq:generating_func}) we can 
+Using the equations~(\cref{eq:sum_recursive}) and~(\cref{eq:generating_func}) we can 
 derive the probability generating function for the random variable $\xi_{i+1}$ as 
 \begin{equation}\label{eq:g_rec}
 G_{\xi_{i+1}}(z) = G_{\xi_i}(G_i(z)).
@@ -220,7 +220,7 @@ Hence, the probability generating function for the random variable $\xi_1$ is
 \begin{equation}\label{eq:g_xi_one}
 G_{\xi_1}(z) = z^1 = z
 \end{equation}
-which is the initial condition for the recursive equation~(\ref{eq:g_rec}).
+which is the initial condition for the recursive equation~(\cref{eq:g_rec}).
 
 \begin{proposition}\label{prop:exp_rec}
 The expectation of the random variable $\xi_{i+1}$ can be expressed 
@@ -236,15 +236,15 @@ Using the following property of probability generating function
 G_X'(1^-) = \mathbb{E}(X)
 \end{equation}
 the expectation for the random variable $\xi_{i+1}$ can be derived in terms of 
-the equation~(\ref{eq:g_rec}).
+the equation~(\cref{eq:g_rec}).
 \begin{eqnarray}\label{eq:exp}
 \mathbb{E}(\xi_{i+1}) &=& G_{\xi_{i+1}}'(1^-) \nonumber \\
 &=& G_{\xi_i}'(G_i(1^-))G_i'(1^-).
 \end{eqnarray}
-According to~(\ref{eq:pdf}) and~(\ref{eq:generating_func}) the value of $G_i(z)$ at 
+According to~(\cref{eq:pdf}) and~(\cref{eq:generating_func}) the value of $G_i(z)$ at 
 $1$ is $1$ and the value of its derivative at $1$ is $\mathbb{E}(\mathcal{B}_0(n,p_{i+1})).$ 
 Substituting the values of $G_i(1^-)$ and $G_i'(1^-),$ and applying the 
-property~(\ref{eq:prop_exp-pgf}) we complete the proof.
+property~(\cref{eq:prop_exp-pgf}) we complete the proof.
 \hspace*{\fill}\qed
 \end{proof}
 %
@@ -265,7 +265,7 @@ of nodes on every level of $\mathcal{M},$ i.e. $\mathbb{E}(\xi_i)$ is defined as
 \end{equation}
 \end{theorem}
 \begin{proof}
-According to~(\ref{eq:g_xi_one}) the expected number of nodes on the first level is 1. \\
+According to~(\cref{eq:g_xi_one}) the expected number of nodes on the first level is 1. \\
 Using $\mathbb{E}(\xi_1) = 1$ and the result from Proposition~\ref{prop:exp_rec}
 we get
 \begin{eqnarray*}
@@ -345,9 +345,9 @@ from the set $M_2$ is equal to
 %
 \begin{proof}
 Using the results from Theorem~\ref{thm:exp_level} and Theorem~\ref{thm:exp_nodes} 
-we derive the formulas~(\ref{eq:nodes_sub_param}) and~(\ref{eq:nodes_super_param}) 
+we derive the formulas~(\cref{eq:nodes_sub_param}) and~(\cref{eq:nodes_super_param}) 
 by specifying the possible number of nodes on every level in the multiset-trie according 
-to the multiset $m.$ Note that the formula~(\ref{eq:nodes_level}) assumes that on every 
+to the multiset $m.$ Note that the formula~(\cref{eq:nodes_level}) assumes that on every 
 level but the first one there are $n$ possible nodes. Given submultiset or supermultiset 
 query and an input multiset $m$ the number of nodes that will be traversed on level $i$ is 
 defined by the number $k_{i-1}+1$ or $n-k_{i-1}-1$ for $i\geq 2.$ On level $i=1$ 
