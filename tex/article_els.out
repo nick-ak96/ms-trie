@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Contributions}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Paper organization}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Multiset-trie data structure}{}% 4
+\BOOKMARK [1][-]{section.3}{Multiset-trie operations}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Insert}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Search}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Delete}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.4}{Sub-multiset existence}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.5}{Super-multiset existence}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.6}{Get all sub-multisets and get all super-multisets}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Mathematical analysis of the structure}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Time complexity of the algorithms}{section.4}% 13
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Mathematical model}{subsection.4.1}% 14
+\BOOKMARK [3][-]{subsubsection.4.1.2}{GetAllSubmsets and GetAllSupermsets}{subsection.4.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.3}{SubmsetExistence and SupermsetExistence}{subsection.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Space complexity}{section.4}% 17
+\BOOKMARK [1][-]{section.5}{Experiments}{}% 18
+\BOOKMARK [2][-]{subsection.5.1}{Experiment 1}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.2}{Experiment 2}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.3}{Experiment 3}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.4}{Experiment 4}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.5}{Experiment 5}{section.5}% 23
+\BOOKMARK [1][-]{section.6}{Related work}{}% 24
+\BOOKMARK [2][-]{subsection.6.1}{Set-trie}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.2}{Inverted file}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.3}{Signature trees}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.4}{Multisets in relational databases}{section.6}% 28
+\BOOKMARK [1][-]{section.7}{Conclusions and future work}{}% 29
