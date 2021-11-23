@@ -139,7 +139,7 @@ Thus, the probability that there are no nodes on leaf level in $v$-subtree is
 \]
 %
 The claim follows by taking the complement probability of the above result. 
-\hspace*{\fill}\qed
+
 %
 \end{proof}
 
@@ -185,7 +185,7 @@ distribution:
 \]
 %
 which completes the proof.
-\hspace*{\fill}\qed
+
 \end{proof}
 %
 Knowing the probability density and probability generating functions of $\xi_{ij}$ 
@@ -245,7 +245,7 @@ According to~(\cref{eq:pdf}) and~(\cref{eq:generating_func}) the value of $G_i(z
 $1$ is $1$ and the value of its derivative at $1$ is $\mathbb{E}(\mathcal{B}_0(n,p_{i+1})).$ 
 Substituting the values of $G_i(1^-)$ and $G_i'(1^-),$ and applying the 
 property~(\cref{eq:prop_exp-pgf}) we complete the proof.
-\hspace*{\fill}\qed
+
 \end{proof}
 %
 From the Proposition~\ref{prop:exp_rec} above and Lemma~\ref{l:prob-children} we 
@@ -273,7 +273,7 @@ we get
 = \prod_{j=2}^{i} n \frac{1-(1-p)^{n^{\sigma +1-j}}}{1-(1-p)^{n^{\sigma + 2 -j}}} \\
 &=& n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}
 \end{eqnarray*}
-\hspace*{\fill}\qed
+
 \end{proof}
 
 Having derived the expected number of nodes on every level of multiset-trie, the
@@ -295,7 +295,7 @@ Using the results obtained from Theorem~\ref{thm:exp_level} we compute
 \mathbb{E}( | \mathcal{M} | ) &=& \mathbb{E}\left[ \sum_{i=1}^{\sigma+1} \xi_i \right] \\
 &=& \sum_{i=1}^{\sigma + 1} n^{i-1} \frac{1-(1-p)^{n^{\sigma + 1 -i}}}{1-(1-p)^{n^{\sigma}}} \\
 \end{eqnarray*}
-\hspace*{\fill}\qed
+
 \end{proof}
 
 With the expected number of nodes in a multiset-trie $\mathcal{M}$ obtained from 
@@ -354,7 +354,7 @@ defined by the number $k_{i-1}+1$ or $n-k_{i-1}-1$ for $i\geq 2.$ On level $i=1$
 there is only one root node in any multiset-trie $\mathcal{M},$ which always exists 
 if $M\neq\emptyset$ and is traversed for any type of query (submultiset and 
 supermultiset).
-\hspace*{\fill}\qed
+
 \end{proof}
 
 \subsubsection{GetAllSubmsets and GetAllSupermsets}\label{ss:getall}
@@ -518,6 +518,12 @@ level. The figure~\ref{f:exp-nodes} demonstrates the relation between the number
 of multisets stored and the number of nodes needed for storage, where parameters 
 $\sigma$ and $n$ are $26$ and $10,$ respectively.
 
+\begin{figure}[h!]
+\center
+\includegraphics[width=.4\textwidth, keepaspectratio]{exp-nodes-on-probab.pdf}
+\caption{$\mathbb{E}(|\mathcal{M}|)$ and $\mathbb{E}(|M|)$ on probability.}
+\label{f:exp-nodes}
+\end{figure}
 
 As we see on the figure~\ref{f:exp-nodes} the value of $|\mathcal{M}|$ is slightly 
 shifted with respect to the value of $|M|.$
@@ -527,14 +533,11 @@ $|M|.$ Figure~\ref{f:ratio-exp-msets} shows the ratio between the expected cardi
 of a multiset-trie $|\mathcal{M}|$ and the actual number of multisets stored $|M|$ for 
 parameters $n$ and $\sigma$ being $10$ and $26$ respectively.
 
-
 \begin{figure}[h!]
-	\center
-	
-\subcaptionbox{$\mathbb{E}(|\mathcal{M}|)$ and $\mathbb{E}(|M|)$ on probability.\label{f:exp-nodes}}{\includegraphics[width=.45\textwidth]{exp-nodes-on-probab.pdf}}
-\subcaptionbox{Ratio $\mathbb{E}(\frac{|\mathcal{M}|}{|M|})$ on $p.$
-\label{f:ratio-exp-msets}}{\includegraphics[width=.45\textwidth]{ratio-exp-nodes-and-msets-on-prob.pdf}}
-\caption{Interplay of $\mathbb{E}(|\mathcal{M}|)$ and $\mathbb{E}(|M|)$.}
+\center
+\includegraphics[width=.4\textwidth, keepaspectratio]{ratio-exp-nodes-and-msets-on-prob.pdf}
+\caption{Ratio $\mathbb{E}(\frac{|\mathcal{M}|}{|M|})$ on $p.$}
+\label{f:ratio-exp-msets}
 \end{figure}
 
 Note that analyzing the graph on figure~\ref{f:ratio-exp-msets} we can safely 

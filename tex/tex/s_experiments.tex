@@ -122,31 +122,21 @@ multiset-trie with respect to $|M|$ varies from~$\num{0.3e-3}$ to~$\num{9.5e-3}.
 
 
 \begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp1-m1.pdf}
-\caption{Experiment 1, submsetExistence function.}
-\label{fig:e1m1}
+	\center
+	\subcaptionbox{submsetExistence \label{fig:e1m1}}{\includegraphics[width=.45\textwidth]{exp1-m1.pdf}}
+	\subcaptionbox{supermsetExistence\label{fig:e1m2}}{\includegraphics[width=.45\textwidth]{exp1-m2.pdf}}
+	\caption{Existence functions of Experiment 1.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 \center
-\includegraphics[width=.4\textwidth]{exp1-m2.pdf}
-\caption{Experiment 1, supermsetExistence function.}
-\label{fig:e1m2}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp1-m3.pdf}
-\caption{Experiment 1, getAllSubmsets function.}
-\label{fig:e1m3}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp1-m4.pdf}
-\caption{Experiment 1, getAllSupermsets function.}
-\label{fig:e1m4}
+\subcaptionbox{getAllSubmsets
+\label{fig:e1m3}}{\includegraphics[width=.45\textwidth]{exp1-m3.pdf}
+}
+\subcaptionbox{getAllSupermsets
+\label{fig:e1m4}}{\includegraphics[width=.45\textwidth]{exp1-m4.pdf}
+}
+\caption{Exhaustive functions of Experiment 1.}
 \end{figure}
 
 The performance of the functions \textsc{submsetExistence} and 
@@ -211,32 +201,23 @@ in Experiment~\hyperref[s:exp1]{1}, because now we allow multisets to be stored
 in the data structure and according to the parameters $n$ and $\sigma$ the 
 cardinality of $N$ is $6^{25} = \num{2.84e19}.$
 
-\begin{figure}
+\begin{figure}[ht]
 \center
-\includegraphics[width=.4\textwidth]{exp2-m1.pdf}
-\caption{Experiment 2, submsetExistence function.}
-\label{fig:e2m1}
+
+\subcaptionbox{submsetExistence
+\label{fig:e2m1}}{\includegraphics[width=.45\textwidth]{exp2-m1.pdf}}
+\subcaptionbox{supermsetExistence
+\label{fig:e2m2}}{\includegraphics[width=.45\textwidth]{exp2-m2.pdf}}
+\caption{Existence functions in Experiment 2.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[ht]
 \center
-\includegraphics[width=.4\textwidth]{exp2-m2.pdf}
-\caption{Experiment 2, supermsetExistence function.}
-\label{fig:e2m2}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp2-m3.pdf}
-\caption{Experiment 2, getAllSubmsets function.}
-\label{fig:e2m3}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp2-m4.pdf}
-\caption{Experiment 2, getAllSupermsets function.}
-\label{fig:e2m4}
+\subcaptionbox{Experiment 2, getAllSubmsets function.
+\label{fig:e2m3}}{\includegraphics[width=.45\textwidth]{exp2-m3.pdf}}
+\subcaptionbox{Experiment 2, getAllSupermsets function.
+\label{fig:e2m4}}{\includegraphics[width=.45\textwidth]{exp2-m4.pdf}}
+\caption{Exhaustive functions in Experiment 2.}
 \end{figure}
 
 As we can see from the graphs on figures~\ref{fig:e2m1} and~\ref{fig:e2m2}, 
@@ -340,16 +321,11 @@ maximal for each value of particular density.
 
 \begin{figure}
 \center
-\includegraphics[width=.4\textwidth]{exp4-m1.pdf}
-\caption{Experiment 3, submsetExistence function.}
-\label{fig:e3m1}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp4-m2.pdf}
-\caption{Experiment 3, supermsetExistence function.}
-\label{fig:e3m2}
+\subcaptionbox{submsetExistence
+\label{fig:e3m1}}{\includegraphics[width=.45\textwidth]{exp4-m1.pdf}}
+\subcaptionbox{supermsetExistence
+\label{fig:e3m2}}{\includegraphics[width=.45\textwidth]{exp4-m2.pdf}}
+\caption{Exsitence functions in Experiment 3.}
 \end{figure}
 
 As we see on figures~\ref{fig:e3m1} and~\ref{fig:e3m2} both functions 
@@ -383,16 +359,11 @@ the multiplicity to be up to 10, because the dictionary contains such words.
 
 \begin{figure}
 \center
-\includegraphics[width=.4\textwidth]{exp3-m1.pdf}
-\caption{Experiment 4, submsetExistence function.}
-\label{fig:e4m1}
-\end{figure}
-
-\begin{figure}
-\center
-\includegraphics[width=.4\textwidth]{exp3-m2.pdf}
-\caption{Experiment 4, supermsetExistence function.}
-\label{fig:e4m2}
+\subcaptionbox{submsetExistence
+\label{fig:e4m1}}{\includegraphics[width=.45\textwidth]{exp3-m1.pdf}}
+\subcaptionbox{supermsetExistence
+\label{fig:e4m2}}{\includegraphics[width=.45\textwidth]{exp3-m2.pdf}}
+\caption{Existence functions in Experiment 4.}
 \end{figure}
 
 %\begin{figure}
