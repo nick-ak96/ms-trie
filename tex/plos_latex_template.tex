@@ -190,6 +190,7 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 
+\usepackage{amsthm}
 % for math enviroments
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -203,9 +204,18 @@
 %cref
 \usepackage[capitalise]{cleveref}
 
+\usepackage{siunitx}
+
+\usepackage{subcaption}
+% for math enviroments
+
 % graphics paths
 %\usepackage{graphicx}
 \graphicspath{{img/ex1/}{img/ex2/}{img/ex3/}{img/ex4/}{img/ex5/}{img/other/}{img/benchmark/}}
+
+% pretty C++
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+
 
 \begin{document}
 \vspace*{0.2in}
@@ -262,6 +272,9 @@ Riste Škrekovski\textsuperscript{2,3\Yinyang}
 \section*{Abstract}
 \input{tex/abstract}
 
+\newpage
+\tableofcontents
+
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLOS ONE authors please skip this step. 
@@ -269,9 +282,8 @@ Riste Škrekovski\textsuperscript{2,3\Yinyang}
 %\section*{Author summary}
 %Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
 
+\newpage
 \linenumbers
-
-
 % section 1
 \input{tex/s_intro}
 % section 2
@@ -281,26 +293,18 @@ Riste Škrekovski\textsuperscript{2,3\Yinyang}
 % section 4
 \input{tex/s_math-noqed}
 % section 5
-%\input{tex/s_experiments}
+\input{tex/s_experiments}
 % section 6
 \input{tex/s_relwork}
 % section 7
-%\input{tex/s_conclusions}
+\input{tex/s_conclusions}
 
-
-% Use "Eq" instead of "Equation" for equation citations.
-
-\section*{Acknowledgments}
-Cras egestas velit mauris, eu mollis turpis pellentesque sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam id pretium nisi. Sed ac quam id nisi malesuada congue. Sed interdum aliquet augue, at pellentesque quam rhoncus vitae.
 
 \nolinenumbers
 
 	
 \input{bibliography.bbl}
 	
-
-\newpage
-\tableofcontents
 
 
 

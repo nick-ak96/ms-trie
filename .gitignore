@@ -5,3 +5,12 @@ tex/*.blg
 tex/*.log
 tex/*.pdf
 tex/*.synctex.gz
+#cover.lyx#
+cover.lyx~
+*.lyx#
+cover.pdf
+*.out
+*.spl
+*.toc
+*.bcf
+*.xml
