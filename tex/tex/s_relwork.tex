@@ -1,12 +1,9 @@
 \section{Related work} \label{c:relwork}
 
 % intro to related work
-
 The data structure multiset-trie is related to the data structures and indexes designed to store and manage sets and multisets. We mainly focus on the related data structures and indexes that efficiently support the set and multiset containment queries. Firstly, we summarize our previous work done on the storage and retrieval of sets in Section \ref{rel-strie}. Next, we present in Section \ref{rel-invfile} the related work on the inverted files, i.e., the index structure that serves as a central data structure in the area of Information retrieval but also for storing sets and multisets in database management systems. The alternative to the inverted file is the signature tree that is presented in Section \ref{rel-signature}. Finally, we describe the related work in the area of the database management systems in Section \ref{rel-dbms}. We review the novel index structures used for the containment queries and the proposed containment join algorithms. 
 
-
 % Construction of multiset-trie
-
 
 \subsection{Set-trie\label{rel-strie}}
 % set-trie: 
@@ -21,24 +18,11 @@ Since we are storing sets where each element of the set can appear only once, an
 
 The data structure multiset-trie generalizes the set-trie allowing to store a set of multisets. When the multiset-trie is restricted to store a set of sets, the underlying data structure becomes a simple binary tree. Moreover, all the operations of the set-trie are also supported by the multiset-trie. The generalization comes with a small penalty in performance if we compare the multiset-trie with the set-trie in the performance of the set containment operations. The downside of such a generalization is that multiset-trie no longer supporting path compression that was obtained in set-trie. However, the design of multiset-trie provides storage of multisets with constant worst-case time complexity of the set containment operations.
 
-
 \subsection{Inverted file\label{rel-invfile}}
 % inverted index:
 % - performance study of set containment queries (sequential signature files, signature trees, extendible signature hashing, inverted files)
 % - performance comparison of multiset-trie to inverted index
 % - containment query issues of inverted index
-
-%%%
-%
-%The information retrieval (abbr. IR) area deals with storing and querying huge collections of text documents \cite{manning2008introduction,zobel1992efficient,zobel1998inverted,zobel2006inverted}. The most common model used for the representation of texts is the bag-of-words model of documents. A document is represented by a multiset of words that are preprocessed using techniques such as stemming, stopping, lemmatization, and others. After the words of the documents are preprocessed, the inverted file is constructed to support a range of query types from simple word matchings to boolean queries typical for the early IR systems. The inverted file is the most important part of an IR  system; it is an all-in-one data structure that serves as the structural framework for the representation of the data, and for querying the collections of texts.
-%
-%The inverted file is composed of two main parts, the dictionary, and the postings. In the baseline inverted file, the dictionary is used to identify, for the given words, the postings that are composed of a list of document identifiers. In addition, postings usually include a pointer to the location of the word inside the document and the frequencies of words in documents. The data structures commonly used in inverted files for the representation of a dictionary are hash tables, B-trees, and tries \cite{Terrovitis2006}. The dictionary is typically stored in the main memory to speed up the access to postings. Because of the huge amount of texts stored by the IR system, the postings have to be stored on disks \cite{zobel2006inverted}. 
-%
-%Inverted files support boolean queries. The conjunction of two or more one-word queries retrieves documents that include both words. The disjunction of one-word queries includes all documents listed for one-word queries. Finally, the negation of a one-word query includes all documents that do not include a given word. The boolean expressions can be arbitrarily combined by using operations conjunction, disjunction, and negation. The time complexity of query evaluation is $O(N)$, where $N$ is the number of documents in a collection. The efficiency of the query evaluation in practical IR systems depends on the careful implementation of the inverted file, and efficient methods for query evaluation. Let us present some optimizations of the baseline inverted file  \cite{zobel2006inverted}. 
-%
-%Since postings include the integer numbers solely, the space used for the representation of integer numbers can be significantly reduced by using variable-length encodings. The benefits of compression are a more efficient representation of data and faster access to postings. The disadvantages of compression are the need to decode the postings before they can be used in calculations. Next, the processing of the postings can be sped up by introducing additional structure in postings. A technique called \emph{skipping} organizes postings into chunks that are used to guide the search during query evaluation. Further, it is beneficial that the postings are \emph{sorted}, either by frequencies or by the actual impacts of words to the similarity measure. Only the most influential hits are interesting for further processing. Finally, the \emph{ordering of postings} that are linked to the words from a query is very important for query processing. While the efficient order of processing the postings is an optimization problem, the greedy approach that selects the shortest lists first works well \cite{Manning2008}. 
-%
-%%%
 
 The inverted file \cite{zobel1992efficient,zobel1998inverted,zobel2006inverted} is the most common data structure used to represent a collection of (multi)sets. It is composed of two parts: a dictionary and the postings. Originally, in the area of Information retrieval \cite{manning2008introduction}, the inverted files are used for searching documents that contain a given set of words. The dictionary maps each word to a list of document identifiers together with the locations of words in documents. The dictionary is most often implemented by a variant of a search tree such as, for example, a B+-tree. The postings are implemented as a list of positions that is stored on the disk because of the huge amount of documents usually indexed by the inverted file. Since we have a large number of postings for a given word, the postings are compressed. Furthermore, several possible optimizations exist in the representation and implementation of postings \cite{zobel2006inverted}, such as sorting of postings, a technique called skipping, and some others.
 
@@ -49,31 +33,8 @@ In our work we replicate the experiment with the inverted file and compare the p
 % Application areas of multiset-trie
 
 \subsection{Signature trees\label{rel-signature}}
-%%%
-%
-%An alternative to the inverted file was proposed in the area of Information retrieval by Deppisch et al.\ in the form of a dynamically balanced signature tree \cite{Deppisch1986}. Signatures are hash-coded binary words of a fixed length that represent abstractions of objects. Each object attribute value is mapped to a sequence of bits that are carefully defined to represent an abstraction of the attribute value. The bits representing attribute values are then glued together to form a signature. The main advantage of signatures used as the access paths in database systems is the possibility to express partial matching, subset queries, substring matching, and fuzzy match queries. 
-%
-%In the simplest instance, the \emph{signature file} stores the signatures of objects solely. The search is implemented by a sequential scan of the signature file retrieving the signatures having the bits in the query set to one \cite{Pfaltz1980}. The search can be improved by structuring the signatures hierarchically. The signatures are not just the keys; they have the additional information encoded into the signatures. We can decode from the signature the values of particular attributes of a stored object. Furthermore, given a set of signatures, they can be superimposed (computed using bitwise OR operation) to obtain a representative signature of a given set of signatures. The signatures are therefore used to guide the search. Given a superimposed signature and a signature that represents an object, we can determine just from the signatures if the superimposed signature can represent a given concrete signature. 
-%
-%The dynamically balanced \emph{signature tree}, S-tree, is from many aspects similar to B+-tree \cite{Deppisch1986}. S-tree is comprised of index pages and leaf pages. The index pages store lists of pairs composed of signatures and pointers to the corresponding subtrees. The signatures at the higher levels are constructed by superimposing the signatures from the corresponding subtrees. The leaf pages store pairs composed of signatures and, either objects or pointers to objects stored in some other file. S-tree is a dynamically balanced tree; each leaf page of S-tree has equal height. 
-%
-%The main operations of S-tree are \emph{retrieve}, \emph{insert}, \emph{update} and \emph{delete}. The operation \emph{retrieve} follows the paths from the root to a leaf node that is determined by relating the signature to the signatures from index pages. The operation \emph{insert} enters the new signature in a leaf page that is determined by the new signature. A leaf page is split into two pages if the number of signatures exceeds the maximal number of signatures. Splitting a page is implemented by grouping signatures by similarity into two pages. The operation \emph{delete}, on the other hand, deletes the signature from the leaf page and updates the affected signatures in index pages. When the number of signatures on the page is lower than the minimum, then two nodes are joined into a single node. The operation \emph{update} changes the value of a given signature and updates the affected signatures in index pages. 
-%
-%%%
 
 A dynamically balanced signature tree \cite{Deppisch1986,Pfaltz1980}, or S-tree, is an alternative data structure for the representation of multisets. An S-tree stores objects on the basis of their attributes represented in the form of signatures. A signature of an object is formed by the discretization of object attributes. Each attribute is discretized by mapping the attribute values to a sequence of bits. The bit sequences are the abstractions of the values of object attributes. They are glued together to form a signature of an object. The mappings from attribute values to sequences of bits are defined in such a way that allows superimposing a set of signatures by a single signature. Such a signature is often formed by using the operation OR. This property of signatures allows for the construction of a hierarchy of signatures that is utilized for the efficient search. The mutisets can be effectively represented by means of signatures, and the superposition operation can be implemented by the operation OR. The use of the signature tree for the containment operations was studied by Tousidou et al. \cite{tousidou2002sigstruc}. They show that S-tree that uses linear hash partitioning can be used to implement the containment operations efficiently. 
-
-%Another approach to the efficient implementation of the set containment queries is the use of signature-based structures. Tousidou et al. \cite{Tousidou2002} combine the advantages of two access paths: the linear hashing and the tree-structured methods. They show through the empirical analysis that S-tree that uses linear hash partitioning is an efficient data structure for the subset and superset queries. 
-
-
-%The results of the experiments presented in \cite{Helmer2003} show that the signature tree is outperformed by the inverted index for storing sets with low cardinality.
-
-%\subsection{Set containment joins}
-%[WIP]
-% set containment joins:
-% - review the paper: Set containment join revisited\cite{bouros2016set}
-% - multiset containment join
-
 
 \subsection{Multisets in relational databases\label{rel-dbms}}
 % multisets in RDBMS and ORDBMS:
@@ -81,95 +42,6 @@ A dynamically balanced signature tree \cite{Deppisch1986,Pfaltz1980}, or S-tree,
 % - multiset-valued attributes
 % - underlying datastructures for storage of set- and multiset-valued attributes
 
-%%%
-%
-%The sets are among the important data modeling constructs in the object-relational and object-oriented database systems. The \emph{set-valued} attributes are used for the representation of properties that range over the sets of atomic values or objects. The database community has shown significant interest in indexing structures that can be used as the access paths for querying set-valued attributes \cite{Terrovitis2006,Melnik2003,Helmer2003,Tousidou2002,Zhang2001}. \emph{Set containment queries} were studied in the frame of different index structures. 
-%
-%Zhang et al.\ \cite{Zhang2001} investigated two alternatives for the implementation of the set containment queries: a) a separate  IR engine based on the inverted lists, and, b) the native tables of the relational database management system. They have shown that while RDBMS are poorly suited for the set containment queries, they can outperform the inverted list engine in some conditions. Furthermore, they have shown that with some modifications, RDBMS can support containment queries much more efficiently. 
-%
-%Another approach to the efficient implementation of the set containment queries is the use of signature-based structures. Tousidou et al. \cite{Tousidou2002} combine the advantages of two access paths: the linear hashing and the tree-structured methods. They show through the empirical analysis that S-tree that uses linear hash partitioning is an efficient data structure for the subset and superset queries. 
-%
-%Helmer and Moercotte investigated four index structures for querying set-valued attributes of low cardinality \cite{Helmer2003}. All four index structures are based on conventional techniques: signatures and inverted files. The index structures that they compare are the sequential signature files, the signature trees, the extendable signature hashing, and B-tree based implementation of inverted lists. The inverted file index showed the best performance over the other data structures in most operations. 
-%
-%Terrovitis et al.\ \cite{Terrovitis2011} improve the performance of the inverted files by ordering the symbols (i.e., the set elements) from the vocabulary $\Sigma$. The sets are in an ordered inverted file (OIF) represented by using the ordered lists of elements. Therefore, the lexicographical ordering of sets can be defined. But then, the sets can be indexed in the same way as any other collection of key/value pairs by using B+ trees. The postings of an inverted file are stored in separate B+ trees that are merged in a single B+ tree index. The set containment operations are implemented efficiently by identifying the intervals of B+ index that are mapped to a range of disk blocks containing the candidate results. There are similarities between the OIF and the set-trie. The most evident similarity is in the ordering of the elements of sets. However, there are differences in the use of the ordering. A set-trie uses the ordering of sets for the space-efficient representation of the sets of sets. Further, the ordering of sets is in a set-trie employed for reducing the search space to a sub-tree of a set-trie. The search space is similarly reduced in the OIF. The difference is in the way a sub-tree of a given search tree (a set-trie, or an OIF B+ tree) is defined for a given query.
-%
-%A number of join algorithms based on set containment operations are proposed \cite{Ramasamy2000,Melnik2003,Jampani2005,Luo2015}. The partitioning set join \cite{Ramasamy2000} relies on the signature-based representation of the sets. The sets are abstracted by means of signatures to provide fast set comparison operations. The sets are converted to signatures by converting the set elements into the bits of the signatures using the modulo function. The partitioning set join \cite{Ramasamy2000} splits records of the input relations by using the values of the given set-valued attributes. In addition, partitioning eliminates unnecessary comparisons between signatures. The partitioning set join algorithm is further improved to handle efficiently large sets as well as to optimize the partitioning phase of the algorithm by the adaptive design of monotonic hash functions for particular relations \cite{Melnik2003}. 
-%
-%Finally, Jampani and Pudi propose the use of a prefix tree together with an inverted index for the computation of the set-based joins of two relations \cite{Jampani2005}. The proposed set-based joins are referred to as PRETTI joins. Set containment join of the table $R$ with the table $S$ is computed by constructing a prefix tree for the sets from $R$ and an inverted index for the sets from $S$. Starting with the root of the prefix tree constructed for $R$, the algorithm for the set containment join traverses the prefix tree in depth-first order. In each node $n$ of the prefix tree, the list of rids of the records from $S$ that contain a given set represented by $n$ is computed. This can be done recursively by intersecting rids from $S$, computed previously for a common prefix, with the rids of records from $S$ containing $n$. The algorithm is efficient since a single intersection of two lists is required to be computed to enumerate matching tuple pairs from $S$ for a given set from $R$. Besides the algorithm for the set containment join, the paper proposes the algorithms for the set overlap join and the set equality join. The PRETTI set-based join algorithms proposed in \cite{Jampani2005} are further improved by Luo et al. \cite{Luo2015} by using the Patricia trie instead of the prefix tree. The empirical results show that their PRETTI+ algorithm outperforms the state-of-the-art set-based joins by an order of magnitude. 
-%
-%%%
-
 The index structures for the efficient implementation of the (multi)set containment queries were studied in the frame of the relational DBMS as well as the object-relational DBMS where we can use multivalued attributes including sets, multisets (bags), and lists. Zhang et al.\ \cite{Zhang2001} compared the performance of the containment queries implemented in a standard relational DBMS (abbr. RDBMS) to an Information retrieval engine. The results show that, in general, the IR engine performs better than a RDBMS on containment queries. They have identified the problems that reason for the poor performance of the containment operations in a RDBMS and showed that with some modifications, a RDBMS could perform this class of queries more efficiently. 
 
 The joins in an object-relational DBMS can be defined by means of the containment operations. A number of \emph{containment join} methods have been proposed \cite{Ramasamy2000,Melnik2003,Jampani2005,Luo2015}. Ramasamy et al. propose the use of the partitioning set join that relies on the representation of sets by using signatures \cite{Ramasamy2000}. The signature-based representation allows efficient implementation of the set comparison operations. The partitioning set join was further improved by Melnik at al. \cite{Melnik2003} to handle large sets and to speed-up the partitioning phase of the algorithm. Further, Jampani et al. introduce the PRETTI join algorithm that combines an inverted file with a prefix tree for the efficient implementation of the containment joins. The algorithm for $R\bowtie T$ recursively computes record identifiers from $T$ while traversing a prefix tree storing the sets from $R$. The algorithm uses a single intersection of two lists to enumerate the matching pairs of rid-s. The PRETTI algorithm was improved by Luo at al. \cite{Luo2015} by replacing the prefix tree with the Patricia tree. 
-
-%\subsection{Application of multiset-trie}
-%[WIP]
-% application of multiset-trie
-% - indexing of multisets
-% - containment queries
-% - multiset containment join
-% - information retrieval
-
-
-
-
-
-
-
-
-%
-% Set theory, multiest theory, bag-of-words model
-%\subsection{Multiset}
-%Multiset is a widely used data structure in different areas of mathematics, physics 
-%and computer science \cite{singh2007overview}. The theory of multisets is based 
-%entirely on the theory of sets. However, classical mathematics does not deal with 
-%multisets directly. Instead, one can define a multiset to be a \emph{family} of sets 
-%or the functions on ordered pairs, where the members of a pair are an element and its 
-%multiplicity. This means that mathematically the concepts of set such as cardinality, 
-%set-containment operation, power set, equivalence classes and others are well defined 
-%for multisets in terms of sets \cite{blizard1988multiset}. 
-%
-%The concept of a multiset can also be referred to the \emph{bag-of-words model}. 
-%This model takes its origin from a linguistic context studied by Harris~\cite{harris1954distributional}. 
-%According to the bag-of-words model, text can be represented as a bag (multiset) 
-%of words, where an element is a word and the number of its occurrences in the 
-%text is multiplicity. A bag of words does not keep track of grammar and ordering 
-%of words. 
-
-% Information retrieval
-%\subsection{Information retrieval}
-%\emph{Information retrieval (IR)} refers to a problem of finding material of an 
-%unstructured nature that satisfies an information need~\cite{manning2008introduction}. 
-%Usually, one is searching for a specific documents in a significantly large text 
-%documents database. The size of a database makes the search a time consuming 
-%operation. In order to resolve the issue IR systems pre-process data and create 
-%indexes for future use in search operation. 
-%
-%The bag-of-words model is widely used in IR. In particular, such a representation of 
-%text documents is used in database indexes when a full text search of a database 
-%is required. The full-text search problem refers to indexing techniques for full-text 
-%databases. The most efficient index nowadays uses the concept of an inverted index 
-%\cite{zobel1992efficient}. 
-%
-%The proposed data structure multiset-trie can be used as an alternative implementation 
-%of the search structure of an inverted index. It represents words as multisets and 
-%stores them into data structure. The query processing is achieved using boolean 
-%retrieval model \cite{manning2008introduction} and multiset containment operations. 
-%Multiset containment operations of the multiset-trie implement the nearest neighbor 
-%search queries which retrieve not only exact but also the most relevant results 
-%to a user. 
-
-%\subsection{Generalized search tree}
-%The properties and operations of the multiset-trie makes it a competitor to the 
-%most efficient implementation of a search tree the \emph{Generalized Search Tree 
-%(GiST)}~\cite{broder2006indexing,hellerstein1995generalized,kornacker1999high} 
-%that is used in inverted index. GiST is a very flexible data structure that can be 
-%customized in order to behave like B+-tree, R-tree or RD-tree. It also provides 
-%support for an extensible set of queries and data types that B+-tree, R-tree or RD-tree 
-%do not support originally. GiST supports all the basic search tree operations such as 
-%insert, delete and search, and in addition provides such extensions as the 
-%nearest-neighbor search and multiset containment operations. The extensions 
-%provided by GiST are native in the multiset-trie. The multiset-trie also has a fixed 
-%height while GiST is a self-balanced tree and has to use additional methods in 
-%order to preserve its balance. 
