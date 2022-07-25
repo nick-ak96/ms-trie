@@ -6,34 +6,33 @@ A multiset is a collection of elements where a particular element can have more 
 % motivation for the design
 Multisets appear in a wide variety of domains and applications \cite{savnik2021plos}. The index structures for storing sets of multisets were studied in the area of object-relational database systems to store, compress and query multiset-valued attributes efficiently \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. The need to efficiently manage multisets also appears in the information retrieval \cite{zobel1992efficient,zobel2006inverted,manning2008introduction} where texts are represented as multisets. In data mining, sets are often used to represent and efficiently search hypotheses in the knowledge discovery process \cite{mannila1997,flach1999aicom}. In the area of expert systems, multisets are used for the representation and querying of the preconditions of rules \cite{forgy1982}. Finally, in recent internet applications, efficient representation, and search of multisets (such as user requests and object features) have become essential \cite{bayardo2007simlar,xiao2011tods,wang2017vldb} for data cleaning, information integration, community mining, and entity resolution. 
 
-%\subsubsection{Problem definition.}
+%\medskip\noindent\textbf{Problem definition.}\;
 In this paper, we address the problems of storing, indexing, and querying the sets of multisets. In particular, we deal with the design of an index data structure that provides an efficient implementation of the multiset containment queries. Let $S$ be an index storing a set of multisets. For a given input multiset $m$, a \emph{containment query} searches for either sub-multisets or super-multisets of $m$ in $S$. 
 
 Existent indexes for storing a set of multisets are rooted in the search trees \cite{corman2001}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
 
 The existing solutions to the implementation of the containment queries include the inverted index \cite{zobel1992efficient,zobel1998inverted,broder2006indexing}, the signature tree \cite{tousidou2002sigstruc,yangjun2005stree,zobel1998inverted} and, the B+ tree~\cite{Helmer2003}. These solutions provide a key-value look-up, where a key is an element of a multiset and a value is a corresponding multiset. The containment operations require additional processing of partial results such as intersection or union of multisets.
 
-% description of the proposed data structure
-%\subsubsection{Proposed index data structure.}
-To improve the efficiency of containment operations, we propose a data structure \emph{multiset-trie} that is designed for storing and processing a finite bounded set of multisets. It generalizes the \emph{set-trie} data structure proposed by Savnik~\cite{savnik2013index,savnik2021plos} that was designed for storage and processing of a finite bounded set of sets. 
+%\medskip\noindent\textbf{Proposed data structure.}\;
+To improve the efficiency of containment operations, we propose a data structure \emph{multiset-trie} that is designed for storing and processing a finite bounded set of multisets. A multiset-trie generalizes the \emph{set-trie} data structure proposed by Savnik~\cite{savnik2013index,savnik2021plos} that was designed for storage and processing of a finite bounded set of sets. 
 The set-trie is an extension of a trie data structure to provide fast search and retrieval of sets and to implement the set containment operations efficiently. The set-trie is also a form of the binomial tree \cite{corman2001}.
 
-Multiset-trie generalizes the set-trie data structure. It provides a space-efficient representation of a set of multisets and efficient multiset containment operations. As in the case of set-trie, the ordering of the elements from the alphabet is not important for the representation of multisets. The efficiency of the multiset containment operations is the consequence of selecting the specific ordering of multiset elements. The ordering can be exploited for the efficient search in a multiset-trie.  
+Multiset-trie provides a space-efficient representation of a set of multisets and efficient multiset containment operations. As in the case of set-trie, the ordering of the elements from the alphabet is not important for the representation of multisets. The efficiency of the multiset containment operations is the consequence of selecting the specific ordering of multiset elements. The ordering can be exploited for the efficient search in a multiset-trie.  
 
 % intro into mstrie
 The multiset-trie is an $n$-ary tree data structure. Each multiset in a multiset-trie is represented by a path from the root to a leaf node. Multiset elements are symbols from an alphabet. Each symbol from the alphabet is represented by a node at a certain level of the multiset-trie. The node stores the multiplicity of an element in a multiset.
 
 A multiset-trie is also a kind of search tree. Similar to a trie, it uses common prefixes for a shared data representation. Unlike the compact prefix tree \cite{Sedgewick:2011:ALG:2011916}, the multiset-trie does not support path compression. However, the absence of path compression makes the multiset-trie a perfectly height-balanced tree. Moreover, when multiset-trie is full, it forms a complete $n$-ary tree.
 
-%\subsubsection{Contributions.}
-The main contribution of this paper is a novel data structure \emph{multiset-trie} for storing and querying a set of multisets that provides efficient multiset containment operations. Furthermore, the contributions of this work are thorough mathematical and empirical analyses of the proposed data structure multiset-trie. 
+\medskip\noindent\textbf{Contributions.}\;
+The main contributions of this paper are as follows. First, a  multiset-trie is a novel data structure \emph{multiset-trie} for storing and querying a set of multisets that provides efficient multiset containment operations. Furthermore, the contributions of this work are thorough mathematical and empirical analyses of the proposed data structure multiset-trie. 
 
-A mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and give an insight into the time complexity of containment queries. 
+Second, a mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and give an insight into the time complexity of containment queries. 
 In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the time complexity space. 
 
 Finally, the mathematical as well as empirical analyses show an influence of ordering the elements of multisets on the efficiency of storing and processing multisets. We show that the ordering which is based on the frequencies of the multiset elements can speed-up the multiset containment queries by orders of magnitude.
 
-%\subsubsection{Paper organization.}
+\medskip\noindent\textbf{Paper organization.}\; 
 The paper is organized as follows. In the following Section~\ref{c:description}, we present the multiset-trie data structure in detail.
 Section~\ref{c:operations} presents the operations of the multiset-trie. These include the basic operations of search trees and multiset containment operations. The algorithms are presented in detail using the pseudo code. 
 
