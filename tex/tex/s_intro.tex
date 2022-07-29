@@ -25,7 +25,7 @@ The multiset-trie is an $n$-ary tree data structure. Each multiset in a multiset
 A multiset-trie is also a kind of search tree. Similar to a trie, it uses common prefixes for a shared data representation. Unlike the compact prefix tree \cite{Sedgewick:2011:ALG:2011916}, the multiset-trie does not support path compression. However, the absence of path compression makes the multiset-trie a perfectly height-balanced tree. Moreover, when multiset-trie is full, it forms a complete $n$-ary tree.
 
 \medskip\noindent\textbf{Contributions.}\;
-The main contributions of this paper are as follows. First, a  multiset-trie is a novel data structure for storing and querying a set of multisets that provides efficient multiset containment operations. Furthermore, the contributions of this work are thorough mathematical and empirical analyses of the proposed data structure multiset-trie. 
+The main contributions of this paper are as follows. First, a  multiset-trie is a novel data structure for storing and querying a set of multisets that provides efficient multiset containment operations. 
 
 Second, a mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and give an insight into the time complexity of containment queries. 
 In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the time complexity space. 

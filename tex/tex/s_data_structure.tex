@@ -67,12 +67,10 @@ on all levels represents an empty multiset or an empty set.
 Thus, any multiset $m$ that is composed of symbols from $\Sigma$ with maximum 
 multiplicity not greater than $n-1$ can be represented by a complete path in a multiset-trie.
 
-Let us have an example of a multiset-trie data structure. Let $\sigma = 2$ and 
-$\Sigma = I = \{ 1,2 \}$ respectively, so the mapping $\phi$ is an identity mapping. 
-Fix the degree of a node $n=3,$ so the maximal multiplicity of an element in 
-a multiset is $n-1=2.$ The Figure~\ref{fig:sketch} presents the multiset-trie that 
-contains multisets $\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}.$ 
-The \emph{Null} children are omitted on the figure.
+An example of a multiset-trie data structure with $\sigma = 2$ and 
+$\Sigma = I = \{ 1,2 \}$ (i.e. the mapping $\phi$ is an identity mapping) is shown on Figure~\ref{fig:sketch}. 
+On the figure, which stores elements of $\{\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}\}$, the degree of a node is set to be $n=3,$ so the maximal multiplicity of an element in 
+a multiset is $n-1=2.$  
 
 \begin{figure}[h!]
 \centering
@@ -103,7 +101,7 @@ level distance = 1.5cm]
 		\path (R-3-1		-| R-3-1) ++(5mm,0) node {$LL$};
 	\end{scope}			
 \end{tikzpicture}
-\caption{Example of multiset-trie structure.}
+\caption{Example of multiset-trie structure containing multisets multisets $\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}$. The \emph{Null} children are omitted.}
 \label{fig:sketch}
 \end{figure}
 
