@@ -1,25 +1,25 @@
 \section{Multiset-trie data structure} \label{c:description}
 %
-Let $\Sigma$ be a set of distinct symbols that define an alphabet, and let 
+Let $\Sigma$ be a set of distinct symbols that define an alphabet and let 
 $\sigma$ be the cardinality of $\Sigma.$ The \emph{multiset-trie} data structure 
 stores multisets that are composed of symbols from the alphabet $\Sigma.$ It 
-provides the basic tree data structure operations such as insert, delete, and 
-search, together with multiset containment and membership operations such as 
-sub-multiset and super-multiset that will be discussed in the next section 
-in greater detail.
+provides the basic tree data structure operations such as insert, delete and 
+search together with multiset containment and membership operations such as 
+submultiset and supermultiset that will be discussed in the next section 
+in greater details.
 
 Multiset ignores the ordering of its elements by definition, which allows us to 
 define a bijective mapping $\phi:\Sigma \rightarrow I,$ where $I$ is the set of 
-integers $\{ 1,2,3, \ldots, \sigma \}.$ In this way, we obtain indexing of 
+integers $\{ 1,2,3, \ldots, \sigma \}.$ In this way, we obtain an indexing of 
 elements from the alphabet $\Sigma,$ so we can work directly with integers 
-rather than with specific symbols from $\Sigma.$
+rather then with specific symbols from $\Sigma.$
 
-The multiset-trie is an $n$-ary tree-based data structure with the properties of 
-the trie. A node in multiset-trie always has degree $n,$ i.e., $n$ children. Some of 
+The multiset-trie is an $n$-ary tree based data structure with the properties of 
+trie. A node in multiset-trie always has degree $n,$ i.e. $n$ children. Some of 
 the children may be \emph{Null} (non-existing), but the number of \emph{Null} 
 children can be at most $n-1.$ All the children of a node, including the \emph{Null} 
 children, are labeled from left to right with labels $c_j,$ where $j\in \{ 0, 1, \ldots, n-1 \}.$ 
-Every pair of child nodes $u$ and $v$ that share the same parent node have different labels.
+Every two child nodes $u$ and $v$ that share the same parent node have different labels.
 
 %The multiset-trie is an $n$-ary tree based structure. A node can have a degree 
 %from $1$ to $n,$ depending on the number of existing children. The edges from 
@@ -31,7 +31,7 @@ Nodes that have equal height in a multiset-trie form a level. The height of a
 multiset-trie is always $\sigma+1$ if at least one multiset is in structure. 
 The height of the root node (the first level) is defined to be 1.
 %
-Levels in multiset-trie are enumerated by their height, i.e., a level $L_i$ has 
+Levels in multiset-trie are enumerated by their height, i.e. a level $L_i$ has 
 height $i.$ The connection between level height in a multiset-trie and symbols 
 from alphabet $\Sigma$ is defined as follows. A level $L_i,$ where 
 $i\in\{ 1,2,\ldots, \sigma \}$ represents a symbol $s\in\Sigma,$ such that 
@@ -55,7 +55,7 @@ a node $v.$ If a node $v$ has label $c_0,$ then the path $u\rightarrow v$
 represents a symbol with the multiplicity $0$ respectively i.e. an empty symbol.
 
 We define a \emph{complete path} to be the path of length $\sigma$ in a 
-multiset-trie with the endpoints at the root node (the 1st level) and $LL$. Thus, 
+multiset-trie with the end points at root node (the 1st level) and $LL$. Thus, 
 a multiset $m$ is inserted into a multiset-trie if and only if there exists a 
 complete path in a multiset-trie that corresponds to $m.$
 %

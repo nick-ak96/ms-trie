@@ -5,7 +5,7 @@ Let $\mathcal{M}$ be a multiset-trie and let $M$ be a set of multisets that are
 inserted into the multiset-trie $\mathcal{M}.$ We define a type \emph{Multiset} in 
 order to use it as a representation of a multiset. The type \emph{Multiset} is 
 an array $m$ of constant length $\sigma,$ where $i$-th cell represents the element 
-$\phi^{-1}(i)$ from $\Sigma$ with multiplicity $m[i].$ From now on, we 
+$\phi^{-1}(i)$ from $\Sigma$ with multiplicity $m[i].$ From now on we 
 agree that the first cell of an array has index 1. Let us have an example of a 
 \emph{Multiset} instance with $\sigma = 2:$
 %
@@ -53,7 +53,7 @@ where $1\leq i\leq \sigma.$
 %
 \end{enumerate}
 
-In the following subsections, we will present each operation of the multiset-trie 
+In the following subsections we will present each operation of the multiset-trie 
 data structure separately. 
 
 Firstly we would like to describe some notations that will be used. The 
@@ -71,7 +71,7 @@ only the cells from index $i$ until the last cell.
 \subsection{Insert} \label{s:insert}
 The procedure \textsc{insert}($\mathcal{M}$, $m$) inserts a new instance $m$ of 
 type Multiset into multiset-trie $\mathcal{M}$. If the complete path already 
-exists, then the procedure leaves the structure unchanged. Otherwise, it extends 
+exists, then procedure leaves the structure unchanged. Otherwise it extends 
 partially existing or creates a new complete path. The procedure does not return 
 any result. The pseudocode for procedure \textsc{insert} is presented in 
 Algorithm~\ref{alg:insert}.
@@ -120,13 +120,13 @@ function \textsc{search} is presented in Algorithm~\ref{alg:search}.
 \subsection{Delete} \label{s:delete}
 Function \textsc{delete}($\mathcal{M},$ $m$) searches for the complete path 
 that corresponds to $m$ in order to remove it. If the path can not be found, the 
-function immediately returns false. During the search, the function keeps track of the 
+function immediately returns false. During search, the function keeps track of the 
 number of children for every node. It marks the nodes that have more than one child 
-as \emph{parent nodes} and remembers the label of the child, which is a potential node 
+as \emph{parent nodes} and remembers the label of the child which is a potential node 
 where the sub-tree will be cut to remove the multiset. The parent node is needed to 
-perform a removal because the multiset-tire is an explicit data structure. When the search 
-is completed, the function removes the sub-tree of the last found parent node and 
-returns true. In such a way, after deletion, all the prefixes for other multisets are 
+perform a removal, because the multiset-tire is an explicit data structure. When search 
+is completed, the function removes the sub-tree of the last found parent node, and 
+returns true. In such a way after deletion all the prefixes for other multisets are 
 preserved in $\mathcal{M}$ and $m$ is removed. The function \textsc{delete} is 
 presented in Algorithm~\ref{alg:delete}.
 
@@ -168,15 +168,15 @@ $| x[i] - m[i] | \leq dev,$ where $1\leq i \leq \sigma.$
 The function starts with searching for an exact match $x=m$ in $\mathcal{M},$ 
 since $m\subseteq m$ by definition of sub-multiset inclusion. If an exact match is 
 not found in $\mathcal{M},$ the function uses multiset-trie to find the closest 
-(the largest) sub-multiset of $m$ in $\mathcal{M}$ by decreasing the multiplicity of 
+(the largest) sub-multiset of $m$ in $\mathcal{M}$ by decreasing multiplicity of 
 elements in $m.$ The parameter $dev$ is used to limit a maximal deviation of 
 multiplicity for a particular element in $x$ with respect to $m.$ 
-At every level, the function tries to proceed with the largest possible multiplicity of 
+At every level the function tries to proceed with the largest possible multiplicity of 
 an element that is provided by $m.$ However, when the function reaches some level 
-where it meets a \emph{Null} node and can not go further using the path provided by 
+where it meets a \emph{Null} node and can not go further using path provided by 
 $m,$ it decreases the multiplicity of an element 
 that corresponds to a current level with respect to the specified maximal deviation. 
-Thus, the function can decrease the multiplicity of an element or eventually skip it in 
+Thus, the function can decrease multiplicity of an element or eventually skip it in 
 order to find the closest $x\subseteq m.$ The function \textsc{submsetExistence} 
 is presented in Algorithm~\ref{alg:subexists}.
 
@@ -209,10 +209,10 @@ to the function \textsc{submsetExistence}, the function \textsc{supermsetExisten
 starts by searching for an exact match $x=m$ in $\mathcal{M}.$ If an exact 
 match is not found in $\mathcal{M},$ the function searches for the closest (the 
 smallest) super-multiset $x$ of $m$ in $\mathcal{M}$ by increasing multiplicity 
-of elements in $m.$ At every level, the function tries to proceed with the smallest 
-possible multiplicity of an element that is provided by $m.$ However, when the function 
+of elements in $m.$ At every level the function tries to proceed with the smallest 
+possible multiplicity of an element that is provided by $m.$ However, when function 
 reaches some level where it meets a \emph{Null} node and can not go further using 
-the path provided by $m,$ it increases the multiplicity of an element that corresponds to a 
+path provided by $m,$ it increases the multiplicity of an element that corresponds to a 
 current level according to the deviation parameter $dev.$ Thus, the function \textsc{supermsetExistence} 
 can increase multiplicity of an element up to $n-1,$ where $n$ is the degree of 
 a node in $\mathcal{M},$ to find the closest super-multiset $x\supseteq m$ in 
@@ -247,15 +247,15 @@ The algorithms for functions \textsc{getAllSubmsets} and
 \textsc{getAllSupermsets} are based entirely on algorithms for 
 \textsc{submsetExistence} and \textsc{supermsetExistence} functions that do not 
 terminate on the first existing sub/super-multiset, but store the results and 
-continue the procedure until all existing sub/super-multisets in $\mathcal{M}$ are 
+continue procedure until all existing sub/super-multisets in $\mathcal{M}$ are 
 found and stored. The functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} 
 are presented in Algorithm~\ref{alg:getallsub} and Algorithm~\ref{alg:getallsup} respectively.
 
-In order to record a multiset during multiset-trie traversal, we use the variable $x$ in the algorithms.
+In order to record a multiset during multiset-trie traversal we use the variable $x$ in the algorithms.
 It is an empty array of size $\sigma$ where we store multiplicities of elements at 
 each level as we traverse the tree. The variable $result$ is used as a container for storing 
 sub-multisets of $m$ found during traversal. Both variables $x$ and $result$ are presented 
-as global, however, they could be passed to the recursive function as parameters.
+as global, however they could be passed to the recursive function as parameters.
 
 \begin{algorithm}[h!]
 \caption{Function \textsc{getAllSubmsets}}
