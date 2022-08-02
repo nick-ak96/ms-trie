@@ -28,6 +28,7 @@ A multiset-trie is also a kind of search tree. Similar to a trie, it uses common
 The main contributions of this paper are as follows. First, a  multiset-trie is a novel data structure for storing and querying a set of multisets that provides efficient multiset containment operations. 
 
 Second, a mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and give an insight into the time complexity of containment queries. 
+
 In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the time complexity space. 
 
 Finally, the mathematical, as well as empirical analyses, show an influence of ordering the elements of multisets on the efficiency of storing and processing multisets. We show that the ordering, which is based on the frequencies of the multiset elements, can speed up the multiset containment queries by orders of magnitude.
@@ -40,4 +41,4 @@ The description of multiset-trie operations is followed by the mathematical anal
 
 In Section~\ref{c:experiments} we present an empirical study of the multiset-trie. Synthetic and real-world data sets are used in experiments that are designed to study the performance of multiset containment operations. The experiments highlight the methods for optimizing a multiset-trie. 
 
-The related work is reviewed in Section~\ref{c:relwork}. We present the related approaches, including a description of a set-trie data structure, the inverted indexes, the signature indexes, and the multisets in relational database systems. Finally, the concluding remarks and the future work are presented in Section~\ref{c:conclusions}.
+The related work is reviewed in Section~\ref{c:relwork}. This section describes a set-trie data structure, the inverted indexes, the signature indexes, and the multisets in relational database systems. Finally, the concluding remarks and the future work are presented in Section~\ref{c:conclusions}.
