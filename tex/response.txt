@@ -1,0 +1,122 @@
+Comments to the Author
+
+1. Is the manuscript technically sound, and do the data support the conclusions?
+
+Reviewer #1: Partly
+
+2. Has the statistical analysis been performed appropriately and rigorously?
+Reviewer #1: N/A
+
+3. Have the authors made all data underlying the findings in their manuscript fully available?
+
+Reviewer #1: No
+
+NAŠ ODZIV NA ZGORNJE:
+
+? (to ask Mikita)
+
+4. Is the manuscript presented in an intelligible fashion and written in standard English?
+
+Reviewer #1: Yes
+
+5. Review Comments to the Author
+
+Reviewer #1: 
+The motivation is not clear, the authors claim that this is an important problem in object-relational databases, information retrieval, data mining and expert systems. However, for example, when authors claim to be a relevant problem in information retrieval, they provide two citations to complete books of information retrieval, without any indication of section or chapter. Please, please be more specific. A good practice is to show the specific problems (examples) of the application.
+
+NAŠ ODZIV NA ZGORNJE:
+
+In the second pharagraph of the introduction (Section 1) we overview
+the CS areas where the use of a data structure for fast retrieval of
+sets is needed. In all of the presented areas the set containment
+operational are essential.
+
+It would be nice if the authors provide running examples of their algorithms, they would be easier to understand.
+
+NAŠ ODZIV NA ZGORNJE:
+
+?
+
+All figures are of very poor quality and can hardly be read.
+
+NAŠ ODZIV NA ZGORNJE:
+
+?
+
+An important problem for me is that in the paper it is always assumed that the multisets are always ordered according to a certain order, more precisely, that specified in the alphabet \Sigma, or as stated on page 10, line 269 "for simplicity that all elements are ordered in an ascending order". Therefore, the authors claim that the functions search, delete and insert have complexity \sigma (the size of \Sigma). I do not agree with this, in practical implementations, for example in an object-relational database, we cannot assure that the multiset queries or insertions will have the elements in a specific order. For your method to work, a previous sort and sum are required, in order to build an instance of the type Multiset. This requires O(n log n) cost, being n the cardinality of the multiset in the query, be aware, not the distinct symbols in the multiset, all (including repeated) symbols.
+
+NAŠ ODZIV NA ZGORNJE:
+
+In multisets ordering is not important. We use a specific ordering of
+the multiset elements to speed up the set containment queries. This
+specific ordering is used when we construct the multiset-trie, so the
+ordering is a part of the data structure. Please have a look at the
+description of the set containment operations (Section 3) to see the
+details.
+
+In the second pharagraph of the introduction (Section 1) we overview
+the CS areas where the use of a data structure for fast retrieval of
+sets is needed. In all of the presented areas the set containment
+operational are essential.
+
+We have updated the introduction (Section 1) to:
+1) emphasise that the ordering is not important in multisets, and
+2) to depict the utilization of the selected ordering for multiset
+containment operations.
+
+The experiments are not convincing for the same reason, as the whole paper obviates the ordering, whereas the inverted index uses a B-tree to search for the inverted list of each element in the multiset.
+The experiments must consider that the multisets are not ordered nor added, that is, an input query could be {1,2,2, 1, 3, 3, 1, 2, 2}
+
+The values of n, the maximum multiplicity of each element of the multiset, are small, most experiments (as shown in Table 1) are 3, and one with 10. Experiments with larger values of n are needed, and, as I will argue next, authors must include the size of the resulting data structures. The scalability must be studied, and experiments showing how the size of n affects the query times and the size of the data structure must be included.
+
+NAŠ ODZIV NA ZGORNJE:
+
+The multiset-trie data structure is not optimized but it is given in
+the original and complete form. The absence of the compression makes
+the multiset-trie a perfectly height-balanced tree.
+
+The multiplicity of an element in a multiset is in a multiset-trie
+implemented by means of an array. There exist a number of possible
+optimizations. For example, the multiplicity of an element can be
+implemented using a small, customly designed, hash table.
+
+The idea of minimality of the data structure size stated in line 808 page 27, for me, is wrong. A simple analysis reveals that the space complexity O(|M|) is a very coarse bound, and it is not minimal. First, the size of the data structure is better bounded by the number of nodes, which is analyzed in Section 4.1.1. Second, the space efficiency is not optimal because you are using a complex method to determine the label of a node (the symbol a node contains). That is, to know the label of a node, it is necessary to know the position of the pointer that points to the node of interest, within the \sigma pointers of the parent node. Then each node needs an array of \sigma entries, even though only some of them are filled, so you are wasting many empty entries. In addition, since the label of a node is given by a pointer, unless you use a modern tree (that exists, but you have not mentioned that) I assume that you require 32 bits to represent the pointer (label) of a node. Instead, if you explicitly represent the symbol of each node, you only need log \sigma bits.
+
+NAŠ ODZIV NA ZGORNJE:
+
+We dropped the comment about the space minimality of the data
+structure in the conclusions (Section 7). Minimality of the data
+structure is not mentioned in any other part of the paper.
+
+(Matjaž, so preostale ocene v istem odstavku o minimalnosti korektne?)
+
+I can continue giving arguments, for example, you even recognize that your structure is based on a trie, and not on a patricia trie or compact prefix tree, that is, your structure does not support path compression, and this added to the aforementioned array of pointers at each node, yields a poor space efficiency.
+Therefore, the space consumption of your data structure must be reported in the experimental section and compared with that of the inverted index.
+
+NAŠ ODZIV NA ZGORNJE:
+
+See the previous reply.
+
+Finally, the intersection algorithm used in your experiments is not described. There are different intersection algorithms, please refer to, for example :
+J. Shane Culpepper and Alistair Moffat. 2011. Efficient set intersection for inverted indexing. ACM Trans. Inf. Syst. 29, 1, Article 1 (December 2010), 25 pages. https://doi.org/10.1145/1877766.1877767
+
+That with the better behaviour in your case must be selected.
+
+NAŠ ODZIV NA ZGORNJE:
+
+We have omitted the empirical comparison of the multiset-trie with the
+inverted file from the paper.
+
+Related work is poor, especially the explanation of the set-trie. Although Section 6.1 sketches the differences between multiset-trie and set-trie, more explanations are needed. First, the differences in the data structures and then, the differences in operations must be clarified.
+
+NAŠ ODZIV NA ZGORNJE:
+
+We have added a more detailed presentation of the set-trie in the
+related work.
+
+Page 3 line 37 "at a certan level" -> "at a certain
+level"
+
+NAŠ ODZIV NA ZGORNJE:
+
+Corrected.
