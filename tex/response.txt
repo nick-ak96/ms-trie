@@ -50,9 +50,7 @@ NAŠ ODZIV NA ZGORNJE:
 In multisets ordering is not important. We use a specific ordering of
 the multiset elements to speed up the set containment queries. This
 specific ordering is used when we construct the multiset-trie, so the
-ordering is a part of the data structure. Please have a look at the
-description of the set containment operations (Section 3) to see the
-details.
+ordering is a part of the data structure. 
 
 In the second pharagraph of the introduction (Section 1) we overview
 the CS areas where the use of a data structure for fast retrieval of
