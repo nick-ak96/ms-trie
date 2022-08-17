@@ -9,12 +9,13 @@ One of the conclusions of studying the multiset-trie both theoretically and empi
 % The mathematical analysis of the space complexity shows that multiset-trie requires only $O(|M|)$ space, which is the minimal possible space required by any data structure for storage of $|M|$ objects. As for the running time complexity of algorithms,
 The basic tree functions such as \textsc{insert}, \textsc{search}, and \textsc{delete} all have a constant complexity once the multiset-trie is defined. The "getAll" multiset containment functions have worst-case running time complexity of $O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. The "existence" multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
 
-The multiset-trie is an input-sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$
-Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly;  however, in real-world models, such an assumption is not generally true. 
-%Specifically, the probability $P(m\in M)$ may vary dramatically and can even be equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. 
-For example, many multisets will have zero probability of appearing in $M$ because a word that would correspond to such a multiset does not exist in the dictionary.%
+%The multiset-trie is an input-sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$
+%Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly;  however, in real-world models, such an assumption is not generally true. 
+%%Specifically, the probability $P(m\in M)$ may vary dramatically and can even be equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. 
+%For example, many multisets will have zero probability of appearing in $M$ because a word that would correspond to such a multiset does not exist in the dictionary.%
 
-The implementation of the multiset-trie is not optimized. The main reason for space-inefficiency is in implementing the links from a node to its children. A node at the $i$-th level of a tree has $n-i$ possible children where $n$ is the size of the alphabet. Our implementation uses an array data structure to link a node to its children where each element of an array includes a link to a sub-tree. A custom-implemented small and extendable hash table would significantly decrease the amount the space needed, especially since the number of children tends to decrease with the increasing levels of a tree. There are more additional optimizations possible. For example, the ...
+The implementation of the multiset-trie is not optimized. For example, the main reason for space-inefficiency is in implementing the links from a node to its children. Our implementation uses an array data structure to link a node to its children where each element of an array, indexed by the multiplicity of the element of the next level, includes a link to a sub-tree. A custom-implemented small and extendable hash table would significantly decrease the amount the space needed to represent a multiset-trie.
+% There are more additional optimizations possible. For example, the ...
 
 % Future work notes
 %
