@@ -1,7 +1,7 @@
 % Template for PLoS
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL ./texdiff/plos_latex_template.tex   Fri Jul 29 08:36:01 2022
-%DIF ADD ./tex/plos_latex_template.tex       Fri Jul 29 08:30:03 2022
+%DIF ADD ./tex/plos_latex_template.tex       Sun Aug 21 15:03:51 2022
 % Version 3.5 March 2018
 %
 % % % % % % % % % % % % % % % % % % % % % %
@@ -343,6 +343,7 @@ The multiset-trie is a search tree with properties similar to those of a trie. I
 
 We present the mathematical analysis of a multiset-trie that gives the time complexity of the algorithms and the space complexity of the data structure. Further, the empirical analysis of the data structure is implemented in a series of experiments. The experiments illuminate the time complexity space of the multiset containment operations.
 \DIFdelbegin \DIFdel{Finally, the comparison of the multiset-trie with the inverted index shows that the multiset-trie outperforms the inverted index by up to 4 orders of magnitude.
+%
 }\DIFdelend %DIF > Finally, the comparison of the multiset-trie with the inverted index shows that the multiset-trie outperforms the inverted index by up to 4 orders of magnitude.
 %DIF > %% more rounded...!
 
@@ -938,44 +939,45 @@ as global, however\DIFaddbegin \DIFadd{, }\DIFaddend they could be passed to the
 % section 4
 \section{Mathematical analysis of the structure} \label{c:analysis}
 %
-In this chapter we present theoretical results of time and space complexity of
+In this chapter\DIFaddbegin \DIFadd{, }\DIFaddend we present theoretical results of time and space complexity of
 the multiset-trie data structure. In the following Section~\ref{s:timecomplexity} 
 we discuss the running time complexity of the presented algorithms. First, in 
-Section~\ref{ss:mathmodel}, we present our mathematical model that we use 
+Section~\ref{ss:mathmodel}, we present \DIFdelbegin \DIFdel{our }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend mathematical model that we use 
 to describe the distribution of multisets in the multiset-trie and input data. 
-Using probabilistic approach and tools from a Galton-Watson process we 
+Using \DIFaddbegin \DIFadd{a }\DIFaddend probabilistic approach and tools from a Galton-Watson process\DIFaddbegin \DIFadd{, }\DIFaddend we 
 measure the expected cardinality of the multiset-trie in Theorem~\ref{thm:exp_nodes}. 
 Further, we derive the expected cardinality of the searched subtree of the 
 multiset-trie parametrized by an input multiset in Corollary~\ref{cor:exp_nodes_param}.
 
 In Section~\ref{ss:getall} we discuss the running time complexity of the functions 
 \textsc{getAllSubmsets} and \textsc{getAllSupermsets}. We observe that the 
-complexity of functions is exponential. Moreover, the worst case running time 
-complexity is the same for both functions and its upper bound is the cardinality of 
+complexity of functions is exponential. Moreover, the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running time 
+complexity is the same for both functions\DIFaddbegin \DIFadd{, }\DIFaddend and its upper bound is the cardinality of 
 the multiset-trie.
 
 The remaining "existence" functions are discussed in the Section~\ref{ss:exists}. 
-We observe that out of scope of our mathematical model unlike in functions 
+We observe that out of \DIFaddbegin \DIFadd{the }\DIFaddend scope of our mathematical model\DIFaddbegin \DIFadd{, }\DIFaddend unlike in functions 
 \textsc{getAllSubmsets} and \textsc{getAllSupermsets} the mapping $\phi$ has an 
 impact on performance of the functions \textsc{submsetExistence} and 
 \textsc{supermsetExistence}. In particular, the frequency analysis of the symbols 
 from $\Sigma$ in input data determines such a $\phi$ that gives a boost in performance. 
 
 We find that the performance of the functions \textsc{submsetExistence} and 
-\textsc{supermsetExistence} in the worst case scenario is also exponential and 
+\textsc{supermsetExistence} in the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend scenario is also exponential and 
 does not depend on the outcome of the functions. We give a quite precise upper 
-bound for the worst case running time complexity, which appears to be the same 
-for both functions. However, it must be stressed that for the positive outcome an 
-exponential behavior holds only on specific cases, such as presence of the emptyset 
-in the multiset-trie. 
+bound for the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running time complexity, which appears to be the same 
+for both functions. However, it must be stressed that for the positive outcome\DIFaddbegin \DIFadd{, }\DIFaddend an 
+exponential behavior holds only on specific cases, such as \DIFaddbegin \DIFadd{the }\DIFaddend presence of the \DIFdelbegin \DIFdel{emptyset 
+}\DIFdelend \DIFaddbegin \DIFadd{empty set 
+}\DIFaddend in the multiset-trie. 
 
 Finalizing the mathematical analysis, we present the study of space complexity 
-of the multiset-trie in the Section~\ref{s:spacecomplexity}. We show that the space 
+of the multiset-trie in \DIFdelbegin \DIFdel{the }\DIFdelend Section~\ref{s:spacecomplexity}. We show that the space 
 used for the storage is asymptotically equal to the size of the input data. 
 
 \subsection{Time complexity of the algorithms}\label{s:timecomplexity}
 The performance of the functions will be measured by the number of 
-visited nodes in a multiset-trie during execution of a particular query by the 
+visited nodes in a multiset-trie during \DIFaddbegin \DIFadd{the }\DIFaddend execution of a particular query by the 
 functions \textsc{search}, \textsc{delete}, \textsc{submsetExistence}, 
 \textsc{supermsetExistence}, \textsc{getAllSubmsets}, \textsc{getAllSupermsets} 
 and the procedure \textsc{insert}.
@@ -986,9 +988,9 @@ By the design of the multiset-trie, it is easy to see that the functions \textsc
 Because $\sigma$ is defined when the structure is initialized and does not depend
 on the user input afterwards, the asymptotic complexity of the functions \textsc{search}, 
 \textsc{delete} and the procedure \textsc{insert} is $O(1).$ Nonetheless, in the general 
-case the complexity is $O(\sigma).$
+case\DIFaddbegin \DIFadd{, }\DIFaddend the complexity is $O(\sigma).$
 
-In what follows, we focus on analysis of the more involved functions:
+In what follows, we focus on \DIFaddbegin \DIFadd{the }\DIFaddend analysis of the more involved functions:
 \textsc{submsetExistence}, \textsc{supermsetExistence}, \textsc{getAllSubmsets}
 and \textsc{getAllSupermsets}.
 
@@ -1007,7 +1009,7 @@ has at most $\sigma$ distinct elements that are members of $\Sigma$ and
 every distinct element in $m$ has multiplicity strictly less than $n.$
 %
 Because a multiset does not distinguish different orderings, it is assumed, for
-simplicity that all elements are ordered in an ascending order. A multiset $m$ is
+simplicity\DIFaddbegin \DIFadd{, }\DIFaddend that all elements are ordered in \DIFdelbegin \DIFdel{an }\DIFdelend ascending order. A multiset $m$ is
 represented as $\{1^{k_1},2^{k_2},\ldots, \sigma^{k_\sigma}\},$ where $e^{k_e}$
 represents an element $e\in\Sigma$ with multiplicity $k_e.$
 %
@@ -1016,13 +1018,13 @@ Denote the nodes of multiset-trie on all levels but on $\sigma + 1$ as \emph{int
 and nodes on leaf level as \emph{leaf} nodes.
 %
 Observe that every internal non-root node has a degree at least~1. Indeed an
-insertion of a multiset requires a construction of a path of length~$\sigma + 1,$
-meaning that if an internal node exists in a multiset-trie it must have a degree
+insertion of a multiset requires \DIFdelbegin \DIFdel{a }\DIFdelend construction of a path of length~$\sigma + 1,$
+meaning that if an internal node exists in a multiset-trie\DIFaddbegin \DIFadd{, }\DIFaddend it must have a degree
 at least~1. It also follows that the height of a multiset-trie is always~$\sigma +1$
 as soon as at least one multiset is inserted into the data structure.
 
 Our model assumes that all the inserted multisets are chosen with the same probability,
-meaning that for some $p\in (0,1)$ the following holds:
+meaning that for some $p\in (0,1)$\DIFaddbegin \DIFadd{, }\DIFaddend the following holds:
 \[
 P(m\in M) = p, \quad \forall~m\in N.
 \]
@@ -1041,7 +1043,7 @@ where $\xi_1 = 1.$
 It is easy to see that the variable $\xi_{i+1}$ can have values in the interval
 $[\xi_i,n^{i}]$ and the value of the variable $\xi_{ij}$ is within the interval $[1,n].$
 Without conditioning on the existence of any node in multiset-trie, 
-it is easy to describe the probability of existence of any individual node.
+it is easy to describe the probability of \DIFaddbegin \DIFadd{the }\DIFaddend existence of any individual node.
 
 \begin{lemma}\label{l:prob-node-existence}
 Any potential node on a fixed level $i,$ where $i\in \{ 1,2,\ldots, \sigma +1 \}$ exists, %independently of others,
@@ -1054,7 +1056,7 @@ p_i=1-(1-p)^{n^{\sigma + 1 -i}}.
 Let $v$ be an arbitrary node in a multiset-trie on an arbitrary level $i.$ Consider
 the subtree with the root $v$ and call it $v$-subtree. Since the height of the
 multiset-trie is $\sigma + 1$ we can calculate the height of the $v$-subtree.
-Taking in account that the root node has height 1, the height of the $v$-subtree is
+Taking \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{into }\DIFaddend account that the root node has height 1, the height of the $v$-subtree is
 %
 \[
 h_v = \sigma + 1 - i.
@@ -1100,7 +1102,7 @@ G_i(z) = \frac{(1+p_{i+1}(z-1))^n - (1-p_{i+1})^n}{1-(1-p_{i+1})^n}.
 In order to prove the lemma, we have to show that
 $\xi_{iv}\sim\mathcal{B}_0(n, p_{i+1}).$
 Consider an arbitrary node $v$ on level $1\leq i\leq\sigma.$ According to the
-definition of the multiset-trie a node exists at level $i$ if and only if
+definition of the multiset-trie\DIFaddbegin \DIFadd{, }\DIFaddend a node exists at level $i$ if and only if
 it has at least one child. Note that this is not true for the nodes on the leaf
 level $\sigma + 1.$ Implies, a node on level $i$ can have
 $k\in\{ 1,2,\ldots, n\}$ children. Let $X_0, X_1, \ldots, X_{n-1}$ be random
@@ -1127,7 +1129,7 @@ which completes the proof.
 \end{proof}
 %
 Knowing the probability density and probability generating functions of $\xi_{ij}$ 
-from Lemma~\ref{l:prob-children}, we now can estimate the number of nodes in 
+from Lemma~\ref{l:prob-children}, we \DIFdelbegin \DIFdel{now can }\DIFdelend \DIFaddbegin \DIFadd{can now }\DIFaddend estimate the number of nodes in 
 a randomly generated multiset-trie as follows:
 %
 \begin{equation}\label{eq:num_nodes}
@@ -1153,7 +1155,7 @@ derive the probability generating function for the random variable $\xi_{i+1}$ a
 \begin{equation}\label{eq:g_rec}
 G_{\xi_{i+1}}(z) = G_{\xi_i}(G_i(z)).
 \end{equation}
-Since there is always precisely one node at the root-level, we have $P(\xi_1 = 1) = 1.$ 
+Since there is always precisely one node at the \DIFdelbegin \DIFdel{root-level}\DIFdelend \DIFaddbegin \DIFadd{root level}\DIFaddend , we have $P(\xi_1 = 1) = 1.$ 
 Hence, the probability generating function for the random variable $\xi_1$ is 
 \begin{equation}\label{eq:g_xi_one}
 G_{\xi_1}(z) = z^1 = z
@@ -1239,9 +1241,9 @@ Using the results obtained from Theorem~\ref{thm:exp_level} we compute
 With the expected number of nodes in a multiset-trie $\mathcal{M}$ obtained from 
 Theorem~\ref{thm:exp_nodes}, we can now generalize the result for a subtree 
 in $\mathcal{M}$ parametrized by an input multiset $m.$ The subtrees that we 
-are interested in are the ones that contain all the submultisets or all the 
-supermultisets of $m.$ In order to calculate the expected cardinality of such 
-subtrees we need the following definition. 
+are interested in are the ones that contain all the \DIFdelbegin \DIFdel{submultisets }\DIFdelend \DIFaddbegin \DIFadd{sub-multisets }\DIFaddend or all the 
+\DIFdelbegin \DIFdel{supermultisets }\DIFdelend \DIFaddbegin \DIFadd{super-multisets }\DIFaddend of $m.$ In order to calculate the expected cardinality of such 
+subtrees\DIFaddbegin \DIFadd{, }\DIFaddend we need the following definition. 
 
 \begin{definition}\label{def:params}
 Let $m = \{ 1^{k_1}, 2^{k_2}, \ldots, \sigma^{k_\sigma} \},$ where 
@@ -1286,22 +1288,26 @@ Using the results from Theorem~\ref{thm:exp_level} and Theorem~\ref{thm:exp_node
 we derive the formulas~(\cref{eq:nodes_sub_param}) and~(\cref{eq:nodes_super_param}) 
 by specifying the possible number of nodes on every level in the multiset-trie according 
 to the multiset $m.$ Note that the formula~(\cref{eq:nodes_level}) assumes that on every 
-level but the first one there are $n$ possible nodes. Given submultiset or supermultiset 
-query and an input multiset $m$ the number of nodes that will be traversed on level $i$ is 
+level but the first one\DIFaddbegin \DIFadd{, }\DIFaddend there are $n$ possible nodes. Given \DIFdelbegin \DIFdel{submultiset or supermultiset 
+}\DIFdelend \DIFaddbegin \DIFadd{sub-multiset or super-multiset 
+}\DIFaddend query and an input multiset $m$ the number of nodes that will be traversed on level $i$ is 
 defined by the number $k_{i-1}+1$ or $n-k_{i-1}-1$ for $i\geq 2.$ On level $i=1$ 
 there is only one root node in any multiset-trie $\mathcal{M},$ which always exists 
-if $M\neq\emptyset$ and is traversed for any type of query (submultiset and 
-supermultiset).
+if $M\neq\emptyset$ and is traversed for any type of query (\DIFdelbegin \DIFdel{submultiset and 
+supermultiset}\DIFdelend \DIFaddbegin \DIFadd{sub-multiset and 
+super-multiset}\DIFaddend ).
 
 \end{proof}
 
 \subsubsection{GetAllSubmsets and GetAllSupermsets}\label{ss:getall}
 In this subsection we discuss the running time complexity of the functions 
 \textsc{getAllSubmsets} and \textsc{getAllSupermsets}. It is obvious that any 
-other algorithm for retrieving all the submultisets or supermultisets has worst 
-case running time complexity at least $O(|M|).$ Hence, the functions 
-\textsc{getAllSubmsets} and \textsc{getAllSupermsets} have the worst case 
-running time complexity $O(|\mathcal{M}|).$ Indeed, the case when the algorithms 
+other algorithm for retrieving all the \DIFdelbegin \DIFdel{submultisets or supermultisets has worst 
+case }\DIFdelend \DIFaddbegin \DIFadd{sub-multisets or super-multisets has worst-case
+}\DIFaddend running time complexity \DIFaddbegin \DIFadd{of }\DIFaddend at least $O(|M|).$ Hence, the functions 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets} have the \DIFdelbegin \DIFdel{worst case 
+}\DIFdelend \DIFaddbegin \DIFadd{worst-case 
+}\DIFaddend running time complexity $O(|\mathcal{M}|).$ Indeed, the case when the algorithms 
 retrieve all the multisets stored in a multiset-trie by traversing the whole structure 
 can be easily constructed. 
 
@@ -1315,22 +1321,22 @@ m = \{ 1^{n-1},2^{n-1},\ldots, \sigma^{n-1} \}
 the whole multiset-trie is traversed during the \textsc{getAllSubmsets} query.
 
 Now let us consider the function \textsc{getAllSupermsets}. Similarly, the function 
-takes a multiset $m$ as an input argument. However, in this case it returns the 
+takes a multiset $m$ as an input argument. However, in this case\DIFaddbegin \DIFadd{, }\DIFaddend it returns the 
 set of multisets $\{ x\in M : x\supseteq m \}$ from the multiset-trie 
-$\mathcal{M}.$ In order to obtain a traversing of all the multiset-trie one must set 
-$m$ to the smallest possible multiset, i.e. an empty multiset
+$\mathcal{M}.$ In order to obtain a traversing of all the multiset-trie\DIFaddbegin \DIFadd{, }\DIFaddend one must set 
+$m$ to the smallest possible multiset, i.e.\DIFaddbegin \DIFadd{, }\DIFaddend an empty multiset
 \begin{equation*}
 m = \{ \emptyset \} = \{ 1^0,2^0, \ldots, \sigma^0 \}.
 \end{equation*}
 
-Thus, we can conclude that the worst case running time complexity of the 
+Thus, we can conclude that the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running time complexity of the 
 functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} is $O(\mathbb{E}( |\mathcal{M}| )).$ 
 According to the Theorem~\ref{thm:exp_nodes} the expected number of visited 
 nodes in the worst case is 
 \begin{equation*}
 O(\sum_{i=1}^{\sigma+1} n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}).
 \end{equation*}
-According to the Theorem~\ref{cor:exp_nodes_param} the worst case running 
+According to the Theorem~\ref{cor:exp_nodes_param} the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running 
 time complexity given an input multiset $m$ for the function \textsc{getAllSubmsets} is 
 \begin{equation*}
 O(\sum_{i=1}^{\sigma + 1} \alpha_{i-1} \frac{1-(1-p)^{\alpha_{i-1}}}{1-(1-p)^{\alpha_{\sigma}}})
@@ -1349,25 +1355,25 @@ We start the analysis of the functions \textsc{submsetExistence} and
 \textsc{supermsetExistence} with an observation. Our theoretical model assumes 
 that all the multisets are inserted into multiset-trie at random. It was already concluded 
 that the probability distribution function $P(m\in M)$ has an impact on the size of 
-mulitset-trie $\mathcal{M}.$ Moreover, this distribution influences on the performance 
+\DIFdelbegin \DIFdel{mulitset-trie }\DIFdelend \DIFaddbegin \DIFadd{multiset-trie }\DIFaddend $\mathcal{M}.$ Moreover, this distribution influences on the performance 
 of the functions \textsc{submsetExistence} and \textsc{supermsetExistence} even more. 
 
-For a real world model, such that $P(m\in M)\neq const$ the performance of the search 
+For a \DIFdelbegin \DIFdel{real world }\DIFdelend \DIFaddbegin \DIFadd{real-world }\DIFaddend model, such that $P(m\in M)\neq const$ the performance of the search 
 algorithms directly depends on the number of nodes on every level $\xi_i.$ When 
-the search functions check if a multiset is in multiset-trie the complete path that 
-corresponds to that multiset is checked. Knowing that fact the search can be optimized 
+the search functions check if a multiset is in multiset-trie\DIFaddbegin \DIFadd{, }\DIFaddend the complete path that 
+corresponds to that multiset is checked. Knowing that fact\DIFaddbegin \DIFadd{, }\DIFaddend the search can be optimized 
 during the construction of a multiset-trie. 
 
 Recall that a multiset-trie is defined on parameters $n,$ $\Sigma,$ $\sigma = |\Sigma|$ 
 and $\phi.$ Let the frequency of an element $e$ in a multiset $m$ be the multiplicity of 
-$e$ in $m,$ denoted by $\emph{mult}_m(e).$ Then the frequency of an element $e$ 
+$e$ in $m,$ denoted by $\emph{mult}_m(e).$ Then\DIFaddbegin \DIFadd{, }\DIFaddend the frequency of an element $e$ 
 can be defined as a sum $\sum_{m\in M} \emph{mult}_m(e).$ According to the frequencies 
 of elements in $\Sigma,$ the performance of the multiset-trie can be optimized by 
-the mapping $\phi : \Sigma \rightarrow I.$ Indeed the ordering of elements by their 
+the mapping $\phi : \Sigma \rightarrow I.$ Indeed\DIFaddbegin \DIFadd{, }\DIFaddend the ordering of elements by their 
 frequencies has an influence on the performance.
 %
 The frequency of an element $e\in\Sigma$ affects the distribution of $\xi_{\phi(e)}$ 
-as follows. The larger the frequency of $e$ the larger the number of nodes on 
+as follows. The larger the frequency of $e$\DIFaddbegin \DIFadd{, }\DIFaddend the larger the number of nodes on 
 $\phi(e)$ level. 
 So, if the number of nodes on lower levels is greater than on higher levels, then 
 the search functions will discard complete paths that do not satisfy the query 
@@ -1398,15 +1404,15 @@ faster. Hence, the closest match will be found faster.
 %%
 
 Let us now switch back to our mathematical model and note that the influence 
-of the mapping function $\phi$ in our model has inessential impact on performance, 
-because all the multisets are equally likely and the whole domain $N$ is used for 
+of the mapping function $\phi$ in our model has \DIFaddbegin \DIFadd{an }\DIFaddend inessential impact on performance, 
+because all the multisets are equally likely\DIFaddbegin \DIFadd{, }\DIFaddend and the whole domain $N$ is used for 
 sampling multisets. 
 
 Consider both functions \textsc{submsetExistence} and \textsc{supermsetExistence}. 
 Whenever the result is \emph{false}, i.e. no multiset in $M$ is 
-a submultiset or supermultiset of an input multiset $m,$ both functions in the 
+a \DIFdelbegin \DIFdel{submultiset or supermultiset }\DIFdelend \DIFaddbegin \DIFadd{sub-multiset or super-multiset }\DIFaddend of an input multiset $m,$ both functions in the 
 worst case visit all the nodes in $\mathcal{M}$ but the nodes on leaf level. 
-Of course such a case would be very rare assuming a random input model, but 
+Of course\DIFaddbegin \DIFadd{, }\DIFaddend such a case would be very rare\DIFaddbegin \DIFadd{, }\DIFaddend assuming a random input model, but 
 it can be constructed as follows. 
 
 Consider the function \textsc{submsetExistence}. Then given an input multiset 
@@ -1416,13 +1422,13 @@ Analogically for the function \textsc{supermsetExistence} with an input multiset
 $m = \{ 1^{k_1}, 2^{k_2}, \ldots, \sigma^{k_\sigma} \},$ the collection of inserted 
 multisets $M$ must be equal to $M = \{ x\in M : k_{x,\sigma} < k_{m,\sigma} \}.$ 
 
-Thus, the worst case running time complexity of the functions 
+Thus, the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running time complexity of the functions 
 \textsc{submsetExistence} and \textsc{supermsetExistence} is $O(|\mathcal{M}| - |M|).$ 
 According to Theorem~\ref{thm:exp_nodes}, this value is 
 \begin{equation*}
 O(\sum_{i=1}^{\sigma} n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}).
 \end{equation*}
-According to Theorem~\ref{cor:exp_nodes_param} the worst case running 
+According to Theorem~\ref{cor:exp_nodes_param} the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running 
 time given an input multiset $m$ for the function \textsc{submsetExistence} is 
 \begin{equation*}
 O(\sum_{i=1}^{\sigma} \alpha_{i-1} \frac{1-(1-p)^{\alpha_{i-1}}}{1-(1-p)^{\alpha_{\sigma}}})
@@ -1436,19 +1442,19 @@ in the Theorem~\ref{thm:exp_nodes} or in the Theorem~\ref{cor:exp_nodes_param}.
 
 As for the case when the outcome of the functions \textsc{submsetExistence} and 
 \textsc{supermsetExistence} is \emph{true} one has to guarantee the termination 
-of the algorithm at some node on the leaf level. The worst case scenario can be 
+of the algorithm at some node on the leaf level. The \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend scenario can be 
 constructed in the same way as for the \emph{false} outcome but with two more 
 multisets in $M.$ The first multiset is the empty multiset. With the empty multiset 
 the function \textsc{submsetExistence} will visit the same amount of nodes as for 
 the \emph{false} case plus one more for the empty multiset. The second multiset 
 is the maximal possible multiset from $N.$ In this case the function \textsc{supermsetExistence} 
 will also visit the same amount of nodes as for the \emph{false} case plus one more 
-for the maximal multiset. Hence, the worst case running time complexity for both 
+for the maximal multiset. Hence, the \DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend running time complexity for both 
 outcomes (\emph{true} and \emph{false}) is the same.
 
 \subsection{Space complexity}\label{s:spacecomplexity}
-As in any efficient algorithm there is always some trade-off between space and 
-time complexity. While offering efficient sub- and supermultiset queries an 
+As in any efficient algorithm\DIFaddbegin \DIFadd{, }\DIFaddend there is always some trade-off between space and 
+time complexity. While offering efficient sub- and \DIFdelbegin \DIFdel{supermultiset queries}\DIFdelend \DIFaddbegin \DIFadd{super-multiset queries, }\DIFaddend an 
 additional space must be provided for multisets storage. Clearly, the cardinality 
 of the set $M$ is smaller than the size of $\mathcal{M},$ because the number 
 of multisets in $\mathcal{M}$ is equal to the number of nodes only on the leaf 
@@ -1496,7 +1502,7 @@ The lower bound for the ratio is obviously at $p=1$ and is equal to 1
 \end{equation}
 
 Since the ratio $\sigma + 1$ can be obtained for a very specific case only and 
-with a small increase of probability the ratio drops rapidly it can be concluded 
+with a small increase \DIFdelbegin \DIFdel{of probability}\DIFdelend \DIFaddbegin \DIFadd{in probability, }\DIFaddend the ratio drops rapidly it can be concluded 
 that the space complexity of the multiset-trie is $O(|M|).$
 
 
@@ -1564,7 +1570,7 @@ benchmark of the multiset-trie against B-tree implementation of inverted index.
 We start with experiments that are performed on an }\DIFdelend \DIFaddbegin \DIFadd{in four experiments.
 The first three experiments use }\DIFaddend artificially generated data\DIFdelbegin \DIFdel{in 
 order to give a general picture of the multiset-trie performance}\DIFdelend \DIFaddbegin \DIFadd{, and the fourth experiment
-uses real world data}\DIFaddend . In the 
+uses real-world data}\DIFaddend . In the 
 Experiment~\hyperref[s:exp1]{1} a special case of the multiset-trie is considered. 
 Only sets are allowed to be stored in the data structure, i.e.\DIFdelbegin \DIFdel{the maximal }\DIFdelend \DIFaddbegin \DIFadd{, the maximally }\DIFaddend allowed 
 multiplicity is set to 1. The performance is measured with respect to the density 
@@ -1774,7 +1780,7 @@ distribution of \DIFaddbegin \DIFadd{the }\DIFaddend size of multisets\DIFaddbeg
 
 It can \DIFdelbegin \DIFdel{be also observed that }\DIFdelend \DIFaddbegin \DIFadd{also be observed that, }\DIFaddend as in previous Experiment~\hyperref[s:exp1]{1}\DIFaddbegin \DIFadd{, }\DIFaddend both 
 functions \textsc{submsetExistence} and \textsc{supermsetExistence} have similar 
-worst case performance. 
+\DIFdelbegin \DIFdel{worst case }\DIFdelend \DIFaddbegin \DIFadd{worst-case }\DIFaddend performance. 
 
 The functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} decrease 
 their performance as the density increases (see figures~\ref{fig:e2m3} 
@@ -2378,13 +2384,20 @@ One of the conclusions of studying the multiset-trie both theoretically and empi
 %
 % Mathematical analysis conclusions
 %DIF < 
-The mathematical analysis of the space complexity shows that multiset-trie requires only $O(|M|)$ space, which is the minimal possible space required by any data structure for storage of $|M|$ objects. As for the running time complexity of algorithms, the basic tree functions such as \textsc{insert}, \textsc{search}, and \textsc{delete} all have a constant complexity once the multiset-trie is defined. The "getAll" multiset containment functions have worst-case running time complexity of $O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. The "existence" multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
+The mathematical analysis \DIFdelbegin \DIFdel{of }\DIFdelend \DIFaddbegin \DIFadd{section provides a non-trivial insight regarding the behavior of multiset-trie datastructure when used in randomized data. It is estimated that }\DIFaddend the space complexity \DIFdelbegin \DIFdel{shows that }\DIFdelend \DIFaddbegin \DIFadd{of }\DIFaddend multiset-trie \DIFdelbegin \DIFdel{requires only }\DIFdelend \DIFaddbegin \DIFadd{is of order }\DIFaddend $O(|M|)$\DIFdelbegin \DIFdel{space}\DIFdelend , which is the minimal possible space required by any data structure for storage of $|M|$ objects. 
+As for the running time complexity of algorithms, the basic tree functions such as \textsc{insert}, \textsc{search}, and \textsc{delete} all have a constant complexity once the multiset-trie is defined. The "getAll" multiset containment functions have worst-case running time complexity of $O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. The "existence" multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
 
-The multiset-trie is an \DIFdelbegin \DIFdel{input sensitive }\DIFdelend \DIFaddbegin \DIFadd{input-sensitive }\DIFaddend data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$
-Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly\DIFdelbegin \DIFdel{. However}\DIFdelend \DIFaddbegin \DIFadd{;  however}\DIFaddend , in real-world models, such an assumption is not \DIFdelbegin \DIFdel{true in a lot of cases. 
-Specifically, the probability $P(m\in M)$ may vary dramatically and can be even equal to $0.$ }\DIFdelend \DIFaddbegin \DIFadd{generally true. 
-%DIF > Specifically, the probability $P(m\in M)$ may vary dramatically and can even be equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. 
-}\DIFaddend For example, \DIFdelbegin \DIFdel{if words are mapped to multisets , then the sample space contains very large multisets. Nonetheless, most of the words }\DIFdelend \DIFaddbegin \DIFadd{many multisets }\DIFaddend will have zero probability \DIFdelbegin \DIFdel{to appear }\DIFdelend \DIFaddbegin \DIFadd{of appearing }\DIFaddend in $M$ \DIFdelbegin \DIFdel{, }\DIFdelend because a word that would correspond to such a multiset does not exist \DIFaddbegin \DIFadd{in the dictionary}\DIFaddend .%
+\DIFdelbegin \DIFdel{The }\DIFdelend %DIF > The multiset-trie is an input-sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$
+%DIF > Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly;  however, in real-world models, such an assumption is not generally true. 
+%DIF > %Specifically, the probability $P(m\in M)$ may vary dramatically and can even be equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. 
+%DIF > For example, many multisets will have zero probability of appearing in $M$ because a word that would correspond to such a multiset does not exist in the dictionary.%
+\DIFaddbegin 
+
+\DIFadd{The implementation of the }\DIFaddend multiset-trie \DIFdelbegin \DIFdel{is an input sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$ Our mathematical model assumes that multisets $m$ }\DIFdelend \DIFaddbegin \DIFadd{is not optimized. For example, the main reason for space-inefficiency is }\DIFaddend in \DIFdelbegin \DIFdel{$M$ are distributed uniformly. However, in real-world models, such an assumption is not true in a lot of cases. Specifically, the probability $P(m\in M)$ may vary dramatically and can be even equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. Nonetheless, most of the words will have zero probability to appear in $M$, because a word that would correspond to such a multiset does not exist.
+%DIF < 
+}\DIFdelend \DIFaddbegin \DIFadd{implementing the links from a node to its children. Our implementation uses an array data structure to link a node to its children where each element of an array, indexed by the multiplicity of the element of the next level, includes a link to a sub-tree. A custom-implemented small and extendable hash table would significantly decrease the amount the space needed to represent a multiset-trie.
+%DIF >  There are more additional optimizations possible. For example, the ...
+}\DIFaddend 
 
 % Future work notes
 %
@@ -2394,8 +2407,12 @@ Further steps in our research will be to extend the functionality of the multise
 The second line of research is to investigate the multiset-trie as a database index data structure. A disk-based index data structure allows storing and managing a huge amount of multisets. The mapping from a multiset-trie, i.e., a $n$-ary search tree, to a block-based index can be easily defined because of the regularity of multiset-trie. It will be interesting to compare the multiset-trie with other existing disk-based index data structures.
 
 
+\DIFaddbegin \paragraph{\DIFadd{Funding information.}} \DIFadd{Authors acknowledge the 
+support in part by the Slovenian Research Agency, research program P1-0383.
+%
+}
 
-\nolinenumbers
+\DIFaddend \nolinenumbers
 
 	
 %\input{bibliography.bbl}

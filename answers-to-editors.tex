@@ -1,0 +1,89 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amssymb,amsmath}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[color=green!40]{todonotes}
+\usepackage[basic]{complexity}
+\usepackage{enumitem}
+\setlist{labelsep=5pt, labelindent=0pt, leftmargin=*, itemindent=0pt}
+\usepackage{amssymb}
+\usepackage{microtype}
+\usepackage{mathrsfs}
+%%Quote environment
+\newlength{\quotemargin}
+\setlength{\quotemargin}{1.7cm}
+\renewenvironment{quote}
+  {\list{}{\rightmargin=\quotemargin \leftmargin=\quotemargin}%
+   \item\relax}
+  {\endlist}
+
+
+%%Justification for teletype (tt) font
+\newcommand*\justify{%
+  \fontdimen2\font=0.4em%interword space
+  \fontdimen3\font=0.2em%interword stretch
+  \fontdimen4\font=0.1em%interword shrink
+  \fontdimen7\font=0.1em%\extra space
+  \hyphenchar\font=`\-%allowing hyphenation
+}
+
+%%'\comment' and '\answer' commands
+\newcommand{\comment}[1]{\begin{itemize}
+    \item {\tt\justify #1}
+\end{itemize}}
+\newcommand{\answer}[1]{{\sc Answer:} #1}
+
+
+
+\begin{document}
+
+	\rightline{August 20, 2022}
+	
+	
+	
+\parindent0cm	
+\noindent 
+ 
+\vskip0.6truecm
+
+
+Dear editor,
+
+\vskip0.3truecm
+
+\bigskip
+
+We would like to thank the editors for overseeing the paper and for their insightful comments and suggestions.
+In addition to addressing the reviewers' comments, we provide a document which emphasizes all additional changes that were made in this revision. 
+Those minor improvements can be found in file diff.pdf, which we attach to this submission.
+Please find below the responses to both comments.
+
+
+\medskip
+\parindent 0cm
+
+\vskip0.6truecm
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\comment{Please ensure that your manuscript meets PLOS ONE's style requirements, including those for file naming. The PLOS ONE style templates can be found at
+
+{\small \textrm{https://journals.plos.org/plosone/s/file?id=wjVg/PLOSOne\_formatting\_sample\_main\_body.pdf}} and
+
+{\small
+	\textrm{https://journals.plos.org/plosone/s/file?id=ba62/PLOSOne\_formatting\_sample\_title\_authors\_affiliations.pdf}}
+}
+\answer{Thank you for those links. We used the suggested tool (PACE) to convert as well as rename all our figures according to the standards of PLOS One. Please find those attached in a single archive (PLOS\_20220821\_83046AM.zip)
+We verified that style used in our LaTeX project is the official PLOS template. 
+We acknowledge that at this stage the sources are not yet supposed to be attached to this revision.  }
+
+\comment{We note that the grant information you provided in the ‘Funding Information’ and ‘Financial Disclosure’ sections do not match. When you resubmit, please ensure that you provide the correct grant numbers for the awards you received for your study in the ‘Funding Information’ section.
+}
+\answer{We added the precise grant number (P1-0383) in the “Funding Information” section, in the Editorial manager.
+We also mentioned the same grant at the very end of the paper, so that both sections now match. } 
+\medskip
+\parindent 0cm
+
+\vskip0.6truecm
+Please let us know if any further changes are needed.
+\end{document}
