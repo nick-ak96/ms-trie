@@ -118,7 +118,7 @@
 \newcommand{\orcidauthorD}{0000-0001-6851-3214} % Add \orcidD{} behind the author's name
 
 % Authors, for the paper (add full first names)
-\Author{Mikita Akulich $^{1,\ddagger}$, Iztok Savnik $^{1,2,\ddagger}$\orcidB{}, Matjaž Krnc $^{1,2,3,\ddagger}$\orcidC{}, and Riste Škrekovski $^{1,2,3,\ddagger}$\orcidD{}*}
+\Author{Mikita Akulich $^{1,\dagger}$, Iztok Savnik $^{*,1,2,\dagger}$\orcidB{}, Matjaž Krnc $^{1,2,3,\dagger}$\orcidC{}, and Riste Škrekovski $^{1,2,3,\dagger}$\orcidD{}}
 
 %\longauthorlist{yes}
 
@@ -132,17 +132,19 @@
 % Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
 \address{%
 $^{1}$ \quad Faculty of mathematics, natural sciences and information technologies, \\University of Primorska, Slovenia;\\ %\{mikita.akulich,iztok.savnik,matjaz.krnc,riste.skrekovski\}@famnit.upr.si\\
-$^{2}$ \quad Department of Mathematics, University of Ljubljana, Slovenia\\
-$^{3}$ \quad Faculty of Information Studies, Novo Mesto, Slovenia}
+$^{2}$ \quad Faculty of Information Studies, Novo Mesto, Slovenia\\
+$^{3}$ \quad Department of Mathematics, University of Ljubljana, Slovenia}
 
 
 % Contact information of the corresponding author
-\corres{Correspondence: skrekovski@gmail.com; %Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)
+%\corres{Correspondence: skrekovski@gmail.com %Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)
+\corres{Correspondence: iztok.savnik@upr.si %Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)
 }
 
+
 % Current address and/or shared authorship
-\firstnote{Current address: Affiliation 3.} 
-\secondnote{These authors contributed equally to this work.}
+%\firstnote{Current address: Affiliation 3.} 
+\firstnote{These authors contributed equally to this work.}
 % The commands \thirdnote{} till \eighthnote{} are available for further notes
 
 %\simplesumm{} % Simple summary
@@ -151,7 +153,7 @@ $^{3}$ \quad Faculty of Information Studies, Novo Mesto, Slovenia}
 
 % Abstract (Do not insert blank lines, i.e. \\) 
 \abstract{
-This paper proposes a new data structure \emph{multiset-trie} that is designed for storing and efficiently processing a set of multisets. Moreover, multiset-trie can operate on a set of sets without efficiency loss.\\
+This paper proposes a new data structure \emph{multiset-trie} that is designed for storing and efficiently processing a set of multisets. Moreover, multiset-trie can operate on a set of sets without efficiency loss.
 %
 The multiset-trie is a search tree with properties similar to those of a trie. It implements all standard search tree operations together with the multiset containment operations such as sub-multiset and super-multiset. Suppose we have a set of multisets $S$ and a multiset $X$. The multiset containment operations retrieve multisets from $S$ that are either sub-multisets or super-multisets of $X$. \\
 %
