@@ -50,13 +50,11 @@ correspondence of letters to levels in multiset-trie, i.e., it defines the order
 levels in multiset-trie. It is also true that $\phi$ defines the ordering in multisets.
 
 % anouncement of the experiments
-In the following Sections 1-5 we will present the behavior of the multiset-trie data 
-structure depending on the selected parameters as well as the comparative 
-benchmark of the multiset-trie against B-tree implementation of inverted index. 
-We start with experiments that are performed on an artificially generated data in 
-order to give a general picture of the multiset-trie performance. 
-
-In the Experiment~\hyperref[s:exp1]{1} a special case of the multiset-trie is considered. 
+In the following sections, we will present the behavior of the multiset-trie data 
+structure in four experiments.
+The first three experiments use artificially generated data, and the fourth experiment
+uses real-world data. In the 
+Experiment~\hyperref[s:exp1]{1} a special case of the multiset-trie is considered. 
 Only sets are allowed to be stored in the data structure, i.e., the maximally allowed 
 multiplicity is set to 1. The performance is measured with respect to the density 
 of the multiset-trie.
@@ -70,7 +68,7 @@ Summarizing the tests of performance depending on the density, we present the
 Experiment~\hyperref[s:exp3]{3}. It shows a nonlinearity of the performance 
 with respect to the density of the multiset-trie.
 
-The fourth experiment on the multiset-trie uses real-world data. In 
+Finally, the fourth experiment on the multiset-trie uses real-world data. In 
 Experiment~\hyperref[s:exp4]{4} the influence of the mapping $\phi$ is studied. 
 The input data is obtained by mapping the real words from the English dictionary 
 to the set of consecutive integers using the function $\phi.$ The experiment 
@@ -78,12 +76,12 @@ shows that the performance of the multiset-trie is noticeably influenced by
 different mappings $\phi.$ It also shows the usability of the multiset-trie in terms 
 of real data demonstrating the high performance of search queries.
 
-Finally, the empirical comparison of multiset-trie data structure with
-B-tree based inverted index is presemted in Experiment~\hyperref[s:exp5]{5}. We use
-inverted index to store and retrieve multisets in the same way as it
-is described in the paper by Helmer and Moerkotte~\cite{Helmer2003}
-for sets. In the comparison we use three types of queries: exact,
-submultiset and supermultiset retrieval.
+% 
+%After all the experiments we present an empirical comparison of multiset-trie 
+%data structure with B-tree based inverted index. We use inverted index 
+%to store and retrieve multisets in the same way as it is described in the paper by 
+%Helmer and Moerkotte~\cite{Helmer2003} for sets. In the comparison we use 
+%three types of queries exact, submultiset and supermultiset retrieval.
 
 \subsection*{Data generation}
 We denote by \emph{input data} the data that is used to fill the structure prior 
@@ -366,170 +364,3 @@ As you may have noticed the functions \textsc{getAllSubmsets} and
 are not affected by variations of the mapping $\phi,$ because for any multiset, 
 they retrieve all sub/supermultisets. This means that the number of visited 
 nodes will not be changed as $\phi$ varies.
-
-\subsection{Experiment 5} \label{s:exp5}
-
-In this experiment, we demonstrate the performance of multiset-trie
-data structure compared to the inverted index based on the
-B-tree. Both data structures are implemented in the programming
-language \CC, providing in this way an experimental setup for a fair
-comparison \cite{akulich2019mstrie}.
-
-%((Brief description of the implementation of the inverted files?))
-The inverted index is implemented using an idea
-from~\cite{Helmer2003}. An inverted index structure consists of two
-parts: a dictionary and postings. In our case, a dictionary is
-implemented as an in-memory B-tree where keys are all distinct values
-from a domain represented by a set $\Sigma.$ The postings are
-represented by lists of multisets that contain a particular element
-from $\Sigma.$ Each list item in postings contains a cardinality of a
-multiset, which speeds up the containment queries.
-
-The experiment uses the input data for the construction of the given
-data structure and the test data for the execution of the operations
-on the given data structure. The input data comprises a set of
-randomly generated multisets used for the construction of a data
-structure. The test data includes the set of multisets together with
-the operations that are evaluated. The input and test data were
-generated with respect to parameters $\sigma$ and $n$ as presented in
-xTable~\ref{t:benchmark}.
-
-\begin{table}[h]
-\center
-\begin{tabular}{|c|c|}
-\hline
-$\sigma$ & $n$ \\
-\hline
-5		& 1\\
-\hline
-30	& 1 \\
-\hline
-5		& 3 \\
-\hline
-15	& 3 \\
-\hline
-30	& 3 \\
-\hline
-10	& 10 \\
-\hline
-\end{tabular}
-\caption{Configuration of $\sigma$ and $n$ in benchmark.}
-\label{t:benchmark}
-\end{table}
-
-We tested all three types of a query on all of the configurations from
-Table 1 results in 18 experiments total, i.e., 6 experiments per
-query type. In each experiment, we measured the average time consumed
-by the data structure to process the query. The results of the exact
-search, sub-multiset, and super-multiset search experiments are
-presented in tables Table~\ref{t:res_ex}, Table~\ref{t:res_sub} and
-Table~\ref{t:res_sup}, respectively.
-
-\begin{table}[h]
-\center
-\begin{tabular}{|r|r|r|r|}
-\hline
-\multicolumn{1}{|c|}{$\sigma$} & 
-\multicolumn{1}{c|}{$n$} & 
-\multicolumn{1}{c|}{Multiset-trie ($\mu s$)} & 
-\multicolumn{1}{c|}{Inverted index ($\mu s$)} \\
-\hline
-5		& 1 & 3.45 & 17782.35\\
-\hline
-30	& 1 & 4.18 & 24865.93\\
-\hline
-5		& 3 & 2.20 & 1508.81\\
-\hline
-15	& 3 & 4.39 & 2146.36\\
-\hline
-30	& 3 & 10.67 & 3639.97\\
-\hline
-10	& 10 & 6.93 & 384.05\\
-\hline
-\end{tabular}
-\caption{Exact search.}
-\label{t:res_ex}
-\end{table}
-
-\begin{table}[h]
-\center
-\begin{tabular}{|r|r|r|r|}
-\hline
-\multicolumn{1}{|c|}{$\sigma$} & 
-\multicolumn{1}{c|}{$n$} & 
-\multicolumn{1}{c|}{Multiset-trie ($\mu s$)} & 
-\multicolumn{1}{c|}{Inverted index ($\mu s$)} \\
-\hline
-5		& 1			& 8.96 & 73500.84\\
-\hline
-30	& 1			& 17.33 & 547572.74\\
-\hline
-5		& 3			& 117.95 & 162360.43\\
-\hline
-15	& 3			& 20.74 & 443321.39\\
-\hline
-30	& 3 		& 23.75 & 947706.14\\
-\hline
-10	& 10		& 55.59 & 466022.68\\
-\hline
-\end{tabular}
-\caption{Sub-multiset search.}
-\label{t:res_sub}
-\end{table}
-
-\begin{table}[h]
-\center
-\begin{tabular}{|r|r|r|r|}
-\hline
-\multicolumn{1}{|c|}{$\sigma$} & 
-\multicolumn{1}{c|}{$n$} & 
-\multicolumn{1}{c|}{Multiset-trie ($\mu s$)} & 
-\multicolumn{1}{c|}{Inverted index ($\mu s$)} \\
-\hline
-5		& 1 		& 10.63 & 63073.86\\
-\hline
-30	& 1 		& 14.65 & 449251.68\\
-\hline
-5		& 3 		& 171.04 & 163256.77\\
-\hline
-15	& 3 		& 43.42 & 425733.80\\
-\hline
-30	& 3 		& 22.06 & 729831.34\\
-\hline
-10	& 10 	& 58.32 & 373784.81\\
-\hline
-\end{tabular}
-\caption{Super-multiset search.}
-\label{t:res_sup}
-\end{table}
-
-We can see that multiset-trie outperforms the inverted index in all of the
-experiments by up to 4 orders of magnitude. In an exact search,
-multiset-trie has to traverse only up to $\sigma+1$ nodes to get a query
-result. It can be seen from the results that with the increase of $\sigma$
-the processing time for multiset-tire also increases. Multiplicity
-also affects the processing time; however, this happens
-passively. Multiplicity, or degree of a node $n$, defines the shape of
-multisets that are stored in multiset-trie. Thus, it affects the
-structure and density of the multiset-trie.
-
-As for the inverted index, all three operations must first fetch all
-postings for each particular element of a test multiset. Afterward,
-the intersection of postings is computed to answer the query. The
-operations use more processing time than a simple tree traversal,
-which we can see from the results. Postings are filtered on-the-fly to
-reduce the cost of the intersection.
-
-Implementations of the sub-multiset and super-multiset are similar in
-the case of the inverted file. The algorithm consists of the same
-steps. First, the postings are fetched for each element of the test
-multiset. Depending on the particular operation, postings are filtered
-on-the-fly. Finally, the union or the intersection of the filtered set
-of postings is computed. Note that the processing time increases with
-the size of the inverted index because of the increased sizes of
-postings.
-
-In the case of multiset-trie, only a traversal of the tree is
-required, which is much faster than the processing of postings, as we
-can see from the results. In the worst case, the whole tree is
-traversed, but the same is for an inverted file.

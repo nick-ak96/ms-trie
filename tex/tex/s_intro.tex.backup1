@@ -39,6 +39,6 @@ Section~\ref{c:operations} presents the operations of the multiset-trie. These i
 
 The description of multiset-trie operations is followed by the mathematical analysis of their complexity in Section~\ref{c:analysis}. The main assumption is that multisets are constructed uniformly at random with bounded cardinality. By using probabilistic tools, we describe the time complexity of the algorithms and the space complexity of the structure.
 
-In Section~\ref{c:experiments} we present an empirical study of the multiset-trie. Synthetic and real-world data sets are used in experiments that are designed to study the performance of multiset containment operations. Further, the multiset-trie is empirically compared to the inverted index in a separate experiment. The experiments highlight the methods for optimizing a multiset-trie. 
+In Section~\ref{c:experiments} we present an empirical study of the multiset-trie. Synthetic and real-world data sets are used in experiments that are designed to study the performance of multiset containment operations. The experiments highlight the methods for optimizing a multiset-trie. 
 
 The related work is reviewed in Section~\ref{c:relwork}. This section describes a set-trie data structure, the inverted indexes, the signature indexes, and the multisets in relational database systems. Finally, the concluding remarks and the future work are presented in Section~\ref{c:conclusions}.
