@@ -195,7 +195,7 @@ G_i(z) = \frac{(1+p_{i+1}(z-1))^n - (1-p_{i+1})^n}{1-(1-p_{i+1})^n}.
 \end{Lemma}
 \begin{proof}
 In order to prove the lemma, we have to show that
-$\xi_{iv}\sim\mathcal{B}_0(n, p_{i+1}).$
+$\xi_{iv}\overset{d}{=}\mathcal{B}_0(n, p_{i+1}).$
 Consider an arbitrary node $v$ on level $1\leq i\leq\sigma.$ According to the
 definition of the multiset-trie, a node exists at level $i$ if and only if
 it has at least one child. Note that this is not true for the nodes on the leaf
@@ -209,7 +209,7 @@ X_k = \begin{cases}
 \end{cases}
 \]
 As it was shown in previous Lemma~\ref{l:prob-children}, the distribution of 
-$X_k$ is $X_k\sim Bernoulli(p_{i+1}).$ Since our model assumes that all the 
+$X_k$ is $X_k\overset{d}{=} Bernoulli(p_{i+1}).$ Since our model assumes that all the 
 multisets in $M$ are chosen uniformly at random, the variables 
 $X_k,X_l$ are independent for $k\neq l.$ But in our case the node $v$ can not 
 have 0 children, so the sum $\sum_{k=1}^n X_k$ has a zero-truncated binomial 
