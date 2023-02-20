@@ -139,11 +139,43 @@ Thus, the probability that there are no nodes on leaf level in $v$-subtree is
 \]
 %
 The claim follows by taking the complement probability of the above result. 
-
-%
 \end{proof}
 
-However, in order to determine the distribution of $\xi_{ij}$, one needs a lemma of a different kind.
+Recall that for any given discrete random variable $X$ taking values over positive non-negative integral values, one can define 
+a so-called \emph{probability generating function} (PGF, for short) $G_X$ to be a formal power series defined as 
+\begin{align*}
+G_X(z)=\sum_{i\ge 0} Pr(X=i)z^i.
+\end{align*}
+While the PGFs are usually not meant to be evaluated for concrete values of $z$, certain values have special interpretation when used in PGF, or in a derivation(s) of PGF. 
+For instance, $Pr(X=0)=G_X(0)$, and also $\mathbb{E}(X)=G'_X(1)$.
+For many values of $z$, the function $G_X$ may not converge to any finite value. For this reason it is a common notation to write, in particular
+\[
+G_X(1^-)=\lim_{z\nearrow 1}G_X(z).
+\]
+
+In what follows we will denote a Bernoulli-distributed random variable with parameter $p$ as $Bernoulli(p)$.
+Furthermore we denote
+zero-truncated binomially
+distributed random variable on parameters $n$ and $p_{i+1}$ by $\mathcal{B}_0(n,p_{i+1})$. Finally, $\overset{d}{=}$ indicates so-called equality in distribution.
+
+\begin{Example}
+The probability generating function of a binomial random variable $\mathcal B(n,p)$, the number of successes in $n$ trials, with probability $p$ of success in each trial, is
+
+\begin{align*}
+ G_{\mathcal B(n,p)}(z)=G(z)
+ &=\sum_{k = 0}^n \binom n k p^k  (1 - p)^{n - k} z^k\\
+ &= \sum_{k = 0}^n \binom n k  (p z)^k  (1 - p)^{n - k}\\
+ &=\left((1-p)+pz\right)^{n}.
+\end{align*}
+
+It is thus easy to compute expectation
+\[
+\mathbb{E}(\mathcal{B}(n,p))=G'(1)=np.
+\]
+
+\end{Example}
+
+We now focus our attention to the distribution of $\xi_{ij}$.
 
 \begin{Lemma}\label{l:prob-children}
 Suppose that a node $v$ exists at level $1\leq i\leq\sigma$.
@@ -155,8 +187,11 @@ P(\xi_{iv} = k) = \frac{\binom{n}{k} (1-p_{i+1})^{n-k}}{1-(1-p_{i+1})^n}
 \end{equation}
 and the corresponding probability generating function equals to
 \begin{equation}\label{eq:generating_func}
+\mathcal{B}_0(n,p_{i+1})\overset{d}{=}
 G_i(z) = \frac{(1+p_{i+1}(z-1))^n - (1-p_{i+1})^n}{1-(1-p_{i+1})^n}.
 \end{equation}
+
+
 \end{Lemma}
 \begin{proof}
 In order to prove the lemma, we have to show that
@@ -181,8 +216,8 @@ have 0 children, so the sum $\sum_{k=1}^n X_k$ has a zero-truncated binomial
 distribution:
 %
 \[
-\sum_{k=1}^n X_k \sim\mathcal{B}_0(n,p_{i+1})
-\]
+\sum_{k=1}^n X_k \overset{d}{=} \mathcal{B}_0(n,p_{i+1}),
+\] 
 %
 which completes the proof.
 
@@ -328,7 +363,7 @@ The expected cardinality of the subtrees containing the multisets from $M_1$ or 
 is defined in the following corollary.
 
 \begin{Corollary}\label{cor:exp_nodes_param}
-Let $M_1, M_2, \alpha_i$ and $\beta_i$ be defined as in previous Definition~\ref{def:params}, 
+Let $M_1, M_2, \alpha_i$ and $\beta_i$ be defined as in  Definition~\ref{def:params}, 
 then the expected cardinality of a multiset-trie subtree $\mathcal{M}_{M_1}$ that contains all the multisets 
 from the set $M_1$ is equal to 
 \begin{equation}\label{eq:nodes_sub_param}
@@ -409,7 +444,8 @@ We start the analysis of the functions \textsc{submsetExistence} and
 \textsc{supermsetExistence} with an observation. Our theoretical model assumes 
 that all the multisets are inserted into multiset-trie at random. It was already concluded 
 that the probability distribution function $P(m\in M)$ has an impact on the size of 
-multiset-trie $\mathcal{M}.$ Moreover, this distribution influences on the performance 
+multiset-trie $\mathcal{M}.$ 
+Moreover, this distribution influences the performance 
 of the functions \textsc{submsetExistence} and \textsc{supermsetExistence} even more. 
 
 For a real-world model, such that $P(m\in M)\neq const$ the performance of the search 
@@ -509,17 +545,22 @@ outcomes (\emph{true} and \emph{false}) is the same.
 \subsection{Space complexity}\label{s:spacecomplexity}
 As in any efficient algorithm, there is always some trade-off between space and 
 time complexity. While offering efficient sub- and super-multiset queries, an 
-additional space must be provided for multisets storage. Clearly, the cardinality 
-of the set $M$ is smaller than the size of $\mathcal{M},$ because the number 
-of multisets in $\mathcal{M}$ is equal to the number of nodes only on the leaf 
-level. The figure~\ref{f:exp-nodes} demonstrates the relation between the number 
-of multisets stored and the number of nodes needed for storage, where parameters 
-$\sigma$ and $n$ are $26$ and $10,$ respectively.
+additional space must be provided for multisets storage. 
+%Clearly, the cardinality 
+%of the set $M$ is smaller than the size of $\mathcal{M},$ because the number 
+%of multisets in $\mathcal{M}$ is equal to the number of nodes only on the leaf 
+%level. 
+As we increase the parameter $p$, the number of sets we need to store (i.e. number of leaves) increases linearly. The figure~\ref{f:exp-nodes} shows that the additional overhead space that our data-structure uses does not increase as the tree is becoming more and more dense.
+
 
 \begin{figure}[h!]
 \center
 \includegraphics[width=.4\textwidth, keepaspectratio]{exp-nodes-on-probab.pdf}
-\caption{$\mathbb{E}(|\mathcal{M}|)$ and $\mathbb{E}(|M|)$ on probability.}
+\caption{Size of a tree ($\mathbb{E}(|\mathcal{M}|)$) compared to the number of stored sets ($\mathbb{E}(|M|)$), as the probability parameter $p$ increases.
+Parameters 
+$\sigma$ and $n$ are $26$ and $10,$ respectively.
+The additional overhead space that our data-structure uses does not increase as the tree is becoming more and more dense.
+}
 \label{f:exp-nodes}
 \end{figure}
 
@@ -533,12 +574,13 @@ parameters $n$ and $\sigma$ being $10$ and $26$ respectively.
 
 \begin{figure}[h!]
 \center
-\includegraphics[width=.4\textwidth, keepaspectratio]{ratio-exp-nodes-and-msets-on-prob.pdf}
-\caption{Ratio $\mathbb{E}(\frac{|\mathcal{M}|}{|M|})$ on $p.$}
+\includegraphics[width=.4\textwidth, keepaspectratio]{ratio-exp-nodes-and-msets-on-prob1.pdf}
+\caption{The ratio of "data overhead" derived from Figure \ref{f:exp-nodes}, as the density $p$ of our data-structure increases.
+Unless we are in a very sparse setting, the trade-off in terms of space is small.}
 \label{f:ratio-exp-msets}
 \end{figure}
 
-Note that analyzing the graph on figure~\ref{f:ratio-exp-msets} we can safely 
+Analyzing the graph on figure~\ref{f:ratio-exp-msets} we can safely 
 say that the upper bound for the ratio is $\sigma + 1.$ The argument holds, 
 because of the limit 
 \begin{equation}
@@ -556,10 +598,17 @@ The lower bound for the ratio is obviously at $p=1$ and is equal to 1
 \end{equation}
 
 Since the ratio $\sigma + 1$ can be obtained for a very specific case only and 
-with a small increase in probability, the ratio drops rapidly it can be concluded 
+with a small increase in probability, the ratio drops rapidly and it can be concluded 
 that the space complexity of the multiset-trie is $O(|M|).$
 
 
+\subsection{An informal comment on the mathematical analysis}
+In the next section we show how our data-structure preforms in certain environments.
+We will see, in our view, great results throughout various experiments, even when compared with state-of-the-art approaches like Inverted Index.
+
+It was very frustrating to us that, despite those indications, it seems that this structure is very difficult to analyze. 
+Even after restricting the analysis to the (usually simple) case when the input data is uniformly distributed, and after utilising reliable probabilistic tools, our approach unfortunately did not give as clear results as we hoped for. 
+We would be very keen to learn of the approach or technique which would shed more insight into the mathematical analysis of our data-structure and its algorithms. 
 
 
 
