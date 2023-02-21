@@ -22,7 +22,8 @@ $\{ 1,1,2 \}$ & $\cong $ &
 \end{tabular}
 \end{center}
 %
-The operations supported by the multiset-trie data structure are as follows.
+The operations supported by the multiset-trie data structure are as
+follows. 
 %
 \begin{enumerate}
 \item \textsc{insert}($\mathcal{M}$, $m$): inserts a multiset $m$ into 
@@ -124,7 +125,7 @@ function immediately returns false. During the search, the function keeps track 
 number of children for every node. It marks the nodes that have more than one child 
 as \emph{parent nodes} and remembers the label of the child, which is a potential node 
 where the sub-tree will be cut to remove the multiset. The parent node is needed to 
-perform a removal because the multiset-tire is an explicit data structure. When the search 
+perform a removal because the multiset-trie is an explicit data structure. When the search 
 is completed, the function removes the sub-tree of the last found parent node and 
 returns true. In such a way, after deletion, all the prefixes for other multisets are 
 preserved in $\mathcal{M}$ and $m$ is removed. The function \textsc{delete} is 

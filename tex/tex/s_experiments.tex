@@ -295,7 +295,7 @@ maximal for each value of a particular density.
 \label{fig:e3m1}}{\includegraphics[width=.45\textwidth]{exp4-m1.pdf}}
 \subcaptionbox{supermsetExistence
 \label{fig:e3m2}}{\includegraphics[width=.45\textwidth]{exp4-m2.pdf}}
-\caption{Exsitence functions in Experiment 3.}
+\caption{Existence functions in Experiment 3.}
 \end{figure}
 
 As we see on figures~\ref{fig:e3m1} and~\ref{fig:e3m2} both functions 
@@ -520,7 +520,8 @@ operations use more processing time than a simple tree traversal,
 which we can see from the results. Postings are filtered on-the-fly to
 reduce the cost of the intersection.
 
-Implementations of the sub-multiset and super-multiset are similar in
+Implementations of the multiset containment operations
+for searching sub-multisets and super-multisets are similar in
 the case of the inverted file. The algorithm consists of the same
 steps. First, the postings are fetched for each element of the test
 multiset. Depending on the particular operation, postings are filtered
