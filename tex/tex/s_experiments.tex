@@ -520,7 +520,8 @@ operations use more processing time than a simple tree traversal,
 which we can see from the results. Postings are filtered on-the-fly to
 reduce the cost of the intersection.
 
-Implementations of the sub-multiset and super-multiset are similar in
+Implementations of the multiset containment operations
+for searching sub-multisets and super-multisets are similar in
 the case of the inverted file. The algorithm consists of the same
 steps. First, the postings are fetched for each element of the test
 multiset. Depending on the particular operation, postings are filtered

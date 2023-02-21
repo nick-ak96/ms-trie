@@ -1,7 +1,7 @@
 \section{Introduction} \label{c:introduction}
 
 % multisets def; not ordered
-A multiset is a collection of elements where a particular element can have more than one instance. As in the case of ordinary sets, the ordering of the elements in multisets is not relevant. For example, multisets $\{1,1,2\}$ and $\{1,2,1\}$ represent the same multiset.
+A multiset is a collection of elements that can have more than one instance. As in the case of ordinary sets, the ordering of the elements in multisets is not relevant. For example, multisets $\{1,1,2\}$ and $\{1,2,1\}$ represent the same multiset.
 
 % motivation for the design
 Multisets appear in a wide variety of domains and applications \cite{savnik2021plos}. The index structures for storing sets of multisets were studied in the area of object-relational database systems to store, compress and query multiset-valued attributes efficiently \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. The need to efficiently manage multisets also appears in the information retrieval \cite{zobel1992efficient,zobel2006inverted,manning2008introduction} where texts are represented as multisets. In data mining, sets are often used to represent and efficiently search hypotheses in the knowledge discovery process \cite{mannila1997,flach1999aicom}. In the area of expert systems, multisets are used for the representation and querying of the preconditions of rules \cite{forgy1982}. Finally, in recent internet applications, efficient representation and search of multisets (such as user requests and object features) have become essential \cite{bayardo2007simlar,xiao2011tods,wang2017vldb} for data cleaning, information integration, community mining, and entity resolution. 
@@ -9,7 +9,7 @@ Multisets appear in a wide variety of domains and applications \cite{savnik2021p
 %\medskip\noindent\textbf{Problem definition.}\;
 In this paper, we address the problems of storing, indexing, and querying the sets of multisets. In particular, we deal with the design of an index data structure that provides an efficient implementation of the multiset containment queries. Let $S$ be an index storing a set of multisets. For a given input multiset $m$, a \emph{containment query} searches for either sub-multisets or super-multisets of $m$ in $S$. 
 
-Existent indexes for storing a set of multisets are rooted in the search trees \cite{corman2001}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multisets relationship. 
+Existent indexes for storing a set of multisets are rooted in the search trees \cite{corman2001}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related to a multiset $m$ either by a sub-multiset or a super-multiset relationship. 
 
 The existing solutions to the implementation of the containment queries use the inverted indexes \cite{zobel1992efficient,zobel1998inverted,zobel2006csur,broder2006indexing,terrovitis2006cikm,terrovitis2011icdt}, the signature trees \cite{deppisch1986sigir,tousidou2002sigstruc,yangjun2005stree,zobel1998inverted} and, the B+ trees~\cite{Helmer2003,terrovitis2011icdt}. These solutions provide a key-value look-up, where a key is an element of a multiset and a value is a corresponding multiset. The containment operations require multiple key-value index accesses and also additional processing of partial results such as intersection or union of multisets.
 
@@ -29,9 +29,9 @@ The main contributions of this paper are as follows. First, a  multiset-trie is 
 
 Second, a mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a sub-tree traversed by a containment query and give an insight into the time complexity of containment queries. 
 
-In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the time complexity space. 
+In addition to the mathematical analysis, the size of a sub-tree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the search space. We observe how the number of visited nodes depends on various parameters, such as the density of the tree, and the ordering of multiset elements.
 
-Finally, the mathematical, as well as empirical analyses, show an influence of ordering the elements of multisets on the efficiency of storing and processing multisets. We show that the ordering, which is based on the frequencies of the multiset elements, can speed up the multiset containment queries by orders of magnitude.
+Finally, the mathematical, as well as empirical analyses show the influence of ordering the elements of multisets on the efficiency of storing and processing multisets. We show that the ordering, which is based on the frequencies of the multiset elements, can speed up the multiset containment queries by orders of magnitude.
 
 \medskip\noindent\textbf{Paper organization.}\; 
 The paper is organized as follows. In the following Section~\ref{c:description}, we present the multiset-trie data structure in detail.

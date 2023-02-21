@@ -4,11 +4,10 @@ Let $\Sigma$ be a set of distinct symbols that define an alphabet, and let
 $\sigma$ be the cardinality of $\Sigma.$ The \emph{multiset-trie} data structure 
 stores multisets that are composed of symbols from the alphabet $\Sigma.$ It 
 provides the basic tree data structure operations such as insert, delete, and 
-search, together with multiset containment and membership operations such as 
-sub-multiset and super-multiset that will be discussed in the next section 
-in greater detail.
+search, together with multiset containment operations for searching sub-multisets
+and super-multisets that will be discussed in the next section in greater detail.
 
-Multiset ignores the ordering of its elements by definition, which allows us to 
+A multiset ignores the ordering of its elements by definition, which allows us to 
 define a bijective mapping $\phi:\Sigma \rightarrow I,$ where $I$ is the set of 
 integers $\{ 1,2,3, \ldots, \sigma \}.$ In this way, we obtain indexing of 
 elements from the alphabet $\Sigma,$ so we can work directly with integers 
