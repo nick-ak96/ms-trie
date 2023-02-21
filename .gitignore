@@ -20,3 +20,6 @@ cover.pdf
 *.gz
 *.pdf
 texdiff/article-plos.bbl
+*.fls
+*.fdb_latexmk
+tex/referee-data-MDPI/~$sponses.docx
