@@ -11,7 +11,15 @@ standard and has a command line interface~\cite{akulich2019mstrie}. The implemen
 optimized for testing, and therefore, the program operates with files to 
 process queries. After processing all the queries, the results are stored in files for further analysis.
 
-%Performance of the functions will be measured by 
+The current implementation of multiset-trie is not optimized for space consumption.
+A node in the multiset-trie is implemented as a record indicating the level of the tree
+that corresponds to a symbol from $\Sigma$, and including an array of pointers to
+its children indexed by the multiplicities of the child symbols. The arrays have
+fixed length $n$ from the interval $[0,n].$
+Only some elements of an array may point to a child node, while others include
+$Null$ value.
+
+% Performance of the functions will be measured by 
 %the number of visited nodes in multiset-trie by the particular function. In 
 %particular the performance is inversely proportional to the number of visited 
 %nodes.

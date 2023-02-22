@@ -174,7 +174,7 @@ presented in Algorithm~\ref{alg:delete}.
 \label{s:subexists} \label{s:superexists}
 The functions \textsc{submsetExistence} and \textsc{supermsetExistence} are
 symmetrical in the following sense. Let a multiset $m$ represent the borderline
-in $\mathcal{M}$ defined by a path from the root to a leaf by following
+in $\mathcal{M}$ defined by a path from the root to a leaf following
 the elements from $m$. The operation \textsc{submsetExistence} searches
 the left part of $\mathcal{M}$ and the operation \textsc{supermsetExistence}
 the right part of $\mathcal{M}$. 
@@ -225,12 +225,12 @@ condition $| x[i] - m[i] |\leq dev$ is satisfied, where $1\leq i \leq \sigma.$
 Symmetrically to the function \textsc{submsetExistence}, the function
 \textsc{supermsetExistence} searches first for an exact match $x=m$ in
 $\mathcal{M}.$ If such $x$ does not exist in $\mathcal{M},$ then
-the function searches on the right side of the borderline (an exact match)
-defined by $m$. Since we would like to find the closest (the smallest)
-super-multiset we increase the multiplicity of elements in $m$ at every
-level of $\mathcal(M)$ starting with the multiplicities of $m.$
-The function \textsc{supermsetExistence} is presented in
-Algorithm~\ref{alg:superxists}.
+the function searches on the right side of the borderline representing
+an exact match of $m$ in $\mathcal{M}.$ Since we would like to find
+the closest (the smallest) super-multiset we increase the multiplicity of
+elements in $m$ at every level of $\mathcal(M)$ starting with
+the multiplicities of $m.$ The function \textsc{supermsetExistence}
+is presented in Algorithm~\ref{alg:superxists}.
 
 
 \begin{algorithm}[h!]
