@@ -54,6 +54,14 @@ where $1\leq i\leq \sigma.$
 %
 \end{enumerate}
 
+The parameter $dev$ is used to specify the maximal deviation in the multiplicity
+of multiset containment operations. It is utilized to limit the search in multiset
+containment queries to the sub-multisets and super-multisets that are
+the closest to the input multiset $m$. In addition, we use $dev$ for
+the implementation of multiset similarity search that, given $m$, retrieves
+from $\mathcal{M}$ all sub-multisets or super-multisets that are similar to $m$
+with respect to the deviation $dev$.
+
 In the following subsections, we will present each operation of the multiset-trie 
 data structure separately. 
 
@@ -162,7 +170,15 @@ presented in Algorithm~\ref{alg:delete}.
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Sub-multiset existence} \label{s:subexists}
+\subsection{Sub-multiset and super-multiset existence}
+\label{s:subexists} \label{s:superexists}
+The functions \textsc{submsetExistence} and \textsc{supermsetExistence} are
+symmetrical in the following sense. Let a multiset $m$ represent the borderline
+in $\mathcal{M}$ defined by a path from the root to a leaf by following
+the elements from $m$. The operation \textsc{submsetExistence} searches
+the left part of $\mathcal{M}$ and the operation \textsc{supermsetExistence}
+the right part of $\mathcal{M}$. 
+
 The function \textsc{submsetExistence}($\mathcal{M},m,dev$) checks if there exists 
 a multiset $x$ in $\mathcal{M},$ that satisfies the condition $x\subseteq m$ and 
 $| x[i] - m[i] | \leq dev,$ where $1\leq i \leq \sigma.$ 
@@ -202,22 +218,18 @@ is presented in Algorithm~\ref{alg:subexists}.
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Super-multiset existence} \label{s:superexists}
+%\subsection{Super-multiset existence} \label{s:superexists}
 The function \textsc{supermsetExistence}($\mathcal{M},m,dev$) checks if there 
 exists super-multiset $x$ of a given multiset $m$ in $\mathcal{M},$ such that 
-condition $| x[i] - m[i] |\leq dev$ is satisfied, where $1\leq i \leq \sigma.$ By analogy 
-to the function \textsc{submsetExistence}, the function \textsc{supermsetExistence} 
-starts by searching for an exact match $x=m$ in $\mathcal{M}.$ If an exact 
-match is not found in $\mathcal{M},$ the function searches for the closest (the 
-smallest) super-multiset $x$ of $m$ in $\mathcal{M}$ by increasing multiplicity 
-of elements in $m.$ At every level, the function tries to proceed with the smallest 
-possible multiplicity of an element that is provided by $m.$ However, when the function 
-reaches some level where it meets a \emph{Null} node and can not go further using 
-the path provided by $m,$ it increases the multiplicity of an element that corresponds to a 
-current level according to the deviation parameter $dev.$ Thus, the function \textsc{supermsetExistence} 
-can increase multiplicity of an element up to $n-1,$ where $n$ is the degree of 
-a node in $\mathcal{M},$ to find the closest super-multiset $x\supseteq m$ in 
-$\mathcal{M}.$ The function \textsc{supermsetExistence} is presented in 
+condition $| x[i] - m[i] |\leq dev$ is satisfied, where $1\leq i \leq \sigma.$
+Symmetrically to the function \textsc{submsetExistence}, the function
+\textsc{supermsetExistence} searches first for an exact match $x=m$ in
+$\mathcal{M}.$ If such $x$ does not exist in $\mathcal{M},$ then
+the function searches on the right side of the borderline (an exact match)
+defined by $m$. Since we would like to find the closest (the smallest)
+super-multiset we increase the multiplicity of elements in $m$ at every
+level of $\mathcal(M)$ starting with the multiplicities of $m.$
+The function \textsc{supermsetExistence} is presented in
 Algorithm~\ref{alg:superxists}.
 
 
