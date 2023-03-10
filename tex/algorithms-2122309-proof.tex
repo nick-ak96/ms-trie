@@ -1,0 +1,2230 @@
+%  LaTeX support: latex@mdpi.com 
+%  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
+
+%=================================================================
+\documentclass[algorithms,article,accept,pdftex,moreauthors]{Definitions/mdpi} 
+% For posting an early version of this manuscript as a preprint, you may use "preprints" as the journal and change "submit" to "accept". The document class line would be, e.g., \documentclass[preprints,article,accept,moreauthors,pdftex]{mdpi}. This is especially recommended for submission to arXiv, where line numbers should be removed before posting. For preprints.org, the editorial staff will make this change immediately prior to posting.
+%\usepackage{showframe}
+%--------------------
+% Class Options:
+%--------------------
+%----------
+% journal
+%----------
+% Choose between the following MDPI journals:
+% acoustics, actuators, addictions, admsci, adolescents, aerospace, agriculture, agriengineering, agronomy, ai, algorithms, allergies, alloys, analytica, animals, antibiotics, antibodies, antioxidants, applbiosci, appliedchem, appliedmath, applmech, applmicrobiol, applnano, applsci, aquacj, architecture, arts, asc, asi, astronomy, atmosphere, atoms, audiolres, automation, axioms, bacteria, batteries, bdcc, behavsci, beverages, biochem, bioengineering, biologics, biology, biomass, biomechanics, biomed, biomedicines, biomedinformatics, biomimetics, biomolecules, biophysica, biosensors, biotech, birds, bloods, blsf, brainsci, breath, buildings, businesses, cancers, carbon, cardiogenetics, catalysts, cells, ceramics, challenges, chemengineering, chemistry, chemosensors, chemproc, children, chips, cimb, civileng, cleantechnol, climate, clinpract, clockssleep, cmd, coasts, coatings, colloids, colorants, commodities, compounds, computation, computers, condensedmatter, conservation, constrmater, cosmetics, covid, crops, cryptography, crystals, csmf, ctn, curroncol, currophthalmol, cyber, dairy, data, dentistry, dermato, dermatopathology, designs, diabetology, diagnostics, dietetics, digital, disabilities, diseases, diversity, dna, drones, dynamics, earth, ebj, ecologies, econometrics, economies, education, ejihpe, electricity, electrochem, electronicmat, electronics, encyclopedia, endocrines, energies, eng, engproc, ent, entomology, entropy, environments, environsciproc, epidemiologia, epigenomes, est, fermentation, fibers, fintech, fire, fishes, fluids, foods, forecasting, forensicsci, forests, foundations, fractalfract, fuels, futureinternet, futureparasites, futurepharmacol, futurephys, futuretransp, galaxies, games, gases, gastroent, gastrointestdisord, gels, genealogy, genes, geographies, geohazards, geomatics, geosciences, geotechnics, geriatrics, hazardousmatters, healthcare, hearts, hemato, heritage, highthroughput, histories, horticulturae, humanities, humans, hydrobiology, hydrogen, hydrology, hygiene, idr, ijerph, ijfs, ijgi, ijms, ijns, ijtm, ijtpp, immuno, informatics, information, infrastructures, inorganics, insects, instruments, inventions, iot, j, jal, jcdd, jcm, jcp, jcs, jdb, jeta, jfb, jfmk, jimaging, jintelligence, jlpea, jmmp, jmp, jmse, jne, jnt, jof, joitmc, jor, journalmedia, jox, jpm, jrfm, jsan, jtaer, jzbg, kidney, kidneydial, knowledge, land, languages, laws, life, liquids, literature, livers, logics, logistics, lubricants, lymphatics, machines, macromol, magnetism, magnetochemistry, make, marinedrugs, materials, materproc, mathematics, mca, measurements, medicina, medicines, medsci, membranes, merits, metabolites, metals, meteorology, methane, metrology, micro, microarrays, microbiolres, micromachines, microorganisms, microplastics, minerals, mining, modelling, molbank, molecules, mps, msf, mti, muscles, nanoenergyadv, nanomanufacturing, nanomaterials, ncrna, network, neuroglia, neurolint, neurosci, nitrogen, notspecified, nri, nursrep, nutraceuticals, nutrients, obesities, oceans, ohbm, onco, oncopathology, optics, oral, organics, organoids, osteology, oxygen, parasites, parasitologia, particles, pathogens, pathophysiology, pediatrrep, pharmaceuticals, pharmaceutics, pharmacoepidemiology, pharmacy, philosophies, photochem, photonics, phycology, physchem, physics, physiologia, plants, plasma, pollutants, polymers, polysaccharides, poultry, powders, preprints, proceedings, processes, prosthesis, proteomes, psf, psych, psychiatryint, psychoactives, publications, quantumrep, quaternary, qubs, radiation, reactions, recycling, regeneration, religions, remotesensing, reports, reprodmed, resources, rheumato, risks, robotics, ruminants, safety, sci, scipharm, seeds, sensors, separations, sexes, signals, sinusitis, skins, smartcities, sna, societies, socsci, software, soilsystems, solar, solids, sports, standards, stats, stresses, surfaces, surgeries, suschem, sustainability, symmetry, synbio, systems, taxonomy, technologies, telecom, test, textiles, thalassrep, thermo, tomography, tourismhosp, toxics, toxins, transplantology, transportation, traumacare, traumas, tropicalmed, universe, urbansci, uro, vaccines, vehicles, venereology, vetsci, vibration, viruses, vision, waste, water, wem, wevj, wind, women, world, youth, zoonoticdis 
+
+%---------
+% article
+%---------
+% The default type of manuscript is "article", but can be replaced by: 
+% abstract, addendum, article, book, bookreview, briefreport, casereport, comment, commentary, communication, conferenceproceedings, correction, conferencereport, entry, expressionofconcern, extendedabstract, datadescriptor, editorial, essay, erratum, hypothesis, interestingimage, obituary, opinion, projectreport, reply, retraction, review, perspective, protocol, shortnote, studyprotocol, systematicreview, supfile, technicalnote, viewpoint, guidelines, registeredreport, tutorial
+% supfile = supplementary materials
+
+%----------
+% submit
+%----------
+% The class option "submit" will be changed to "accept" by the Editorial Office when the paper is accepted. This will only make changes to the frontpage (e.g., the logo of the journal will get visible), the headings, and the copyright information. Also, line numbering will be removed. Journal info and pagination for accepted papers will also be assigned by the Editorial Office.
+
+%------------------
+% moreauthors
+%------------------
+% If there is only one author the class option oneauthor should be used. Otherwise use the class option moreauthors.
+
+%---------
+% pdftex
+%---------
+% The option pdftex is for use with pdfLaTeX. If eps figures are used, remove the option pdftex and use LaTeX and dvi2pdf.
+
+%=================================================================
+% MDPI internal commands
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2023}
+\copyrightyear{2023}
+\externaleditor{Academic Editor:Frank Werner}%MDPI: Please add Academic Editor.
+\datereceived{10 December 2022 } 
+\daterevised{22 February 2023  } % Comment out if no revised date
+\dateaccepted{8 March 2023 } 
+\datepublished{ } 
+%\datecorrected{} % For corrected papers: "Corrected: XXX" date in the original paper.
+%\dateretracted{} % For corrected papers: "Retracted: XXX" date in the original paper.
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+%\pdfoutput=1 % Uncommented for upload to arXiv.org
+%------------------------------------------------------------------
+% The following line should be uncommented if the LaTeX file is uploaded to arXiv.org
+%\pdfoutput=1
+
+%=================================================================
+% Add packages and commands here. The following packages are loaded in our class file: fontenc, inputenc, calc, indentfirst, fancyhdr, graphicx, epstopdf, lastpage, ifthen, lineno, float, amsmath, setspace, enumitem, mathpazo, booktabs, titlesec, etoolbox, tabto, xcolor, soul, multirow, microtype, tikz, totcount, changepage, attrib, upgreek, cleveref, amsthm, hyphenat, natbib, hyperref, footmisc, url, geometry, newfloat, caption
+
+
+%tikz stuff
+%\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzset{
+	treenode/.style = {align=center, inner sep=0pt, font=\sffamily\bfseries, 
+		text=black, draw=black, thick},
+	node1/.style = {treenode, rectangle, rounded corners=5pt, fill=green!10, 
+		minimum width=2em, minimum height=1.5em, text width=1.5em},
+	dummy/.style = {treenode, rectangle, rounded corners=2.5pt, fill=green!10, 
+		minimum width=1em, minimum height=0.75em},
+	emp/.style = {treenode, circle, fill=white, minimum width=1.5em},
+	none/.style = {treenode, rectangle, fill=black, minimum width=0.5em, 
+		minimum height=0.5em}
+}
+
+% for our algorithms
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+%cref
+%\usepackage[capitalise]{cleveref}
+
+\usepackage{siunitx}
+
+%\usepackage{subcaption}
+\usepackage[labelformat=simple]{subcaption}
+\renewcommand\thesubfigure{\alph{subfigure}}
+\DeclareCaptionLabelFormat{subcaptionlabel}{\normalfont(\textbf{#2}\normalfont)}
+\captionsetup[subfigure]{labelformat=subcaptionlabel}
+% for math enviroments
+
+% graphics paths
+%\usepackage{graphicx}
+\graphicspath{{img/ex1/}{img/ex2/}{img/ex3/}{img/ex4/}{img/ex5/}{img/other/}{img/benchmark/}}
+
+% pretty C++
+\newcommand{\CC}{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}
+
+%=================================================================
+%% Please use the following mathematics environments: Theorem, Lemma, Corollary, Proposition, Characterization, Property, Problem, Example, ExamplesandDefinitions, Hypothesis, Remark, Definition, Notation, Assumption
+%% For proofs, please use the proof environment (the amsthm package is loaded by the MDPI class).
+
+
+
+%=================================================================
+% Full title of the paper (Capitalized)
+\Title{Multiset-Trie Data Structure}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{Multiset-Trie Data Structure}
+
+% Author Orchid ID: enter ID or remove command
+%\newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
+\newcommand{\orcidauthorB}{0000-0002-3994-4805} % Add \orcidB{} behind the author's name
+\newcommand{\orcidauthorC}{0000-0002-4960-8901} % Add \orcidC{} behind the author's name
+\newcommand{\orcidauthorD}{0000-0001-6851-3214} % Add \orcidD{} behind the author's name
+
+% Authors, for the paper (add full first names)
+\Author{Mikita Akulich $^{1,\dagger}$, Iztok Savnik $^{1,2,\dagger}$\orcidB{}, Matjaž Krnc $^{1,2,3,\dagger}$\orcidC{} and Riste Škrekovski $^{1,2,3,\dagger,}$*\orcidD{}}
+
+%\longauthorlist{yes}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{Mikita Akulich, Iztok Savnik, Matjaž Krnc and Riste Škrekovski}
+
+% MDPI internal command: Authors, for citation in the left column
+\AuthorCitation{Akulich, M.; Savnik, I.; Krnc, K.; Škrekovski, R.}
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address{%
+$^{1}$ \quad Faculty of Mathematics, Natural Sciences and Information Technologies, University of Primorska,  6000 Koper, Slovenia; mikita.akulich@gmail.com (M.A.); iztok.savnik@upr.si (I.S.); matjaz.krnc@upr.si (M.K.)\\
+$^{2}$ \quad Faculty of Information Studies,  8000 Novo Mesto,  Slovenia\\
+$^{3}$ \quad Department of Mathematics, Faculty of Mathematics and Physics,  University of Ljubljana, \mbox{1000 Ljubljana, Slovenia}
+}
+
+
+% Contact information of the corresponding author
+\corres{Correspondence: skrekovski@gmail.com %Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)
+%\corres{Correspondence: iztok.savnik@upr.si %Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)
+}
+
+
+% Current address and/or shared authorship
+%\firstnote{Current address: Affiliation 3.} 
+\firstnote{These authors contributed equally to this work.}
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+%\simplesumm{} % Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e., \\) 
+\abstract{This paper proposes a new data structure, \highlighting{\emph{multiset-trie}}, %MDPI: Please confirm if the italics is unnecessary and can be removed. Please check all italic.
+ that is designed for storing and efficiently processing a set of multisets. Moreover, multiset-trie can operate on a set of sets without efficiency loss. 
+The multiset-trie structure is a search tree with properties similar to those of a trie. It implements all standard search tree operations together with the multiset containment operations, such as sub-multiset and super-multiset. Suppose that we have a set of multisets $S$ and a multiset $X$. The multiset containment operations retrieve multisets from $S$ that are either sub-multisets or super-multisets of $X$.  
+We present the mathematical analysis of a multiset-trie that gives the time complexity of the algorithms and the space complexity of the data structure. Further, the empirical analysis of the data structure is implemented in a series of experiments. The experiments illuminate the time complexity space of the multiset containment operations.
+%Finally, the comparison of the multiset-trie with the inverted index shows that the multiset-trie outperforms the inverted index by up to 4 orders of magnitude.
+%%% more rounded...!
+}
+
+
+
+% Keywords
+\keyword{trie data structure; multiset; containment queries} 
+
+% The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
+%\PACS{J0101}
+%\MSC{}
+%\JEL{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Diversity
+%\LSID{\url{http://}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Applied Sciences
+%\featuredapplication{Authors are encouraged to provide a concise description of the specific application or a potential application of the work. This section is not mandatory.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Data
+%\dataset{DOI number or link to the deposited data set if the data set is published separately. If the data set shall be published as a supplement to this paper, this field will be filled by the journal editors. In this case, please submit the data set as a supplement.}
+%\datasetlicense{License under which the data set is made available (CC0, CC-BY, CC-BY-SA, CC-BY-NC, etc.)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Toxins
+%\keycontribution{The breakthroughs or highlights of the manuscript. Authors can write one or two sentences to describe the most important part of the paper.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Encyclopedia
+%\encyclopediadef{For entry manuscripts only: please provide a brief overview of the entry title instead of an abstract.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Only for the journal Advances in Respiratory Medicine
+%\addhighlights{yes}
+%\renewcommand{\addhighlights}{%
+
+%\noindent This is an obligatory section in “Advances in Respiratory Medicine”, whose goal is to increase the discoverability and readability of the article via search engines and other scholars. Highlights should not be a copy of the abstract, but a simple text allowing the reader to quickly and simplified find out what the article is about and what can be cited from it. Each of these parts should be devoted up to 2~bullet points.\vspace{3pt}\\
+%\textbf{What are the main findings?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}\vspace{3pt}
+%\textbf{What is the implication of the main finding?}
+% \begin{itemize}[labelsep=2.5mm,topsep=-3pt]
+% \item First bullet.
+% \item Second bullet.
+% \end{itemize}
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction} \label{c:introduction}
+
+% multisets def; not ordered
+A multiset is a collection of elements that can have more than one instance. As in the case of ordinary sets, the ordering of the elements in multisets is not relevant. For example, multisets $\{1,1,2\}$ and $\{1,2,1\}$ represent the same multiset.
+
+% motivation for the design
+Multisets appear in a wide variety of domains and applications \cite{savnik2021plos}. The index structures for storing sets of multisets were studied in the area of object-relational database systems to store, compress and query multiset-valued attributes efficiently \cite{bouros2016set,gripon2012compressing,ross2004symmetric,steinruecken2015compressing}. The need to efficiently manage multisets also appears in information retrieval \cite{zobel1992efficient,zobel2006inverted,manning2008introduction}, where texts are represented as multisets. In data mining, sets are often used to represent and efficiently search hypotheses in the knowledge discovery process \cite{mannila1997,flach1999aicom}. In the area of expert systems, multisets are used for the representation and querying of the preconditions of rules \cite{forgy1982}. Finally, in recent internet applications, the efficient representations and searches of multisets (such as user requests and object features) have become essential \cite{bayardo2007simlar,xiao2011tods,wang2017vldb} for data cleaning, information integration, community mining, and entity resolution. 
+
+%\medskip\noindent\textbf{Problem definition.}\;
+In this paper, we address the problems of storing, indexing, and querying the sets of multisets. In particular, we deal with the design of an index data structure that provides an efficient implementation of the multiset containment queries. Let $S$ be an index storing a set of multisets. For a given input multiset $m$, a \emph{containment query} searches for either sub-multisets or super-multisets of $m$ in $S$. 
+
+Existent indexes for storing a set of multisets are rooted in search trees \cite{corman2001}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related for a multiset $m$ either by a sub-multiset or a super-multiset relationship. 
+
+The existing solutions to the implementation of the containment queries use the inverted indexes \cite{zobel1992efficient,zobel1998inverted,zobel2006csur,broder2006indexing,terrovitis2006cikm,terrovitis2011icdt}, the signature trees \cite{deppisch1986sigir,tousidou2002sigstruc,yangjun2005stree,zobel1998inverted}, and the B+ trees~\cite{Helmer2003,terrovitis2011icdt}. These solutions provide a key--value look-up, where a key is an element of a multiset and a value is a corresponding multiset. The containment operations require multiple key--value index accesses and also the additional processing of partial results such as the intersection or union of~multisets.
+
+%\medskip\noindent\textbf{Proposed data structure.}\;
+To improve the efficiency of containment operations, we propose a data structure, \emph{multiset-trie}, that is designed for storing and processing a finite bounded set of multisets. A multiset-trie generalizes the \emph{set-trie} data structure proposed by Savnik~\cite{savnik2013index,savnik2021plos}, which was designed for the storage and processing of a finite bounded set of sets. 
+The set-trie is an extension of a trie data structure to provide, besides the fast search and retrieval of sets, also the efficient implementation of the set containment operation. The set-trie is also a form of the binomial tree \cite{corman2001}.
+
+Multiset-trie provides a space-efficient representation of a set of multisets and efficient multiset containment operations. As in the case of set-trie, the ordering of the elements in multiset-trie is not relevant for the representation of multisets. As a consequence, the efficiency of the multiset containment operations is obtained by selecting the \emph{specific} ordering of multiset elements. This ordering can be exploited for the efficient search in a multiset-trie.  
+
+% intro into mstrie
+The multiset-trie is an $n$-ary tree data structure. Each multiset in a multiset-trie is represented by a path from the root to a leaf node. Multiset elements are symbols from an alphabet. Each symbol from the alphabet is represented by a node at a certain level of the multiset-trie. The node stores the multiplicity of an element in a multiset.
+
+A multiset-trie is also a kind of search tree. Similar to a trie, it uses common prefixes for a shared data representation. Unlike the compact prefix tree \cite{Sedgewick:2011:ALG:2011916}, the multiset-trie does not support path compression. However, the absence of path compression makes the multiset-trie a perfectly height-balanced tree. Moreover, when multiset-trie is full, it forms a complete $n$-ary tree.
+
+\medskip\noindent\textbf{Contributions.}\;
+The main contributions of this paper are as follows. First, a  multiset-trie is a novel data structure for storing and querying a set of multisets that provides efficient multiset containment operations. 
+
+Second, a mathematical model is developed to analyze the complexity of multiset containment operations. In particular, we estimate the size of a subtree traversed by a containment query and give an insight into the time complexity of containment queries. 
+
+In addition to the mathematical analysis, the size of a subtree visited by a multiset containment query is also the central focus of the empirical analysis. We carefully designed the experiments to unravel the main features of the search space. We observe how the number of visited nodes depends on various parameters, such as the density of the tree and the ordering of multiset elements.
+
+Finally, the mathematical as well as empirical analyses show the influence of ordering the elements of multisets on the efficiency of storing and processing multisets. We show that the ordering, which is based on the frequencies of the multiset elements, can speed up the multiset containment queries by orders of magnitude.
+
+\medskip\noindent\textbf{Paper organization.}\; 
+The paper is organized as follows. In the following Section~\ref{c:description}, we present the multiset-trie data structure in detail.
+Section~\ref{c:operations} presents the operations of the multiset-trie. These include the basic operations of search trees and multiset containment operations. The algorithms are presented in detail using pseudocode. 
+
+The description of multiset-trie operations is followed by the mathematical analysis of their complexity in Section~\ref{c:analysis}. The main assumption is that multisets are constructed uniformly at random with bounded cardinality. By using probabilistic tools, we describe the time complexity of the algorithms and the space complexity of the structure.
+
+In Section~\ref{c:experiments}, we present an empirical study of the multiset-trie. Synthetic and real-world data sets are used in experiments that are designed to study the performance of multiset containment operations. Further, the multiset-trie is empirically compared to the inverted index in a separate experiment. The experiments highlight the methods for optimizing a multiset-trie. 
+
+The related work is reviewed in Section~\ref{c:relwork}. This section describes a set-trie data structure, the inverted indexes, the signature indexes, and the multisets in relational database systems. Finally, the concluding remarks and the future work are presented in Section~\ref{c:conclusions}.
+
+%\input{tex/s_intro}
+% section 2
+%\input{tex/s_data_structure}
+\section{Multiset-Trie Data Structure} \label{c:description}
+%
+Let $\Sigma$ be a set of distinct symbols that define an alphabet, and let 
+$\sigma$ be the cardinality of $\Sigma.$ The \emph{multiset-trie} data structure 
+stores multisets that are composed of symbols from the alphabet $\Sigma.$ It 
+provides the basic tree data structure operations, such as insert, delete, and 
+search, together with multiset containment operations for searching sub-multisets
+and super-multisets, which will be discussed in the next section in greater detail.
+
+A multiset ignores the ordering of its elements by definition, which allows us to 
+define a bijective mapping $\phi:\Sigma \rightarrow I,$ where $I$ is the set of 
+integers $\{ 1,2,3, \ldots, \sigma \}.$ In this way, we obtain the indexing of 
+elements from the alphabet $\Sigma,$ so we can work directly with integers 
+rather than with specific symbols from $\Sigma.$
+
+The multiset-trie is an $n$-ary tree-based data structure with the properties of 
+the trie. A node in multiset-trie always has degree $n,$ i.e., $n$ children. Some of 
+the children may be \emph{Null} (non-existing), but the number of \emph{Null} 
+children can be at most $n-1.$ All the children of a node, including the \emph{Null} 
+children, are labeled from left to right with labels $c_j,$ where $j\in \{ 0, 1, \ldots, n-1 \}.$ 
+Every pair of child nodes $u$ and $v$ that share the same parent node have different labels.
+
+%The multiset-trie is an $n$-ary tree based structure. A node can have a degree 
+%from $1$ to $n,$ depending on the number of existing children. The edges from 
+%parent node to children have labels $c_j,$ where $j\in \{ 0, 1, \ldots, n-1 \}.$ 
+%The edges are labeled from left to right with the condition that there are no 
+%two edges with the same label coming from a parent node. 
+
+Nodes that have equal height in a multiset-trie form a level. The height of a 
+multiset-trie is always $\sigma+1$ if at least one multiset is in the structure. 
+The height of the root node (the first level) is defined to be 1.
+%
+Levels in multiset-trie are enumerated by their height, i.e., a level $L_i$ has 
+height $i.$ The connection between level height in a multiset-trie and symbols 
+from alphabet $\Sigma$ is defined as follows. A level $L_i,$ where 
+$i\in\{ 1,2,\ldots, \sigma \}$ represents a symbol $s\in\Sigma,$ such that 
+$\phi^{-1}(i) = s.$ The last level $L_{\sigma+1}$ does not represent any symbol 
+and is named the \emph{leaf level} ($LL$ for short).
+
+Since every level, except $LL$, represents a symbol from $\Sigma,$ we can define 
+a transition between nodes that are located at different levels in a multiset-trie. 
+%
+Consider two nodes $u,v$ in a multiset-trie at levels $L_i, L_{i+1}$, respectively, 
+where $i\in\{1,2,\ldots,\sigma\}.$ Let a node $u$ be a parent node of a node $v$ 
+and consequently a node $v$ be a child node of a node $u.$ Suppose that a child 
+node $v$ is not \emph{Null} and has a label $c_j,$ where $j\in\{ 0,1,\ldots, n-1 \}.$ 
+%
+Then, the \emph{path} $u\rightarrow v$ represents a symbol $s\in\Sigma$ with 
+multiplicity $j,$ such that $\phi^{-1}(i) = s.$ 
+%
+Such a transition $u\rightarrow v$ is called a \emph{path of length} $1$ and is 
+allowed if and only if a node $v$ is not \emph{Null} and $u$ is a parent node of 
+a node $v.$ If a node $v$ has label $c_0,$ then the path $u\rightarrow v$ 
+represents a symbol with the multiplicity $0$ respectively, i.e., an empty symbol.
+
+We define a \emph{complete path} to be the path of length $\sigma$ in a 
+multiset-trie with the endpoints at the root node (the first level) and $LL$. Thus, 
+a multiset $m$ is inserted into a multiset-trie if and only if there exists a 
+complete path in a multiset-trie that corresponds to $m.$
+%
+Note that every complete path in a multiset-trie is unique. Therefore, the multisets 
+that share a common prefix in a multiset-trie can have a common path of length at 
+most $\sigma-1.$ The complete path that passes through nodes labeled by $c_0$ 
+on all levels represents an empty multiset or an empty set.
+%
+Thus, any multiset $m$ that is composed of symbols from $\Sigma$ with maximum 
+multiplicity not greater than $n-1$ can be represented by a complete path in a multiset-trie.
+
+An example of a multiset-trie data structure with $\sigma = 2$ and 
+$\Sigma = I = \{ 1,2 \}$ (i.e., the mapping $\phi$ is an identity mapping) is shown in Figure~\ref{fig:sketch}. 
+In the figure, which stores elements of $\{\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}\}$, the degree of a node is set to be $n=3,$ so the maximal multiplicity of an element in 
+a multiset is $n-1=2.$  
+
+\begin{figure}[H]
+\begin{tikzpicture}[>=stealth',
+level 1/.style={sibling distance = 2.5cm},
+level 2/.style={sibling distance = 1cm},
+level distance = 1.5cm]
+\node (R) [node1] {\tiny Root}
+	child { node [node1] {} 
+		child { node [node1] {} edge from parent node [near end, left] {$c_0$}}
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		child { node [node1] {} edge from parent node [near end, right] {$c_2$}}
+		edge from parent node [near end, left] {$c_0$}	
+	}
+	child { node [node1] {}
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		child { node [node1] {} edge from parent node [near end, right] {$c_2$}}
+		edge from parent node [near end, left] {$c_1$}
+	}
+	child { node [node1] {} 
+		child { node [node1] {} edge from parent node [near end, left] {$c_1$}}
+		edge from parent node [near end, right] {$c_2$} 
+};	
+%----------------- Level labels --------------	
+	\begin{scope}[every node/.style={right}]
+		\path (R 				-| R-3-1) ++(5mm,0) node {$L_1$};
+		\path (R-3 			-| R-3-1) ++(5mm,0) node {$L_2$};
+		\path (R-3-1		-| R-3-1) ++(5mm,0) node {$LL$};
+	\end{scope}			
+\end{tikzpicture}
+\caption{Example of multiset-trie structure containing multisets $\emptyset, \{ 1,1,2 \},$ $\{ 1,2,2 \},$ $\{ 2 \},$ $\{ 1,2 \},$ $\{ 2,2 \}$. The \emph{Null} children are omitted.}
+\label{fig:sketch}
+\end{figure}
+
+Let a pair $(L_i, c_j)$ represent a node with label $c_j$ at a level $L_i.$ 
+The pair $(L_1,c_j)$ is equivalent to $(L_1,root),$ since the first level has 
+the root node only. According to Figure~\ref{fig:sketch}, we can extract the 
+inserted multisets as follows:
+\begin{eqnarray*}
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_0) & = & \{ 1^0, 2^0 \} = \emptyset \\
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_1) & = & \{ 1^0, 2^1 \} = \{ 2 \} \\
+(L_1,root) \rightarrow (L_2,c_0) \rightarrow (LL,c_2) & = & \{ 1^0, 2^2 \} = \{ 2,2 \} \\
+(L_1,root) \rightarrow (L_2,c_1) \rightarrow (LL,c_1) & = & \{ 1^1, 2^1 \} = \{ 1,2 \} \\
+(L_1,root) \rightarrow (L_2,c_1) \rightarrow (LL,c_2) & = & \{ 1^1, 2^2 \} = \{ 1,2,2 \} \\
+(L_1,root) \rightarrow (L_2,c_2) \rightarrow (LL,c_1) & = & \{ 1^2, 2^1 \} = \{ 1,1,2 \} 
+\end{eqnarray*}
+where $e^k$ represents an element $e$ with multiplicity $k.$
+% section 3
+%\input{tex/s_operations}
+\section{Multiset-Trie Operations} \label{c:operations}
+
+%
+Let $\mathcal{M}$ be a multiset-trie and let $M$ be a set of multisets that are 
+inserted into the multiset-trie $\mathcal{M}.$ We define a type \emph{Multiset} in 
+order to use it as a representation of a multiset. The type \emph{Multiset} is 
+an array $m$ of constant length $\sigma,$ where the $i$-th cell represents the element 
+$\phi^{-1}(i)$ from $\Sigma$ with multiplicity $m[i].$ From now on, we 
+agree that the first cell of an array has index 1. Let us give an example of a 
+\emph{Multiset} instance with $\sigma = 2:$
+%
+\begin{center}
+\begin{tabular}{ccc}
+Multiset & & Instance of type Multiset \\
+$\{ 1,1,2 \}$ & $\cong $ & 
+\begin{tabular}{|c|c|}
+\hline 
+2 & 1 \\
+\hline 
+\multicolumn{1}{c}{\tiny 1} & \multicolumn{1}{c}{\tiny 2} \\
+\end{tabular}
+\end{tabular}
+\end{center}
+%
+\hl{The} %MDPI: Whether the indentation of the paragraph after the formula is necessary, please confirm.
+ operations supported by the multiset-trie data structure are as
+follows. 
+%
+\begin{enumerate}
+\item \textsc{insert}($\mathcal{M}$, $m$): inserts a multiset $m$ into 
+$\mathcal{M}$ if $m\not\in M;$
+%
+\item \textsc{search}($\mathcal{M}$, $m$): returns true if a multiset $m\in M$ 
+for a given $\mathcal{M},$ and returns false otherwise;
+%
+\item \textsc{delete}($\mathcal{M}$, $m$): returns true if a multiset $m$ was 
+successfully deleted from $\mathcal{M},$ and returns false otherwise (in case 
+$m\not\in M$);
+%
+\item \textsc{submsetExistence}($\mathcal{M}$, $m$, $dev$): returns true if 
+there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\subseteq m$ 
+and $| x[i] - m[i] |\leq dev$ for $1\leq i\leq \sigma$, and returns false otherwise; 
+%
+\item \textsc{supermsetExistence}($\mathcal{M}$, $m$, $dev$): returns true if 
+there exists a $x\in M$ for a given $\mathcal{M}$ such that $x\supseteq m$ 
+and $| x[i] - m[i] |\leq dev$ for $1\leq i\leq \sigma$, and returns false otherwise; 
+%
+\item \textsc{getAllSubmsets}($\mathcal{M}$, $m$, $dev$): returns the set of multisets 
+$\{ x \in M : x\subseteq m \wedge |x[i]-m[i]|\leq dev \}$ for a given 
+$\mathcal{M},$ where $1\leq i\leq \sigma;$
+%
+\item \textsc{getAllSupermsets}($\mathcal{M}$, $m$, $dev$): returns the set of multisets 
+$\{ x\in M : x\supseteq m \wedge |x[i]-m[i]|\leq dev \}$ for a given $\mathcal{M},$
+where $1\leq i\leq \sigma.$
+%
+\end{enumerate}
+
+The parameter $dev$ is used to specify the maximal deviation in the multiplicity
+of multiset containment operations. It is utilized to limit the search in multiset
+containment queries to the sub-multisets and super-multisets that are
+the closest to the input multiset $m$. In addition, we use $dev$ for
+the implementation of a multiset similarity search that, given $m$, retrieves
+from $\mathcal{M}$ all sub-multisets or super-multisets that are similar to $m$
+with respect to the deviation $dev$.
+
+In the following subsections, we will present each operation of the multiset-trie 
+data structure separately. 
+
+Firstly, we would like to describe some notations that will be used. The 
+multiset-trie data structure is a recursive data structure. Hence, any subtree 
+of a multiset-trie $\mathcal{M}$ is again a multiset-trie. This fact allows 
+us to use the root node of a multiset-trie as its representative. Thus, the notation 
+$\mathcal{M}$ will be used instead of $\mathcal{M}.root$ to refer to the root 
+node of $\mathcal{M}.$ Non-existing or \emph{Null} nodes in multiset-trie will 
+be marked as \emph{Null} and existing nodes at the level $LL$ will be marked 
+as \emph{accepting} nodes. The array slicing operation will be used as follows. 
+For a given array $a,$ $a[i:]$ represents the array obtained from $a$ by taking 
+only the cells from index $i$ until the last cell. 
+
+
+\subsection{Insert} \label{s:insert}
+The procedure \textsc{insert}($\mathcal{M}$, $m$) inserts a new instance $m$ of 
+type Multiset into multiset-trie $\mathcal{M}$. If the complete path already 
+exists, then the procedure leaves the structure unchanged. Otherwise, it extends 
+partially existing paths or creates a new complete path. The procedure does not return 
+any result. The pseudocode for procedure \textsc{insert} is presented in 
+Algorithm~\ref{alg:insert}.
+
+
+\begin{algorithm}[H]
+\caption{Procedure \textsc{insert}.}
+\label{alg:insert}
+\begin{algorithmic}[1]
+\Procedure{\textsc{insert}}{$\mathcal{M}$, $m$}
+\State $currentNode \gets \mathcal{M}$
+\For{$i=1$ to $\sigma$}
+\If {child $c_{m[i]}$ of $currentNode$ is \emph{Null}}
+\State create new child $c_{m[i]}$ of $currentNode$
+\EndIf
+\State $currentNode \gets c_{m[i]}$
+\EndFor
+\State mark $currentNode$ as \emph{accepting}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Search}\label{s:search}
+The function \textsc{search}($\mathcal{M}$, $m$) checks if the complete path corresponding to 
+a given multiset $m$ exists in the structure $\mathcal{M}.$ The function returns 
+true if the multiset $m$ exists in $\mathcal{M}$, and returns false otherwise. The 
+function \textsc{search} is presented in Algorithm~\ref{alg:search}.
+
+\begin{algorithm}[H]
+\caption{Function \textsc{search}.}
+\label{alg:search}
+\begin{algorithmic}[1]
+\Function{\textsc{search}}{$\mathcal{M}$, $m$}
+\State $currentNode \gets \mathcal{M}$
+\For{$i=1$ to $\sigma$}
+\If {child $c_{m[i]}$ of $currentNode$ is \emph{Null}}
+\State \Return False
+\EndIf
+\State $currentNode \gets c_{m[i]}$
+\EndFor
+\State \Return True
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Delete} \label{s:delete}
+Function \textsc{delete}($\mathcal{M},$ $m$) searches for the complete path 
+that corresponds to $m$ in order to remove it. If the path cannot be found, the 
+function immediately returns false. During the search, the function keeps track of the 
+number of children for every node. It marks the nodes that have more than one child 
+as \emph{parent nodes} and remembers the label of the child, which is a potential node 
+where the subtree will be cut to remove the multiset. The parent node is needed to 
+perform a removal because the multiset-trie is an explicit data structure. When the search 
+is completed, the function removes the subtree of the last found parent node and 
+returns true. In such a way, after deletion, all the prefixes for other multisets are 
+preserved in $\mathcal{M}$ and $m$ is removed. The function \textsc{delete} is 
+presented in Algorithm~\ref{alg:delete}.
+
+
+\begin{algorithm}[H]
+\caption{Function \textsc{delete}.}
+\label{alg:delete}
+\begin{algorithmic}[1]
+\Function{\textsc{delete}}{$\mathcal{M},$ $m$}
+\State $currentNode \gets \mathcal{M}$
+\State $parent \gets currentNode$ 
+\State $position \gets 1$
+\For {$i=1$ to $\sigma$}
+\If {child $c_{m[i]}$ of $currentNode$ is \emph{Null}}
+\State \Return False
+\EndIf
+\State $numChildren \gets 0$
+\For {$j=0$ to $n-1$}
+\If {child $c_j$ of $currentNode$ is not \emph{Null}}
+\State $numChildren\gets numChildren+1$
+\EndIf
+\EndFor
+\If {$numChildren$ is not $1$}
+\State $parent\gets currentNode$
+\State $position \gets i$
+\EndIf
+\State $currentNode \gets c_{m[i]}$
+\EndFor
+\State child $c_{m[position]}$ of $parent\gets$ \emph{Null}
+\State \Return True
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Sub-Multiset and Super-Multiset Existence}
+\label{s:subexists} \label{s:superexists}
+The functions \textsc{submsetExistence} and \textsc{supermsetExistence} are
+symmetrical in the following sense. Let a multiset $m$ represent the borderline
+in $\mathcal{M}$ defined by a path from the root to a leaf following
+the elements from $m$. The operation \textsc{submsetExistence} searches
+the left part of $\mathcal{M}$ and the operation \textsc{supermsetExistence}
+the right part of $\mathcal{M}$. 
+
+The function \textsc{submsetExistence}($\mathcal{M},m,dev$) checks if there exists 
+a multiset $x$ in $\mathcal{M},$ that satisfies the condition $x\subseteq m$ and 
+$| x[i] - m[i] | \leq dev,$ where $1\leq i \leq \sigma.$ 
+The function starts with searching for an exact match $x=m$ in $\mathcal{M},$ 
+since $m\subseteq m$ by definition of sub-multiset inclusion. If an exact match is 
+not found in $\mathcal{M},$ the function uses multiset-trie to find the closest 
+(the largest) sub-multiset of $m$ in $\mathcal{M}$ by decreasing the multiplicity of 
+elements in $m.$ The parameter $dev$ is used to limit a maximal deviation of 
+multiplicity for a particular element in $x$ with respect to $m.$ 
+At every level, the function tries to proceed with the largest possible multiplicity of 
+an element that is provided by $m.$ However, when the function reaches some level 
+where it meets a \emph{Null} node and cannot go further using the path provided by 
+$m,$ it decreases the multiplicity of an element 
+that corresponds to a current level with respect to the specified maximal deviation. 
+Thus, the function can decrease the multiplicity of an element or eventually skip it in 
+order to find the closest $x\subseteq m.$ The function \textsc{submsetExistence} 
+is presented in Algorithm~\ref{alg:subexists}.
+
+\begin{algorithm}[H]
+\caption{Function \textsc{submsetExistence}.}
+\label{alg:subexists}
+\begin{algorithmic}[1]
+\Function{\textsc{submsetExistence}}{$\mathcal{M}, m, dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting}}
+\State \Return True
+\EndIf
+\For {$i=m[1]$ down to max($0, m[1]-dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\If {\textsc{submsetExistence}($c_i,m[2:], dev$)}
+\State \Return True
+\EndIf
+\EndIf
+\EndFor
+\State \Return False
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+%\subsection{Super-multiset existence} \label{s:superexists}
+The function \textsc{supermsetExistence}($\mathcal{M},m,dev$) checks if there 
+exists super-multiset $x$ of a given multiset $m$ in $\mathcal{M},$ such that 
+condition $| x[i] - m[i] |\leq dev$ is satisfied, where \mbox{$1\leq i \leq \sigma.$}
+Symmetrically to the function \textsc{submsetExistence}, the function
+\textsc{supermsetExistence} searches first for an exact match $x=m$ in
+$\mathcal{M}.$ If such $x$ does not exist in $\mathcal{M},$ then
+the function searches on the right side of the borderline representing
+an exact match of $m$ in $\mathcal{M}.$ Since we would like to find
+the closest (the smallest) super-multiset, we increase the multiplicity of
+elements in $m$ at every level of $\mathcal(M)$ starting with
+the multiplicities of $m.$ The function \textsc{supermsetExistence}
+is presented in Algorithm~\ref{alg:superxists}.
+
+
+\begin{algorithm}[H]
+\caption{Function \textsc{supermsetExistence}.}
+\label{alg:superxists}
+\begin{algorithmic}[1]
+\Function{\textsc{supermsetExistence}}{$\mathcal{M},m,dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting} }
+\State \Return True
+\EndIf
+\For {$i=m[1]$ to min($n-1, m[1] + dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\If {\textsc{supermsetExistence}($c_i,$ $m[2:], dev$)}
+\State \Return True
+\EndIf
+\EndIf
+\EndFor
+\State \Return False
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Get All Sub-Multisets and Get All Super-Multisets} \label{s:getall}
+The algorithms for functions \textsc{getAllSubmsets} and 
+\textsc{getAllSupermsets} are based entirely on algorithms for 
+\textsc{submsetExistence} and \textsc{supermsetExistence} functions that do not 
+terminate on the first existing sub/super-multiset, but store the results and 
+continue the procedure until all existing sub/super-multisets in $\mathcal{M}$ are 
+found and stored. The functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} 
+are presented in Algorithm~\ref{alg:getallsub} and Algorithm~\ref{alg:getallsup}, respectively.
+
+In order to record a multiset during multiset-trie traversal, we use the variable $x$ in the algorithms.
+It is an empty array of size $\sigma$ where we store multiplicities of elements at 
+each level as we traverse the tree. The variable $result$ is used as a container for storing 
+sub-multisets of $m$ found during traversal. Both variables $x$ and $result$ are presented 
+as global; however, they could be passed to the recursive function as parameters.
+
+\begin{algorithm}[H]
+\caption{Function \textsc{getAllSubmsets}.}
+\label{alg:getallsub}
+\begin{algorithmic}[1]
+\State $result \gets$ empty container
+\State $x \gets$ empty array of size $\sigma$
+\Function{\textsc{getAllSubmsets}}{$\mathcal{M}, m, dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting}}
+\State add copy of $x$ to $result$ 
+\EndIf
+\For {$i=m[1]$ down to max($0, m[1]-dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\State $x[1]\gets i$
+\State \textsc{getAllSubmsets}($c_i,m[2:], dev$)
+\EndIf
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}[H]
+\caption{Function \textsc{getAllSupermsets}.}
+\label{alg:getallsup}
+\begin{algorithmic}[1]
+\State $result \gets$ empty container
+\State $x \gets$ empty array of size $\sigma$
+\Function{\textsc{getAllSupermsets}}{$\mathcal{M},m,dev$}
+\State $currentNode \gets \mathcal{M}$
+\If {$currentNode$ is \emph{accepting} }
+\State add copy of $x$ to $result$ 
+\EndIf
+\For {$i=m[1]$ to min($n-1, m[1] + dev$)}
+\If {child $c_i$ of $currentNode$ is not \emph{Null}}
+\State $x[1]\gets i$
+\textsc{getAllSupermsets}($c_i,$ $m[2:], dev$)
+\EndIf
+\EndFor
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+% section 4
+%\input{tex/s_math-Theorems}
+\section{Mathematical Analysis of the Structure} \label{c:analysis}
+%
+In this section, we present theoretical results of the time and space complexity of
+the multiset-trie data structure. In the following Section~\ref{s:timecomplexity}, 
+we discuss the running time complexity of the presented algorithms. First, in 
+Section~\ref{ss:mathmodel}, we present the mathematical model that we use 
+to describe the distribution of multisets in the multiset-trie and input data. 
+Using a probabilistic approach and tools from a Galton--Watson process, we 
+measure the expected cardinality of the multiset-trie in Theorem~\ref{thm:exp_nodes}. 
+Further, we derive the expected cardinality of the searched subtree of the 
+multiset-trie parametrized by an input multiset in Corollary~\ref{cor:exp_nodes_param}.
+
+In Section~\ref{ss:getall}, we discuss the running time complexity of the functions 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets}. We observe that the 
+complexity of the functions is exponential. Moreover, the worst-case running time 
+complexity is the same for both functions, and its upper bound is the cardinality of 
+the multiset-trie.
+
+The remaining ``existence'' functions are discussed in Section~\ref{ss:exists}. 
+We observe that, beyond the scope of our mathematical model, unlike in functions 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets}, the mapping $\phi$ has an 
+impact on the performance of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence}. In particular, the frequency analysis of the symbols 
+from $\Sigma$ in input data determines such a $\phi$ that gives a boost in performance. 
+
+We find that the performance of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} in the worst-case scenario is also proportional to the size of the constructed trie. We give a rather technical upper 
+bound for the worst-case running time complexity, which appears to be the same 
+for both functions. 
+However, it must be stressed that for the positive outcome, this 
+worst-case behavior holds only on specific cases, such as the presence of the empty set 
+in the multiset-trie. 
+
+Finalizing the mathematical analysis, we present the study of the space complexity 
+of the multiset-trie in Section~\ref{s:spacecomplexity}. We show that the space 
+used for the storage is asymptotically equal to the size of the input data. 
+
+\subsection{Time Complexity of the Algorithms}\label{s:timecomplexity}
+The performance of the functions will be measured by the number of 
+visited nodes in a multiset-trie during the execution of a particular query by the 
+functions \textsc{search}, \textsc{delete}, \textsc{submsetExistence}, 
+\textsc{supermsetExistence}, \textsc{getAllSubmsets}, \textsc{getAllSupermsets} 
+and the procedure \textsc{insert}.
+%
+
+By the design of the multiset-trie, it is easy to see that the functions \textsc{search},
+\textsc{delete} and the procedure \textsc{insert} have complexity of $O(\sigma).$
+Because $\sigma$ is defined when the structure is initialized and does not depend
+on the user input afterwards, the asymptotic complexity of the functions \textsc{search}, 
+\textsc{delete} and the procedure \textsc{insert} is $O(1).$ Nonetheless, in the general 
+case, the complexity is $O(\sigma).$
+
+In what follows, we focus on the analysis of the more involved functions:
+\textsc{submsetExistence}, \textsc{supermsetExistence}, \textsc{getAllSubmsets},
+and \textsc{getAllSupermsets}.
+
+\subsubsection{Mathematical Model} \label{ss:mathmodel}
+We start with the basics of our mathematical model. Let $\Sigma$ be an alphabet of
+cardinality $\sigma,$ such that $\Sigma = \{ 1,2, \ldots, \sigma \}.$ Define $N$
+to be the set of all possible multisets that can be inserted in a
+multiset-trie. Let $n$ be the maximal degree of a node in a multiset-trie.
+Then, the maximal multiplicity of an element in a multiset is equal to $n-1.$
+Thus, the number of multisets in a complete multiset-trie is $ |N| = n^{\sigma}.$
+%
+Let $M$ be a collection of multisets inserted into multiset-trie $\mathcal{M}.$
+All the multisets in $M$ are constructed from the alphabet $\Sigma$ according
+to the parameters $\sigma$ and $n$. Hence, any multiset $m\in M,$ 
+has at most $\sigma$ distinct elements that are members of $\Sigma$, and 
+every distinct element in $m$ has multiplicity strictly less than $n.$
+%
+Because a multiset does not distinguish different orderings, it is assumed, for
+simplicity, that all elements are ordered in ascending order. A multiset $m$ is
+represented as $\{1^{k_1},2^{k_2},\ldots, \sigma^{k_\sigma}\},$ where $e^{k_e}$
+represents an element $e\in\Sigma$ with multiplicity $k_e.$
+%
+
+Denote the nodes of multiset-trie on all levels but on $\sigma + 1$ as \emph{internal}
+and nodes on the leaf level as \emph{leaf} nodes.
+%
+Observe that every internal non-root node has a degree of at least~1. Indeed, the
+insertion of a multiset requires the construction of a path of length~$\sigma + 1,$
+meaning that if an internal node exists in a multiset-trie, it must have a degree of
+at least~1. It also follows that the height of a multiset-trie is always~$\sigma +1$
+as soon as at least one multiset is inserted into the data structure.
+
+Our model assumes that all the inserted multisets are chosen with the same probability,
+meaning that for some $p\in (0,1)$, the following holds:
+\[
+P(m\in M) = p, \quad \forall~m\in N.
+\]
+%
+\hl{Let} %MDPI: Whether the indentation of the paragraph after the formula is necessary, please confirm. Please check all.
+ $\xi_1, \xi_2, \ldots, \xi_{\sigma+1}$ be random variables such that $\xi_i$
+represents the number of nodes in a multiset-trie on the $i$-th level. For every node $j$ 
+on $i$-th level, we assign a random variable $\xi_{ij}$ to be the number of its children, 
+such that $j\in[1,\xi_i].$ Then, for every $i\in[1,\sigma]$, the following~holds:%
+\begin{equation}\label{eq:sum_recursive}
+\xi_{i+1} = \sum_{j=1}^{\xi_i} \xi_{ij},
+\end{equation}
+%
+where $\xi_1 = 1.$
+%
+It is easy to see that the variable $\xi_{i+1}$ can have values in the interval
+$[\xi_i,n^{i}]$ and the value of the variable $\xi_{ij}$ is within the interval $[1,n].$
+Without conditioning on the existence of any node in multiset-trie, 
+it is easy to describe the probability of the existence of any individual node.
+
+\begin{Lemma}\label{l:prob-node-existence}
+Any potential node on a fixed level $i,$ where $i\in \{ 1,2,\ldots, \sigma +1 \}$ exists, %independently of others,
+with probability
+\begin{equation}
+p_i=1-(1-p)^{n^{\sigma + 1 -i}}.
+\end{equation}
+\end{Lemma}
+\begin{proof}
+Let $v$ be an arbitrary node in a multiset-trie on an arbitrary level $i.$ Consider
+the subtree with the root $v$ and call it the $v$-subtree. Since the height of the
+multiset-trie is $\sigma + 1$, we can calculate the height of the $v$-subtree.
+Taking into account that the root node has height 1, the height of the $v$-subtree is
+%
+\[
+h_v = \sigma + 1 - i.
+\]
+%
+A node in a multiset-trie exists if at least one node exists on the leaf level of its
+subtree, i.e., a node on the level $\sigma + 1$ that belongs to $v$-subtree. The possible
+number of nodes on the leaf level of $v$-subtree can be easily calculated knowing its height.
+It is equal to
+%
+\[
+n^{\sigma + 1 - i}.
+\]
+%
+A node at level $\sigma+1$ exists with probability $p,$ where $p = P(m\in M).$
+Thus, the probability that there are no nodes on the leaf level in $v$-subtree is
+%
+\[
+(1-p)^{n^{\sigma +1 - i}}.
+\]
+%
+The claim follows by taking the complement probability of the above result. 
+\end{proof}
+
+Recall that for any given discrete random variable $X$ taking values over positive non-negative integral values, one can define 
+a so-called \emph{probability generating function} (PGF, for short) $G_X$ to be a formal power series defined as 
+\begin{align*}
+G_X(z)=\sum_{i\ge 0} Pr(X=i)z^i.
+\end{align*}
+While the PGFs are usually not meant to be evaluated for concrete values of $z$, certain values have special interpretation when used in PGF, or in a derivation(s) of PGF. 
+For instance, $Pr(X=0)=G_X(0)$, and also $\mathbb{E}(X)=G'_X(1)$.
+For many values of $z$, the function $G_X$ may not converge to any finite value. For this reason, it is a common notation to write, in particular,
+\[
+G_X(1^-)=\lim_{z\nearrow 1}G_X(z).
+\]
+
+In what follows, we will denote a Bernoulli-distributed random variable with parameter $p$ as $Bernoulli(p)$.
+Furthermore, we denote
+a zero-truncated binomially
+distributed random variable on parameters $n$ and $p_{i+1}$ by $\mathcal{B}_0(n,p_{i+1})$. Finally, $\overset{d}{=}$ indicates so-called equality in distribution.
+
+\begin{Example}
+The probability generating function of a binomial random variable $\mathcal B(n,p)$, the number of successes in $n$ trials, with probability $p$ of success in each trial, is
+
+\begin{align*}
+ G_{\mathcal B(n,p)}(z)=G(z)
+ &=\sum_{k = 0}^n \binom n k p^k  (1 - p)^{n - k} z^k\\
+ &= \sum_{k = 0}^n \binom n k  (p z)^k  (1 - p)^{n - k}\\
+ &=\left((1-p)+pz\right)^{n}.
+\end{align*}
+
+It is thus easy to compute expectation
+\[
+\mathbb{E}(\mathcal{B}(n,p))=G'(1)=np.
+\]
+
+\end{Example}
+
+We now focus our attention on the distribution of $\xi_{ij}$.
+
+\begin{Lemma}\label{l:prob-children}
+Suppose that a node $v$ exists at level $1\leq i\leq\sigma$.
+Then, the number of its children $\xi_{iv}$ is modeled by a zero-truncated binomially
+distributed random variable on parameters $n$ and $p_{i+1}$. In particular,
+the probability of node $v$ having $k$ children equals
+\begin{equation}\label{eq:pdf}
+P(\xi_{iv} = k) = \frac{\binom{n}{k} (1-p_{i+1})^{n-k}}{1-(1-p_{i+1})^n}
+\end{equation}
+and the corresponding probability generating function equals
+\begin{equation}\label{eq:generating_func}
+\mathcal{B}_0(n,p_{i+1})\overset{d}{=}
+G_i(z) = \frac{(1+p_{i+1}(z-1))^n - (1-p_{i+1})^n}{1-(1-p_{i+1})^n}.
+\end{equation}
+
+
+\end{Lemma}
+\begin{proof}
+In order to prove the lemma, we have to show that
+$\xi_{iv}\overset{d}{=}\mathcal{B}_0(n, p_{i+1}).$
+Consider an arbitrary node $v$ on level $1\leq i\leq\sigma.$ According to the
+definition of the multiset-trie, a node exists at level $i$ if and only if
+it has at least one child. Note that this is not true for the nodes on the leaf
+level $\sigma + 1.$ This implies that a node on level $i$ can have
+$k\in\{ 1,2,\ldots, n\}$ children. Let $X_0, X_1, \ldots, X_{n-1}$ be random
+variables; they are defined as follows:
+\[
+X_k = \begin{cases}
+0 & \textrm{child $k$ of node $v$ does not exist} \\
+1 & \textrm{child $k$ of node $v$ exists} \\
+\end{cases}
+\]
+As was shown in the previous Lemma~\ref{l:prob-children}, the distribution of 
+$X_k$ is $X_k\overset{d}{=} Bernoulli(p_{i+1}).$ Since our model assumes that all the 
+multisets in $M$ are chosen uniformly at random, the variables 
+$X_k,X_l$ are independent for $k\neq l.$ However, in our case, the node $v$ cannot 
+have 0 children, so the sum $\sum_{k=1}^n X_k$ has a zero-truncated binomial 
+distribution,
+%
+\[
+\sum_{k=1}^n X_k \overset{d}{=} \mathcal{B}_0(n,p_{i+1}),
+\] 
+%
+which completes the proof.
+\end{proof}
+%
+Knowing the probability density and probability generating functions of $\xi_{ij}$ 
+from Lemma~\ref{l:prob-children}, we can now estimate the number of nodes in 
+a randomly generated multiset-trie as follows:
+%
+\begin{equation}\label{eq:num_nodes}
+\mathbb{E}( | \mathcal{M} | ) = \mathbb{E}\left[ \sum_{i=1}^{\sigma+1} \xi_i \right].
+\end{equation}
+%
+
+%Note that in a real world models multisets in $M$ are not chosen with the same 
+%probability. Specifically, in some cases, the probability $P(m\in M)$ varies 
+%dramatically and can be even equal to $0.$ For example, if words are mapped 
+%to multisets, then the sample space $N$ contains very large multisets. However, 
+%most of them will have probability $P(m\in M)=0,$ because a word that would correspond 
+%to such a multiset simply does not exist. So, we can safely conclude that multiset-trie 
+%is an input sensitive data structure, because the size of multiset-trie $|\mathcal{M}|$ 
+%depends on the probability distribution function $P(m\in M).$
+%
+
+In order to evaluate~(\ref{eq:num_nodes}), we will use some of the tools from 
+a Galton--Watson process; see Gardiner~\cite{gardiner1985stochastic} for 
+an introduction.
+Using Equations~(\ref{eq:sum_recursive}) and~(\ref{eq:generating_func}), we can 
+derive the probability generating function for the random variable $\xi_{i+1}$ as 
+\begin{equation}\label{eq:g_rec}
+G_{\xi_{i+1}}(z) = G_{\xi_i}(G_i(z)).
+\end{equation}
+Since there is always precisely one node at the root level, we have $P(\xi_1 = 1) = 1.$ 
+Hence, the probability generating function for the random variable $\xi_1$ is 
+\begin{equation}\label{eq:g_xi_one}
+G_{\xi_1}(z) = z^1 = z
+\end{equation}
+which is the initial condition for the recursive Equation~(\ref{eq:g_rec}).
+
+\begin{Proposition}\label{prop:exp_rec}
+The expectation of the random variable $\xi_{i+1}$ can be expressed 
+as follows.
+\[
+\mathbb{E}(\xi_{i+1}) = \mathbb{E}(\xi_i)\mathbb{E}(\mathcal{B}_0(n,p_{i+1}))
+\]
+for $1\leq i\leq\sigma.$
+\end{Proposition}
+\begin{proof}
+Using the following property of probability generating function
+\begin{equation}\label{eq:prop_exp-pgf}
+G_X'(1^-) = \mathbb{E}(X)
+\end{equation}
+the expectation for the random variable $\xi_{i+1}$ can be derived in terms of Equation~(\ref{eq:g_rec}).
+\begin{eqnarray}\label{eq:exp}
+\mathbb{E}(\xi_{i+1}) &=& G_{\xi_{i+1}}'(1^-) \nonumber \\
+&=& G_{\xi_i}'(G_i(1^-))G_i'(1^-).
+\end{eqnarray}
+According to~(\ref{eq:pdf}) and~(\ref{eq:generating_func}), the value of $G_i(z)$ at 
+$1$ is $1$ and the value of its derivative at $1$ is $\mathbb{E}(\mathcal{B}_0(n,p_{i+1})).$ 
+Substituting the values of $G_i(1^-)$ and $G_i'(1^-),$ and applying the 
+property~(\ref{eq:prop_exp-pgf}), we complete the proof.
+\end{proof}
+%
+From Proposition~\ref{prop:exp_rec} above and Lemma~\ref{l:prob-children}, we 
+can conclude that 
+\begin{eqnarray}
+\mathbb{E}(\xi_{i}) &=& \mathbb{E}(\xi_{i-1})\mathbb{E}\left( \mathcal{B}_0(n,p_{i}) \right) \nonumber \\
+& = & \mathbb{E}(\xi_{i-1})\frac{np_{i}}{1-(1-p_{i})^n}.
+\end{eqnarray}
+
+\begin{Theorem}\label{thm:exp_level}
+Let $\mathcal{M}$ be a multiset-trie defined with parameters $n,$ $\sigma,$ and denote the number 
+of nodes on every level $i$ by a random variable $\xi_i.$ Furthermore, let all multisets appear in 
+$\mathcal{M}$ with equal probability $p\in (0,1).$ Then, the expected number 
+of nodes on every level of $\mathcal{M},$ i.e., $\mathbb{E}(\xi_i)$, is defined as 
+\begin{equation}\label{eq:nodes_level}
+\mathbb{E}(\xi_{i}) = n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}.
+\end{equation}
+\end{Theorem}
+\begin{proof}
+According to~(\ref{eq:g_xi_one}), the expected number of nodes on the first level is 1. \\
+Using $\mathbb{E}(\xi_1) = 1$ and the result from Proposition~\ref{prop:exp_rec},
+we obtain
+\begin{align*}
+\mathbb{E}(\xi_{i}) &= \prod_{j=2}^{i} \frac{n p_j}{1-(1-p_j)^n}
+= \prod_{j=2}^{i} n \frac{1-(1-p)^{n^{\sigma +1-j}}}{1-(1-p)^{n^{\sigma + 2 -j}}} \\
+&= n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}
+\end{align*}
+\end{proof}
+
+Having derived the expected number of nodes on every level of multiset-trie, the
+expected value of the total number of nodes in a multiset-trie can be calculated 
+with respect to the parameters $n,$ $\sigma$ and $p.$ This result is obtained in 
+the next theorem.
+
+\begin{Theorem}\label{thm:exp_nodes}
+The expected cardinality of a multiset-trie defined on parameters $n,$ $\sigma$, 
+and $p$ can be computed as 
+\begin{equation}
+\mathbb{E}( | \mathcal{M} | ) = \sum_{i=1}^{\sigma+1} n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}},
+\end{equation}
+where $r = (1-p)^n,$ so $r\in(0,1).$
+\end{Theorem}
+\begin{proof}
+Using the results obtained from Theorem~\ref{thm:exp_level}, we compute 
+\begin{align*}
+\mathbb{E}( | \mathcal{M} | ) &= \mathbb{E}\left[ \sum_{i=1}^{\sigma+1} \xi_i \right] \\
+&= \sum_{i=1}^{\sigma + 1} n^{i-1} \frac{1-(1-p)^{n^{\sigma + 1 -i}}}{1-(1-p)^{n^{\sigma}}}
+\end{align*}
+\end{proof}
+
+With the expected number of nodes in a multiset-trie $\mathcal{M}$ obtained from 
+Theorem~\ref{thm:exp_nodes}, we can now generalize the result for a subtree 
+in $\mathcal{M}$ parametrized by an input multiset $m.$ The subtrees that we 
+are interested in are the ones that contain all the sub-multisets or all the 
+super-multisets of $m.$ In order to calculate the expected cardinality of such 
+subtrees, we need the following definition. 
+
+\begin{Definition}\label{def:params}
+Let $m = \{ 1^{k_1}, 2^{k_2}, \ldots, \sigma^{k_\sigma} \},$ where 
+$e^{k_e}$ is an element $e$ with multiplicity $k_e.$ Let $M_1, M_2$ be 
+the subsets of the set $M,$ such that $M_1 = \{ x\in M : x\subseteq m \}$ and 
+$M_2 = \{ x\in M : x\supseteq m \}.$
+Define $\alpha_i$ and $\beta_i$ as follows: 
+\begin{equation*}
+\alpha_i = \begin{cases}
+1, & i=0 \\
+\prod_{j=1}^i (k_j+1), & 1\leq i\leq\sigma \\
+\end{cases}
+\end{equation*} 
+and 
+\begin{equation*}
+\beta_i = \begin{cases}
+1, & i=0 \\
+\prod_{j=1}^i (n-k_j-1), & 1\leq i\leq\sigma \\
+\end{cases}.
+\end{equation*}
+\end{Definition}
+
+The expected cardinality of the subtrees containing the multisets from $M_1$ or $M_2$ 
+is defined in the following corollary.
+
+\begin{Corollary}\label{cor:exp_nodes_param}
+Let $M_1, M_2, \alpha_i$ and $\beta_i$ be defined as in  Definition~\ref{def:params}; 
+then, the expected cardinality of a multiset-trie subtree $\mathcal{M}_{M_1}$ that contains all the multisets 
+from the set $M_1$ is equal to 
+\vspace{6pt} 
+\begin{equation}\label{eq:nodes_sub_param}
+\mathbb{E}( |\mathcal{M}_{M_1}| ) = \sum_{i=1}^{\sigma + 1} \alpha_{i-1} \frac{1-(1-p)^{\alpha_{i-1}}}{1-(1-p)^{\alpha_{\sigma}}}.
+\end{equation}
+The expected cardinality of a multiset-trie subtree $\mathcal{M}_{M_2}$ that contains all the multisets 
+from the set $M_2$ is equal to 
+\begin{equation}\label{eq:nodes_super_param}
+\mathbb{E}( |\mathcal{M}_{M_2}| ) = \sum_{i=1}^{\sigma + 1} \beta_{i-1} \frac{1-(1-p)^{\beta_{i-1}}}{1-(1-p)^{\beta_{\sigma}}}.
+\end{equation}
+\end{Corollary}
+%
+\begin{proof}
+Using the results from Theorems~\ref{thm:exp_level} and~\ref{thm:exp_nodes}, 
+we derive the formulas~(\ref{eq:nodes_sub_param}) and~(\ref{eq:nodes_super_param}) 
+by specifying the possible number of nodes on every level in the multiset-trie according 
+to the multiset $m.$ Note that the formula~(\ref{eq:nodes_level}) assumes that, on every 
+level but the first one, there are $n$ possible nodes. Given a sub-multiset or super-multiset 
+query and an input multiset $m$, the number of nodes that will be traversed on level $i$ is 
+defined by the number $k_{i-1}+1$ or $n-k_{i-1}-1$ for $i\geq 2.$ On level $i=1$, 
+there is only one root node in any multiset-trie $\mathcal{M},$ which always exists 
+if $M\neq\emptyset$ and is traversed for any type of query (sub-multiset and 
+super-multiset).
+\end{proof}
+
+\subsubsection{GetAllSubmsets and GetAllSupermsets}\label{ss:getall}
+In this subsection, we discuss the running time complexity of the functions 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets}. It is obvious that any 
+other algorithm for retrieving all the sub-multisets or super-multisets has a worst-case
+running time complexity of at least $O(|M|).$ Hence, the functions 
+\textsc{getAllSubmsets} and \textsc{getAllSupermsets} have the worst-case 
+running time complexity $O(|\mathcal{M}|).$ Indeed, the case when the algorithms 
+retrieve all the multisets stored in a multiset-trie by traversing the whole structure 
+can be easily~constructed. 
+
+Consider the function \textsc{getAllSubmsets}. The function takes some multiset 
+$m$ as an input argument. Then, it returns a set of multisets $\{x\in M : x\subseteq m \}$ 
+from the multiset-trie $\mathcal{M}$. Having a multiset $m$ set to the largest 
+possible multiset in $N$ (it can also be larger), 
+\[
+m = \{ 1^{n-1},2^{n-1},\ldots, \sigma^{n-1} \}
+\]
+the whole multiset-trie is traversed during the \textsc{getAllSubmsets} query.
+
+Now, let us consider the function \textsc{getAllSupermsets}. Similarly, the function 
+takes a multiset $m$ as an input argument. However, in this case, it returns the 
+set of multisets $\{ x\in M : x\supseteq m \}$ from the multiset-trie 
+$\mathcal{M}.$ In order to obtain the traversing of all the multiset-trie, one must set 
+$m$ to the smallest possible multiset, i.e., an empty multiset
+\begin{equation*}
+m = \{ \emptyset \} = \{ 1^0,2^0, \ldots, \sigma^0 \}.
+\end{equation*}
+
+Thus, we can conclude that the worst-case running time complexity of the 
+functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} is $O(\mathbb{E}( |\mathcal{M}| )).$ 
+According to Theorem~\ref{thm:exp_nodes}, the expected number of visited 
+nodes in the worst case is 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma+1} n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}).
+\end{equation*}
+According to Theorem~\ref{cor:exp_nodes_param}, the worst-case running 
+time complexity given an input multiset $m$ for the function \textsc{getAllSubmsets} is 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma + 1} \alpha_{i-1} \frac{1-(1-p)^{\alpha_{i-1}}}{1-(1-p)^{\alpha_{\sigma}}})
+\end{equation*}
+and for the function \textsc{getAllSupermsets} is 
+\vspace{6pt} 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma + 1} \beta_{i-1} \frac{1-(1-p)^{\beta_{i-1}}}{1-(1-p)^{\beta_{\sigma}}}).
+\end{equation*}
+
+%Taking into account that $\sigma |M| \geq |\mathcal{M}|,$ we can say that the 
+%running time complexity is $O(\sigma |M|).$ However, this is a very rough upper 
+%bound, which overestimates the complexity a lot. 
+
+\subsubsection{SubmsetExistence and SupermsetExistence}\label{ss:exists}
+We start the analysis of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} with an observation. Our theoretical model assumes 
+that all the multisets are inserted into multiset-trie at random. It was already concluded 
+that the probability distribution function $P(m\in M)$ has an impact on the size of 
+multiset-trie $\mathcal{M}.$ 
+Moreover, this distribution influences the performance 
+of the functions \textsc{submsetExistence} and \textsc{supermsetExistence} even more. 
+
+For a real-world model, such that $P(m\in M)\neq const$, the performance of the search 
+algorithms directly depends on the number of nodes on every level $\xi_i.$ When 
+the search functions check if a multiset is in multiset-trie, the complete path that 
+corresponds to this multiset is checked. Knowing this fact, the search can be optimized 
+during the construction of a multiset-trie. 
+
+Recall that a multiset-trie is defined on parameters $n,$ $\Sigma,$ $\sigma = |\Sigma|$, 
+and $\phi.$ Let the frequency of an element $e$ in a multiset $m$ be the multiplicity of 
+$e$ in $m,$ denoted by $\emph{mult}_m(e).$ Then, the frequency of an element $e$ 
+can be defined as a sum $\sum_{m\in M} \emph{mult}_m(e).$ According to the frequencies 
+of elements in $\Sigma,$ the performance of the multiset-trie can be optimized by 
+the mapping $\phi : \Sigma \rightarrow I.$ Indeed, the ordering of elements by their 
+frequencies has an influence on the performance.
+%
+The frequency of an element $e\in\Sigma$ affects the distribution of $\xi_{\phi(e)}$ 
+as follows. The larger the frequency of $e$, the larger the number of nodes on the
+$\phi(e)$ level. 
+Thus, if the number of nodes on lower levels is greater than on higher levels, then 
+the search functions will discard complete paths that do not satisfy the query 
+faster. Hence, the closest match will be found faster.
+
+%
+%\begin{Lemma}\label{l:frequency}
+%Let $M$ be a collection of multisets. Let the frequency of an element $e$ in a 
+%multiset $m$ be the multiplicity of $e$ in $m,$ denoted by $\emph{mult}_m(e).$ 
+%Then the frequency of an element $e$ is the sum 
+%\[
+%\sum_{m\in M} \emph{mult}_m(e).
+%\] 
+%According to the frequencies of elements in $\Sigma,$ the performance of the 
+%multiset-trie can be optimized. In particular, the mapping $\phi : \Sigma \rightarrow I$ 
+%must order elements by their frequencies as follows. The smaller the frequency of 
+%an element the smaller its index.
+%\end{Lemma}
+%%
+%\begin{proof}
+%The frequency of an element $e\in\Sigma$ affects the distribution of $\xi_{\phi(e)}$ 
+%as follows. The larger the frequency of $e$ the larger the number of nodes on 
+%$\phi(e)$ level. 
+%So, if the number of nodes on lower levels is greater than on higher levels, then 
+%the search functions will discard complete paths that do not satisfy the query 
+%faster. Hence, the closest match will be found faster.
+%\end{proof}
+%%
+
+Let us now switch back to our mathematical model and note that the influence 
+of the mapping function $\phi$ in our model has an inessential impact on the performance, 
+because all the multisets are equally likely, and the whole domain $N$ is used for 
+sampling multisets. 
+
+Consider both functions \textsc{submsetExistence} and \textsc{supermsetExistence}. 
+Whenever the result is \emph{false}, i.e., no multiset in $M$ is 
+a sub-multiset or super-multiset of an input multiset $m,$ both functions in the 
+worst case visit all the nodes in $\mathcal{M}$ but the nodes on the leaf level. 
+Of course, such a case would be very rare, assuming a random input model, but 
+it can be constructed as follows. 
+
+Consider the function \textsc{submsetExistence}. Then, given an input multiset 
+$m = \{ 1^{k_1}, 2^{k_2}, \ldots, \sigma^{k_\sigma} \},$ the collection of inserted 
+multisets $M$ must be equal to $M = \{ x\in M : k_{x,\sigma} > k_{m,\sigma} \}.$ 
+Analogically, for the function \textsc{supermsetExistence} with an input multiset 
+$m = \{ 1^{k_1}, 2^{k_2}, \ldots, \sigma^{k_\sigma} \},$ the collection of inserted 
+multisets $M$ must be equal to $M = \{ x\in M : k_{x,\sigma} < k_{m,\sigma} \}.$ 
+
+Thus, the worst-case running time complexity of the functions 
+\textsc{submsetExistence} and \textsc{supermsetExistence} is $O(|\mathcal{M}| - |M|).$ 
+According to Theorem~\ref{thm:exp_nodes}, this value is 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma} n^{i-1} \frac{1-(1-p)^{n^{\sigma +1 -i}}}{1-(1-p)^{n^{\sigma}}}).
+\end{equation*}
+According to Theorem~\ref{cor:exp_nodes_param}, the worst-case running 
+time given an input multiset $m$ for the function \textsc{submsetExistence} is 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma} \alpha_{i-1} \frac{1-(1-p)^{\alpha_{i-1}}}{1-(1-p)^{\alpha_{\sigma}}})
+\end{equation*}
+and for the function \textsc{supermsetExistence} is 
+\begin{equation*}
+O(\sum_{i=1}^{\sigma} \beta_{i-1} \frac{1-(1-p)^{\beta_{i-1}}}{1-(1-p)^{\beta_{\sigma}}}).
+\end{equation*}
+Note that the summation goes only up to $\sigma$ and not up to $\sigma + 1$ as 
+in Theorem~\ref{thm:exp_nodes} or in Theorem~\ref{cor:exp_nodes_param}.
+
+As for the case wherein the outcome of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} is \emph{true}, one has to guarantee the termination 
+of the algorithm at some node on the leaf level. The worst-case scenario can be 
+constructed in the same way as for the \emph{false} outcome but with two more 
+multisets in $M.$ The first multiset is the empty multiset. With the empty multiset, 
+the function \textsc{submsetExistence} will visit the same amount of nodes as for 
+the \emph{false} case, plus one more for the empty multiset. The second multiset 
+is the maximal possible multiset from $N.$ In this case, the function \textsc{supermsetExistence} 
+will also visit the same amount of nodes as for the \emph{false} case, plus one more 
+for the maximal multiset. Hence, the worst-case running time complexity for both 
+outcomes (\emph{true} and \emph{false}) is the same.
+
+\subsection{Space Complexity}\label{s:spacecomplexity}
+As in any efficient algorithm, there is always some trade-off between space and 
+time complexity. While offering efficient sub- and super-multiset queries, an 
+additional space must be provided for multiset storage. 
+%Clearly, the cardinality 
+%of the set $M$ is smaller than the size of $\mathcal{M},$ because the number 
+%of multisets in $\mathcal{M}$ is equal to the number of nodes only on the leaf 
+%level. 
+As we increase the parameter $p$, the number of sets we need to store (i.e., number of leaves) increases linearly. Figure~\ref{f:exp-nodes} shows that the additional overhead space that our data structure uses does not increase as the tree is becoming more and more dense.
+
+
+\begin{figure}[H]
+
+\includegraphics[width=.64\textwidth, keepaspectratio]{exp-nodes-on-probab.pdf}
+\caption{\hl{Size} %MDPI: Please change the terms into scientific notations in the figure,  e.g., "$8 \times 10^{3}$", not "8E3".
+ of a tree ($\mathbb{E}(|\mathcal{M}|)$) compared to the number of stored sets ($\mathbb{E}(|M|)$), as the probability parameter $p$ increases.
+Parameters 
+$\sigma$ and $n$ are $26$ and $10,$ respectively.
+The additional overhead space that our data structure uses does not increase as the tree is becoming more and more dense.
+}
+\label{f:exp-nodes}
+\end{figure}
+
+As we see in Figure~\ref{f:exp-nodes}, the value of $|\mathcal{M}|$ is slightly 
+shifted with respect to the value of $|M|.$
+
+Now, we demonstrate a more descriptive comparison between $|\mathcal{M}|$ and 
+$|M|.$ Figure~\ref{f:ratio-exp-msets} shows the ratio between the expected cardinality 
+of a multiset-trie $|\mathcal{M}|$ and the actual number of multisets stored $|M|$ for 
+parameters $n$ and $\sigma$ being $10$ and $26$, respectively.
+
+Analyzing the graph in Figure~\ref{f:ratio-exp-msets}, we can safely 
+say that the upper bound for the ratio is $\sigma + 1.$ The argument holds 
+because of the limit 
+\begin{equation}
+\lim_{p\rightarrow 0^+} \mathbb{E}(\xi_i) = 1,
+\end{equation}
+where $\xi_i$ is the number of nodes on the $i$-th level and $1\leq i \leq \sigma + 1.$ 
+
+However, the ratio $\sigma + 1$ can be obtained only with a very small cardinality 
+of the set $M,$ in particular $|M| = 1.$ In order to obtain such a case, the 
+probability $p$ must be at most~$\frac{1}{n^\sigma}.$
+
+The lower bound for the ratio is obviously at $p=1$ and is equal to 1:
+\begin{equation}
+\lim_{n,\sigma \rightarrow\infty} \frac{n^{\sigma + 1} - 1}{n^\sigma (n-1)} = 1.
+\end{equation}
+
+Since the ratio $\sigma + 1$ can be obtained for a very specific case only and 
+with a small increase in probability, the ratio drops rapidly and it can be concluded 
+that the space complexity of the multiset-trie is $O(|M|).$
+
+
+\begin{figure}[H]
+
+\includegraphics[width=.64\textwidth, keepaspectratio]{ratio-exp-nodes-and-msets-on-prob1.pdf}
+\caption{The ratio of ``data overhead'' derived from Figure \ref{f:exp-nodes}, as the density $p$ of our data structure increases.
+Unless we are in a very sparse setting, the trade-off in terms of space is small.}
+\label{f:ratio-exp-msets}
+\end{figure}
+
+\subsection{An Informal Comment on the Mathematical Analysis}
+In the next section, we show how our data structure preforms in certain environments.
+We will see, in our view, great results throughout various experiments, even when compared with state-of-the-art approaches such as Inverted Index.
+
+It was very frustrating to us that, despite these indications, it seems that this structure is very difficult to analyze. 
+Even after restricting the analysis to the (usually simple) case wherein the input data are uniformly distributed, and after utilizing reliable probabilistic tools, our approach unfortunately did not provide as clear results as we hoped for. 
+We would be very keen to learn of an approach or technique that would offer more insight into the mathematical analysis of our data structure and its algorithms. 
+
+
+
+
+% section 5
+%\input{tex/s_experiments}
+\section{Experiments} \label{c:experiments}
+
+%
+This section contains the results of experiments that were performed on the multiset-trie 
+data structure. In particular, we tested the functions \textsc{submsetExistence}, 
+\textsc{supermsetExistence}, \textsc{getAllSubmsets}, and \textsc{getAllSupermsets}. 
+
+The multiset-trie is implemented in the \CC { programming} language. 
+The current implementation uses only the standard library of the \CC14 version of the 
+standard and has a command line interface~\cite{akulich2019mstrie}. The implementation of the program was 
+optimized for testing, and, therefore, the program operates with files to 
+process queries. After processing all the queries, the results are stored in files for further analysis.
+
+The current implementation of multiset-trie is not optimized for space consumption.
+A node in the multiset-trie is implemented as a record indicating the level of the tree
+that corresponds to a symbol from $\Sigma$, and including an array of pointers to
+its children indexed by the multiplicities of the child symbols. The arrays have
+fixed length $n$ from the interval $[0,n].$
+Only some elements of an array may point to a child node, while others include a
+$Null$~value.
+
+% Performance of the functions will be measured by 
+%the number of visited nodes in multiset-trie by the particular function. In 
+%particular the performance is inversely proportional to the number of visited 
+%nodes.
+
+Before we start, we will give a few definitions of the parameters 
+that were varied throughout the experiments and discuss the experimental data 
+that were used.
+
+Let $M$ be a set of multisets inserted into multiset-trie and let $n$ be 
+the maximal node degree. Let $N$ be the power multiset of $\Sigma,$ where 
+the multiplicity of each element is bounded from above by $n-1.$ We define the 
+\emph{density} of a multiset-trie to be the ratio $\frac{|M|}{|N|},$ where 
+$|\cdot|$ denotes cardinality.
+
+The selected parameters of the data structure that were varied in the experiments 
+were as follows:
+%
+\begin{itemize}
+\item $\sigma$---the cardinality of the alphabet $\Sigma;$
+%
+\item $n$---the maximal degree of a node, which explicitly defines the maximal 
+multiplicity of elements in a multiset;
+%
+\item $\phi$---mapping of letters from $\Sigma$ into a set of consecutive 
+integers;
+%
+\item $d$---density of a multiset-trie.
+%
+\end{itemize}
+The cardinality of a power multiset $N$ is equal to $n^\sigma,$ which means that 
+density $d$ of a multiset-trie depends on parameters $|M|,$ $\sigma$ and $n.$ 
+Because parameters $\sigma$ and $n$ are set when a multiset-trie is initialized, 
+the parameter $|M|$ was varied to change the density in the experiments. As we 
+mentioned in Section~\ref{c:description}, the mapping $\phi$ determines the 
+correspondence of letters to levels in multiset-trie, i.e., it defines the ordering of 
+levels in multiset-trie. It is also true that $\phi$ defines the ordering in multisets.
+
+% anouncement of the experiments
+In the following Sections \ref{c:introduction}--\ref{c:experiments}, we will present the behavior of the multiset-trie data 
+structure depending on the selected parameters, as well as the comparative 
+benchmark of the multiset-trie against the B-tree implementation of Inverted Index. 
+We start with experiments that were performed on artificially generated data in 
+order to give a general picture of the multiset-trie's performance. 
+
+In Experiment~\hyperref[s:exp1]{1}, a special case of the multiset-trie is considered. 
+Only sets are allowed to be stored in the data structure, i.e., the maximally allowed 
+multiplicity is set to 1. The performance is measured with respect to the density 
+of the multiset-trie.
+
+Experiment~\hyperref[s:exp2]{2} was an extension of the previous one. Here, 
+we also measured the performance of the multiset-trie depending on its density. 
+The difference was that the allowed multiplicity of an element was raised, i.e., 
+the data structure was populated with multisets. 
+
+Summarizing the tests of the performance depending on the density, we present 
+Experiment~\hyperref[s:exp3]{3}. It shows the nonlinearity of the performance 
+with respect to the density of the multiset-trie.
+
+The fourth experiment on the multiset-trie uses real-world data. In 
+Experiment~\hyperref[s:exp4]{4}, the influence of the mapping $\phi$ is studied. 
+The input data are obtained by mapping real words from the English dictionary 
+to the set of consecutive integers using the function $\phi.$ The experiment 
+shows that the performance of the multiset-trie is noticeably influenced by 
+different mappings $\phi.$ It also shows the usability of the multiset-trie in terms 
+of real data, demonstrating the high performance of search queries.
+
+Finally, the empirical comparison of the multiset-trie data structure with
+the B-tree-based Inverted Index is presented in Experiment~\hyperref[s:exp5]{5}. We use
+Inverted Index to store and retrieve multisets in the same way as
+is described in the paper by Helmer and Moerkotte~\cite{Helmer2003}
+for sets. In the comparison, we use three types of queries: exact,
+sub-multiset, and super-multiset~retrieval.
+
+\subsection{\hl{Data} %MDPI: Section headings should be numbered sequentially, e.g., Section 2.1, Section 2.2.1. Please confirm this revision.
+ Generation}
+We denote by \emph{input data} the data that are used to fill the structure prior 
+to testing and by \emph{test data} the set of queries that are used to test the 
+performance of the functions.
+
+The artificially generated input data are obtained by sampling $|M|$ multisets 
+from $N.$ All the multisets in $N$ are constructed according to parameters 
+$\sigma$ and $n$ and represent the power multiset of the alphabet $\Sigma.$ 
+Every multiset in $M$ is chosen from $N$ with equal probability $p.$ Thus, the 
+probability $p$ gives a collection $M$ of multisets that are sampled from $N$ 
+with uniform distribution. Uniform distribution is chosen in order to simulate
+random user~input.
+
+% test data explanation
+The test data are generated artificially and constructed as follows. Given the 
+parameters $\sigma$ and $n,$ the possible size of a multiset varies from~1 
+to~$\sigma n.$ The number of randomly generated test multisets for every 
+value of multiset size is 1500. In other words, we perform 1500 experiments 
+in order to measure the number of visited nodes for the queries with a test multiset 
+of distinct sizes. The final value of visited nodes is calculated by taking an 
+arithmetic mean among all 1500 measurements.
+
+
+\subsection{Experiment 1} \label{s:exp1}
+This experiment shows the performance of multiset-trie being used for storing 
+and retrieving \emph{sets} instead of \emph{multisets}. We restrict multiset-trie in order 
+to obtain a closer comparison with the \emph{set-trie} data structure~\cite{savnik2013index}.
+In this case, we set the maximal node degree $n$ to be $2$ and $\sigma$ to be 25. 
+The mapping $\phi$ does not have an influence in this particular experiment
+because the input data are generated artificially with uniform distribution. On 
+average, the results will be the same for any $\phi,$ since all the multisets are 
+equally likely to appear in $M.$ The parameter $|M|$ varies from \hl{10,000} %MDPI: We added commas to separate thousands for numbers with five or more digits. Please confirm.
+ sets up 
+to \hl{320,000} sets. According to the parameters $n$ and $\sigma,$ the cardinality of 
+$N$ is $33,554,432\approx \num{3.36e+7}.$ Thus, the calculated density of the 
+multiset-trie with respect to $|M|$ varies from~$\num{0.3e-3}$ to~$\num{9.5e-3}.$
+
+
+The performance of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} increases as the density increases (see Figure~\ref{fig:4}a,b). The results are as expected because the increase in the 
+density increases the probability of finding a sub-multiset or super-multiset in 
+multiset-trie, which leads to a lower number of visited nodes. 
+
+\begin{figure}[H]
+	\subcaptionbox{\centering  \label{fig:e1m1}}{\includegraphics[width=.485\textwidth]{exp1-m1.pdf}}
+	\subcaptionbox{\centering \label{fig:e1m2}}{\includegraphics[width=.485\textwidth]{exp1-m2.pdf}}
+	\caption{\hl{Existence} %MDPI: Please use commas to separate thousands for numbers with five or more digits (not four digits) in the picture, e.g., "10000" should be "10,000".
+ functions of Experiment 1. (\textbf{a}) \hl{submsetExistence;} %MDPI: We moved the subfigure explanations into the figure caption. Please confirm. The following are same.
+ (\textbf{b}) \hl{supermsetExistence}.  \label{fig:4}}
+\end{figure}
+
+The maxima are located between 175 and 375 for \textsc{submsetExistence} and 
+between 175 and 350 for \textsc{supermsetExistence}. According to these maxima,
+we can deduce that at least 7--15 multisets were checked in order to find 
+a sub-multiset or super-multiset, which is from $\num{0.02e-3}$ to $\num{1.5e-3}$ of the 
+multiset-trie and from $\num{1.9e-7}$ to $\num{4.5e-7}$ of the complete 
+multiset-trie.
+
+As the density increases, the peaks shift from the center to the left or to the right, 
+for \textsc{submsetExistence} and \textsc{supermsetExistence}, respectively. 
+The shifts are the consequence of the uniform distribution of sets in $M.$ 
+Since every set has the same probability of appearing in $M,$ the distribution of set 
+sizes in $M$ is normal. Consequently, with the increase in the density of the 
+multiset-trie, the number of sets in $M$ with cardinality $\frac{1}{2}\sigma$ will be 
+larger than the number of sets with cardinality $\frac{1}{2}\sigma\pm\epsilon,$ 
+for $\frac{1}{2}\sigma > \epsilon > 0.$ Thus, the function \textsc{submsetExistence} 
+needs to visit less nodes for test sets of size $\frac{1}{2}\sigma$ than for test 
+sets of size $\frac{1}{2}\sigma\pm\epsilon.$ The function decreases the 
+multiplicity of some elements (in some cases, it skips them) in order to find the 
+closest subset. Hence, the peak shifts to the left. Oppositely, the function 
+\textsc{supermsetExistence} increases the multiplicity of some elements 
+(in this case, adding new elements) in order to find the closest superset. 
+Thus, the peak shifts to the right.
+
+Note that despite the peak shifts, both functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} have approximately the same worst-case performance. 
+
+The performance of the functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} 
+decreases as the density increases (see Figure~\ref{fig:5}a,b). 
+This happens because the number of multisets in multiset-trie increases, which means 
+that any multiset in the data structure will have more sub- and super-multisets. 
+The maxima for both functions vary from $\num{8.0e4}$ to $\num{1.5e6}$ visited nodes. 
+We can notice that the local maxima for the functions \textsc{getAllSubmsets} and 
+\textsc{getAllSupermsets} differ with respect to the length of input. The 
+explanation is very simple. In order to find all sub-multisets of a small set, the 
+function has to traverse a small part of the multiset-trie. As the size of a set 
+increases, the part of a multiset-trie where all the sub-multisets of a given set 
+are stored also increases. The opposite holds for the function 
+\textsc{getAllSupermsets}.
+
+\begin{figure}[H]
+
+\subcaptionbox{\centering 
+\label{fig:e1m3}}{\includegraphics[width=.485\textwidth]{exp1-m3.pdf}
+}
+\subcaptionbox{\centering 
+\label{fig:e1m4}}{\includegraphics[width=.485\textwidth]{exp1-m4.pdf}
+}
+\caption{\hl{Exhaustive} %MDPI: Please use commas to separate thousands for numbers with five or more digits (not four digits) in the picture, e.g., "10000" should be "10,000". please check all figures.
+ functions of Experiment 1. (\textbf{a}) \hl{getAllSubmsets}; (\textbf{b}) \hl{getAllSupermsets}.\label{fig:5}}
+\end{figure}
+
+
+Despite the fact, that for a lookup of any set/multiset, $\sigma$ nodes must be visited 
+in multiset-trie on average, the data structure has very similar performance 
+results in comparison to the \emph{set-trie} data structure.
+
+\subsection{Experiment 2} \label{s:exp2}
+In Experiment~\hyperref[s:exp2]{2}, we demonstrate the performance of 
+the unrestricted multiset-trie allowing \emph{multisets} to be inserted into the data structure. 
+We set $n$ to be 6 and retain $\sigma = 25$, as in Experiment~\hyperref[s:exp1]{1}. 
+The mapping $\phi$ does not have an influence on the results, since the input 
+data are generated artificially with uniform distribution. The cardinality of $M$ 
+varies from \hl{40,000} to \hl{640,000} multisets. Thus, the calculated density $d$ varies 
+from $\num{1.4e-15}$ to $\num{2.25e-14}.$ The density is much smaller than 
+in Experiment~\hyperref[s:exp1]{1}, because now we allow multisets to be stored 
+in the data structure, and according to the parameters $n$ and $\sigma$, the 
+cardinality of $N$ is $6^{25} = \num{2.84e19}.$
+
+As we can see from the graphs in Figure~\ref{fig:e2m1}a,b, 
+the performance of the functions \textsc{submsetExistence} and 
+\textsc{supermsetExistence} becomes worse as the density increases. 
+In this case, the number $|M|$ is slightly larger than in 
+Experiment~\hyperref[s:exp1]{1}, but the density is very small. Consequently, 
+multiset-trie becomes more sparse. Multisets in a sparse multiset-trie differ more, 
+which leads to a larger number of visited nodes. 
+
+The maxima for both functions vary from 7500 to 25,000 visited nodes. According 
+to these maxima, at least 300--1000 multisets were checked in order to find a 
+sub-multiset or super-multiset, which is from $\num{1.5e-3}$ to $\num{7.5e-3}$ of the entire 
+multiset-trie and from $\num{1.1e-17}$ to $\num{3.4e-17}$ of the complete 
+multiset-trie. The percentage of visited multisets with respect to $|M|$ is 
+larger than in Experiment~\hyperref[s:exp1]{1}. However, if one would compare 
+the percentage of visited multisets with respect to the complete multiset-trie, then, 
+in the case of Experiment~\hyperref[s:exp2]{2}, it is less by 10 orders than in 
+Experiment~\hyperref[s:exp1]{1}.
+
+\begin{figure}[H]
+\subcaptionbox{\centering
+}{\includegraphics[width=.485\textwidth]{exp2-m1.pdf}}
+\subcaptionbox{\centering
+\label{fig:e2m2}}{\includegraphics[width=.485\textwidth]{exp2-m2.pdf}}
+\caption{Existence functions in Experiment 2. (\textbf{a}) \hl{submsetExistence}; (\textbf{b}) \hl{supermsetExistence}.\label{fig:e2m1}}
+\end{figure}
+
+The peaks are shifted from the center to the left and right for 
+\textsc{submsetExistence} and \textsc{supermsetExistence}, respectively. Such 
+behavior was previously observed in Experiment~\hyperref[s:exp1]{1}. The 
+explanation is the same: the input data have a uniform distribution, implying that 
+the size of multisets in $M$ is normally distributed. Because of the normal 
+distribution of the size of multisets, the shift in the peak occurs as the density increases.
+
+It can also be observed that, as in the previous Experiment~\hyperref[s:exp1]{1}, both 
+functions \textsc{submsetExistence} and \textsc{supermsetExistence} have similar 
+worst-case performance. 
+
+The functions \textsc{getAllSubmsets} and \textsc{getAllSupermsets} decrease 
+their performance as the density increases (see Figure~\ref{fig:e2m3}a,b). This happens because the number of multisets increases as 
+the density increases. Thus, there are more nodes that have to be visited in order to 
+retrieve all sub- or super-multisets of some multiset. The maximum for both functions 
+varies from $\num{0.9e5}$ to $\num{1.5e7}$ visited nodes. As was observed in 
+Experiment~\hyperref[s:exp1]{1}, the maxima occur at opposite points. For the 
+function \textsc{getAllSubmsets}, it will always be at the largest size of the multiset, 
+which is 125 in our case. Conversely, the maximum for \textsc{getAllSupermsets} 
+is at the smallest size of multiset, which is 0 (an empty set).
+
+\begin{figure}[H]
+
+\subcaptionbox{\centering \hl{Experiment} %Please move sub-caption to Caption.
+2, getAllSubmsets function.
+}{\includegraphics[width=.485\textwidth]{exp2-m3.pdf}}
+\subcaptionbox{\centering \hl{Experiment} 2, getAllSupermsets function.
+\label{fig:e2m4}}{\includegraphics[width=.485\textwidth]{exp2-m4.pdf}}
+\caption{Exhaustive functions in Experiment 2.\label{fig:e2m3}}
+\end{figure}
+
+The results of Experiment~\hyperref[s:exp1]{1} show that the performance 
+of functions \textsc{submsetExistence} and \textsc{supermsetExistence} increases 
+as the density increases. However, we observe the opposite behavior in 
+Experiment~\hyperref[s:exp2]{2}. We explain the reason for such a contradiction 
+in the next Experiment~\hyperref[s:exp3]{3} 
+
+
+\subsection{Experiment 3} \label{s:exp3}
+The results of Experiment~\hyperref[s:exp1]{1} and Experiment~\hyperref[s:exp2]{2} 
+have shown that as the density of a multiset-trie increases, the performance of 
+functions \textsc{submsetExistence} and \textsc{supermsetExistence} can both become 
+better and worse. The reason for such behavior is that the dependence of the 
+number of visited nodes on the density is not a linear function. 
+The performance of the abovementioned functions is maximal when the multiset-trie is 
+complete. As the multiset-trie becomes more sparse (the density is small), the multisets
+differ more, and the number of visited nodes increases. However, the multisets differ
+less when the density is high, so the number of visited nodes decreases. Since 
+the dependence of the number of visited nodes on the density of multiset-trie 
+is a continuous function in the interval $[0,1],$ there exists a global maximum. 
+In other words, there exists such a value of density where the number of visited 
+nodes is maximal. 
+
+In this experiment, we empirically find the extremum of density for functions 
+\textsc{submsetExistence} and \textsc{supermsetExistence}. The parameters 
+$\sigma$ and $n$ are set to 12 and 5, respectively. The density varies from 
+$\num{1.0e-6}$ to $\num{1.0e-2}.$ The number of visited nodes was chosen to be 
+maximal for each value of a particular density.
+
+As we see in Figure~\ref{fig:e3m1}a,b both functions 
+\textsc{submsetExistence} and \textsc{supermsetExistence} have the maximum 
+around $d\approx \num{7.0e-5}.$ The maximum is less than $\num{0.3e-3}$ and 
+greater than $\num{1.4e-15},$ which explains the behavior of multiset-trie in 
+Experiment~\hyperref[s:exp1]{1} and Experiment~\hyperref[s:exp2]{2}. It is safe 
+to say that the maximum may vary depending on parameters $n$ and $\sigma,$ but 
+such a maximum always exists. Therefore, we omit the experiments with different 
+parameters $n$ and $\sigma.$
+
+\begin{figure}[H]
+
+\subcaptionbox{\centering}{\includegraphics[width=.485\textwidth]{exp4-m1.pdf}}
+\subcaptionbox{\centering 
+\label{fig:e3m2}}{\includegraphics[width=.485\textwidth]{exp4-m2.pdf}}
+\caption{Existence functions in Experiment 3. (\textbf{a}) \hl{submsetExistence}; (\textbf{b}) supermsetExistence.\label{fig:e3m1}}
+\end{figure}
+
+
+\subsection{Experiment 4} \label{s:exp4}
+In previous experiments, the input was generated artificially with a uniform 
+distribution, so there was no influence of the mapping function $\phi$ on 
+the performance of the tested functions. This experiment shows the influence of the 
+mapping $\phi$ from alphabet $\Sigma$ to a set of consecutive integers. 
+We obtain the influence by taking the real-world data as input data. 
+
+The data are taken from the English dictionary, which contains \hl{235,883} different words. 
+These words are mapped to multisets of integers according to the $\phi.$ In 
+particular, we are interested in cases where $\phi(\Sigma)$ enumerates 
+letters by their relative frequency in the English language. We say that $\phi(\Sigma)$ 
+maps letters in \emph{ascending order} if the most frequent letter is mapped to 
+number $\sigma.$ Conversely, in \emph{descending order}, this letter is mapped to 
+the number $1.$ The size of the alphabet $\sigma$ is set to the size of the English 
+alphabet: 26. The degree of a node $n$ is set to 10. On average, the multiplicity 
+of letters is, of course, less than 10. We choose such a large node degree allowing 
+the multiplicity to be up to 10 because the dictionary contains such words. 
+
+
+%\begin{figure}
+%\includegraphics[width=\textwidth]{exp4-m3.pdf}
+%\caption{Experiment 4, getAllSubmsets function.}
+%\end{figure}
+%
+%\begin{figure}
+%\includegraphics[width=\textwidth]{exp4-m4.pdf}
+%\caption{Experiment 4, getAllSupermsets function.}
+%\end{figure}
+
+The results in Figure~\ref{fig:e4m1}a,b are more balanced when 
+letters are ordered by frequency in ascending order. The maxima for the functions 
+\textsc{submsetExistence} and \textsc{supermsetExistence} are at 250 visited nodes. 
+
+\begin{figure}[H]
+
+\subcaptionbox{\centering}{\includegraphics[width=.475\textwidth]{exp3-m1.pdf}}
+\subcaptionbox{\centering 
+\label{fig:e4m2}}{\includegraphics[width=.475\textwidth]{exp3-m2.pdf}}
+\caption{Existence functions in Experiment 4. (\textbf{a}) submsetExistence; (\textbf{b}) supermsetExistence. \label{fig:e4m1}}
+\end{figure}
+
+According to the design of the data structure multiset-trie, we can say 
+something about multiset only if we try to reach it, i.e., to find the complete 
+path that corresponds to a particular multiset. This means that in order to give 
+an answer about the existance of some multiset, one has to check the leaf level in 
+multiset-trie. 
+
+Letters that have the least frequencies are now located at the top of 
+multiset-trie according to the ascending order of letters by frequency. This means 
+that the search becomes narrower because a great deal of invalid paths will be 
+discarded at the top-most levels. Thus, multiset-trie can be traversed faster.
+
+As may have been noticed, the functions \textsc{getAllSubmsets} and 
+\textsc{getAllSupermsets} were not tested in this experiment. These functions 
+are not affected by variations in the mapping $\phi,$ because, for any multiset, 
+they retrieve all sub-/super-multisets. This means that the number of visited 
+nodes will not be changed as $\phi$ varies.
+
+\subsection{Experiment 5} \label{s:exp5}
+
+In this experiment, we demonstrate the performance of the multiset-trie
+data structure compared to the Inverted Index based on the
+B-tree. Both data structures are implemented in the programming
+language \CC, providing in this way an experimental setup for a fair
+comparison \cite{akulich2019mstrie}.
+
+%((Brief description of the implementation of the inverted files?))
+The Inverted Index is implemented using an idea
+from~\cite{Helmer2003}. An inverted index structure consists of two
+parts: a dictionary and postings. In our case, a dictionary is
+implemented as an in-memory B-tree where keys are all distinct values
+from a domain represented by a set $\Sigma.$ The postings are
+represented by lists of multisets that contain a particular element
+from $\Sigma.$ Each list item in postings contains a cardinality of a
+multiset, which speeds up the containment queries.
+
+The experiment uses the input data for the construction of the given
+data structure and the test data for the execution of the operations
+on the given data structure. The input data comprise a set of
+randomly generated multisets used for the construction of a data
+structure. The test data include the set of multisets together with
+the operations that are evaluated. The input and test data were
+generated with respect to parameters $\sigma$ and $n$, as presented in
+\hl{x} %MDPI: Please confirm if this can be removed.
+ Table~\ref{t:benchmark}.
+
+\begin{table}[H]
+\caption{\hl{Configuration} %MDPI: We removed the vertical lines. Please confirm.
+ of $\sigma$ and $n$ in benchmark.}
+\label{t:benchmark}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{CC}
+\toprule
+\boldmath$\sigma$ & \boldmath$n$ \\
+\midrule
+5		& 1\\
+%\hline
+30	& 1 \\
+%\hline
+5		& 3 \\
+%\hline
+15	& 3 \\
+%\hline
+30	& 3 \\
+%\hline
+10	& 10 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+We tested all three types of query on all of the configurations from
+Table \ref{t:benchmark}, resulting in 18 experiments in total, i.e., 6 experiments per
+query type. In each experiment, we measured the average time consumed
+by the data structure to process the query. The results of the exact
+search, sub-multiset, and super-multiset search experiments are
+presented in Tables~\ref{t:res_ex},~\ref{t:res_sub}, and~\ref{t:res_sup}, respectively.
+
+\begin{table}[H]
+\caption{Exact search.}
+\label{t:res_ex}
+\newcolumntype{r}{>{\raggedleft\arraybackslash}X}
+\begin{tabularx}{\textwidth}{rrrr}
+\toprule
+\multicolumn{1}{c}{\boldmath$\sigma$} & 
+\multicolumn{1}{c}{\boldmath$n$} & 
+\multicolumn{1}{c}{\textbf{Multiset-Trie (\boldmath$\mu s$)}} & 
+\multicolumn{1}{c}{\textbf{Inverted Index (\boldmath$\mu s$)}} \\
+\midrule
+5		& 1 & 3.45 & 17,782.35\\
+%\hline
+30	& 1 & 4.18 & 24,865.93\\
+%\hline
+5		& 3 & 2.20 & 1508.81\\
+%\hline
+15	& 3 & 4.39 & 2146.36\\
+%\hline
+30	& 3 & 10.67 & 3639.97\\
+%\hline
+10	& 10 & 6.93 & 384.05\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\caption{Sub-multiset search.}
+\label{t:res_sub}
+\newcolumntype{r}{>{\raggedleft\arraybackslash}X}
+\begin{tabularx}{\textwidth}{rrrr}
+\toprule
+\multicolumn{1}{c}{\boldmath$\sigma$} & 
+\multicolumn{1}{c}{\boldmath$n$} & 
+\multicolumn{1}{c}{\textbf{Multiset-Trie (\boldmath$\mu s$)}} & 
+\multicolumn{1}{c}{\textbf{Inverted Index (\boldmath$\mu s$)}} \\
+\midrule
+5		& 1			& 8.96 & 73,500.84\\
+%\hline
+30	& 1			& 17.33 & 547,572.74\\
+%\hline
+5		& 3			& 117.95 & 162,360.43\\
+%\hline
+15	& 3			& 20.74 & 443,321.39\\
+%\hline
+30	& 3 		& 23.75 & 947,706.14\\
+%\hline
+10	& 10		& 55.59 & 466,022.68\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\caption{Super-multiset search.}
+\label{t:res_sup}
+\newcolumntype{r}{>{\raggedleft\arraybackslash}X}
+\begin{tabularx}{\textwidth}{rrrr}
+\toprule
+\multicolumn{1}{c}{\boldmath$\sigma$} & 
+\multicolumn{1}{c}{\boldmath$n$} & 
+\multicolumn{1}{c}{\textbf{Multiset-Trie (\boldmath$\mu s$)}} & 
+\multicolumn{1}{c}{\textbf{Inverted Index (\boldmath$\mu s$)}} \\
+\midrule
+5		& 1 		& 10.63 & 63,073.86\\
+%\hline
+30	& 1 		& 14.65 & 449,251.68\\
+%\hline
+5		& 3 		& 171.04 & 163,256.77\\
+%\hline
+15	& 3 		& 43.42 & 425,733.80\\
+%\hline
+30	& 3 		& 22.06 & 729,831.34\\
+%\hline
+10	& 10 	& 58.32 & 373,784.81\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+We can see that multiset-trie outperforms the Inverted Index in all of the
+experiments by up to four orders of magnitude. In an exact search,
+multiset-trie has to traverse only up to $\sigma+1$ nodes to obtain a query
+result. It can be seen from the results that with the increase in $\sigma$,
+the processing time for multiset-tire also increases. Multiplicity
+also affects the processing time; however, this happens
+passively. Multiplicity, or the degree of a node $n$, defines the shape of
+multisets that are stored in multiset-trie. Thus, it affects the
+structure and density of the multiset-trie.
+
+As for the Inverted Index, all three operations must first fetch all
+postings for each particular element of a test multiset. Afterward,
+the intersection of postings is computed to answer the query. The
+operations use more processing time than a simple tree traversal,
+which we can see from the results. Postings are filtered on-the-fly to
+reduce the cost of the intersection.
+
+Implementations of the multiset containment operations
+for searching sub-multisets and super-multisets are similar in
+the case of the inverted file. The algorithm consists of the same
+steps. First, the postings are fetched for each element of the test
+multiset. Depending on the particular operation, postings are filtered
+on-the-fly. Finally, the union or the intersection of the filtered set
+of postings is computed. Note that the processing time increases with
+the size of the inverted index because of the increased sizes of
+postings.
+
+In the case of multiset-trie, only a traversal of the tree is
+required, which is much faster than the processing of postings, as we
+can see from the results. In the worst case, the whole tree is
+traversed, but the same is for an inverted file.
+
+% section 6
+%\input{tex/s_relwork}
+\section{Related Work} \label{c:relwork}
+
+% intro to related work
+The data structure multiset-trie is related to the data structures and indexes designed to store and manage sets and multisets. We mainly focus on the related data structures and indexes that efficiently support the set and multiset containment queries. Firstly, we summarize our previous work on the data structure for managing sets in Section \ref{rel-strie}. Next, we present in Section \ref{rel-invfile} the related work on the inverted files, i.e., the index structure that serves as a central data structure in the area of Information Retrieval (IR), but also for storing sets and multisets in database management systems. The alternative to the inverted file is the signature tree that is presented in Section \ref{rel-signature}. Finally, we describe the related work in the area of database management systems in Section \ref{rel-dbms}. We review the novel index structures used for the containment queries and the proposed containment join algorithms. 
+
+% Construction of multiset-trie
+
+\subsection{Set-Trie\label{rel-strie}}
+% set-trie: 
+% - data structure that multiset-trie generalizes
+% - stores a set of sets
+% - supports set containment operations
+
+The multiset-trie is closely related to the set-trie data structure introduced by Savnik in~\cite{savnik2013index,savnik2021plos}. A set-trie is a trie data structure that is adapted for the efficient storage and retrieval of sets instead of the sequences of symbols. The set-trie provides the set containment operations, such as the retrieval of the \emph{nearest} subset or supersets, as well as the retrieval of \emph{all} subsets and supersets from the sets of sets.
+
+Since we are storing sets where each element of the set can appear only once, and the ordering of elements is not important, the ordering of the elements from the alphabet can be used for guiding the search in set containment operations. Each set is represented in a set-trie by a path including the increasing elements of a set represented by set-trie nodes. Since all sets from a set-trie are ordered by the increasing value of the set elements, the children of each set-trie node $n$ can only be elements larger than the element $n$. For a given set $s$ and a set-trie $S$, the set containment operations search solely the subtree of $S$ that includes all the sets (paths from a root to a set-trie node) that are the possible subsets or supersets of $s$.
+%The size of such subtree depends on the size of $S$ and the shape of $s$.
+
+The data structure multiset-trie generalizes the set-trie by providing storage for the set of multisets. When the multiset-trie is restricted to store a set of sets, the underlying data structure becomes a simple binary tree. Moreover, all the operations of the set-trie are also supported by the multiset-trie. The generalization comes with a small penalty in performance if we compare the multiset-trie with the set-trie in the performance of the set containment operations. The downside of such a generalization is that multiset-trie no longer supports the path compression that was obtained in set-trie. 
+%However, the design of multiset-trie provides storage of multisets with constant worst-case time complexity of the set containment operations.
+
+\subsection{Inverted File\label{rel-invfile}}
+% inverted index:
+% - performance study of set containment queries (sequential signature files, signature trees, extendible signature hashing, inverted files)
+% - performance comparison of multiset-trie to inverted index
+% - containment query issues of inverted index
+
+The inverted file \cite{zobel1992efficient,zobel1998inverted,zobel2006inverted} is the most common data structure used to represent a collection of (multi)sets. In the area of IR \cite{manning2008introduction}, the inverted files are used for searching documents that contain a given set of words. It is composed of two parts: a dictionary and the postings. The dictionary maps each word to a list of document identifiers together with the locations of words in documents. The dictionary is most often implemented by a variant of a search tree, such as a B+ tree. The postings are implemented as a list of positions that are stored on the disk because of the huge amount of documents usually indexed by the inverted file. Since we can have a large number of postings for one word, the postings are compressed. Furthermore, several possible optimizations exist in the representation and implementation of postings \cite{zobel2006inverted}, such as the sorting of postings, a technique called skipping, and others.
+
+The empirical analyses~\cite{Helmer2003,zobel1998inverted} show that the inverted file is the most efficient data structure for containment queries among the data structures: the sequential signature file, the signature tree, the extendible signature hashing, and the inverted file. 
+
+% Application areas of multiset-trie
+
+\subsection{Signature Trees\label{rel-signature}}
+
+A dynamically balanced signature tree \cite{Deppisch1986,Pfaltz1980}, or S-tree, is an alternative data structure for the representation of multisets. An S-tree stores objects on the basis of their attributes represented in the form of signatures. A signature of an object is formed by the discretization of object attributes. Each attribute is discretized by mapping the attribute values to a sequence of bits. The bit sequences are the abstractions of the values of object attributes. They are glued together to form the signature of an object. The mappings from attribute values to sequences of bits are defined in such a way that allows superimposing a set of signatures by a single signature. Such a signature is often formed by using the operation OR. This property of signatures provides the means for the construction of the hierarchy of signatures that is utilized for efficient search. The multisets can be effectively represented using signatures, and the superposition operation can be implemented by the operation OR. The use of the signature tree for the containment operations was studied by Tousidou et~al.~\cite{tousidou2002sigstruc}. They show that an S-tree that uses linear hash partitioning can be used to implement the containment operations efficiently. 
+
+\subsection{Multisets in Relational Databases\label{rel-dbms}}
+% multisets in RDBMS and ORDBMS:
+% - set-valued attributes
+% - multiset-valued attributes
+% - underlying datastructures for storage of set- and multiset-valued attributes
+
+The index structures for the efficient implementation of the (multi)set containment queries were studied in the framework of the relational DBMS as well as the object-relational DBMS, where we can use multivalued attributes, including sets, multisets (bags), and lists. Zhang et al.\ \cite{Zhang2001} compared the performance of the containment queries implemented in a standard relational DBMS (RDBMS) to an information retrieval engine. The results show that, in general, the IR engine performs better than an RDBMS on containment queries. They identified the problems that lead to the poor performance of the containment operations in an RDBMS and showed that, with some modifications, an RDBMS could perform this class of queries more efficiently. 
+
+The joins in an object-relational DBMS can be defined by means of the containment operations. A number of \emph{containment join} methods have been proposed \cite{Ramasamy2000,Melnik2003,Jampani2005,Luo2015}. Ramasamy et al. propose the use of the partitioning set join that relies on the representation of sets by using signatures \cite{Ramasamy2000}. The signature-based representation allows the efficient implementation of the set comparison operations. The partitioning set join was further improved by Melnik et al. \cite{Melnik2003} to handle large sets and to speed up the partitioning phase of the algorithm. Further, Jampani et al. introduced the PRETTI join algorithm, which combines an inverted file with a prefix tree for the efficient implementation of the containment joins. The algorithm for $R\bowtie T$ recursively computes record identifiers from $T$ while traversing a prefix tree storing the sets from $R$. The algorithm uses a single intersection of two lists to enumerate the matching pairs of rid-s. The PRETTI algorithm was improved by Luo at al. \cite{Luo2015} by replacing the prefix tree with the Patricia tree. 
+
+% section 7
+%\input{tex/s_conclusions}
+\section{Conclusions and Future Work} \label{c:conclusions}
+
+%
+% Experiments conclusions
+One of the conclusions of studying the multiset-trie both theoretically and empirically is that our data structure is input-sensitive. Input sensitivity implies non-consistent performance on different input data. However, our argument that the performance can be optimized by pre-processing the input data is confirmed in  Experiment~\hyperref[ss:exp3]{4}. Pre-processing determines the optimal encoding for input data and ensures the best performance of the multiset-trie on particular input data. For example, in the case of storing words in the multiset-trie, the search queries can always be optimized based on the frequencies of letters in a specific language. We also see from Experiments~\hyperref[s:exp1]{1} and~\hyperref[s:exp2]{2} that the dependence of the multiset-trie's performance on the density is not a linear function. However, the function is continuous, and the point of inflection is unique on the whole domain, as shown in Experiment~\hyperref[s:exp3]{3}. This allows us to predict whether multiset-trie can be used for some particular application, offering high performance. 
+
+%
+% Mathematical analysis conclusions
+The mathematical analysis section provides a non-trivial insight regarding the behavior of the multiset-trie data structure when used in randomized data. It is estimated that the space complexity of multiset-trie is of order $O(|M|)$, which is the minimal possible space required by any data structure for the storage of $|M|$ objects. 
+As for the running time complexity of algorithms, the basic tree functions such as \textsc{insert}, \textsc{search}, and \textsc{delete} all have constant complexity once the multiset-trie is defined. The ``getAll'' multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie data structure. The ``existence'' multiset containment functions have the worst-case running time complexity of $O(|\mathcal{M}| - |M|),$ where $|\mathcal{M}|$ is the cardinality of the multiset-trie and $|M|$ is the number of inserted multisets (nodes on leaf level). 
+
+%The multiset-trie is an input-sensitive data structure because the size of multiset-trie $|\mathcal{M}|$ depends on the distribution of multisets in $M.$
+%Our mathematical model assumes that multisets $m$ in $M$ are distributed uniformly;  however, in real-world models, such an assumption is not generally true. 
+%%Specifically, the probability $P(m\in M)$ may vary dramatically and can even be equal to $0.$ For example, if words are mapped to multisets, then the sample space contains very large multisets. 
+%For example, many multisets will have zero probability of appearing in $M$ because a word that would correspond to such a multiset does not exist in the dictionary.%
+
+The implementation of the multiset-trie is not optimized. For example, the main reason for the space inefficiency is in implementing the links from a node to its children. Our implementation uses an array data structure to link a node to its children, where each element of an array, indexed by the multiplicity of the element of the next level, includes a link to a subtree. A custom-implemented small and extendable hash table would significantly decrease the amount of space needed to represent a multiset-trie.
+% There are more additional optimizations possible. For example, the ...
+
+% Future work notes
+%
+%The above results have opened even more interesting questions for future research. 
+Further steps in our research will be to extend the functionality of the multiset-trie. We are interested in more flexible multiset containment queries where additional conditions constrain the sub- and super-multisets. For example, the multiplicity of an element in a multiset can be bounded in operations getAllSubmsets and getAllSupermsets. Furthermore, the similarity search on multisets can be implemented by modifying the algorithms for searching the sub- and super-multisets. 
+%
+The second line of research is to investigate the multiset-trie as a database index data structure. A disk-based index data structure allows for storing and managing a huge amount of multisets. The mapping from a multiset-trie, i.e., a $n$-ary search tree, to a block-based index can be easily defined because of the regularity of multiset-trie. It will be interesting to compare the multiset-trie with other existing disk-based index data structures.
+
+\vspace{6pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% optional
+%\supplementary{The following supporting information can be downloaded at:  \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title.}
+
+% Only for the journal Methods and Protocols:
+% If you wish to submit a video article, please do so with any other supplementary material.
+% \supplementary{The following supporting information can be downloaded at: \linksupplementary{s1}, Figure S1: title; Table S1: title; Video S1: title. A supporting video article is available at doi: link.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authorcontributions{\hl{ .}}%For research articles with several authors, a short paragraph specifying their individual contributions must be provided. The following statements should be used ``Conceptualization, X.X. and Y.Y.; methodology, X.X.; software, X.X.; validation, X.X., Y.Y. and Z.Z.; formal analysis, X.X.; investigation, X.X.; resources, X.X.; data curation, X.X.; writing---original draft preparation, X.X.; writing---review and editing, X.X.; visualization, X.X.; supervision, X.X.; project administration, X.X.; funding acquisition, Y.Y. All authors have read and agreed to the published version of the manuscript.'', please turn to the  \href{http://img.mdpi.org/data/contributor-role-instruction.pdf}{CRediT taxonomy} for the term explanation. Authorship must be limited to those who have contributed substantially to the work~reported.}
+
+\funding{\hl{The authors} %MDPI: We moved the last paragraph here, please confirm.
+ acknowledge the support in part of the Slovenian Research Agency, research program P1-0383.}
+
+\institutionalreview{\hl{ .}}%In this section, you should add the Institutional Review Board Statement and approval number, if relevant to your study. You might choose to exclude this statement if the study did not require ethical approval. Please note that the Editorial Office might ask you for further information. Please add “The study was conducted in accordance with the Declaration of Helsinki, and approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).” for studies involving humans. OR “The animal study protocol was approved by the Institutional Review Board (or Ethics Committee) of NAME OF INSTITUTE (protocol code XXX and date of approval).” for studies involving animals. OR “Ethical review and approval were waived for this study due to REASON (please provide a detailed justification).” OR “Not applicable” for studies not involving humans or animals.}
+
+\informedconsent{\hl{ .}}%Any research article describing a study involving humans should contain this statement. Please add ``Informed consent was obtained from all subjects involved in the study.'' OR ``Patient consent was waived due to REASON (please provide a detailed justification).'' OR ``Not applicable'' for studies not involving humans. You might also choose to exclude this statement if the study did not involve humans. Written informed consent for publication must be obtained from participating patients who can be identified (including by the patients themselves). Please state ``Written informed consent has been obtained from the patient(s) to publish this paper'' if applicable.}
+
+\dataavailability{\hl{ .}}%We encourage all authors of articles published in MDPI journals to share their research data. In this section, please provide details regarding where data supporting reported results can be found, including links to publicly archived datasets analyzed or generated during the study. Where no new data were created, or where data is unavailable due to privacy or ethical re-strictions, a statement is still required. Suggested Data Availability Statements are available in section “MDPI Research Data Policies” at \url{https://www.mdpi.com/ethics}.} 
+
+%\acknowledgments{}
+
+\conflictsofinterest{\hl{The} %MDPI: Newly added information. Please confirm.
+ authors declare no conflicts of interest.} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\paragraph{\textbf{Funding information.}} Authors acknowledge the 
+%support in part by the Slovenian Research Agency, research program P1-0383.
+
+%\nolinenumbers
+
+%\newpage
+\begin{adjustwidth}{-\extralength}{0cm}
+\reftitle{References}
+\begin{thebibliography}{999}
+
+\bibitem[Savnik \em{et~al.}(2021)Savnik, Akulich, Krnc, and
+  Škrekovski]{savnik2021plos}
+Savnik, I.; Akulich, M.; Krnc, M.; Škrekovski, R.
+\newblock Data structure set-trie for storing and querying sets: Theoretical
+  and empirical analysis.
+\newblock {\em PLoS ONE} {\bf 2021}, {\em 2}, e0245122. https://doi.org/10.1371/journal.pone.0245122.
+
+\bibitem[Bouros \em{et~al.}(2016)Bouros, Mamoulis, Ge, and
+  Terrovitis]{bouros2016set}
+Bouros, P.; Mamoulis, N.; Ge, S.; Terrovitis, M.
+\newblock Set containment join revisited.
+\newblock {\em Knowl. Inf. Syst.} {\bf 2016}, {\em
+  49},~375--402.
+
+\bibitem[Gripon \em{et~al.}(2012)Gripon, Rabbat, Skachek, and
+  Gross]{gripon2012compressing}
+Gripon, V.; Rabbat, M.; Skachek, V.; Gross, W.J.
+\newblock Compressing multisets using tries.
+\newblock In Proceedings of the 2012 IEEE Information Theory Workshop, \hl{Lausanne, Switzerland, 3--7 September} %MDPI: We added the location and date of the conference. Please confirm.
+  2012; pp. 642--646.
+
+\bibitem[Ross and Stoyanovich(2004)]{ross2004symmetric}
+Ross, K.A.; Stoyanovich, J.
+\newblock Symmetric relations and cardinality-bounded multisets in database
+  systems.
+\newblock In Proceedings of the Thirtieth International
+  Conference on Very Large Data Bases-Volume 30. VLDB \hl{Endowment,} %MDPI: Please add the location and date of the conference. 
+  2004; pp.
+  912--923.
+
+\bibitem[Steinruecken(2015)]{steinruecken2015compressing}
+Steinruecken, C.
+\newblock Compressing sets and multisets of sequences.
+\newblock {\em IEEE Trans. Inf. Theory} {\bf 2015}, {\em
+  61},~1485--1490.
+
+\bibitem[Zobel \em{et~al.}(1992)Zobel, Moffat, and
+  Sacks-Davis]{zobel1992efficient}
+Zobel, J.; Moffat, A.; Sacks-Davis, R.
+\newblock An efficient indexing technique for full-text database systems.
+\newblock In Proceedings of the VLDB '92: Proceedings of the 18th International Conference on Very Large Data Bases, \hl{IEEE,} %MDPI: Please add the location and date of the conference. 
+ 23--27 August 1992; pp. 352--352.
+
+\bibitem[Zobel and Moffat(2006)]{zobel2006inverted}
+\hl{Zobel, J.; Moffat, A.}  %MDPI: Refs. 7 and 17 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
+\newblock Inverted files for text search engines.
+\newblock {\em ACM Comput. Surv. (CSUR)} {\bf 2006}, {\em 38},~6.
+
+\bibitem[Manning \em{et~al.}(2008)Manning, Raghavan, Sch{\"u}tze,
+  et~al.]{manning2008introduction}
+Manning, C.D.; Raghavan, P.; Sch{\"u}tze, H.;  \hl{et~al.} %MDPI: Please include the first ten authors' names before using "et al." in the references.
+\newblock {\em Introduction to Information Retrieval}; Cambridge
+  University Press: Cambridge, UK, 2008; Volume~1.
+
+\bibitem[Mannila and Toivonen(1997)]{mannila1997}
+Mannila, H.; Toivonen, H.
+\newblock Levelwise Search and Borders of Theories in Knowledge Discovery.
+\newblock {\em Data Min. Knowl. Discov.} {\bf 1997}, {\em
+  1},~241--258.
+
+\bibitem[Flach and Savnik(1999)]{flach1999aicom}
+Flach, P.A.; Savnik, I.
+\newblock Database Dependency Discovery: A Machine Learning Approach.
+\newblock {\em AI Commun.} {\bf 1999}, {\em 12},~139--160.
+
+\bibitem[Forgy(1982)]{forgy1982}
+Forgy, C.
+\newblock Rete: A Fast Algorithm for the Many Pattern/Many Object Pattern Match
+  Problem.
+\newblock {\em Artif. Intell.} {\bf 1982}, {\em 19},~17--37.
+
+\bibitem[Bayardo \em{et~al.}(2007)Bayardo, Ma, and Srikant]{bayardo2007simlar}
+Bayardo, R.J.; Ma, Y.; Srikant, R.
+\newblock Scaling up All Pairs Similarity Search.
+\newblock In WWW'07: 16th International World Wide Web Conference, \hl{Banff, AB, Canada, 8--12 May} %MDPI: We added the location and date of the conference. Please confirm.
+ 2007;  Association for Computing Machinery: New York,
+  NY, USA,  2007; pp. 131–140.
+
+\bibitem[Xiao \em{et~al.}(2011)Xiao, Wang, Lin, Yu, and Wang]{xiao2011tods}
+Xiao, C.; Wang, W.; Lin, X.; Yu, J.X.; Wang, G.
+\newblock Efficient Similarity Joins for Near-Duplicate Detection.
+\newblock {\em ACM Trans. Database Syst.} {\bf 2011}, {\em 36}, 15.
+
+\bibitem[Wang \em{et~al.}(2017)Wang, Qin, Lin, Zhang, and Chang]{wang2017vldb}
+Wang, X.; Qin, L.; Lin, X.; Zhang, Y.; Chang, L.
+\newblock Leveraging set relations in exact set similarity join.
+\newblock {\em Proc. VLDB Endow.} {\bf 2017}, {\em
+  10},~925--936.
+
+\bibitem[H.~Cormen \em{et~al.}(2001)H.~Cormen, Leiserson, L.~Rivest, and
+  Stein]{corman2001}
+H.~Cormen, T.; Leiserson, C.; L.~Rivest, R.; Stein, C.
+\newblock {\em Introduction to Algorithms, Second Edition}; \hl{The MIT Press: Cambridge, MA, USA,} %MDPI: We added the name of the publisher and location. Please confirm.
+ 2001.
+
+\bibitem[Zobel \em{et~al.}(1998)Zobel, Moffat, and
+  Ramamohanarao]{zobel1998inverted}
+Zobel, J.; Moffat, A.; Ramamohanarao, K.
+\newblock Inverted files versus signature files for text indexing.
+\newblock {\em ACM Trans. Database Syst. (TODS)} {\bf 1998}, {\em
+  23},~453--490.
+
+\bibitem[Zobel and Moffat(2006)]{zobel2006csur}
+\hl{Zobel, J.; Moffat, A.}
+\newblock Inverted files for text search engines.
+\newblock {\em ACM Comput. Surv. (CSUR)} {\bf 2006}, {\em 38},~6.
+
+\bibitem[Broder \em{et~al.}(2006)Broder, Eiron, Fontoura, Herscovici, Lempel,
+  McPherson, Qi, and Shekita]{broder2006indexing}
+Broder, A.Z.; Eiron, N.; Fontoura, M.; Herscovici, M.; Lempel, R.; McPherson,
+  J.; Qi, R.; Shekita, E.
+\newblock Indexing shared content in information retrieval systems.
+\newblock In \emph{Proceedings of the International Conference on Extending Database
+  Technology}; Springer:  \hl{Berlin/Heidelberg, Germany,} %We added the location of publisher. Please confirm
+  2006; pp. 313--330.
+
+\bibitem[Terrovitis \em{et~al.}(2006)Terrovitis, Passas, Vassiliadis, and
+  Sellis]{terrovitis2006cikm}
+Terrovitis, M.; Passas, S.; Vassiliadis, P.; Sellis, T.
+\newblock A Combination of Trie-trees and Inverted Files for the Indexing of
+  Set-valued Attributes.
+\newblock In \emph{Proceedings of the Proceedings of the 15th ACM International
+  Conference on Information and Knowledge Management}; ACM: New York, NY, USA,
+  2006; pp. 728--737.
+
+\bibitem[Terrovitis \em{et~al.}(2011)Terrovitis, Bouros, Vassiliadis, Sellis,
+  and Mamoulis]{terrovitis2011icdt}
+Terrovitis, M.; Bouros, P.; Vassiliadis, P.; Sellis, T.; Mamoulis, N.
+\newblock Efficient Answering of Set Containment Queries for Skewed Item
+  Distributions.
+\newblock In \emph{Proceedings of the Proceedings of the 14th International
+  Conference on Extending Database Technology}; ACM: New York, NY, USA,  2011;
+   pp. 225--236.
+
+\bibitem[Deppisch(1986)]{deppisch1986sigir}
+\hl{Deppisch, U.} %MDPI: Refs. 21 and 29 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
+\newblock S-tree: A Dynamic Balanced Signature Index for Office Retrieval.
+\newblock In \emph{Proceedings of the 9th Annual International ACM
+  SIGIR Conference on Research and Development in Information Retrieval}; ACM:
+  New York, NY, USA,  1986;  pp. 77--87.
+
+\bibitem[Tousidou \em{et~al.}(2002)Tousidou, Bozanis, and
+  Manolopoulos]{tousidou2002sigstruc}
+Tousidou, E.; Bozanis, P.; Manolopoulos, Y.
+\newblock Signature-based Structures for Objects with Set-valued Attributes.
+\newblock {\em Inf. Syst.} {\bf 2002}, {\em 27},~93--121.
+\newblock {{https://doi.org/10.1016/S0306-4379(01)00047-3}}.
+
+\bibitem[Chen and Shi(2005)]{yangjun2005stree}
+Chen, Y.; Shi, Y.
+\newblock Signature Files and Signature File Construction.
+\newblock In {\em Encyclopedia of Database Technologies and Applications}; \hl{IGI Global: } %MDPI: Please add the location of the publisher (City and Country).
+ {2005}.
+\newblock {{https://doi.org/10.4018/978-1-59140-560-3.ch105}}.
+
+\bibitem[Helmer and Moerkotte(2003)]{Helmer2003}
+Helmer, S.; Moerkotte, G.
+\newblock A performance study of four index structures for set-valued
+  attributes of low cardinality.
+\newblock {\em  VLDB J.} {\bf 2003}, {\em 12},~244--261.
+\newblock {{https://doi.org/10.1007/s00778-003-0106-0}}.
+
+\bibitem[Savnik(2013)]{savnik2013index}
+Savnik, I.
+\newblock Index data structure for fast subset and superset queries.
+\newblock In \emph{Proceedings of the International Conference on Availability,
+  Reliability, and Security}; Springer:  \hl{Berlin/Heidelberg, Germany,} %We added the location of publisher. Please confirm
+  2013; pp. 134--148.
+
+\bibitem[Sedgewick and Wayne(2011)]{Sedgewick:2011:ALG:2011916}
+Sedgewick, R.; Wayne, K.
+\newblock {\em Algorithms}, 4th ed.; \hl{Addison-Wesley} %MDPI: Please add the location of the publisher (City and Country).
+ Professional:  2011.
+
+\bibitem[Gardiner(1985)]{gardiner1985stochastic}
+Gardiner, C.W.
+\newblock {\em Stochastic Methods}; Springer: Berlin/Heidelberg, Germany, New
+  York, NY, USA, Tokyo, Japan, 1985.
+
+\bibitem[Akulich(2019)]{akulich2019mstrie}
+Akulich, M.
+\newblock Mstrie Repository. 2019. Available online:  \url{https://github.com/nick-ak96/mstrie} (\hl{accessed} %MDPI: Please add the access date (format: Date Month Year), e.g., accessed on 1 January 2020.
+ on).
+
+\bibitem[Deppisch(1986)]{Deppisch1986}
+\hl{Deppisch, U.} %MDPI: Refs. 21 and 29 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
+\newblock S-tree: A Dynamic Balanced Signature Index for Office Retrieval.
+\newblock In \emph{Proceedings of the 9th Annual International ACM
+  SIGIR Conference on Research and Development in Information Retrieval}; ACM:
+  New York, NY, USA,  1986;  pp. 77--87.
+\newblock {{https://doi.org/10.1145/253168.253189}}.
+
+\bibitem[Pfaltz \em{et~al.}(1980)Pfaltz, Berman, and Cagley]{Pfaltz1980}
+Pfaltz, J.L.; Berman, W.J.; Cagley, E.M.
+\newblock Partial-match Retrieval Using Indexed Descriptor Files.
+\newblock {\em Commun. ACM} {\bf 1980}, {\em 23},~522--528.
+\newblock {{https://doi.org/10.1145/359007.359013}}.
+
+\bibitem[Zhang \em{et~al.}(2001)Zhang, Naughton, DeWitt, Luo, Luo, and
+  Lohman]{Zhang2001}
+Zhang, C.; Naughton, J.; DeWitt, D.; Luo, Q.; Luo, Q.; Lohman, G.
+\newblock On Supporting Containment Queries in Relational Database Management
+  Systems.
+\newblock In \emph{Proceedings of the  SIGMOD}; ACM: New York, NY, USA,
+  2001; pp. 425--436.
+\newblock {{https://doi.org/10.1145/375663.375722}}.
+
+\bibitem[Ramasamy \em{et~al.}(2000)Ramasamy, Patel, Naughton, and
+  Kaushik]{Ramasamy2000}
+Ramasamy, K.; Patel, J.M.; Naughton, J.F.; Kaushik, R.
+\newblock Set containment joins: The good, the bad and the ugly.
+\newblock In Proceedings of the \hl{Proc. of VLDB,} %MDPI: Please provide more information about the article type, such as book (please provide the name and location of the publisher); online resource (please provide the URL of the website and the date it was accessed (Date Month Year)); or journal article (please provide the name of the journal, the year and volume in which it was published, and the page number). Please refer to https://www.mdpi.com/authors/references for full reference formatting guides.
+  2000.
+
+\bibitem[Melnik and Garcia-Molina(2003)]{Melnik2003}
+Melnik, S.; Garcia-Molina, H.
+\newblock Adaptive Algorithms for Set Containment Joins.
+\newblock {\em ACM Trans. Database Syst.} {\bf 2003}, {\em 28},~56--99.
+\newblock {{https://doi.org/10.1145/762471.762474}}.
+
+\bibitem[Jampani and Pudi(2005)]{Jampani2005}
+Jampani, R.; Pudi, V.
+\newblock Using Prefix-Trees for Efficiently Computing Set Joins.
+\newblock In Proceedings of the Database Systems for Advanced Applications,
+  10th International Conference, {DASFAA} 2005, Beijing, China,  17--20 April
+  2005; pp. 761--772.
+\newblock {{https://doi.org/10.1007/11408079\_69}}.
+
+\bibitem[Luo \em{et~al.}(2015)Luo, Fletcher, Hidders, and Bra]{Luo2015}
+Luo, Y.; Fletcher, G.H.L.; Hidders, J.; Bra, P.D.
+\newblock Efficient and scalable trie-based algorithms for computing set
+  containment relations.
+\newblock In Proceedings of the 31st {IEEE} International Conference on Data
+  Engineering, {ICDE} 2015, Seoul, Republic of Korea,  13--17 April 2015; pp.
+  303--314.
+\newblock {{https://doi.org/10.1109/ICDE.2015.7113293}}.
+
+\end{thebibliography}
+
+\PublishersNote{}
+%%\input{bibliography.bbl}
+%\bibliographystyle{Definitions/MDPI.bst}
+%\bibliography{multiset-trie.bib}
+\end{adjustwidth}
+\end{document}
+
