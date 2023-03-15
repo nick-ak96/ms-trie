@@ -233,7 +233,7 @@ In this paper, we address the problems of storing, indexing, and querying the se
 
 Existent indexes for storing a set of multisets are rooted in search trees \cite{corman2001}. The elements of a search tree can be accessed through keys. This approach is efficient for checking the membership of individual multisets $m$ in $S$. However, it is not as efficient for  containment queries. The search based on the containment relation requires access to the collections $C\subseteq\/S$ of multisets that are related for a multiset $m$ either by a sub-multiset or a super-multiset relationship. 
 
-The existing solutions to the implementation of the containment queries use the inverted indexes \cite{zobel1992efficient,zobel1998inverted,zobel2006csur,broder2006indexing,terrovitis2006cikm,terrovitis2011icdt}, the signature trees \cite{deppisch1986sigir,tousidou2002sigstruc,yangjun2005stree,zobel1998inverted}, and the B+ trees~\cite{Helmer2003,terrovitis2011icdt}. These solutions provide a key--value look-up, where a key is an element of a multiset and a value is a corresponding multiset. The containment operations require multiple key--value index accesses and also the additional processing of partial results such as the intersection or union of~multisets.
+The existing solutions to the implementation of the containment queries use the inverted indexes \cite{zobel1992efficient,zobel1998inverted,zobel2006inverted,broder2006indexing,terrovitis2006cikm,terrovitis2011icdt}, the signature trees \cite{deppisch1986sigir,tousidou2002sigstruc,yangjun2005stree,zobel1998inverted}, and the B+ trees~\cite{Helmer2003,terrovitis2011icdt}. These solutions provide a key--value look-up, where a key is an element of a multiset and a value is a corresponding multiset. The containment operations require multiple key--value index accesses and also the additional processing of partial results such as the intersection or union of~multisets.
 
 %\medskip\noindent\textbf{Proposed data structure.}\;
 To improve the efficiency of containment operations, we propose a data structure, \emph{multiset-trie}, that is designed for storing and processing a finite bounded set of multisets. A multiset-trie generalizes the \emph{set-trie} data structure proposed by Savnik~\cite{savnik2013index,savnik2021plos}, which was designed for the storage and processing of a finite bounded set of sets. 
@@ -1586,8 +1586,7 @@ which is 125 in our case. Conversely, the maximum for \textsc{getAllSupermsets}
 is at the smallest size of multiset, which is 0 (an empty set).
 
 \begin{figure}[H]
-
-\subcaptionbox{\centering \hl{Experiment} %Please move sub-caption to Caption.
+\subcaptionbox{\centering \hl{Experiment} %MDPI Please move sub-caption to Caption.
 2, getAllSubmsets function.
 }{\includegraphics[width=.485\textwidth]{exp2-m3.pdf}}
 \subcaptionbox{\centering \hl{Experiment} 2, getAllSupermsets function.
@@ -1905,7 +1904,7 @@ The empirical analyses~\cite{Helmer2003,zobel1998inverted} show that the inverte
 
 \subsection{Signature Trees\label{rel-signature}}
 
-A dynamically balanced signature tree \cite{Deppisch1986,Pfaltz1980}, or S-tree, is an alternative data structure for the representation of multisets. An S-tree stores objects on the basis of their attributes represented in the form of signatures. A signature of an object is formed by the discretization of object attributes. Each attribute is discretized by mapping the attribute values to a sequence of bits. The bit sequences are the abstractions of the values of object attributes. They are glued together to form the signature of an object. The mappings from attribute values to sequences of bits are defined in such a way that allows superimposing a set of signatures by a single signature. Such a signature is often formed by using the operation OR. This property of signatures provides the means for the construction of the hierarchy of signatures that is utilized for efficient search. The multisets can be effectively represented using signatures, and the superposition operation can be implemented by the operation OR. The use of the signature tree for the containment operations was studied by Tousidou et~al.~\cite{tousidou2002sigstruc}. They show that an S-tree that uses linear hash partitioning can be used to implement the containment operations efficiently. 
+A dynamically balanced signature tree \cite{deppisch1986sigir,Pfaltz1980}, or S-tree, is an alternative data structure for the representation of multisets. An S-tree stores objects on the basis of their attributes represented in the form of signatures. A signature of an object is formed by the discretization of object attributes. Each attribute is discretized by mapping the attribute values to a sequence of bits. The bit sequences are the abstractions of the values of object attributes. They are glued together to form the signature of an object. The mappings from attribute values to sequences of bits are defined in such a way that allows superimposing a set of signatures by a single signature. Such a signature is often formed by using the operation OR. This property of signatures provides the means for the construction of the hierarchy of signatures that is utilized for efficient search. The multisets can be effectively represented using signatures, and the superposition operation can be implemented by the operation OR. The use of the signature tree for the containment operations was studied by Tousidou et~al.~\cite{tousidou2002sigstruc}. They show that an S-tree that uses linear hash partitioning can be used to implement the containment operations efficiently. 
 
 \subsection{Multisets in Relational Databases\label{rel-dbms}}
 % multisets in RDBMS and ORDBMS:
@@ -2002,7 +2001,7 @@ Bouros, P.; Mamoulis, N.; Ge, S.; Terrovitis, M.
   Gross]{gripon2012compressing}
 Gripon, V.; Rabbat, M.; Skachek, V.; Gross, W.J.
 \newblock Compressing multisets using tries.
-\newblock In Proceedings of the 2012 IEEE Information Theory Workshop, \hl{Lausanne, Switzerland, 3--7 September} %MDPI: We added the location and date of the conference. Please confirm.
+\newblock In Proceedings of the 2012 IEEE Information Theory Workshop, Lausanne, Switzerland, 3--7 September %MDPI: We added the location and date of the conference. Please confirm. %RES We confirm.
   2012; pp. 642--646.
 
 \bibitem[Ross and Stoyanovich(2004)]{ross2004symmetric}
@@ -2010,9 +2009,8 @@ Ross, K.A.; Stoyanovich, J.
 \newblock Symmetric relations and cardinality-bounded multisets in database
   systems.
 \newblock In Proceedings of the Thirtieth International
-  Conference on Very Large Data Bases-Volume 30. VLDB \hl{Endowment,} %MDPI: Please add the location and date of the conference. 
-  2004; pp.
-  912--923.
+  Conference on Very Large Data Bases, Volume 30, VLDB Endowment, Toronto, Canada, 29 August--3 September 2004; %MDPI: Please add the location and date of the conference. %RES Location and date added.
+  pp. 912--923.
 
 \bibitem[Steinruecken(2015)]{steinruecken2015compressing}
 Steinruecken, C.
@@ -2024,17 +2022,16 @@ Steinruecken, C.
   Sacks-Davis]{zobel1992efficient}
 Zobel, J.; Moffat, A.; Sacks-Davis, R.
 \newblock An efficient indexing technique for full-text database systems.
-\newblock In Proceedings of the VLDB '92: Proceedings of the 18th International Conference on Very Large Data Bases, \hl{IEEE,} %MDPI: Please add the location and date of the conference. 
- 23--27 August 1992; pp. 352--352.
+\newblock In Proceedings of the 18th Conference on Very Large Data Bases, Morgan Kaufmann, Vancouver, Canada, 23--27 August, 1992; %MDPI: Please add the location and date of the conference. %RES Location and date added.
+ pp. 352--352.
 
 \bibitem[Zobel and Moffat(2006)]{zobel2006inverted}
-\hl{Zobel, J.; Moffat, A.}  %MDPI: Refs. 7 and 17 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
+Zobel, J.; Moffat, A.  %MDPI: Refs. 7 and 17 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references. %RES Corrected.
 \newblock Inverted files for text search engines.
 \newblock {\em ACM Comput. Surv. (CSUR)} {\bf 2006}, {\em 38},~6.
 
-\bibitem[Manning \em{et~al.}(2008)Manning, Raghavan, Sch{\"u}tze,
-  et~al.]{manning2008introduction}
-Manning, C.D.; Raghavan, P.; Sch{\"u}tze, H.;  \hl{et~al.} %MDPI: Please include the first ten authors' names before using "et al." in the references.
+\bibitem[Manning \em{et~al.}(2008)Manning, Raghavan, Sch{\"u}tze]{manning2008introduction}
+Manning, C.D.; Raghavan, P.; Sch{\"u}tze, H.; %MDPI: Please include the first ten authors' names before using "et al." in the references. %RES All authors included.
 \newblock {\em Introduction to Information Retrieval}; Cambridge
   University Press: Cambridge, UK, 2008; Volume~1.
 
@@ -2058,9 +2055,8 @@ Forgy, C.
 \bibitem[Bayardo \em{et~al.}(2007)Bayardo, Ma, and Srikant]{bayardo2007simlar}
 Bayardo, R.J.; Ma, Y.; Srikant, R.
 \newblock Scaling up All Pairs Similarity Search.
-\newblock In WWW'07: 16th International World Wide Web Conference, \hl{Banff, AB, Canada, 8--12 May} %MDPI: We added the location and date of the conference. Please confirm.
- 2007;  Association for Computing Machinery: New York,
-  NY, USA,  2007; pp. 131–140.
+\newblock In WWW'07: 16th International World Wide Web Conference, ACM, Banff, Alberta, Canada, 8--12 May %MDPI: We added the location and date of the conference. Please confirm. %RES Updated and confirmed.
+ 2007; pp. 131–140.
 
 \bibitem[Xiao \em{et~al.}(2011)Xiao, Wang, Lin, Yu, and Wang]{xiao2011tods}
 Xiao, C.; Wang, W.; Lin, X.; Yu, J.X.; Wang, G.
@@ -2076,7 +2072,7 @@ Wang, X.; Qin, L.; Lin, X.; Zhang, Y.; Chang, L.
 \bibitem[H.~Cormen \em{et~al.}(2001)H.~Cormen, Leiserson, L.~Rivest, and
   Stein]{corman2001}
 H.~Cormen, T.; Leiserson, C.; L.~Rivest, R.; Stein, C.
-\newblock {\em Introduction to Algorithms, Second Edition}; \hl{The MIT Press: Cambridge, MA, USA,} %MDPI: We added the name of the publisher and location. Please confirm.
+\newblock {\em Introduction to Algorithms, Second Edition}; The MIT Press: Cambridge, MA, USA, %MDPI: We added the name of the publisher and location. Please confirm. %RES Confirmed.
  2001.
 
 \bibitem[Zobel \em{et~al.}(1998)Zobel, Moffat, and
@@ -2086,18 +2082,13 @@ Zobel, J.; Moffat, A.; Ramamohanarao, K.
 \newblock {\em ACM Trans. Database Syst. (TODS)} {\bf 1998}, {\em
   23},~453--490.
 
-\bibitem[Zobel and Moffat(2006)]{zobel2006csur}
-\hl{Zobel, J.; Moffat, A.}
-\newblock Inverted files for text search engines.
-\newblock {\em ACM Comput. Surv. (CSUR)} {\bf 2006}, {\em 38},~6.
-
 \bibitem[Broder \em{et~al.}(2006)Broder, Eiron, Fontoura, Herscovici, Lempel,
   McPherson, Qi, and Shekita]{broder2006indexing}
 Broder, A.Z.; Eiron, N.; Fontoura, M.; Herscovici, M.; Lempel, R.; McPherson,
   J.; Qi, R.; Shekita, E.
 \newblock Indexing shared content in information retrieval systems.
 \newblock In \emph{Proceedings of the International Conference on Extending Database
-  Technology}; Springer:  \hl{Berlin/Heidelberg, Germany,} %We added the location of publisher. Please confirm
+  Technology}; Springer: Berlin/Heidelberg, Germany, %We added the location of publisher. Please confirm %RES Confirmed.
   2006; pp. 313--330.
 
 \bibitem[Terrovitis \em{et~al.}(2006)Terrovitis, Passas, Vassiliadis, and
@@ -2119,7 +2110,7 @@ Terrovitis, M.; Bouros, P.; Vassiliadis, P.; Sellis, T.; Mamoulis, N.
    pp. 225--236.
 
 \bibitem[Deppisch(1986)]{deppisch1986sigir}
-\hl{Deppisch, U.} %MDPI: Refs. 21 and 29 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
+Deppisch, U. %MDPI: Refs. 21 and 29 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references. %RES The other reference deleted and updated. 
 \newblock S-tree: A Dynamic Balanced Signature Index for Office Retrieval.
 \newblock In \emph{Proceedings of the 9th Annual International ACM
   SIGIR Conference on Research and Development in Information Retrieval}; ACM:
@@ -2135,7 +2126,7 @@ Tousidou, E.; Bozanis, P.; Manolopoulos, Y.
 \bibitem[Chen and Shi(2005)]{yangjun2005stree}
 Chen, Y.; Shi, Y.
 \newblock Signature Files and Signature File Construction.
-\newblock In {\em Encyclopedia of Database Technologies and Applications}; \hl{IGI Global: } %MDPI: Please add the location of the publisher (City and Country).
+\newblock In {\em Encyclopedia of Database Technologies and Applications}; IGI Global: Hershey, Pennsylvania, USA, %MDPI: Please add the location of the publisher (City and Country). %RES Location of pub. added.
  {2005}.
 \newblock {{https://doi.org/10.4018/978-1-59140-560-3.ch105}}.
 
@@ -2143,20 +2134,20 @@ Chen, Y.; Shi, Y.
 Helmer, S.; Moerkotte, G.
 \newblock A performance study of four index structures for set-valued
   attributes of low cardinality.
-\newblock {\em  VLDB J.} {\bf 2003}, {\em 12},~244--261.
+\newblock {\em  VLDB Journal}, {\bf 2003}, {\em 12},~244--261.
 \newblock {{https://doi.org/10.1007/s00778-003-0106-0}}.
 
 \bibitem[Savnik(2013)]{savnik2013index}
 Savnik, I.
 \newblock Index data structure for fast subset and superset queries.
 \newblock In \emph{Proceedings of the International Conference on Availability,
-  Reliability, and Security}; Springer:  \hl{Berlin/Heidelberg, Germany,} %We added the location of publisher. Please confirm
+  Reliability, and Security}; Springer: Berlin/Heidelberg, Germany, %We added the location of publisher. Please confirm %RES Confirmed.
   2013; pp. 134--148.
 
 \bibitem[Sedgewick and Wayne(2011)]{Sedgewick:2011:ALG:2011916}
 Sedgewick, R.; Wayne, K.
-\newblock {\em Algorithms}, 4th ed.; \hl{Addison-Wesley} %MDPI: Please add the location of the publisher (City and Country).
- Professional:  2011.
+\newblock {\em Algorithms}, 4th ed.; Addison-Wesley: %MDPI: Please add the location of the publisher (City and Country). %RES Added.
+ Professional: Boston, USA, 2011.
 
 \bibitem[Gardiner(1985)]{gardiner1985stochastic}
 Gardiner, C.W.
@@ -2165,16 +2156,8 @@ Gardiner, C.W.
 
 \bibitem[Akulich(2019)]{akulich2019mstrie}
 Akulich, M.
-\newblock Mstrie Repository. 2019. Available online:  \url{https://github.com/nick-ak96/mstrie} (\hl{accessed} %MDPI: Please add the access date (format: Date Month Year), e.g., accessed on 1 January 2020.
- on).
-
-\bibitem[Deppisch(1986)]{Deppisch1986}
-\hl{Deppisch, U.} %MDPI: Refs. 21 and 29 are duplicated. Please remove duplicated references and rearrange all the references to appear in numerical order. Please ensure that there are no duplicated references.
-\newblock S-tree: A Dynamic Balanced Signature Index for Office Retrieval.
-\newblock In \emph{Proceedings of the 9th Annual International ACM
-  SIGIR Conference on Research and Development in Information Retrieval}; ACM:
-  New York, NY, USA,  1986;  pp. 77--87.
-\newblock {{https://doi.org/10.1145/253168.253189}}.
+\newblock Mstrie Repository. 2019. Available online:  \url{https://github.com/nick-ak96/mstrie} (accessed %MDPI: Please add the access date (format: Date Month Year), e.g., accessed on 1 January 2020. %RES Added
+ on 10 March 2023).
 
 \bibitem[Pfaltz \em{et~al.}(1980)Pfaltz, Berman, and Cagley]{Pfaltz1980}
 Pfaltz, J.L.; Berman, W.J.; Cagley, E.M.
@@ -2195,8 +2178,8 @@ Zhang, C.; Naughton, J.; DeWitt, D.; Luo, Q.; Luo, Q.; Lohman, G.
   Kaushik]{Ramasamy2000}
 Ramasamy, K.; Patel, J.M.; Naughton, J.F.; Kaushik, R.
 \newblock Set containment joins: The good, the bad and the ugly.
-\newblock In Proceedings of the \hl{Proc. of VLDB,} %MDPI: Please provide more information about the article type, such as book (please provide the name and location of the publisher); online resource (please provide the URL of the website and the date it was accessed (Date Month Year)); or journal article (please provide the name of the journal, the year and volume in which it was published, and the page number). Please refer to https://www.mdpi.com/authors/references for full reference formatting guides.
-  2000.
+\newblock In Proceedings of the 26th VLDB Conference, Morgan Kaufmann, Cairo, Egypt, 10--14 September, 2000. %MDPI: Please provide more information about the article type, such as book (please provide the name and location of the publisher); online resource (please provide the URL of the website and the date it was accessed (Date Month Year)); or journal article (please provide the name of the journal, the year and volume in which it was published, and the page number). Please refer to https://www.mdpi.com/authors/references for full reference formatting guides.
+%RES Details on reference Added.
 
 \bibitem[Melnik and Garcia-Molina(2003)]{Melnik2003}
 Melnik, S.; Garcia-Molina, H.
