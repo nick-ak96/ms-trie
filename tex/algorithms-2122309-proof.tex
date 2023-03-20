@@ -796,7 +796,8 @@ meaning that for some $p\in (0,1)$, the following holds:
 P(m\in M) = p, \quad \forall~m\in N.
 \]
 %
-\hl{Let} %MDPI: Whether the indentation of the paragraph after the formula is necessary, please confirm. Please check all.
+Let % MDPI: Whether the indentation of the paragraph after the formula is necessary, please confirm. Please check all.
+%RES: We do not want to start new paragraph here, hence no indentation!
  $\xi_1, \xi_2, \ldots, \xi_{\sigma+1}$ be random variables such that $\xi_i$
 represents the number of nodes in a multiset-trie on the $i$-th level. For every node $j$ 
 on $i$-th level, we assign a random variable $\xi_{ij}$ to be the number of its children, 
@@ -1259,9 +1260,9 @@ As we increase the parameter $p$, the number of sets we need to store (i.e., num
 
 
 \begin{figure}[H]
-
-\includegraphics[width=.64\textwidth, keepaspectratio]{exp-nodes-on-probab.pdf}
-\caption{\hl{Size} %MDPI: Please change the terms into scientific notations in the figure,  e.g., "$8 \times 10^{3}$", not "8E3".
+\centering
+\includegraphics[width=.64\textwidth, keepaspectratio]{exp-nodes-on-probab-1.pdf}
+\caption{Size % MDPI: Please change the terms into scientific notations in the figure,  e.g., "$8 \times 10^{3}$", not "8E3". %RES: done.
  of a tree ($\mathbb{E}(|\mathcal{M}|)$) compared to the number of stored sets ($\mathbb{E}(|M|)$), as the probability parameter $p$ increases.
 Parameters 
 $\sigma$ and $n$ are $26$ and $10,$ respectively.
@@ -1301,7 +1302,7 @@ that the space complexity of the multiset-trie is $O(|M|).$
 
 
 \begin{figure}[H]
-
+\centering
 \includegraphics[width=.64\textwidth, keepaspectratio]{ratio-exp-nodes-and-msets-on-prob.pdf}
 \caption{The ratio of ``data overhead'' derived from Figure \ref{f:exp-nodes}, as the density $p$ of our data structure increases.
 Unless we are in a very sparse setting, the trade-off in terms of space is small.}
@@ -1418,7 +1419,7 @@ is described in the paper by Helmer and Moerkotte~\cite{Helmer2003}
 for sets. In the comparison, we use three types of queries: exact,
 sub-multiset, and super-multiset~retrieval.
 
-\subsection{Data%MDPI: Section headings should be numbered sequentially, e.g., Section 2.1, Section 2.2.1. Please confirm this revision. %RES It is Ok as it is.
+\subsection{Data %MDPI: Section headings should be numbered sequentially, e.g., Section 2.1, Section 2.2.1. Please confirm this revision. %RES It is Ok as it is.
  Generation}
 We denote by \emph{input data} the data that are used to fill the structure prior 
 to testing and by \emph{test data} the set of queries that are used to test the 
